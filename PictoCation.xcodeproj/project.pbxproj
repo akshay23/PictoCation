@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19A641E91B56D9DF00E8402A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A641E81B56D9DF00E8402A /* AppDelegate.swift */; };
+		19A641EB1B56D9DF00E8402A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A641EA1B56D9DF00E8402A /* LoginViewController.swift */; };
+		19A641EE1B56D9DF00E8402A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A641EC1B56D9DF00E8402A /* Main.storyboard */; };
+		19A641F01B56D9DF00E8402A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A641EF1B56D9DF00E8402A /* Images.xcassets */; };
+		19A641F31B56D9DF00E8402A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A641F11B56D9DF00E8402A /* LaunchScreen.xib */; };
+		19A641FF1B56D9DF00E8402A /* PictoCationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A641FE1B56D9DF00E8402A /* PictoCationTests.swift */; };
+		968AAF2498DB9E720678F377 /* Pods_PictoCation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4063455072B457624267AD /* Pods_PictoCation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		19A641F91B56D9DF00E8402A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19A641DB1B56D9DF00E8402A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19A641E21B56D9DF00E8402A;
+			remoteInfo = PictoCation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		19A641E31B56D9DF00E8402A /* PictoCation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictoCation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19A641E71B56D9DF00E8402A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19A641E81B56D9DF00E8402A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		19A641EA1B56D9DF00E8402A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		19A641ED1B56D9DF00E8402A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		19A641EF1B56D9DF00E8402A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		19A641F21B56D9DF00E8402A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		19A641F81B56D9DF00E8402A /* PictoCationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PictoCationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19A641FD1B56D9DF00E8402A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19A641FE1B56D9DF00E8402A /* PictoCationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictoCationTests.swift; sourceTree = "<group>"; };
+		25A8054865C2CCA8F35EA597 /* Pods-PictoCation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictoCation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictoCation/Pods-PictoCation.debug.xcconfig"; sourceTree = "<group>"; };
+		5C4063455072B457624267AD /* Pods_PictoCation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PictoCation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8F6593EBA73DFAFA1996CEE /* Pods-PictoCation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictoCation.release.xcconfig"; path = "Pods/Target Support Files/Pods-PictoCation/Pods-PictoCation.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19A641E01B56D9DF00E8402A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				968AAF2498DB9E720678F377 /* Pods_PictoCation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19A641F51B56D9DF00E8402A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19A641DA1B56D9DF00E8402A = {
+			isa = PBXGroup;
+			children = (
+				19A641E51B56D9DF00E8402A /* PictoCation */,
+				19A641FB1B56D9DF00E8402A /* PictoCationTests */,
+				19A641E41B56D9DF00E8402A /* Products */,
+				EABEFDF26DBDC916250897DE /* Pods */,
+				906C4E3F9DEFE722609D639F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		19A641E41B56D9DF00E8402A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19A641E31B56D9DF00E8402A /* PictoCation.app */,
+				19A641F81B56D9DF00E8402A /* PictoCationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19A641E51B56D9DF00E8402A /* PictoCation */ = {
+			isa = PBXGroup;
+			children = (
+				19A641EC1B56D9DF00E8402A /* Main.storyboard */,
+				19A6420B1B56DA0300E8402A /* Misc */,
+				19A6420A1B56D9FD00E8402A /* Views */,
+				19A642091B56D9F400E8402A /* Controllers */,
+				19A642081B56D9E900E8402A /* Models */,
+				19A641E61B56D9DF00E8402A /* Supporting Files */,
+			);
+			path = PictoCation;
+			sourceTree = "<group>";
+		};
+		19A641E61B56D9DF00E8402A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				19A641E71B56D9DF00E8402A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		19A641FB1B56D9DF00E8402A /* PictoCationTests */ = {
+			isa = PBXGroup;
+			children = (
+				19A641FE1B56D9DF00E8402A /* PictoCationTests.swift */,
+				19A641FC1B56D9DF00E8402A /* Supporting Files */,
+			);
+			path = PictoCationTests;
+			sourceTree = "<group>";
+		};
+		19A641FC1B56D9DF00E8402A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				19A641FD1B56D9DF00E8402A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		19A642081B56D9E900E8402A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		19A642091B56D9F400E8402A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				19A641EA1B56D9DF00E8402A /* LoginViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		19A6420A1B56D9FD00E8402A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		19A6420B1B56DA0300E8402A /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				19A641F11B56D9DF00E8402A /* LaunchScreen.xib */,
+				19A641EF1B56D9DF00E8402A /* Images.xcassets */,
+				19A641E81B56D9DF00E8402A /* AppDelegate.swift */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		906C4E3F9DEFE722609D639F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C4063455072B457624267AD /* Pods_PictoCation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EABEFDF26DBDC916250897DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25A8054865C2CCA8F35EA597 /* Pods-PictoCation.debug.xcconfig */,
+				E8F6593EBA73DFAFA1996CEE /* Pods-PictoCation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19A641E21B56D9DF00E8402A /* PictoCation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19A642021B56D9DF00E8402A /* Build configuration list for PBXNativeTarget "PictoCation" */;
+			buildPhases = (
+				095E53989F1FC1A7ABFD5C68 /* Check Pods Manifest.lock */,
+				19A641DF1B56D9DF00E8402A /* Sources */,
+				19A641E01B56D9DF00E8402A /* Frameworks */,
+				19A641E11B56D9DF00E8402A /* Resources */,
+				D42E6B34BCDB4D0272BF5926 /* Embed Pods Frameworks */,
+				FC3B9C2B3B3BEFD106296C0D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PictoCation;
+			productName = PictoCation;
+			productReference = 19A641E31B56D9DF00E8402A /* PictoCation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		19A641F71B56D9DF00E8402A /* PictoCationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19A642051B56D9DF00E8402A /* Build configuration list for PBXNativeTarget "PictoCationTests" */;
+			buildPhases = (
+				19A641F41B56D9DF00E8402A /* Sources */,
+				19A641F51B56D9DF00E8402A /* Frameworks */,
+				19A641F61B56D9DF00E8402A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19A641FA1B56D9DF00E8402A /* PBXTargetDependency */,
+			);
+			name = PictoCationTests;
+			productName = PictoCationTests;
+			productReference = 19A641F81B56D9DF00E8402A /* PictoCationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19A641DB1B56D9DF00E8402A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Akshay Bharath";
+				TargetAttributes = {
+					19A641E21B56D9DF00E8402A = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					19A641F71B56D9DF00E8402A = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 19A641E21B56D9DF00E8402A;
+					};
+				};
+			};
+			buildConfigurationList = 19A641DE1B56D9DF00E8402A /* Build configuration list for PBXProject "PictoCation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 19A641DA1B56D9DF00E8402A;
+			productRefGroup = 19A641E41B56D9DF00E8402A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19A641E21B56D9DF00E8402A /* PictoCation */,
+				19A641F71B56D9DF00E8402A /* PictoCationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19A641E11B56D9DF00E8402A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19A641EE1B56D9DF00E8402A /* Main.storyboard in Resources */,
+				19A641F31B56D9DF00E8402A /* LaunchScreen.xib in Resources */,
+				19A641F01B56D9DF00E8402A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19A641F61B56D9DF00E8402A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		095E53989F1FC1A7ABFD5C68 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D42E6B34BCDB4D0272BF5926 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PictoCation/Pods-PictoCation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC3B9C2B3B3BEFD106296C0D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PictoCation/Pods-PictoCation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19A641DF1B56D9DF00E8402A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19A641EB1B56D9DF00E8402A /* LoginViewController.swift in Sources */,
+				19A641E91B56D9DF00E8402A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19A641F41B56D9DF00E8402A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19A641FF1B56D9DF00E8402A /* PictoCationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		19A641FA1B56D9DF00E8402A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19A641E21B56D9DF00E8402A /* PictoCation */;
+			targetProxy = 19A641F91B56D9DF00E8402A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		19A641EC1B56D9DF00E8402A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19A641ED1B56D9DF00E8402A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		19A641F11B56D9DF00E8402A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19A641F21B56D9DF00E8402A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		19A642001B56D9DF00E8402A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		19A642011B56D9DF00E8402A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		19A642031B56D9DF00E8402A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25A8054865C2CCA8F35EA597 /* Pods-PictoCation.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PictoCation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		19A642041B56D9DF00E8402A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8F6593EBA73DFAFA1996CEE /* Pods-PictoCation.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PictoCation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		19A642061B56D9DF00E8402A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PictoCationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PictoCation.app/PictoCation";
+			};
+			name = Debug;
+		};
+		19A642071B56D9DF00E8402A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PictoCationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PictoCation.app/PictoCation";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19A641DE1B56D9DF00E8402A /* Build configuration list for PBXProject "PictoCation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19A642001B56D9DF00E8402A /* Debug */,
+				19A642011B56D9DF00E8402A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19A642021B56D9DF00E8402A /* Build configuration list for PBXNativeTarget "PictoCation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19A642031B56D9DF00E8402A /* Debug */,
+				19A642041B56D9DF00E8402A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19A642051B56D9DF00E8402A /* Build configuration list for PBXNativeTarget "PictoCationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19A642061B56D9DF00E8402A /* Debug */,
+				19A642071B56D9DF00E8402A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19A641DB1B56D9DF00E8402A /* Project object */;
+}

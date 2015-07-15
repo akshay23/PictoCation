@@ -1,0 +1,906 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0857D207C2A193B5ED33F784 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFEAA059F396470D15DB3DA /* SwiftyJSON.swift */; };
+		0F0A19A304D91B7CA6574556 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32DFFAB83BECFAD85BD07E /* Foundation.framework */; };
+		196559446C1BA11B5B89348E /* FICImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E5787196BBE370F6A4AF7E31 /* FICImageCache.m */; };
+		2D3A9C729C402CD7D71C9225 /* FICUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF6315E930138B7D9649815 /* FICUtilities.m */; };
+		40F506CF39D80A9BF30F0208 /* FICImageTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B67BF961887F39B5178A0A0 /* FICImageTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4628CC73194E92644BC5DEE0 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D211446F24DF89B23D541 /* Upload.swift */; };
+		4E41ACBECA5BE5C4CB3FE7F0 /* Pods-PictoCation-SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6E8B76ED79294299FD74881 /* Pods-PictoCation-SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		59FA2D9B38D7316DD9467D16 /* FICUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 828536090B0EBE702F1E50AB /* FICUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73BBCFA69DF9BCF5890EDE90 /* FICImageTable.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB3B7FD2DD338C8D5B1BECA /* FICImageTable.m */; };
+		74470D172910CD6DA3C4125A /* Pods-PictoCation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DCD5665EFF4CDC3B98D586E /* Pods-PictoCation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		749795B4F10F189DCC4640D6 /* FICImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 32C52E165D410982F4251892 /* FICImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		852F63E6354AE49AF434F2EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32DFFAB83BECFAD85BD07E /* Foundation.framework */; };
+		95931A00DEFF99AA02471DFF /* Pods-PictoCation-FastImageCache-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B1C121A077A9FDF4B67FD02A /* Pods-PictoCation-FastImageCache-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9827043D765757AC794EA7E2 /* FICImageFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 81ECAE0616A8112153352B7E /* FICImageFormat.m */; };
+		99BB4215818C6AFE567E7CE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32DFFAB83BECFAD85BD07E /* Foundation.framework */; };
+		9D2CD8C7DBD4F002BE1CFDDB /* Pods-PictoCation-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDCABD8E22AAC5EC3CADA81 /* Pods-PictoCation-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D8D6E3A99D237A54323BCA6 /* FICImageTableChunk.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7B5D819D48F51D44274F57 /* FICImageTableChunk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FA5AD699111D0AC3A66BAD7 /* Pods-PictoCation-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F970F1177DA62E893AAC60F5 /* Pods-PictoCation-Alamofire-dummy.m */; };
+		AF9AE321778410D63F245957 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C695CC25CFCD65E819AEA2E8 /* ParameterEncoding.swift */; };
+		B10002EC4D4D3B6D3EC4C8CB /* FICImageTableChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FC9CC5A638E5BFAAF76510 /* FICImageTableChunk.m */; };
+		B365C81B669551FCE50CFFEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD32DFFAB83BECFAD85BD07E /* Foundation.framework */; };
+		B9BD52DB55758D3DE6377DAA /* FICImports.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD7838ABC9D78CC5BA2C477 /* FICImports.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9E893846614BBA30083669A /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A221B2E6890109E57B8E173E /* Manager.swift */; };
+		BDC0088875A6198CC7272C48 /* FICImageCache+FICErrorLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = C40777945CADD2FF9621C99F /* FICImageCache+FICErrorLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF23EF94DC4AFC683CD6CCA1 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91BE6EFCEF99E40C81EF783 /* Download.swift */; };
+		D9260D78C1C1882A8E13EA1D /* FICEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = BDBBEDFC5C962D3C5935703C /* FICEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB5CB3A3DB38A2664DFB7517 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E801C6463B958532921BA773 /* ResponseSerialization.swift */; };
+		E70C91F9170F59B142EBC57D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58908E1DB39F50E6BF29B9FF /* Request.swift */; };
+		E785A1CE63CEAD48204864CC /* FICImageFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = BF37D149B004D54A5D7FE265 /* FICImageFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EADAA38A01E7E4926EB3BA28 /* Pods-PictoCation-FastImageCache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1550A3D3AD319D16632F8 /* Pods-PictoCation-FastImageCache-dummy.m */; };
+		EFD55F2DCA9BBA12EECE96A3 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A5FE412E5CD0652D3C256E /* Alamofire.swift */; };
+		F27DF0001E71DF54ED51B6FE /* Pods-PictoCation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A5EF409DF65CE8FD48728B /* Pods-PictoCation-dummy.m */; };
+		F4ACBAE769F4BB50E40FD914 /* Pods-PictoCation-SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 355940AE7015CB0148B95A3D /* Pods-PictoCation-SwiftyJSON-dummy.m */; };
+		F4C0C85B6712821C33451304 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFE5A440D03D32DC631ED2C /* Validation.swift */; };
+		FAAAEAD6FCD7C5F8DC87AB5B /* FICImageTableEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ABC041FD19F5F06C4973AD /* FICImageTableEntry.m */; };
+		FDB924CFF272B10825339A3F /* FICImageTableEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = F137559654E95195E340D9D7 /* FICImageTableEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		77A3DBDEC12426D19860E715 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A195F2CD95163A107D9530E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29BBB7BF6DAB5FEE62B5709E;
+			remoteInfo = "Pods-PictoCation-FastImageCache";
+		};
+		9A6F98E205565BB5F6340115 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A195F2CD95163A107D9530E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 919D097395BFC4E02AE581F9;
+			remoteInfo = "Pods-PictoCation-Alamofire";
+		};
+		DF4EF3B461386807CA4CFBC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A195F2CD95163A107D9530E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E0EE2849F1C093659AE18BB;
+			remoteInfo = "Pods-PictoCation-SwiftyJSON";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03E3758317550F9307590E7F /* Pods-PictoCation-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		0CAEA4530DF1102703F4EB1F /* Pods-PictoCation-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PictoCation-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0DDCABD8E22AAC5EC3CADA81 /* Pods-PictoCation-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		111159F92D5067231E58A92D /* Pods-PictoCation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation.debug.xcconfig"; sourceTree = "<group>"; };
+		14E1550A3D3AD319D16632F8 /* Pods-PictoCation-FastImageCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-FastImageCache-dummy.m"; sourceTree = "<group>"; };
+		158D211446F24DF89B23D541 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
+		1DC6E621C3978F78CFC09FB1 /* Pods-PictoCation-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PictoCation-acknowledgements.plist"; sourceTree = "<group>"; };
+		1EF01DF464E1948F25876774 /* Pods-PictoCation-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PictoCation-frameworks.sh"; sourceTree = "<group>"; };
+		2300E0ADB57EC888BAC424C8 /* Pods-PictoCation-SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		2C7B5D819D48F51D44274F57 /* FICImageTableChunk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTableChunk.h; path = FastImageCache/FICImageTableChunk.h; sourceTree = "<group>"; };
+		2F3B238A730ABF2759725AEC /* Pods_PictoCation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PictoCation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32C52E165D410982F4251892 /* FICImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageCache.h; path = FastImageCache/FICImageCache.h; sourceTree = "<group>"; };
+		342EFD1E17133E387C0A93FC /* FastImageCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FastImageCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		355940AE7015CB0148B95A3D /* Pods-PictoCation-SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		356F2070E84DFBF3D2846111 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CFEAA059F396470D15DB3DA /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		4EF6315E930138B7D9649815 /* FICUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICUtilities.m; path = FastImageCache/FICUtilities.m; sourceTree = "<group>"; };
+		561CEB5FC8BB5EE5057E4B66 /* Pods-PictoCation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation.release.xcconfig"; sourceTree = "<group>"; };
+		56ABC041FD19F5F06C4973AD /* FICImageTableEntry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTableEntry.m; path = FastImageCache/FICImageTableEntry.m; sourceTree = "<group>"; };
+		58908E1DB39F50E6BF29B9FF /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		5B67BF961887F39B5178A0A0 /* FICImageTable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTable.h; path = FastImageCache/FICImageTable.h; sourceTree = "<group>"; };
+		623BFA10120F61CBBFE9BA62 /* Pods-PictoCation-SwiftyJSON-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-SwiftyJSON-Private.xcconfig"; sourceTree = "<group>"; };
+		668DDF2D9930956A24AF6434 /* Pods-PictoCation-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PictoCation-resources.sh"; sourceTree = "<group>"; };
+		69FC9CC5A638E5BFAAF76510 /* FICImageTableChunk.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTableChunk.m; path = FastImageCache/FICImageTableChunk.m; sourceTree = "<group>"; };
+		6CA47BB2D02AE8553DEF860D /* Pods-PictoCation-FastImageCache-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-FastImageCache-prefix.pch"; sourceTree = "<group>"; };
+		81ECAE0616A8112153352B7E /* FICImageFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageFormat.m; path = FastImageCache/FICImageFormat.m; sourceTree = "<group>"; };
+		828536090B0EBE702F1E50AB /* FICUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICUtilities.h; path = FastImageCache/FICUtilities.h; sourceTree = "<group>"; };
+		8DA3CA9187246FA193624481 /* Pods-PictoCation-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-environment.h"; sourceTree = "<group>"; };
+		8F138B8F7FDCCC9529341AA9 /* Pods-PictoCation-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-Alamofire.xcconfig"; sourceTree = "<group>"; };
+		989F206200F69652B4CD3306 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DCD5665EFF4CDC3B98D586E /* Pods-PictoCation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-umbrella.h"; sourceTree = "<group>"; };
+		A16180327D6DE529A1FE376A /* Pods-PictoCation-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation-Alamofire.modulemap"; sourceTree = "<group>"; };
+		A221B2E6890109E57B8E173E /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
+		A91BE6EFCEF99E40C81EF783 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
+		ACB3B7FD2DD338C8D5B1BECA /* FICImageTable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTable.m; path = FastImageCache/FICImageTable.m; sourceTree = "<group>"; };
+		AD6989E894790823E6FFC7FB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1C121A077A9FDF4B67FD02A /* Pods-PictoCation-FastImageCache-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-FastImageCache-umbrella.h"; sourceTree = "<group>"; };
+		BDBBEDFC5C962D3C5935703C /* FICEntity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICEntity.h; path = FastImageCache/FICEntity.h; sourceTree = "<group>"; };
+		BEFE5A440D03D32DC631ED2C /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		BF37D149B004D54A5D7FE265 /* FICImageFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageFormat.h; path = FastImageCache/FICImageFormat.h; sourceTree = "<group>"; };
+		C40777945CADD2FF9621C99F /* FICImageCache+FICErrorLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FICImageCache+FICErrorLogging.h"; path = "FastImageCache/FICImageCache+FICErrorLogging.h"; sourceTree = "<group>"; };
+		C695CC25CFCD65E819AEA2E8 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		C7E0747124AA4957A82FEDE5 /* Pods-PictoCation-FastImageCache.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation-FastImageCache.modulemap"; sourceTree = "<group>"; };
+		C983C0F5C2B848E620AE2836 /* Pods-PictoCation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation.modulemap"; sourceTree = "<group>"; };
+		CC2873AF7BE473778CD90097 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC8D98BC3F35B4B7FF013FE1 /* Pods-PictoCation-SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-SwiftyJSON.xcconfig"; sourceTree = "<group>"; };
+		CD32DFFAB83BECFAD85BD07E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D5975CD9B41FCEF71610607A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9067118E554E0578ACBFEA7 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9A5EF409DF65CE8FD48728B /* Pods-PictoCation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-dummy.m"; sourceTree = "<group>"; };
+		DEE3A7CDB71FE70AC31AAFE3 /* Pods-PictoCation-FastImageCache.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-FastImageCache.xcconfig"; sourceTree = "<group>"; };
+		E273366920936E37B22CFDED /* Pods-PictoCation-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
+		E428BF51A964FD8BE457FBEB /* Pods-PictoCation-FastImageCache-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-FastImageCache-Private.xcconfig"; sourceTree = "<group>"; };
+		E5787196BBE370F6A4AF7E31 /* FICImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageCache.m; path = FastImageCache/FICImageCache.m; sourceTree = "<group>"; };
+		E801C6463B958532921BA773 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		F137559654E95195E340D9D7 /* FICImageTableEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTableEntry.h; path = FastImageCache/FICImageTableEntry.h; sourceTree = "<group>"; };
+		F6A5FE412E5CD0652D3C256E /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		F6E8B76ED79294299FD74881 /* Pods-PictoCation-SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		F970F1177DA62E893AAC60F5 /* Pods-PictoCation-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-Alamofire-dummy.m"; sourceTree = "<group>"; };
+		F9A7E7F3FE36925516A865D1 /* Pods-PictoCation-SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation-SwiftyJSON.modulemap"; sourceTree = "<group>"; };
+		FAD7838ABC9D78CC5BA2C477 /* FICImports.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImports.h; path = FastImageCache/FICImports.h; sourceTree = "<group>"; };
+		FFFBEAB0BB549876585E0A87 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16D64D83B29F3AEDB54D5087 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99BB4215818C6AFE567E7CE9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BD0B1E024638B07F919EB36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				852F63E6354AE49AF434F2EA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8F4F0B1F01BFC42660A2FA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B365C81B669551FCE50CFFEB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEEDC5C9695DB279D5FFFA39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F0A19A304D91B7CA6574556 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		022FF41C018196DA1FF8EF9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0CDE954E82F056660963AF9A /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0CDE954E82F056660963AF9A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CD32DFFAB83BECFAD85BD07E /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		181D318435748C6881573DF0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5975CD9B41FCEF71610607A /* Info.plist */,
+				C7E0747124AA4957A82FEDE5 /* Pods-PictoCation-FastImageCache.modulemap */,
+				DEE3A7CDB71FE70AC31AAFE3 /* Pods-PictoCation-FastImageCache.xcconfig */,
+				E428BF51A964FD8BE457FBEB /* Pods-PictoCation-FastImageCache-Private.xcconfig */,
+				14E1550A3D3AD319D16632F8 /* Pods-PictoCation-FastImageCache-dummy.m */,
+				6CA47BB2D02AE8553DEF860D /* Pods-PictoCation-FastImageCache-prefix.pch */,
+				B1C121A077A9FDF4B67FD02A /* Pods-PictoCation-FastImageCache-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-PictoCation-FastImageCache";
+			sourceTree = "<group>";
+		};
+		281E5C7B8820CD17E6A984C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD5413195D83806C8B3F98B3 /* Alamofire */,
+				FE3FB84F8F66BDCB6DBD093E /* FastImageCache */,
+				94B8DC22A9B47E8581D6D616 /* SwiftyJSON */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		52266CD2738039C9C6BDE694 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				356F2070E84DFBF3D2846111 /* Info.plist */,
+				A16180327D6DE529A1FE376A /* Pods-PictoCation-Alamofire.modulemap */,
+				8F138B8F7FDCCC9529341AA9 /* Pods-PictoCation-Alamofire.xcconfig */,
+				E273366920936E37B22CFDED /* Pods-PictoCation-Alamofire-Private.xcconfig */,
+				F970F1177DA62E893AAC60F5 /* Pods-PictoCation-Alamofire-dummy.m */,
+				03E3758317550F9307590E7F /* Pods-PictoCation-Alamofire-prefix.pch */,
+				0DDCABD8E22AAC5EC3CADA81 /* Pods-PictoCation-Alamofire-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-PictoCation-Alamofire";
+			sourceTree = "<group>";
+		};
+		94B8DC22A9B47E8581D6D616 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				4CFEAA059F396470D15DB3DA /* SwiftyJSON.swift */,
+				97F287279DF72CB87DAF3355 /* Support Files */,
+			);
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		97F287279DF72CB87DAF3355 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD6989E894790823E6FFC7FB /* Info.plist */,
+				F9A7E7F3FE36925516A865D1 /* Pods-PictoCation-SwiftyJSON.modulemap */,
+				CC8D98BC3F35B4B7FF013FE1 /* Pods-PictoCation-SwiftyJSON.xcconfig */,
+				623BFA10120F61CBBFE9BA62 /* Pods-PictoCation-SwiftyJSON-Private.xcconfig */,
+				355940AE7015CB0148B95A3D /* Pods-PictoCation-SwiftyJSON-dummy.m */,
+				2300E0ADB57EC888BAC424C8 /* Pods-PictoCation-SwiftyJSON-prefix.pch */,
+				F6E8B76ED79294299FD74881 /* Pods-PictoCation-SwiftyJSON-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-PictoCation-SwiftyJSON";
+			sourceTree = "<group>";
+		};
+		9C88ACD0439A02C1E035A70C /* Pods-PictoCation */ = {
+			isa = PBXGroup;
+			children = (
+				989F206200F69652B4CD3306 /* Info.plist */,
+				C983C0F5C2B848E620AE2836 /* Pods-PictoCation.modulemap */,
+				0CAEA4530DF1102703F4EB1F /* Pods-PictoCation-acknowledgements.markdown */,
+				1DC6E621C3978F78CFC09FB1 /* Pods-PictoCation-acknowledgements.plist */,
+				D9A5EF409DF65CE8FD48728B /* Pods-PictoCation-dummy.m */,
+				8DA3CA9187246FA193624481 /* Pods-PictoCation-environment.h */,
+				1EF01DF464E1948F25876774 /* Pods-PictoCation-frameworks.sh */,
+				668DDF2D9930956A24AF6434 /* Pods-PictoCation-resources.sh */,
+				9DCD5665EFF4CDC3B98D586E /* Pods-PictoCation-umbrella.h */,
+				111159F92D5067231E58A92D /* Pods-PictoCation.debug.xcconfig */,
+				561CEB5FC8BB5EE5057E4B66 /* Pods-PictoCation.release.xcconfig */,
+			);
+			name = "Pods-PictoCation";
+			path = "Target Support Files/Pods-PictoCation";
+			sourceTree = "<group>";
+		};
+		C5302D4D15FB6B400740904C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C88ACD0439A02C1E035A70C /* Pods-PictoCation */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		D55BC1402112CBD98835F555 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9067118E554E0578ACBFEA7 /* Alamofire.framework */,
+				342EFD1E17133E387C0A93FC /* FastImageCache.framework */,
+				2F3B238A730ABF2759725AEC /* Pods_PictoCation.framework */,
+				CC2873AF7BE473778CD90097 /* SwiftyJSON.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD5413195D83806C8B3F98B3 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				F6A5FE412E5CD0652D3C256E /* Alamofire.swift */,
+				A91BE6EFCEF99E40C81EF783 /* Download.swift */,
+				A221B2E6890109E57B8E173E /* Manager.swift */,
+				C695CC25CFCD65E819AEA2E8 /* ParameterEncoding.swift */,
+				58908E1DB39F50E6BF29B9FF /* Request.swift */,
+				E801C6463B958532921BA773 /* ResponseSerialization.swift */,
+				158D211446F24DF89B23D541 /* Upload.swift */,
+				BEFE5A440D03D32DC631ED2C /* Validation.swift */,
+				52266CD2738039C9C6BDE694 /* Support Files */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		E5FDEDDC028004C3BA1C0CB6 = {
+			isa = PBXGroup;
+			children = (
+				FFFBEAB0BB549876585E0A87 /* Podfile */,
+				022FF41C018196DA1FF8EF9F /* Frameworks */,
+				281E5C7B8820CD17E6A984C4 /* Pods */,
+				D55BC1402112CBD98835F555 /* Products */,
+				C5302D4D15FB6B400740904C /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		FE3FB84F8F66BDCB6DBD093E /* FastImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				BDBBEDFC5C962D3C5935703C /* FICEntity.h */,
+				32C52E165D410982F4251892 /* FICImageCache.h */,
+				E5787196BBE370F6A4AF7E31 /* FICImageCache.m */,
+				C40777945CADD2FF9621C99F /* FICImageCache+FICErrorLogging.h */,
+				BF37D149B004D54A5D7FE265 /* FICImageFormat.h */,
+				81ECAE0616A8112153352B7E /* FICImageFormat.m */,
+				5B67BF961887F39B5178A0A0 /* FICImageTable.h */,
+				ACB3B7FD2DD338C8D5B1BECA /* FICImageTable.m */,
+				2C7B5D819D48F51D44274F57 /* FICImageTableChunk.h */,
+				69FC9CC5A638E5BFAAF76510 /* FICImageTableChunk.m */,
+				F137559654E95195E340D9D7 /* FICImageTableEntry.h */,
+				56ABC041FD19F5F06C4973AD /* FICImageTableEntry.m */,
+				FAD7838ABC9D78CC5BA2C477 /* FICImports.h */,
+				828536090B0EBE702F1E50AB /* FICUtilities.h */,
+				4EF6315E930138B7D9649815 /* FICUtilities.m */,
+				181D318435748C6881573DF0 /* Support Files */,
+			);
+			path = FastImageCache;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		28078447432049D8AFC483FD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9260D78C1C1882A8E13EA1D /* FICEntity.h in Headers */,
+				BDC0088875A6198CC7272C48 /* FICImageCache+FICErrorLogging.h in Headers */,
+				749795B4F10F189DCC4640D6 /* FICImageCache.h in Headers */,
+				E785A1CE63CEAD48204864CC /* FICImageFormat.h in Headers */,
+				40F506CF39D80A9BF30F0208 /* FICImageTable.h in Headers */,
+				9D8D6E3A99D237A54323BCA6 /* FICImageTableChunk.h in Headers */,
+				FDB924CFF272B10825339A3F /* FICImageTableEntry.h in Headers */,
+				B9BD52DB55758D3DE6377DAA /* FICImports.h in Headers */,
+				59FA2D9B38D7316DD9467D16 /* FICUtilities.h in Headers */,
+				95931A00DEFF99AA02471DFF /* Pods-PictoCation-FastImageCache-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3388919CBE73F2972D7DC65A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74470D172910CD6DA3C4125A /* Pods-PictoCation-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3717AB5283C62A7E8CFF4E09 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E41ACBECA5BE5C4CB3FE7F0 /* Pods-PictoCation-SwiftyJSON-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		549A577E17C9E089950B3624 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D2CD8C7DBD4F002BE1CFDDB /* Pods-PictoCation-Alamofire-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1DF3CA71051D5DA599AE1983 /* Pods-PictoCation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B2A30D7BDD5B02BAA65A905 /* Build configuration list for PBXNativeTarget "Pods-PictoCation" */;
+			buildPhases = (
+				CFAC93C7560E57E8F7304E3E /* Sources */,
+				16D64D83B29F3AEDB54D5087 /* Frameworks */,
+				3388919CBE73F2972D7DC65A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				501E4D9A8970714D576DD60B /* PBXTargetDependency */,
+				D7E042F6C5E23E35D222DAB6 /* PBXTargetDependency */,
+				7A4EA8DB518954A8E82A875E /* PBXTargetDependency */,
+			);
+			name = "Pods-PictoCation";
+			productName = "Pods-PictoCation";
+			productReference = 2F3B238A730ABF2759725AEC /* Pods_PictoCation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1E0EE2849F1C093659AE18BB /* Pods-PictoCation-SwiftyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A9FBAEC52E958335B6D0FA3 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-SwiftyJSON" */;
+			buildPhases = (
+				07472F2189E27245C1C98FFE /* Sources */,
+				FEEDC5C9695DB279D5FFFA39 /* Frameworks */,
+				3717AB5283C62A7E8CFF4E09 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PictoCation-SwiftyJSON";
+			productName = "Pods-PictoCation-SwiftyJSON";
+			productReference = CC2873AF7BE473778CD90097 /* SwiftyJSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		29BBB7BF6DAB5FEE62B5709E /* Pods-PictoCation-FastImageCache */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC2095AF2BA6A9D431E043F9 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-FastImageCache" */;
+			buildPhases = (
+				44E3CD328B9D125271876971 /* Sources */,
+				1BD0B1E024638B07F919EB36 /* Frameworks */,
+				28078447432049D8AFC483FD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PictoCation-FastImageCache";
+			productName = "Pods-PictoCation-FastImageCache";
+			productReference = 342EFD1E17133E387C0A93FC /* FastImageCache.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		919D097395BFC4E02AE581F9 /* Pods-PictoCation-Alamofire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B674D5E66ABACF08A7788671 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-Alamofire" */;
+			buildPhases = (
+				792DFA6D03D3E084D2EC8AE8 /* Sources */,
+				A8F4F0B1F01BFC42660A2FA1 /* Frameworks */,
+				549A577E17C9E089950B3624 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PictoCation-Alamofire";
+			productName = "Pods-PictoCation-Alamofire";
+			productReference = D9067118E554E0578ACBFEA7 /* Alamofire.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A195F2CD95163A107D9530E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
+			buildConfigurationList = 198601F28154848E659472E1 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E5FDEDDC028004C3BA1C0CB6;
+			productRefGroup = D55BC1402112CBD98835F555 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1DF3CA71051D5DA599AE1983 /* Pods-PictoCation */,
+				919D097395BFC4E02AE581F9 /* Pods-PictoCation-Alamofire */,
+				29BBB7BF6DAB5FEE62B5709E /* Pods-PictoCation-FastImageCache */,
+				1E0EE2849F1C093659AE18BB /* Pods-PictoCation-SwiftyJSON */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07472F2189E27245C1C98FFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4ACBAE769F4BB50E40FD914 /* Pods-PictoCation-SwiftyJSON-dummy.m in Sources */,
+				0857D207C2A193B5ED33F784 /* SwiftyJSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44E3CD328B9D125271876971 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				196559446C1BA11B5B89348E /* FICImageCache.m in Sources */,
+				9827043D765757AC794EA7E2 /* FICImageFormat.m in Sources */,
+				73BBCFA69DF9BCF5890EDE90 /* FICImageTable.m in Sources */,
+				B10002EC4D4D3B6D3EC4C8CB /* FICImageTableChunk.m in Sources */,
+				FAAAEAD6FCD7C5F8DC87AB5B /* FICImageTableEntry.m in Sources */,
+				2D3A9C729C402CD7D71C9225 /* FICUtilities.m in Sources */,
+				EADAA38A01E7E4926EB3BA28 /* Pods-PictoCation-FastImageCache-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		792DFA6D03D3E084D2EC8AE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFD55F2DCA9BBA12EECE96A3 /* Alamofire.swift in Sources */,
+				CF23EF94DC4AFC683CD6CCA1 /* Download.swift in Sources */,
+				B9E893846614BBA30083669A /* Manager.swift in Sources */,
+				AF9AE321778410D63F245957 /* ParameterEncoding.swift in Sources */,
+				9FA5AD699111D0AC3A66BAD7 /* Pods-PictoCation-Alamofire-dummy.m in Sources */,
+				E70C91F9170F59B142EBC57D /* Request.swift in Sources */,
+				DB5CB3A3DB38A2664DFB7517 /* ResponseSerialization.swift in Sources */,
+				4628CC73194E92644BC5DEE0 /* Upload.swift in Sources */,
+				F4C0C85B6712821C33451304 /* Validation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFAC93C7560E57E8F7304E3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F27DF0001E71DF54ED51B6FE /* Pods-PictoCation-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		501E4D9A8970714D576DD60B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-PictoCation-Alamofire";
+			target = 919D097395BFC4E02AE581F9 /* Pods-PictoCation-Alamofire */;
+			targetProxy = 9A6F98E205565BB5F6340115 /* PBXContainerItemProxy */;
+		};
+		7A4EA8DB518954A8E82A875E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-PictoCation-SwiftyJSON";
+			target = 1E0EE2849F1C093659AE18BB /* Pods-PictoCation-SwiftyJSON */;
+			targetProxy = DF4EF3B461386807CA4CFBC0 /* PBXContainerItemProxy */;
+		};
+		D7E042F6C5E23E35D222DAB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-PictoCation-FastImageCache";
+			target = 29BBB7BF6DAB5FEE62B5709E /* Pods-PictoCation-FastImageCache */;
+			targetProxy = 77A3DBDEC12426D19860E715 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2BBF615F895DDAED583E0AA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E273366920936E37B22CFDED /* Pods-PictoCation-Alamofire-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-Alamofire/Pods-PictoCation-Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-Alamofire/Pods-PictoCation-Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3B732CFE98336BC9ECCBD541 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 623BFA10120F61CBBFE9BA62 /* Pods-PictoCation-SwiftyJSON-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-SwiftyJSON/Pods-PictoCation-SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-SwiftyJSON/Pods-PictoCation-SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		547901B53E8B7A06E05D2513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 561CEB5FC8BB5EE5057E4B66 /* Pods-PictoCation.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation/Pods-PictoCation.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PictoCation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		66E0C35B89C5FA6500128389 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E428BF51A964FD8BE457FBEB /* Pods-PictoCation-FastImageCache-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-FastImageCache/Pods-PictoCation-FastImageCache-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-FastImageCache/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-FastImageCache/Pods-PictoCation-FastImageCache.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FastImageCache;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		75DBB964358B9C4BC697C24F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E428BF51A964FD8BE457FBEB /* Pods-PictoCation-FastImageCache-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-FastImageCache/Pods-PictoCation-FastImageCache-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-FastImageCache/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-FastImageCache/Pods-PictoCation-FastImageCache.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FastImageCache;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		82B4D6FCC7F5375795A91B4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9C2F2765C8824DCC52B4C7AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 111159F92D5067231E58A92D /* Pods-PictoCation.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation/Pods-PictoCation.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PictoCation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CC4AC26FE1D580015AF41D33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA6090EF58FB3E941390DE8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E273366920936E37B22CFDED /* Pods-PictoCation-Alamofire-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-Alamofire/Pods-PictoCation-Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-Alamofire/Pods-PictoCation-Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E9ABE9D01C15817AC678132E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 623BFA10120F61CBBFE9BA62 /* Pods-PictoCation-SwiftyJSON-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-SwiftyJSON/Pods-PictoCation-SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-SwiftyJSON/Pods-PictoCation-SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		198601F28154848E659472E1 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82B4D6FCC7F5375795A91B4C /* Debug */,
+				CC4AC26FE1D580015AF41D33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B2A30D7BDD5B02BAA65A905 /* Build configuration list for PBXNativeTarget "Pods-PictoCation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C2F2765C8824DCC52B4C7AC /* Debug */,
+				547901B53E8B7A06E05D2513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A9FBAEC52E958335B6D0FA3 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-SwiftyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B732CFE98336BC9ECCBD541 /* Debug */,
+				E9ABE9D01C15817AC678132E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B674D5E66ABACF08A7788671 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-Alamofire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BBF615F895DDAED583E0AA4 /* Debug */,
+				DA6090EF58FB3E941390DE8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC2095AF2BA6A9D431E043F9 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-FastImageCache" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66E0C35B89C5FA6500128389 /* Debug */,
+				75DBB964358B9C4BC697C24F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A195F2CD95163A107D9530E5 /* Project object */;
+}
