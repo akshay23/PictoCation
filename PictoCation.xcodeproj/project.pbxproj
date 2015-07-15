@@ -232,6 +232,7 @@
 				TargetAttributes = {
 					19A641E21B56D9DF00E8402A = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = VRYW4TD62Q;
 					};
 					19A641F71B56D9DF00E8402A = {
 						CreatedOnToolsVersion = 6.4;
@@ -466,6 +467,7 @@
 			baseConfigurationReference = 25A8054865C2CCA8F35EA597 /* Pods-PictoCation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PictoCation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -477,6 +479,7 @@
 			baseConfigurationReference = E8F6593EBA73DFAFA1996CEE /* Pods-PictoCation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PictoCation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
