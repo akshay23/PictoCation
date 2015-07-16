@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "102FE66CD66BF7EF866EA9CA"
+               BlueprintIdentifier = "02E6EA1279FAC0BFBDC4891D"
                BuildableName = "Pods_PictoCation.framework"
                BlueprintName = "Pods-PictoCation"
                ReferencedContainer = "container:Pods.xcodeproj">

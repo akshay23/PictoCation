@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Alamofire
 import FastImageCache
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,9 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
 
+    // Instantiate core data stack
     let navController = window!.rootViewController as! UINavigationController
     let mapViewController = navController.topViewController as! MapViewController
     mapViewController.coreDataStack = coreDataStack
+    
+    // Google Maps auth
+    GMSServices.provideAPIKey("AIzaSyC1ZOBSUT8Z5Xl7tzGZ6KnL9on5LoFsHWs")
 
     return true
   }

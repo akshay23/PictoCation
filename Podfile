@@ -7,6 +7,7 @@ target 'PictoCation' do
   pod 'SwiftyJSON'
   pod 'FastImageCache'
   pod 'MBProgressHUD'
+  pod 'GoogleMaps'
 end
 
 target 'PictoCationTests' do
