@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-PictoCation-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PictoCation-SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1DF3CA71051D5DA599AE1983</key>
+		<key>102FE66CD66BF7EF866EA9CA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1E0EE2849F1C093659AE18BB</key>
+		<key>DC2C8CB8B6A68D71A062D988</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>29BBB7BF6DAB5FEE62B5709E</key>
+		<key>F4A0D416385E1BFA0929C0AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>919D097395BFC4E02AE581F9</key>
+		<key>F79763D0072627441058A5E0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F93D5836D7896431AFBC7B3D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

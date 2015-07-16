@@ -6,6 +6,7 @@ target 'PictoCation' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'FastImageCache'
+  pod 'MBProgressHUD'
 end
 
 target 'PictoCationTests' do

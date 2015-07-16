@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ea0-wI-Ioh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -102,40 +101,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please sign in using your Instagram credentials" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zB-b7-XgF">
-                                <rect key="frame" x="187" y="40" width="226" height="61"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="61" id="Gid-EN-X3F"/>
-                                    <constraint firstAttribute="width" constant="226" id="WsS-zF-7M4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Inh-zp-xnW">
-                                <rect key="frame" x="1" y="121" width="598" height="479"/>
-                                <color key="backgroundColor" red="0.53029467590000001" green="0.82024694460000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="YWS-0Q-eb8"/>
                                 </connections>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" red="0.53029467591271917" green="0.82024694458091452" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.68887172080000003" green="0.84889764940000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Inh-zp-xnW" secondAttribute="centerX" id="Doj-xo-hSu"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Inh-zp-xnW" secondAttribute="bottom" id="F2D-lZ-rvc"/>
-                            <constraint firstItem="Inh-zp-xnW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="M46-ms-Vnm"/>
-                            <constraint firstItem="5zB-b7-XgF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="RYN-eV-9nP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Inh-zp-xnW" secondAttribute="trailing" constant="-15" id="mEl-1f-DiX"/>
-                            <constraint firstAttribute="centerX" secondItem="5zB-b7-XgF" secondAttribute="centerX" id="o06-Uw-sli"/>
-                            <constraint firstItem="Inh-zp-xnW" firstAttribute="top" secondItem="5zB-b7-XgF" secondAttribute="bottom" id="vGh-5w-v9o"/>
-                            <constraint firstItem="Inh-zp-xnW" firstAttribute="top" secondItem="5zB-b7-XgF" secondAttribute="bottom" constant="20" id="zsJ-Xt-HcK"/>
+                            <constraint firstItem="Inh-zp-xnW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="6ge-C8-4SD"/>
+                            <constraint firstItem="Inh-zp-xnW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="H8p-m4-Ehh"/>
+                            <constraint firstAttribute="centerY" secondItem="Inh-zp-xnW" secondAttribute="centerY" id="NfN-Wh-ft3"/>
+                            <constraint firstAttribute="centerX" secondItem="Inh-zp-xnW" secondAttribute="centerX" id="sy2-3n-Xys"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="vGh-5w-v9o"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Tag-5o-iQ1"/>
                     <connections>
