@@ -10,12 +10,14 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import CoreData
+import MBProgressHUD
 
 class LoginViewController: UIViewController {
 
   @IBOutlet var webView: UIWebView!
   
   var coreDataStack: CoreDataStack!
+  var progressHUD: MBProgressHUD!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,6 +28,11 @@ class LoginViewController: UIViewController {
     webView.delegate = self
     webView.hidden = true
     NSURLCache.sharedURLCache().removeAllCachedResponses()
+    
+    // Show progress HUD
+    let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+    loadingNotification.mode = MBProgressHUDMode.Indeterminate
+    loadingNotification.labelText = "Loading"
 
     // Delete all cookies (if any)
     if let cookies = NSHTTPCookieStorage.sharedHTTPCookieStorage().cookies as? [NSHTTPCookie]{
@@ -92,6 +99,7 @@ extension LoginViewController: UIWebViewDelegate {
   
   func webViewDidFinishLoad(webView: UIWebView) {
     webView.hidden = false
+    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
   }
   
   func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
