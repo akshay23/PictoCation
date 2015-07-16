@@ -8,15 +8,22 @@
 
 import UIKit
 import CoreData
+import Alamofire
+import FastImageCache
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-
+  lazy var coreDataStack = CoreDataStack()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+
+    let navController = window!.rootViewController as! UINavigationController
+    let mapViewController = navController.topViewController as! MapViewController
+    mapViewController.coreDataStack = coreDataStack
+
     return true
   }
 
@@ -28,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationDidEnterBackground(application: UIApplication) {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    coreDataStack.saveContext()
   }
 
   func applicationWillEnterForeground(application: UIApplication) {
@@ -40,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func applicationWillTerminate(application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    self.saveContext()
+    coreDataStack.saveContext()
   }
 
   // MARK: - Core Data stack
@@ -91,19 +99,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     managedObjectContext.persistentStoreCoordinator = coordinator
     return managedObjectContext
     }()
-  
-  // MARK: - Core Data Saving support
-  
-  func saveContext () {
-    if let moc = self.managedObjectContext {
-      var error: NSError? = nil
-      if moc.hasChanges && !moc.save(&error) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog("Unresolved error \(error), \(error!.userInfo)")
-        abort()
-      }
-    }
-  }
 }
 

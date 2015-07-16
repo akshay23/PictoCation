@@ -9,10 +9,13 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import CoreData
 
 class LoginViewController: UIViewController {
 
   @IBOutlet var webView: UIWebView!
+  
+  var coreDataStack: CoreDataStack!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -76,7 +79,11 @@ extension LoginViewController: UIWebViewDelegate {
           
           if let accessToken = json["access_token"].string, userID = json["user"]["id"].string {
             println("Logged in")
-            self.performSegueWithIdentifier("unwindToMapView", sender: nil)
+            let user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: self.coreDataStack.context) as! User
+            user.userID = userID
+            user.accessToken = accessToken
+            self.coreDataStack.saveContext()
+            self.performSegueWithIdentifier("unwindToMapView", sender: ["user": user])
           }
         }
         

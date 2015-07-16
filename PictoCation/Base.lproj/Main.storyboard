@@ -74,10 +74,16 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="Jxf-ee-Fnb"/>
+                    <navigationItem key="navigationItem" id="Jxf-ee-Fnb">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="KJL-Eb-goT">
+                            <connections>
+                                <segue destination="BCt-tC-xTQ" kind="presentation" identifier="login" id="2Kj-zw-MeZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="btnLogout" destination="KJL-Eb-goT" id="FnI-Qo-EdW"/>
                         <outlet property="lblLoginMsg" destination="xFd-6U-Mxz" id="pn2-Ob-9vi"/>
-                        <segue destination="BCt-tC-xTQ" kind="presentation" identifier="login" id="NXH-tg-wuF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAp-hh-Uh9" userLabel="First Responder" sceneMemberID="firstResponder"/>

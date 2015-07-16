@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19091B191B5812D4005420DE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19091B181B5812D4005420DE /* CoreDataStack.swift */; };
 		195AEEFD1B56F4E30046B628 /* Instagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195AEEFC1B56F4E30046B628 /* Instagram.swift */; };
 		19A641E91B56D9DF00E8402A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A641E81B56D9DF00E8402A /* AppDelegate.swift */; };
 		19A641EB1B56D9DF00E8402A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A641EA1B56D9DF00E8402A /* LoginViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19091B181B5812D4005420DE /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		195AEEFC1B56F4E30046B628 /* Instagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
 		19A641E31B56D9DF00E8402A /* PictoCation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictoCation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A641E71B56D9DF00E8402A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				195AEEFC1B56F4E30046B628 /* Instagram.swift */,
 				19F72C6A1B57080500FA43E9 /* User.swift */,
+				19091B181B5812D4005420DE /* CoreDataStack.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19091B191B5812D4005420DE /* CoreDataStack.swift in Sources */,
 				19A641EB1B56D9DF00E8402A /* LoginViewController.swift in Sources */,
 				195AEEFD1B56F4E30046B628 /* Instagram.swift in Sources */,
 				19A641E91B56D9DF00E8402A /* AppDelegate.swift in Sources */,
