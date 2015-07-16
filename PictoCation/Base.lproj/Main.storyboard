@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ea0-wI-Ioh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -50,28 +52,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFd-6U-Mxz">
-                                <rect key="frame" x="0.0" y="150" width="600" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="PdQ-wl-q7I"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQK-DP-9j5" userLabel="MapHolder" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="273"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.91488441281357924" green="1" blue="0.95668244742296593" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="xFd-6U-Mxz" secondAttribute="centerY" constant="100" id="4oc-5Z-rEi"/>
-                            <constraint firstItem="xFd-6U-Mxz" firstAttribute="height" secondItem="G3M-3U-3Xf" secondAttribute="height" id="Ccp-uA-g7R"/>
-                            <constraint firstAttribute="centerX" secondItem="xFd-6U-Mxz" secondAttribute="centerX" id="KLl-6a-nbd"/>
-                            <constraint firstItem="xFd-6U-Mxz" firstAttribute="width" secondItem="G3M-3U-3Xf" secondAttribute="width" id="tLa-YA-xcc"/>
+                            <constraint firstAttribute="height" secondItem="hQK-DP-9j5" secondAttribute="height" multiplier="2.2" id="5op-01-vg6"/>
+                            <constraint firstAttribute="width" secondItem="hQK-DP-9j5" secondAttribute="width" id="8RY-mZ-FdL"/>
+                            <constraint firstAttribute="centerX" secondItem="hQK-DP-9j5" secondAttribute="centerX" id="u9H-kg-awp"/>
+                            <constraint firstItem="hQK-DP-9j5" firstAttribute="top" secondItem="G3M-3U-3Xf" secondAttribute="topMargin" id="xhb-Hz-ysN"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Ccp-uA-g7R"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Jxf-ee-Fnb">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="KJL-Eb-goT">
@@ -81,8 +73,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="btnLogout" destination="KJL-Eb-goT" id="FnI-Qo-EdW"/>
-                        <outlet property="lblLoginMsg" destination="xFd-6U-Mxz" id="pn2-Ob-9vi"/>
+                        <outlet property="btnLogout" destination="KJL-Eb-goT" id="b7L-iB-OC4"/>
+                        <outlet property="mainMapView" destination="hQK-DP-9j5" id="dhZ-Qy-Er7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAp-hh-Uh9" userLabel="First Responder" sceneMemberID="firstResponder"/>

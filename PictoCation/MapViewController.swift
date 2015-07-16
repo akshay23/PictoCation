@@ -12,41 +12,49 @@ import CoreLocation
 import GoogleMaps
 
 class MapViewController: UIViewController {
-  
-  @IBOutlet var lblLoginMsg: UILabel!
+
+  @IBOutlet var mainMapView: GMSMapView!
   @IBOutlet var btnLogout: UIBarButtonItem!
 
   var locationManager: CLLocationManager!
   var mapView: GMSMapView!
+  var placesClient: GMSPlacesClient!
   var coreDataStack: CoreDataStack!
   var user: User?
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    mapView = GMSMapView(frame: CGRectZero)
-    locationManager = CLLocationManager()
-    locationManager.delegate = self
-    self.view = mapView
     
     var error: NSError?
     if let fetchRequest = coreDataStack.model.fetchRequestTemplateForName("UserFetchRequest") {
       let results = coreDataStack.context.executeFetchRequest(fetchRequest, error: &error) as! [User]
       user = results.first
     }
+    
+    mapView = GMSMapView(frame: mainMapView.bounds)
+    mapView.myLocationEnabled = true
+    mapView.settings.myLocationButton = true
+    mainMapView = mapView
+    //self.view = mapView
+    placesClient = GMSPlacesClient()
+    locationManager = CLLocationManager()
+    locationManager.delegate = self
+    locationManager.requestWhenInUseAuthorization()
   }
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
 
-    if user == nil {
+    if (user == nil) {
       performSegueWithIdentifier("login", sender: self)
-      mapView.hidden = true
+      mainMapView.hidden = true
+      btnLogout.enabled = false
     } else {
-      println("Login was successful!")
-      locationManager.requestWhenInUseAuthorization()
+      println("Logged in!")
+      mainMapView.hidden = false
+      btnLogout.enabled = true
       locationManager.desiredAccuracy = kCLLocationAccuracyBest
       locationManager.startUpdatingLocation()
-      mapView.hidden = false
     }
   }
   
@@ -75,9 +83,7 @@ extension MapViewController: CLLocationManagerDelegate {
   func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
     let location = locations[0] as! CLLocation
     let camera = GMSCameraPosition.cameraWithLatitude(location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 16)
-    mapView.camera = camera
-    mapView.myLocationEnabled = true
-    mapView.userInteractionEnabled = false
+    mapView.animateToCameraPosition(camera)
     println("Latitude: \(location.coordinate.latitude). Longitude: \(location.coordinate.longitude).")
   }
   
