@@ -17,8 +17,6 @@ class MapViewController: UIViewController {
   @IBOutlet var btnLogout: UIBarButtonItem!
 
   var locationManager: CLLocationManager!
-  var mapView: GMSMapView!
-  var placesClient: GMSPlacesClient!
   var coreDataStack: CoreDataStack!
   var user: User?
 
@@ -30,13 +28,8 @@ class MapViewController: UIViewController {
       let results = coreDataStack.context.executeFetchRequest(fetchRequest, error: &error) as! [User]
       user = results.first
     }
-    
-    mapView = GMSMapView(frame: mainMapView.bounds)
-    mapView.myLocationEnabled = true
-    mapView.settings.myLocationButton = true
-    mainMapView = mapView
-    //self.view = mapView
-    placesClient = GMSPlacesClient()
+
+    // Initialize all the location stuff
     locationManager = CLLocationManager()
     locationManager.delegate = self
     locationManager.requestWhenInUseAuthorization()
@@ -81,12 +74,35 @@ class MapViewController: UIViewController {
  
 extension MapViewController: CLLocationManagerDelegate {
   func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-    let location = locations[0] as! CLLocation
-    let camera = GMSCameraPosition.cameraWithLatitude(location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 16)
-    mapView.animateToCameraPosition(camera)
+    // Get current location and update map view
+    let location = locations.first as! CLLocation
+    let camera = GMSCameraPosition.cameraWithLatitude(location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 15)
+    mainMapView.camera = camera
+    mainMapView.myLocationEnabled = true
+    mainMapView.settings.myLocationButton = true
+    locationManager.stopUpdatingLocation()
     println("Latitude: \(location.coordinate.latitude). Longitude: \(location.coordinate.longitude).")
+    
+    // Get places near current location
+    
+    // Update table
   }
   
   func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+  }
+}
+ 
+extension MapViewController: UITableViewDelegate {
+  
+}
+ 
+extension MapViewController: UITableViewDataSource {
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+    return cell
+  }
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 0
   }
 }
