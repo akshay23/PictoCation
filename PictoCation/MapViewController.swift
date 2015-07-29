@@ -15,10 +15,12 @@ class MapViewController: UIViewController {
 
   @IBOutlet var mainMapView: GMSMapView!
   @IBOutlet var btnLogout: UIBarButtonItem!
+  @IBOutlet var placesTable: UITableView!
 
   var locationManager: CLLocationManager!
   var coreDataStack: CoreDataStack!
   var user: User?
+  var placesManager: PlacesManager!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -33,6 +35,9 @@ class MapViewController: UIViewController {
     locationManager = CLLocationManager()
     locationManager.delegate = self
     locationManager.requestWhenInUseAuthorization()
+    
+    // Get PlacesManager instance
+    placesManager = PlacesManager.sharedInstance
   }
   
   override func viewDidAppear(animated: Bool) {
@@ -43,7 +48,7 @@ class MapViewController: UIViewController {
       mainMapView.hidden = true
       btnLogout.enabled = false
     } else {
-      println("Logged in!")
+      println("Logged in")
       mainMapView.hidden = false
       btnLogout.enabled = true
       locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -84,8 +89,15 @@ extension MapViewController: CLLocationManagerDelegate {
     println("Latitude: \(location.coordinate.latitude). Longitude: \(location.coordinate.longitude).")
     
     // Get places near current location
-    
-    // Update table
+    placesManager.updateLatLong(location.coordinate.latitude, longitude: location.coordinate.longitude) {
+      error in
+
+      if (error == nil) {
+        self.placesTable.reloadData()
+      } else {
+        // TODO
+      }
+    }
   }
   
   func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -99,10 +111,11 @@ extension MapViewController: UITableViewDelegate {
 extension MapViewController: UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+    cell.textLabel!.text = placesManager.places[indexPath.row].name
     return cell
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    return placesManager.places.count
   }
 }

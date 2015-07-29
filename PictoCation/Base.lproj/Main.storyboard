@@ -53,11 +53,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQK-DP-9j5" userLabel="MapHolder" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="272.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="273"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JHD-LM-PSX">
-                                <rect key="frame" x="0.0" y="272.5" width="600" height="327.5"/>
+                                <rect key="frame" x="0.0" y="273" width="600" height="328"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="e4H-Qv-oLP" detailTextLabel="6fP-fz-bOf" style="IBUITableViewCellStyleSubtitle" id="5cl-9p-hk3">
@@ -68,13 +68,13 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e4H-Qv-oLP">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6fP-fz-bOf">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -89,14 +89,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.91488441281357924" green="1" blue="0.95668244742296593" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Hqi-Og-K7A" firstAttribute="top" secondItem="JHD-LM-PSX" secondAttribute="bottom" id="0X6-9s-9Tr"/>
                             <constraint firstAttribute="height" secondItem="hQK-DP-9j5" secondAttribute="height" multiplier="2.2" id="5op-01-vg6"/>
+                            <constraint firstItem="JHD-LM-PSX" firstAttribute="top" secondItem="hQK-DP-9j5" secondAttribute="bottom" id="5vr-Gc-lmZ"/>
                             <constraint firstAttribute="width" secondItem="hQK-DP-9j5" secondAttribute="width" id="8RY-mZ-FdL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JHD-LM-PSX" secondAttribute="trailing" id="AJm-63-3CP"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="JHD-LM-PSX" secondAttribute="bottom" constant="-1" id="LBI-rH-Rhj"/>
+                            <constraint firstItem="JHD-LM-PSX" firstAttribute="trailing" secondItem="hQK-DP-9j5" secondAttribute="trailing" id="Nip-u3-3P0"/>
+                            <constraint firstItem="JHD-LM-PSX" firstAttribute="leading" secondItem="hQK-DP-9j5" secondAttribute="leading" id="PiY-sU-3sQ"/>
                             <constraint firstAttribute="centerX" secondItem="JHD-LM-PSX" secondAttribute="centerX" constant="-16" id="Wsr-ro-GoZ"/>
-                            <constraint firstItem="hQK-DP-9j5" firstAttribute="centerX" secondItem="JHD-LM-PSX" secondAttribute="centerX" id="YHG-9m-nui"/>
-                            <constraint firstAttribute="width" secondItem="JHD-LM-PSX" secondAttribute="width" id="ngz-ah-5IA"/>
-                            <constraint firstItem="JHD-LM-PSX" firstAttribute="top" secondItem="hQK-DP-9j5" secondAttribute="bottom" id="tez-Ka-Jpa"/>
                             <constraint firstAttribute="centerX" secondItem="hQK-DP-9j5" secondAttribute="centerX" id="u9H-kg-awp"/>
                             <constraint firstItem="JHD-LM-PSX" firstAttribute="leading" secondItem="G3M-3U-3Xf" secondAttribute="leadingMargin" id="uC7-pV-T7C"/>
                             <constraint firstAttribute="width" secondItem="JHD-LM-PSX" secondAttribute="width" id="vkV-to-Qml"/>
@@ -121,6 +121,7 @@
                     <connections>
                         <outlet property="btnLogout" destination="KJL-Eb-goT" id="b7L-iB-OC4"/>
                         <outlet property="mainMapView" destination="hQK-DP-9j5" id="dhZ-Qy-Er7"/>
+                        <outlet property="placesTable" destination="JHD-LM-PSX" id="dFO-bv-EYJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAp-hh-Uh9" userLabel="First Responder" sceneMemberID="firstResponder"/>

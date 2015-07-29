@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "331FCF5BB28F4F078650D186"
+               BlueprintIdentifier = "4129F200D04A0911A7BF867C"
                BuildableName = "FastImageCache.framework"
                BlueprintName = "Pods-PictoCation-FastImageCache"
                ReferencedContainer = "container:Pods.xcodeproj">
