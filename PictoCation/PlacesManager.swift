@@ -42,6 +42,7 @@ class PlacesManager {
     let location: String = "\(latitude),\(longitude)"
     let params = "location=\(location)&radius=\(radius)&key=\(apiKey)"
     let myRequest = requestURL + params
+    self.places = []
     
     Alamofire.request(.GET, myRequest, parameters: nil).responseJSON {
       (_, _, data, error) in

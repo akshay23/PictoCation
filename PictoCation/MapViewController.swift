@@ -21,6 +21,8 @@ class MapViewController: UIViewController {
   var coreDataStack: CoreDataStack!
   var user: User?
   var placesManager: PlacesManager!
+  var currentLocation: CLLocation!
+  var placeMarker: GMSMarker!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -50,6 +52,7 @@ class MapViewController: UIViewController {
     } else {
       println("Logged in")
       mainMapView.hidden = false
+      mainMapView.setMinZoom(14, maxZoom: 14)
       btnLogout.enabled = true
       locationManager.desiredAccuracy = kCLLocationAccuracyBest
       locationManager.startUpdatingLocation()
@@ -73,23 +76,20 @@ class MapViewController: UIViewController {
     }
   }
   
-  @IBAction func unwindToMapView(segue : UIStoryboardSegue) {
-  }
+  @IBAction func unwindToMapView(segue : UIStoryboardSegue) {}
 }
  
 extension MapViewController: CLLocationManagerDelegate {
   func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-    // Get current location and update map view
-    let location = locations.first as! CLLocation
-    let camera = GMSCameraPosition.cameraWithLatitude(location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 15)
+    currentLocation = locations.first as! CLLocation
+    let camera = GMSCameraPosition.cameraWithLatitude(currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude, zoom: 14)
     mainMapView.camera = camera
     mainMapView.myLocationEnabled = true
     mainMapView.settings.myLocationButton = true
     locationManager.stopUpdatingLocation()
-    println("Latitude: \(location.coordinate.latitude). Longitude: \(location.coordinate.longitude).")
     
     // Get places near current location
-    placesManager.updateLatLong(location.coordinate.latitude, longitude: location.coordinate.longitude) {
+    placesManager.updateLatLong(currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude) {
       error in
 
       if (error == nil) {
@@ -100,18 +100,34 @@ extension MapViewController: CLLocationManagerDelegate {
     }
   }
   
-  func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-  }
+  func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {}
 }
  
 extension MapViewController: UITableViewDelegate {
-  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    if (placeMarker != nil) {
+      placeMarker.map = nil
+    }
+    
+    let location = CLLocationCoordinate2DMake(placesManager.places[indexPath.row].latitude,
+      placesManager.places[indexPath.row].longitude)
+    placeMarker = GMSMarker(position: location)
+    placeMarker.title = placesManager.places[indexPath.row].name
+    placeMarker.map = mainMapView
+    mainMapView.selectedMarker = placeMarker
+    
+    var locationCam = GMSCameraUpdate.setTarget(location)
+    mainMapView.animateWithCameraUpdate(locationCam)
+  }
 }
  
 extension MapViewController: UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+    let location = CLLocation(latitude: placesManager.places[indexPath.row].latitude, longitude: placesManager.places[indexPath.row].longitude)
+    let distance = round(100 * (currentLocation.distanceFromLocation(location) * 0.000621371))/100  // Meters to Miles, then round to 2 decimal places
     cell.textLabel!.text = placesManager.places[indexPath.row].name
+    cell.detailTextLabel!.text = "\(distance) miles away"
     return cell
   }
   
