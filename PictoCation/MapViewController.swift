@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import CoreLocation
 import GoogleMaps
+import MBProgressHUD
 
 class MapViewController: UIViewController {
 
@@ -23,6 +24,7 @@ class MapViewController: UIViewController {
   var placesManager: PlacesManager!
   var currentLocation: CLLocation!
   var placeMarker: GMSMarker!
+  var isUpdating: Bool = false
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -42,16 +44,20 @@ class MapViewController: UIViewController {
     placesManager = PlacesManager.sharedInstance
   }
   
-  override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
 
     if (user == nil) {
       performSegueWithIdentifier("login", sender: self)
+      locationManager.stopUpdatingLocation()
       mainMapView.hidden = true
       btnLogout.enabled = false
+      isUpdating = true
     } else {
       println("Logged in")
+      locationManager.startUpdatingLocation()
       mainMapView.hidden = false
+      isUpdating = false
       mainMapView.setMinZoom(14, maxZoom: 14)
       btnLogout.enabled = true
       locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -81,12 +87,23 @@ class MapViewController: UIViewController {
  
 extension MapViewController: CLLocationManagerDelegate {
   func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    if (!isUpdating) {
+      isUpdating = true
+    } else {
+      return
+    }
+    
+    // Show progress HUD in table view
+    let loadingNotification = MBProgressHUD.showHUDAddedTo(self.placesTable, animated: true)
+    loadingNotification.mode = MBProgressHUDMode.Indeterminate
+    loadingNotification.labelText = "Loading places..."
+
+    locationManager.stopUpdatingLocation()
     currentLocation = locations.first as! CLLocation
     let camera = GMSCameraPosition.cameraWithLatitude(currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude, zoom: 14)
     mainMapView.camera = camera
     mainMapView.myLocationEnabled = true
     mainMapView.settings.myLocationButton = true
-    locationManager.stopUpdatingLocation()
     
     // Get places near current location
     placesManager.updateLatLong(currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude) {
@@ -95,8 +112,14 @@ extension MapViewController: CLLocationManagerDelegate {
       if (error == nil) {
         self.placesTable.reloadData()
       } else {
-        // TODO
+        let alert = UIAlertController(title: "Could Not Fetch Places", message: "Click 'Refresh Places' to try again", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
       }
+      
+      // Stop the loading spinner
+      MBProgressHUD.hideAllHUDsForView(self.placesTable, animated: true)
+      self.isUpdating = false
     }
   }
   
