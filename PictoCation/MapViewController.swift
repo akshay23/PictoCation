@@ -26,6 +26,7 @@ class MapViewController: UIViewController {
   var placesManager: PlacesManager!
   var currentLocation: CLLocation!
   var placeMarker: GMSMarker!
+  var bgOverlay: UIView!
   var isUpdating: Bool = false
 
   override func viewDidLoad() {
@@ -45,14 +46,14 @@ class MapViewController: UIViewController {
     // Get PlacesManager instance
     placesManager = PlacesManager.sharedInstance
     
-    // Update the look of the refresh button
-    btnRefresh.shadowHeight = 3.0
-    btnRefresh.cornerRadius = 6.0
+    // Update the look of components
+    btnRefresh.shadowHeight = 4.0
     btnRefresh.buttonColor = UIColor.turquoiseColor()
     btnRefresh.shadowColor = UIColor.greenSeaColor()
     btnRefresh.titleLabel?.font = UIFont.boldFlatFontOfSize(20)
     btnRefresh.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Normal)
     btnRefresh.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Highlighted)
+    placesTable.backgroundColor = UIColor.wetAsphaltColor()
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -143,7 +144,11 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     // Show progress HUD in table view
-    let loadingNotification = MBProgressHUD.showHUDAddedTo(self.placesTable, animated: true)
+    bgOverlay = UIView(frame: self.view.bounds)
+    bgOverlay.backgroundColor = UIColor.whiteColor()
+    bgOverlay.alpha = 0.7
+    self.view.addSubview(bgOverlay)
+    let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
     loadingNotification.mode = MBProgressHUDMode.Indeterminate
     loadingNotification.labelText = "Loading places..."
 
@@ -165,9 +170,13 @@ extension MapViewController: CLLocationManagerDelegate {
       }
       
       // Stop the loading spinner
-      MBProgressHUD.hideAllHUDsForView(self.placesTable, animated: true)
+      MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
       self.btnRefresh.enabled = true
       self.isUpdating = false
+      if (self.bgOverlay != nil) {
+        self.bgOverlay.removeFromSuperview()
+        self.bgOverlay = nil
+      }
     }
   }
   
@@ -199,10 +208,18 @@ extension MapViewController: UITableViewDelegate {
 extension MapViewController: UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+    
+    // Configure the look
+    cell.configureFlatCellWithColor(UIColor.wetAsphaltColor(), selectedColor: UIColor.cloudsColor())
+    cell.separatorHeight = 2.0
+    cell.textLabel!.font = UIFont.boldFlatFontOfSize(16)
+    
+    // Add the info
     let location = CLLocation(latitude: placesManager.places[indexPath.row].latitude, longitude: placesManager.places[indexPath.row].longitude)
     let distance = round(100 * (currentLocation.distanceFromLocation(location) * 0.000621371))/100  // Meters to Miles, then round to 2 decimal places
     cell.textLabel!.text = placesManager.places[indexPath.row].name
     cell.detailTextLabel!.text = "\(distance) miles away"
+
     return cell
   }
   
