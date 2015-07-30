@@ -100,8 +100,12 @@ class MapViewController: UIViewController {
   @IBAction func unwindToMapView(segue : UIStoryboardSegue) {}
 
   @IBAction func refreshPlaces(sender: AnyObject) {
-    btnRefresh.enabled = false
-    locationManager.startUpdatingLocation()
+    if (!Reachability.isConnectedToNetwork()) {
+      self.showAlertWithMessage("Please check your connection and try again", title: "No Internet Connection", buttons: ["OK"])
+    } else {
+      btnRefresh.enabled = false
+      locationManager.startUpdatingLocation()
+    }
   }
   
   private func showAlertWithMessage(message: String, title: String, buttons: [String]) {

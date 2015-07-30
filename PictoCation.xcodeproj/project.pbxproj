@@ -10,6 +10,7 @@
 		19091B191B5812D4005420DE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19091B181B5812D4005420DE /* CoreDataStack.swift */; };
 		19091B1E1B597A72005420DE /* PlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19091B1D1B597A72005420DE /* PlacesManager.swift */; };
 		195AEEFD1B56F4E30046B628 /* Instagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195AEEFC1B56F4E30046B628 /* Instagram.swift */; };
+		19739C281B6A962B00A05F26 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19739C271B6A962B00A05F26 /* Reachability.swift */; };
 		19A641E91B56D9DF00E8402A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A641E81B56D9DF00E8402A /* AppDelegate.swift */; };
 		19A641EB1B56D9DF00E8402A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A641EA1B56D9DF00E8402A /* LoginViewController.swift */; };
 		19A641EE1B56D9DF00E8402A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A641EC1B56D9DF00E8402A /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		19091B181B5812D4005420DE /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		19091B1D1B597A72005420DE /* PlacesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesManager.swift; sourceTree = "<group>"; };
 		195AEEFC1B56F4E30046B628 /* Instagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
+		19739C271B6A962B00A05F26 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		19A641E31B56D9DF00E8402A /* PictoCation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictoCation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A641E71B56D9DF00E8402A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19A641E81B56D9DF00E8402A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				19A641EF1B56D9DF00E8402A /* Images.xcassets */,
 				19A641E81B56D9DF00E8402A /* AppDelegate.swift */,
 				19F72C6C1B57085F00FA43E9 /* PictoCation.xcdatamodeld */,
+				19739C271B6A962B00A05F26 /* Reachability.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				19A641EB1B56D9DF00E8402A /* LoginViewController.swift in Sources */,
 				195AEEFD1B56F4E30046B628 /* Instagram.swift in Sources */,
 				19A641E91B56D9DF00E8402A /* AppDelegate.swift in Sources */,
+				19739C281B6A962B00A05F26 /* Reachability.swift in Sources */,
 				19F72C6E1B57085F00FA43E9 /* PictoCation.xcdatamodeld in Sources */,
 				19F72C6B1B57080500FA43E9 /* User.swift in Sources */,
 				19F72C691B56FC2800FA43E9 /* MapViewController.swift in Sources */,
