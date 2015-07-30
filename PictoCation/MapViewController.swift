@@ -133,6 +133,18 @@ class MapViewController: UIViewController {
     alert.defaultButtonTitleColor = UIColor.asbestosColor()
     alert.show()
   }
+  
+  @objc private func instaButtonTapped(sender: UIButton, event: AnyObject) {
+    let touches = event.allTouches()
+    let firstTouch = touches?.first as? UITouch
+    let currentTouchPosition = firstTouch?.locationInView(self.placesTable)
+    let indexPath = self.placesTable.indexPathForRowAtPoint(currentTouchPosition!)
+    
+    if (indexPath != nil) {
+      // TODO
+      println("Clicked button in row \(indexPath!.row)")
+    }
+  }
 }
  
 extension MapViewController: CLLocationManagerDelegate {
@@ -220,6 +232,7 @@ extension MapViewController: UITableViewDataSource {
     let icon = UIImage(named: "InstagramIcon")
     let accBtn = UIButton(frame: CGRectMake(0.0, 0.0, icon!.size.width, icon!.size.width))
     accBtn.setBackgroundImage(icon, forState: .Normal)
+    accBtn.addTarget(self, action: Selector("instaButtonTapped:event:"), forControlEvents: UIControlEvents.TouchUpInside)
     cell.accessoryView = accBtn
     
     // Add the info
