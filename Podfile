@@ -8,6 +8,7 @@ target 'PictoCation' do
   pod 'FastImageCache'
   pod 'MBProgressHUD'
   pod 'GoogleMaps'
+  pod 'FlatUIKit'
 end
 
 target 'PictoCationTests' do

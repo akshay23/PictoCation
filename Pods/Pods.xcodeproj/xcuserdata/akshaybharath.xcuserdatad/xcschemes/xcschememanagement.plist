@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-PictoCation-FlatUIKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PictoCation-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4129F200D04A0911A7BF867C</key>
+		<key>52E237F45B164BA697A3E062</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4962DA8F49EB8FAE623BA003</key>
+		<key>5C8F97C9D7094099B939B670</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8AF0A834EC055536A96E6A5D</key>
+		<key>8DF227023E94D7985B9694B7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A1C16F1950EF41B8C54164B0</key>
+		<key>96F3C1336E9E92D4BEA9102E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B18943714E0F01DA6270CC66</key>
+		<key>9C43E3E32C942C8393FCA389</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CECA8A3AC9A9527FEDFAD41D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -53,11 +53,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQK-DP-9j5" userLabel="MapHolder" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="273"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="283.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JHD-LM-PSX">
-                                <rect key="frame" x="0.0" y="273" width="600" height="328"/>
+                                <rect key="frame" x="0.0" y="315.5" width="600" height="285.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="e4H-Qv-oLP" detailTextLabel="6fP-fz-bOf" style="IBUITableViewCellStyleSubtitle" id="5cl-9p-hk3">
@@ -86,17 +86,30 @@
                                     <outlet property="delegate" destination="tLB-nQ-CaP" id="eqB-aA-pbq"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Mi-IU-STJ" customClass="FUIButton">
+                                <rect key="frame" x="0.0" y="283.5" width="600" height="33"/>
+                                <state key="normal" title="Refresh Places"/>
+                                <connections>
+                                    <action selector="refreshPlaces:" destination="tLB-nQ-CaP" eventType="touchUpInside" id="7AY-nc-nrk"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.91488441281357924" green="1" blue="0.95668244742296593" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.9996508108195471" green="1" blue="0.95414738648615871" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" secondItem="hQK-DP-9j5" secondAttribute="height" multiplier="2.2" id="5op-01-vg6"/>
-                            <constraint firstItem="JHD-LM-PSX" firstAttribute="top" secondItem="hQK-DP-9j5" secondAttribute="bottom" id="5vr-Gc-lmZ"/>
+                            <constraint firstItem="JHD-LM-PSX" firstAttribute="top" secondItem="hQK-DP-9j5" secondAttribute="bottom" multiplier="1.2" id="5vr-Gc-lmZ"/>
                             <constraint firstAttribute="width" secondItem="hQK-DP-9j5" secondAttribute="width" id="8RY-mZ-FdL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JHD-LM-PSX" secondAttribute="trailing" id="AJm-63-3CP"/>
+                            <constraint firstItem="JHD-LM-PSX" firstAttribute="top" secondItem="3Mi-IU-STJ" secondAttribute="bottom" constant="-1" id="BRI-Gt-SMb"/>
                             <constraint firstAttribute="bottomMargin" secondItem="JHD-LM-PSX" secondAttribute="bottom" constant="-1" id="LBI-rH-Rhj"/>
                             <constraint firstItem="JHD-LM-PSX" firstAttribute="trailing" secondItem="hQK-DP-9j5" secondAttribute="trailing" id="Nip-u3-3P0"/>
                             <constraint firstItem="JHD-LM-PSX" firstAttribute="leading" secondItem="hQK-DP-9j5" secondAttribute="leading" id="PiY-sU-3sQ"/>
+                            <constraint firstAttribute="height" secondItem="JHD-LM-PSX" secondAttribute="height" multiplier="2.1" id="Pmv-c9-Xse"/>
                             <constraint firstAttribute="centerX" secondItem="JHD-LM-PSX" secondAttribute="centerX" constant="-16" id="Wsr-ro-GoZ"/>
+                            <constraint firstAttribute="width" secondItem="3Mi-IU-STJ" secondAttribute="width" id="Zw2-bT-PE0"/>
+                            <constraint firstAttribute="centerX" secondItem="3Mi-IU-STJ" secondAttribute="centerX" id="csH-yC-FOq"/>
+                            <constraint firstAttribute="centerY" secondItem="3Mi-IU-STJ" secondAttribute="centerY" id="lse-ic-T3l"/>
+                            <constraint firstItem="3Mi-IU-STJ" firstAttribute="top" secondItem="hQK-DP-9j5" secondAttribute="bottom" id="nI0-tp-2BZ"/>
                             <constraint firstAttribute="centerX" secondItem="hQK-DP-9j5" secondAttribute="centerX" id="u9H-kg-awp"/>
                             <constraint firstItem="JHD-LM-PSX" firstAttribute="leading" secondItem="G3M-3U-3Xf" secondAttribute="leadingMargin" id="uC7-pV-T7C"/>
                             <constraint firstAttribute="width" secondItem="JHD-LM-PSX" secondAttribute="width" id="vkV-to-Qml"/>
@@ -104,6 +117,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="5op-01-vg6"/>
+                                <exclude reference="5vr-Gc-lmZ"/>
                                 <exclude reference="AJm-63-3CP"/>
                                 <exclude reference="Wsr-ro-GoZ"/>
                                 <exclude reference="uC7-pV-T7C"/>
@@ -120,6 +135,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnLogout" destination="KJL-Eb-goT" id="b7L-iB-OC4"/>
+                        <outlet property="btnRefresh" destination="3Mi-IU-STJ" id="ima-sd-Kp7"/>
                         <outlet property="mainMapView" destination="hQK-DP-9j5" id="dhZ-Qy-Er7"/>
                         <outlet property="placesTable" destination="JHD-LM-PSX" id="dFO-bv-EYJ"/>
                     </connections>

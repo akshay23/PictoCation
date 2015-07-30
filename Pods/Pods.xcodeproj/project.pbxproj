@@ -7,550 +7,751 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04726331AD2AD19F1839DBAA /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE1F3966D936E05704CFBDB /* ResponseSerialization.swift */; };
-		05D8E0DD47196101EF926EDE /* Pods-PictoCation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C239E3740734429C891F0494 /* Pods-PictoCation-dummy.m */; };
-		08EB4F8951AC8E70AB000D90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E659CD51AAF07DC5F3DECB /* Foundation.framework */; };
-		1A4444A3D961F817DFCA22D2 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F3C4982B93670606778798 /* ParameterEncoding.swift */; };
-		2EAA8D2C252F3BE086B1D88B /* FICImageFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = A4D6B2465CD10BAFF13882DF /* FICImageFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		31C976634F17909BC62AA174 /* FICImageCache+FICErrorLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = FBBA7A3CB4CA27CC79D294E2 /* FICImageCache+FICErrorLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		36C010AEA66A0517BD9F5CB6 /* Pods-PictoCation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DD7BAEC5B07DFCBF514621EF /* Pods-PictoCation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		39A7F6EDC4CE8334FEFF5337 /* Pods-PictoCation-FastImageCache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE386499D96E0FCB27ED78 /* Pods-PictoCation-FastImageCache-dummy.m */; };
-		3AF9E1C11CF2F7F18BD99418 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E659CD51AAF07DC5F3DECB /* Foundation.framework */; };
-		4AB7AE0510ECAA0AD9C1F8C4 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC314AAE9F1BC930D6910B /* ServerTrustPolicy.swift */; };
-		4ACBAB7D62B00D3C6CDB0EEB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E82C12A6201EC11E34739E6 /* CoreGraphics.framework */; };
-		4FE243BE1045B90CCA32B7F7 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F51AD9E3E497A24CA8B88BE /* MultipartFormData.swift */; };
-		5B6E6A48E4A2BECD70FA86DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E659CD51AAF07DC5F3DECB /* Foundation.framework */; };
-		5F2EEE7977AC28729BAB4D05 /* FICImageTableChunk.h in Headers */ = {isa = PBXBuildFile; fileRef = A815EEA0DF91A0DF7C1C5475 /* FICImageTableChunk.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		66326C192B054D95AD186CA8 /* FICImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 15F5FBCA87484FC720F66CFB /* FICImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A02C686A499CBD60A8AC57A /* FICImageTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CC4D158EE95E12EB55C951F /* FICImageTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6FB7F39DB896E9C8913F3922 /* Pods-PictoCation-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69C2A2571E3858DC11D2EC3A /* Pods-PictoCation-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		774160E13FBFCE32FE0D2089 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 0783F149C3C6D99244E6FC42 /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		77C446AB8F3F8D91DC93C6A8 /* Pods-PictoCation-MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FE5BD610C27881CFB8B6B3 /* Pods-PictoCation-MBProgressHUD-dummy.m */; };
-		8624D87C5D4B55E1D842F242 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07608100FEECD2C979CFAE5 /* Validation.swift */; };
-		87C0CBF13F5FE895A95687A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E659CD51AAF07DC5F3DECB /* Foundation.framework */; };
-		896A82885CECE5F681923CFF /* FICEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 46D6B7B8BF41CE76A17140F9 /* FICEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8BBBAC27B841B80E034E26C6 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A34BEE0DE966267BD040C0 /* Manager.swift */; };
-		903630A6AF19AF5B687780C0 /* Pods-PictoCation-FastImageCache-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B5CF1FF237991757D8E7A287 /* Pods-PictoCation-FastImageCache-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		96DD74107B133C788D885C65 /* FICImageFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD8F11DE600BF017CFEB216 /* FICImageFormat.m */; };
-		9B739739F729D0D1C192EBA4 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95150F34F59CCAF3F5FEA451 /* Download.swift */; };
-		9C3B1060DE58F40E34100BEB /* Pods-PictoCation-MBProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AA85728FD8C8E92222C2BEAF /* Pods-PictoCation-MBProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9C80D1E825B8D6B7FB0AD7D0 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6715C0834D8D2CAA31FF3F4A /* SwiftyJSON.swift */; };
-		A1FEFB41EFF73398C9228858 /* FICUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDCEFC6CAB080CE044502F8 /* FICUtilities.m */; };
-		A719BC2D2EE0A35620D1BC3E /* Pods-PictoCation-SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2EC5016A9443DD696A091B /* Pods-PictoCation-SwiftyJSON-dummy.m */; };
-		B43CEB300732A0CEE9666D1B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681AAA9EF968F9A145731F21 /* Request.swift */; };
-		B482230DF8906EBE7FC360C2 /* FICImageTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB53B6335710C30FDEF290 /* FICImageTable.m */; };
-		B599252419BAD9E5049A087E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9830E6DD49DC60AD9BC2E6 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		BB6132B1FD8EB1FF71302711 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297BBF70E13CF7794B8D689 /* Upload.swift */; };
-		C0F22532E8102C57A8E96268 /* FICImageTableChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6174338E0A7A131205C046 /* FICImageTableChunk.m */; };
-		C1CEDE79641AEFDA18E7E97C /* FICUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = C72C0ED0058D37630A0628C3 /* FICUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DA88A7A23004DBA0BADE99EC /* FICImports.h in Headers */ = {isa = PBXBuildFile; fileRef = 62C5720F6BACF09257ADDE52 /* FICImports.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E00C86B2A7B156AEC126D30A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E659CD51AAF07DC5F3DECB /* Foundation.framework */; };
-		EB31EF4298E840B0B59FD607 /* FICImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C2C11313AED5387450D9A8 /* FICImageCache.m */; };
-		ED868456237EAFF0134BC803 /* Pods-PictoCation-SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C16B8CEB319E1603A874FD3 /* Pods-PictoCation-SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4988B4B5CBCF91B2D44F20C /* FICImageTableEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = B2F67DE397E68DA5B620823A /* FICImageTableEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA9E8D37A836C7C4E90B11E5 /* Pods-PictoCation-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D10542D143DB1B85736606 /* Pods-PictoCation-Alamofire-dummy.m */; };
-		FCED5FC3FE7E34F1DB06CE88 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9517A01DF07BE3EB32F3092 /* Alamofire.swift */; };
-		FEC4DD73916F0277E3E1EA37 /* FICImageTableEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC0DE6AD0229FF96A2B744 /* FICImageTableEntry.m */; };
+		064FA284C7421F1AA5D1B448 /* FICImageTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 16C267393BDC7DC607AFE00B /* FICImageTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		06EF6A735E9BF49FA43D099C /* FUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8604FAC94E39F49E19F4086D /* FUITextField.m */; };
+		08C414BF40001C30469F9724 /* UIStepper+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = A87A985C88515FC54B440416 /* UIStepper+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		099B56D2E77DD21B0D654B4C /* FUIAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD270320A1AA2269311632C /* FUIAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D151C0CB323A4B6592512B6 /* Pods-PictoCation-MBProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0C8F739DC9598EADF57A2CF /* Pods-PictoCation-MBProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F24C4072A140470F545404C /* FUIPopoverBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E7DB7B59B8FB753257F3005 /* FUIPopoverBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14824A48CDD8BB53E4F278A6 /* UITabBar+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AC77A68FF57B133F3ADD5C7 /* UITabBar+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		19A8EFE821EF35E29002FE0C /* FICImageFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EC8FC0AC6C5DF8D44A555BC /* FICImageFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A868C8CF413F280D37D00AF /* FUICellBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = C0D44DA08ED5FFBC72E4A9DA /* FUICellBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CEF28A1D0641289EA79B33A /* FICEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 03111C21F7F65B9AEA7E7573 /* FICEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1EB9CD420C91534E2222AF7D /* UIImage+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 89E8ED543EFD30AB3547CE04 /* UIImage+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F0E2114BAB1E53300934865 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8256711F76EEFAC1DB5DC /* Foundation.framework */; };
+		20D730782C03B02538BDD07D /* UIImage+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A360386860DA841827951E /* UIImage+FlatUI.m */; };
+		20E848AEC14C0E3EBA5AC2A3 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0D2D411D8864F9CE052A9BD /* Lato-Light.ttf */; };
+		22ACD12E1936CCC1D8515493 /* Pods-PictoCation-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F5D3C80A8DA2B59250C809 /* Pods-PictoCation-Alamofire-dummy.m */; };
+		23C23B85C38CC3EBCAA20876 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2545327484B8095CE68F5F /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2516C641B7B15E0B78CF6D76 /* UIStepper+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE2A9E286DCD6DA0E0DFEA7 /* UIStepper+FlatUI.m */; };
+		27FFB092DEE026A39C8225EE /* FICImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D48C4AFD7AB927BB01AB695 /* FICImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29C01E1145C80628A55EEF91 /* FUICellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C646D0E69B7EF90498B2F6C /* FUICellBackgroundView.m */; };
+		2B6E622F98D01A5490984FE0 /* UIToolbar+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DF7192EC24F3EE8852C055E /* UIToolbar+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F0903E8941364B666577CDE /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = ED10E9D27BAB00FB90900E3C /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30763A270CA76B5FB91093D3 /* UIBarButtonItem+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD592D1ECD0C247A020510E /* UIBarButtonItem+FlatUI.m */; };
+		378D25F7F23A9879842E9E28 /* FUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FD32CAC1C8CBAD825B0D0933 /* FUIButton.m */; };
+		444600EF43F19EA4FB2D0BB7 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56A01FB89BE0C606391EEC6 /* MultipartFormData.swift */; };
+		465A4226089A448C8B457DAC /* FUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 032D7FC9C313707A924EE04B /* FUISegmentedControl.m */; };
+		471EF7586B19A4AC5BA76A39 /* flat-ui-icons-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE1100CE5D98E6C64DF53AEA /* flat-ui-icons-regular.ttf */; };
+		47B5B4CBB8841692568CDED1 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0300B4CC89BD0BC8E4BD0858 /* ResponseSerialization.swift */; };
+		4806D475379C7861CBA8F5F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8256711F76EEFAC1DB5DC /* Foundation.framework */; };
+		573C91C4AF66AC124B70C621 /* UIPopoverController+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A3613661D0720FFE8D9CD24D /* UIPopoverController+FlatUI.m */; };
+		62BA18C9A7CDDC8B9419796A /* FUIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BCC9134C11009B6A77CB37C /* FUIButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64BC62AEEA074FECDAA58017 /* FICImageTableChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EC61013F356311B72750D0 /* FICImageTableChunk.m */; };
+		68F4ADDD9FF151480D7C6449 /* Pods-PictoCation-MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 252EF50D3F6A652793296E37 /* Pods-PictoCation-MBProgressHUD-dummy.m */; };
+		6CE587854BEC56820AB99429 /* FICImageFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4EDF80D7808C80B0D8FDDA /* FICImageFormat.m */; };
+		71CB3F468B31442FD870CB41 /* FICImports.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FFC2E8A8879E1FEA82D43A9 /* FICImports.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72D52E133E5E83BB48E22DB9 /* Pods-PictoCation-SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCF6412143E0CD5512351D2 /* Pods-PictoCation-SwiftyJSON-dummy.m */; };
+		747542F25D3FA854C3F1D1A3 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0321B1DA17078F0E96A574D /* Validation.swift */; };
+		78DBD2ABC222986603B350C1 /* UINavigationBar+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B62CF5998A0C093AAD528E /* UINavigationBar+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FC542D7FE71E617B1451511 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9070230DEFA9A31AB0F1BFC /* CoreText.framework */; };
+		850DE0A67EC52806D0F5AC02 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29B7776A86F03009EA335499 /* Lato-Regular.ttf */; };
+		87886304B1A2B79F95FB5EE2 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D01622A767CD6309CA8A3C52 /* Lato-Italic.ttf */; };
+		88382DE98BE466A86C049D30 /* FICImageTableChunk.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BEAF521840BAF0DD3ED86A7 /* FICImageTableChunk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88E565F374AC5C138004B176 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 9823B09B3B2D8C9067A0E5C3 /* UIColor+FlatUI.m */; };
+		91CC0A0CEE65F6EB02DA6A01 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4FA56B51FBB9966A94864 /* Request.swift */; };
+		98495463AFB72983A5AB41F6 /* UITableViewCell+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 016608DDC5A4CD03E91AD227 /* UITableViewCell+FlatUI.m */; };
+		9AF1B4516304E73F5F6D1C32 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 096DC520A20678D08EA3252B /* Lato-Bold.ttf */; };
+		9F294315D7A01B9C4C40A9CE /* FlatUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D0581CED7269B1241C991310 /* FlatUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A693F683772F65FB8B068DAC /* Pods-PictoCation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 237B14C1EFC126D934004643 /* Pods-PictoCation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6C1B91906BF4B4F6E0FCEBB /* FICImageTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA0E01594EF57DC66C2BAEC /* FICImageTable.m */; };
+		A7E5EB5EA79725619C7DCB08 /* NSString+Icons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9320F19E769656FBC506403F /* NSString+Icons.m */; };
+		A7E5FB51A4EB14B96C353675 /* UIProgressView+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 918F11905C6E4F6CE4F2DD03 /* UIProgressView+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A897E5628E8A1ED7F9E3FBE9 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D9471CA8FFDE78A73540B /* ParameterEncoding.swift */; };
+		AB2EEC5A272405C391B68DA9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F2867AE1102E84F4D40FF2 /* QuartzCore.framework */; };
+		B116EC9096CD0086E0070FF6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02A7925762B5D5053BA3B7E /* CoreGraphics.framework */; };
+		B3CD4D3AF85C4A1C3C5C32F0 /* UINavigationBar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B115EE993348AEA57C8ADBA /* UINavigationBar+FlatUI.m */; };
+		B56A9B486E3E2EB36996BC4D /* UIPopoverController+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = C981734820933BEC03937399 /* UIPopoverController+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6E34446D386A8EE4B0AB7A6 /* UISlider+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = B06512F66DC8DF02706919FD /* UISlider+FlatUI.m */; };
+		B6E7F60126D812463A122DA7 /* Pods-PictoCation-FlatUIKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF94012813C3D7994F97BD2 /* Pods-PictoCation-FlatUIKit-dummy.m */; };
+		B8488A27D481FF650190D1D5 /* UITabBar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 612C11C99CE41F1A88CD3BB2 /* UITabBar+FlatUI.m */; };
+		B973BB2AF655CC60A45948A9 /* FUIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6F3FEC096EA364940979F4 /* FUIAlertView.m */; };
+		BB026F887C105227FBD83C00 /* UIColor+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B38281A97D403852720579C /* UIColor+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD615138C6471220A0BB9575 /* Pods-PictoCation-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 42639D2BB2522121DBC9BF66 /* Pods-PictoCation-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE3202F1403FA36AAC6462EA /* FICImageTableEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E7C8DAA4C16FFE436BE062 /* FICImageTableEntry.m */; };
+		BEAE2763CC21D6853AE99428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8256711F76EEFAC1DB5DC /* Foundation.framework */; };
+		BF3E505C1076EC9A3B574E72 /* Pods-PictoCation-FlatUIKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C72B717231436341C29A8A3 /* Pods-PictoCation-FlatUIKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3FA474D082838250FB2B7E6 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC85738AAACF014FD59005AC /* ServerTrustPolicy.swift */; };
+		C4D88220A94B2FB8960FA7F7 /* UITableViewCell+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C81B1B5CA6F3D4D98FEDBF /* UITableViewCell+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C56ECD978EF7A6D1DBD3362F /* NSString+Icons.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B465753BBEFBE3B59B0534F /* NSString+Icons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C64C787BAA94AB40EF6AEDCE /* FUISwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 968A596C18E2CA21A76FA429 /* FUISwitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C671709610A9B951B74AB0E6 /* FICImageCache+FICErrorLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = D96DDBA1E63B70292FB32151 /* FICImageCache+FICErrorLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C83EE08719A6487848C93B27 /* UISlider+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 029004CC5ED8A8B2FFA6BDE9 /* UISlider+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C98565F803266922922D1631 /* FUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C28BDCDC00593745D542A2 /* FUISwitch.m */; };
+		C9CAE6BF86D47FD3273F2A16 /* Pods-PictoCation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFA91D04630B253A3B80C1D /* Pods-PictoCation-dummy.m */; };
+		CABEA2BD67E95B264784C251 /* Pods-PictoCation-FastImageCache-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B13AB7E8F284AFA9B8192B7 /* Pods-PictoCation-FastImageCache-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDAC112141FACFA3BD1728CF /* Pods-PictoCation-FastImageCache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E819EFB0B2F488CF9FB5CFE7 /* Pods-PictoCation-FastImageCache-dummy.m */; };
+		CE7AB6694380EFCCC5FE06AC /* FUISegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 8038A47FEBED9E0B929F28D6 /* FUISegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE83E0D401DADD7C1B57C1C2 /* FUITextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CFF9DD2637E384ADC1FE0D1 /* FUITextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1B14788878B8576F32ECADD /* Pods-PictoCation-SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6971BB34C0E5CF1BCC079989 /* Pods-PictoCation-SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D385C9651EB1E5FDEC182EEF /* UIProgressView+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4E9A5568D8597AB321A91F /* UIProgressView+FlatUI.m */; };
+		D48785ECAA1931075B9BB7DD /* UIToolbar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC569D355EBA19115D5FA64 /* UIToolbar+FlatUI.m */; };
+		DA7FD4AAADD7708D0D793FB2 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31C5BC80F7ECD0A850DE22 /* Upload.swift */; };
+		E27A8BC8D5EB5C3E5CB65E83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8256711F76EEFAC1DB5DC /* Foundation.framework */; };
+		E47383EA598339A105981DD6 /* UIBarButtonItem+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 093918177F066A5EAF5DACC9 /* UIBarButtonItem+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8986E238309D49B9137DC42 /* FICImageTableEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ACCEDE06F6B94F20D0FA6E2 /* FICImageTableEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC86F724990D03D8FB2862DC /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000965E4674331C7C0C36EE9 /* Download.swift */; };
+		ECB11CD2217FA10B1DFA0202 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E7708D51FA93C785BF379 /* Alamofire.swift */; };
+		EE03CF67689BC8293387CA80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8256711F76EEFAC1DB5DC /* Foundation.framework */; };
+		EE42C4FBD2793C801E9A37DA /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460D46DB2D6BD6EDAD35328 /* Manager.swift */; };
+		EF674132F8654A80B3533E0E /* UIFont+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 321FBC43900909BE42390D5C /* UIFont+FlatUI.m */; };
+		F00C8D86399CAC12076C3421 /* FICUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 501B85DB01276A0AFC94175D /* FICUtilities.m */; };
+		F23C190583F294DBE8AED592 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8256711F76EEFAC1DB5DC /* Foundation.framework */; };
+		F429D93EFB22D1446448D7BF /* UIFont+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFFAA3E605851687FAE26E0 /* UIFont+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F720A2BB6ECE964CD30FDA94 /* FICImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A773B79066357E65D965031 /* FICImageCache.m */; };
+		F72D58967F10C0FD59570D3D /* FUIPopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAFDAC70F5BE65446CF2779 /* FUIPopoverBackgroundView.m */; };
+		FB1D60F4B014FE9EAC2F3E95 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697AEFC8C95BB37E4B3A9CEE /* SwiftyJSON.swift */; };
+		FC0D69155D6AB2CFB139AA72 /* FICUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A38293F056728F1B5CF243C7 /* FICUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		070144FFE66E3FA0EB125778 /* PBXContainerItemProxy */ = {
+		418B2A20026485F2706B30E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 112BDF2DB19B1852188A6E09 /* Project object */;
+			containerPortal = A21C3513C00DA42422BB8551 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4129F200D04A0911A7BF867C;
+			remoteGlobalIDString = 5C8F97C9D7094099B939B670;
+			remoteInfo = "Pods-PictoCation-Alamofire";
+		};
+		48E4F4130C9B7B1717930639 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A21C3513C00DA42422BB8551 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CECA8A3AC9A9527FEDFAD41D;
+			remoteInfo = "Pods-PictoCation-FlatUIKit";
+		};
+		ACCC2008D639A87ABE8DB9F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A21C3513C00DA42422BB8551 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96F3C1336E9E92D4BEA9102E;
 			remoteInfo = "Pods-PictoCation-FastImageCache";
 		};
-		6659281E50A6344E89E10A98 /* PBXContainerItemProxy */ = {
+		CEA29C37B30CCF7ADB2EE8D4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 112BDF2DB19B1852188A6E09 /* Project object */;
+			containerPortal = A21C3513C00DA42422BB8551 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B18943714E0F01DA6270CC66;
-			remoteInfo = "Pods-PictoCation-MBProgressHUD";
-		};
-		AE881966AD922DC72F68D07C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 112BDF2DB19B1852188A6E09 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4962DA8F49EB8FAE623BA003;
+			remoteGlobalIDString = 9C43E3E32C942C8393FCA389;
 			remoteInfo = "Pods-PictoCation-SwiftyJSON";
 		};
-		F55C04DE41B2461F182E79A8 /* PBXContainerItemProxy */ = {
+		F849B5126AE05CE8B677A139 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 112BDF2DB19B1852188A6E09 /* Project object */;
+			containerPortal = A21C3513C00DA42422BB8551 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A1C16F1950EF41B8C54164B0;
-			remoteInfo = "Pods-PictoCation-Alamofire";
+			remoteGlobalIDString = 8DF227023E94D7985B9694B7;
+			remoteInfo = "Pods-PictoCation-MBProgressHUD";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		042CFE9C13EB9574005A788D /* Pods-PictoCation-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PictoCation-acknowledgements.plist"; sourceTree = "<group>"; };
-		0745EB784C03BFC723544385 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0783F149C3C6D99244E6FC42 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		0819B9F55580873D15DEBE8E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E82C12A6201EC11E34739E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		0EB9B6C873CB30261154F78D /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		118930DF7DF5AC0FCA61FA1F /* Pods-PictoCation-FastImageCache.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-FastImageCache.xcconfig"; sourceTree = "<group>"; };
-		15505F50925957D7FF37A9D1 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
-		15F5FBCA87484FC720F66CFB /* FICImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageCache.h; path = FastImageCache/FICImageCache.h; sourceTree = "<group>"; };
-		1B0032D9F0CA92CD4DAE0163 /* Pods-PictoCation-MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		21ECD0DDDCA5D456B9D247D5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2297BBF70E13CF7794B8D689 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
-		2BDB53B6335710C30FDEF290 /* FICImageTable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTable.m; path = FastImageCache/FICImageTable.m; sourceTree = "<group>"; };
-		2C8641DB9037936B8D56A45B /* Pods-PictoCation-MBProgressHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-MBProgressHUD-Private.xcconfig"; sourceTree = "<group>"; };
-		2F0DB570EEAF58E01C346F45 /* Pods-PictoCation-SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-SwiftyJSON.xcconfig"; sourceTree = "<group>"; };
-		34FE5BD610C27881CFB8B6B3 /* Pods-PictoCation-MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
-		3606B9E791504CEFF156EA6D /* Pods-PictoCation-MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation-MBProgressHUD.modulemap"; sourceTree = "<group>"; };
-		46D6B7B8BF41CE76A17140F9 /* FICEntity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICEntity.h; path = FastImageCache/FICEntity.h; sourceTree = "<group>"; };
-		4D65CE755633348968483E06 /* Pods-PictoCation-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation-Alamofire.modulemap"; sourceTree = "<group>"; };
-		4F85EAF565066DFC1F0EB236 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		549C48CF58A461BE505C7DBF /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		57C2C11313AED5387450D9A8 /* FICImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageCache.m; path = FastImageCache/FICImageCache.m; sourceTree = "<group>"; };
-		58E659CD51AAF07DC5F3DECB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		5CC4D158EE95E12EB55C951F /* FICImageTable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTable.h; path = FastImageCache/FICImageTable.h; sourceTree = "<group>"; };
-		620AD7A48E0F3BD88FBB77ED /* Pods-PictoCation-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
-		62C5720F6BACF09257ADDE52 /* FICImports.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImports.h; path = FastImageCache/FICImports.h; sourceTree = "<group>"; };
-		650D75A16CC9EBA870768A7B /* Pods-PictoCation-SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
-		66D10542D143DB1B85736606 /* Pods-PictoCation-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-Alamofire-dummy.m"; sourceTree = "<group>"; };
-		6715C0834D8D2CAA31FF3F4A /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
-		681AAA9EF968F9A145731F21 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		689ADB9D8A7E5B6B7A1BC90C /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
-		69C2A2571E3858DC11D2EC3A /* Pods-PictoCation-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		69C65A5FE77EFC1ECD058E2B /* Pods-PictoCation-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PictoCation-frameworks.sh"; sourceTree = "<group>"; };
-		6BD09E7634544311AB9C2920 /* Pods-PictoCation-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PictoCation-resources.sh"; sourceTree = "<group>"; };
-		6DDCEFC6CAB080CE044502F8 /* FICUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICUtilities.m; path = FastImageCache/FICUtilities.m; sourceTree = "<group>"; };
-		74136C3387A833DC01E1CEA7 /* Pods-PictoCation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation.modulemap"; sourceTree = "<group>"; };
-		7C16B8CEB319E1603A874FD3 /* Pods-PictoCation-SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
-		7FD8F11DE600BF017CFEB216 /* FICImageFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageFormat.m; path = FastImageCache/FICImageFormat.m; sourceTree = "<group>"; };
-		87D7EE7CF3B3C48C73965A95 /* Pods-PictoCation-FastImageCache-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-FastImageCache-Private.xcconfig"; sourceTree = "<group>"; };
-		8DCE386499D96E0FCB27ED78 /* Pods-PictoCation-FastImageCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-FastImageCache-dummy.m"; sourceTree = "<group>"; };
-		8F51AD9E3E497A24CA8B88BE /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		95150F34F59CCAF3F5FEA451 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
-		9E6174338E0A7A131205C046 /* FICImageTableChunk.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTableChunk.m; path = FastImageCache/FICImageTableChunk.m; sourceTree = "<group>"; };
-		9F269243BB6D88745AFFC8CF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FE24EC53A1250A4C6E8A469 /* Pods-PictoCation-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PictoCation-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A05E40DC40EE77C10D775D4A /* FastImageCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FastImageCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A07608100FEECD2C979CFAE5 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		A41CD4B11D7639320BE7ADED /* Pods-PictoCation-SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation-SwiftyJSON.modulemap"; sourceTree = "<group>"; };
-		A4D6B2465CD10BAFF13882DF /* FICImageFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageFormat.h; path = FastImageCache/FICImageFormat.h; sourceTree = "<group>"; };
-		A7CF03DC8DB45A3DFAF2F61E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A815EEA0DF91A0DF7C1C5475 /* FICImageTableChunk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTableChunk.h; path = FastImageCache/FICImageTableChunk.h; sourceTree = "<group>"; };
-		A89D462E09039CC2599A1468 /* Pods-PictoCation-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-environment.h"; sourceTree = "<group>"; };
-		AA85728FD8C8E92222C2BEAF /* Pods-PictoCation-MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
-		AB2A9CC435D8889263E107F5 /* Pods-PictoCation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation.debug.xcconfig"; sourceTree = "<group>"; };
-		ADE40B4B51097D28EA514F62 /* Pods_PictoCation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PictoCation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2F67DE397E68DA5B620823A /* FICImageTableEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTableEntry.h; path = FastImageCache/FICImageTableEntry.h; sourceTree = "<group>"; };
-		B5CF1FF237991757D8E7A287 /* Pods-PictoCation-FastImageCache-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-FastImageCache-umbrella.h"; sourceTree = "<group>"; };
-		B645F011FDAD56BB988797F9 /* Pods-PictoCation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation.release.xcconfig"; sourceTree = "<group>"; };
-		C0A34BEE0DE966267BD040C0 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
-		C1F3C4982B93670606778798 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		C239E3740734429C891F0494 /* Pods-PictoCation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-dummy.m"; sourceTree = "<group>"; };
-		C72C0ED0058D37630A0628C3 /* FICUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICUtilities.h; path = FastImageCache/FICUtilities.h; sourceTree = "<group>"; };
-		C761435D1560FD0CD7920325 /* Pods-PictoCation-MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-MBProgressHUD.xcconfig"; sourceTree = "<group>"; };
-		C9DC314AAE9F1BC930D6910B /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		CBBC0DE6AD0229FF96A2B744 /* FICImageTableEntry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTableEntry.m; path = FastImageCache/FICImageTableEntry.m; sourceTree = "<group>"; };
-		D511908ABB42158708B3C30D /* Pods-PictoCation-FastImageCache-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-FastImageCache-prefix.pch"; sourceTree = "<group>"; };
-		DD7BAEC5B07DFCBF514621EF /* Pods-PictoCation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-umbrella.h"; sourceTree = "<group>"; };
-		E3D6D10FCD326D8A548B8345 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EBE1F3966D936E05704CFBDB /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		EFF7AAA0A5DD219292120B26 /* Pods-PictoCation-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-Alamofire.xcconfig"; sourceTree = "<group>"; };
-		F27C69405CCDAE67D0246E7B /* Pods-PictoCation-SwiftyJSON-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-SwiftyJSON-Private.xcconfig"; sourceTree = "<group>"; };
-		F43B661F6F7DC912E71BF1DA /* Pods-PictoCation-FastImageCache.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation-FastImageCache.modulemap"; sourceTree = "<group>"; };
-		F9517A01DF07BE3EB32F3092 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		FA8CB9CE420B1B82E8E45961 /* Pods-PictoCation-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		FBBA7A3CB4CA27CC79D294E2 /* FICImageCache+FICErrorLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FICImageCache+FICErrorLogging.h"; path = "FastImageCache/FICImageCache+FICErrorLogging.h"; sourceTree = "<group>"; };
-		FE2EC5016A9443DD696A091B /* Pods-PictoCation-SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
-		FF9830E6DD49DC60AD9BC2E6 /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		000965E4674331C7C0C36EE9 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
+		016608DDC5A4CD03E91AD227 /* UITableViewCell+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+FlatUI.m"; path = "Classes/ios/UITableViewCell+FlatUI.m"; sourceTree = "<group>"; };
+		029004CC5ED8A8B2FFA6BDE9 /* UISlider+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UISlider+FlatUI.h"; path = "Classes/ios/UISlider+FlatUI.h"; sourceTree = "<group>"; };
+		0300B4CC89BD0BC8E4BD0858 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		03111C21F7F65B9AEA7E7573 /* FICEntity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICEntity.h; path = FastImageCache/FICEntity.h; sourceTree = "<group>"; };
+		032D7FC9C313707A924EE04B /* FUISegmentedControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUISegmentedControl.m; path = Classes/ios/FUISegmentedControl.m; sourceTree = "<group>"; };
+		07C81B1B5CA6F3D4D98FEDBF /* UITableViewCell+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+FlatUI.h"; path = "Classes/ios/UITableViewCell+FlatUI.h"; sourceTree = "<group>"; };
+		07F4FA56B51FBB9966A94864 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		093918177F066A5EAF5DACC9 /* UIBarButtonItem+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+FlatUI.h"; path = "Classes/ios/UIBarButtonItem+FlatUI.h"; sourceTree = "<group>"; };
+		096DC520A20678D08EA3252B /* Lato-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "Resources/Lato-Bold.ttf"; sourceTree = "<group>"; };
+		0D48C4AFD7AB927BB01AB695 /* FICImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageCache.h; path = FastImageCache/FICImageCache.h; sourceTree = "<group>"; };
+		1460D46DB2D6BD6EDAD35328 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
+		150D4FD99A5C7DA8376C3DD2 /* Pods-PictoCation-FlatUIKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-FlatUIKit.xcconfig"; sourceTree = "<group>"; };
+		16C267393BDC7DC607AFE00B /* FICImageTable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTable.h; path = FastImageCache/FICImageTable.h; sourceTree = "<group>"; };
+		173D9471CA8FFDE78A73540B /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		1B31C5BC80F7ECD0A850DE22 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
+		1C646D0E69B7EF90498B2F6C /* FUICellBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUICellBackgroundView.m; path = Classes/ios/FUICellBackgroundView.m; sourceTree = "<group>"; };
+		1FE09CFBC35B01A0B4271A0E /* Pods-PictoCation-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-Alamofire.xcconfig"; sourceTree = "<group>"; };
+		237B14C1EFC126D934004643 /* Pods-PictoCation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-umbrella.h"; sourceTree = "<group>"; };
+		252EF50D3F6A652793296E37 /* Pods-PictoCation-MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		27938BDEF38DAF2F39EEA470 /* Pods-PictoCation-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		29B7776A86F03009EA335499 /* Lato-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "Resources/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		2A4EDF80D7808C80B0D8FDDA /* FICImageFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageFormat.m; path = FastImageCache/FICImageFormat.m; sourceTree = "<group>"; };
+		2AC77A68FF57B133F3ADD5C7 /* UITabBar+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITabBar+FlatUI.h"; path = "Classes/ios/UITabBar+FlatUI.h"; sourceTree = "<group>"; };
+		2FFC2E8A8879E1FEA82D43A9 /* FICImports.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImports.h; path = FastImageCache/FICImports.h; sourceTree = "<group>"; };
+		30B025512EA315A39275977A /* FastImageCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FastImageCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		321FBC43900909BE42390D5C /* UIFont+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+FlatUI.m"; path = "Classes/ios/UIFont+FlatUI.m"; sourceTree = "<group>"; };
+		326680BF967BFB91164E8287 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		42639D2BB2522121DBC9BF66 /* Pods-PictoCation-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		45C8256711F76EEFAC1DB5DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		49A360386860DA841827951E /* UIImage+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FlatUI.m"; path = "Classes/ios/UIImage+FlatUI.m"; sourceTree = "<group>"; };
+		4BA0E01594EF57DC66C2BAEC /* FICImageTable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTable.m; path = FastImageCache/FICImageTable.m; sourceTree = "<group>"; };
+		4BF4A86A9880D7B30F15249A /* Pods-PictoCation-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PictoCation-acknowledgements.plist"; sourceTree = "<group>"; };
+		4C34361CDCCD28AACDE473BD /* Pods-PictoCation-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PictoCation-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4CFF9DD2637E384ADC1FE0D1 /* FUITextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUITextField.h; path = Classes/ios/FUITextField.h; sourceTree = "<group>"; };
+		4D423B96B4D06E437599E59B /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D4E9A5568D8597AB321A91F /* UIProgressView+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+FlatUI.m"; path = "Classes/ios/UIProgressView+FlatUI.m"; sourceTree = "<group>"; };
+		4D6F3FEC096EA364940979F4 /* FUIAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUIAlertView.m; path = Classes/ios/FUIAlertView.m; sourceTree = "<group>"; };
+		501B85DB01276A0AFC94175D /* FICUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICUtilities.m; path = FastImageCache/FICUtilities.m; sourceTree = "<group>"; };
+		53B89047A64678952275B82B /* Pods-PictoCation-MBProgressHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-MBProgressHUD-Private.xcconfig"; sourceTree = "<group>"; };
+		587CCECD4A7DD8819302C1C1 /* Pods-PictoCation-FastImageCache-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-FastImageCache-prefix.pch"; sourceTree = "<group>"; };
+		5A4C295BD23E019558AEBFB9 /* Pods-PictoCation-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PictoCation-resources.sh"; sourceTree = "<group>"; };
+		5A773B79066357E65D965031 /* FICImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageCache.m; path = FastImageCache/FICImageCache.m; sourceTree = "<group>"; };
+		5ACCEDE06F6B94F20D0FA6E2 /* FICImageTableEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTableEntry.h; path = FastImageCache/FICImageTableEntry.h; sourceTree = "<group>"; };
+		5B2545327484B8095CE68F5F /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		5B38281A97D403852720579C /* UIColor+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+FlatUI.h"; path = "Classes/ios/UIColor+FlatUI.h"; sourceTree = "<group>"; };
+		5B465753BBEFBE3B59B0534F /* NSString+Icons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+Icons.h"; path = "Classes/ios/NSString+Icons.h"; sourceTree = "<group>"; };
+		5B4F736024AFBA68F92C5656 /* Pods-PictoCation-FlatUIKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation-FlatUIKit.modulemap"; sourceTree = "<group>"; };
+		5BEAF521840BAF0DD3ED86A7 /* FICImageTableChunk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTableChunk.h; path = FastImageCache/FICImageTableChunk.h; sourceTree = "<group>"; };
+		5C72B717231436341C29A8A3 /* Pods-PictoCation-FlatUIKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-FlatUIKit-umbrella.h"; sourceTree = "<group>"; };
+		612C11C99CE41F1A88CD3BB2 /* UITabBar+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITabBar+FlatUI.m"; path = "Classes/ios/UITabBar+FlatUI.m"; sourceTree = "<group>"; };
+		613421C3B2B6317E82AD6777 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		695835C027BDC19B38088C29 /* Pods-PictoCation-FastImageCache.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation-FastImageCache.modulemap"; sourceTree = "<group>"; };
+		6971BB34C0E5CF1BCC079989 /* Pods-PictoCation-SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		697AEFC8C95BB37E4B3A9CEE /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		6DE2A9E286DCD6DA0E0DFEA7 /* UIStepper+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIStepper+FlatUI.m"; path = "Classes/ios/UIStepper+FlatUI.m"; sourceTree = "<group>"; };
+		6EEF5E246628651B181AF48C /* Pods-PictoCation-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-environment.h"; sourceTree = "<group>"; };
+		735E7708D51FA93C785BF379 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		75EC61013F356311B72750D0 /* FICImageTableChunk.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTableChunk.m; path = FastImageCache/FICImageTableChunk.m; sourceTree = "<group>"; };
+		779DF71D1B304A5A655D94F2 /* Pods-PictoCation-FastImageCache-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-FastImageCache-Private.xcconfig"; sourceTree = "<group>"; };
+		78B62CF5998A0C093AAD528E /* UINavigationBar+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+FlatUI.h"; path = "Classes/ios/UINavigationBar+FlatUI.h"; sourceTree = "<group>"; };
+		7B398A6E99DF63FC1749F574 /* Pods-PictoCation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation.release.xcconfig"; sourceTree = "<group>"; };
+		7BCC9134C11009B6A77CB37C /* FUIButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUIButton.h; path = Classes/ios/FUIButton.h; sourceTree = "<group>"; };
+		7DD592D1ECD0C247A020510E /* UIBarButtonItem+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+FlatUI.m"; path = "Classes/ios/UIBarButtonItem+FlatUI.m"; sourceTree = "<group>"; };
+		7DF7192EC24F3EE8852C055E /* UIToolbar+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIToolbar+FlatUI.h"; path = "Classes/ios/UIToolbar+FlatUI.h"; sourceTree = "<group>"; };
+		8038A47FEBED9E0B929F28D6 /* FUISegmentedControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUISegmentedControl.h; path = Classes/ios/FUISegmentedControl.h; sourceTree = "<group>"; };
+		834FDC11D981B92B5A7671C1 /* Pods-PictoCation-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation-Alamofire.modulemap"; sourceTree = "<group>"; };
+		8604FAC94E39F49E19F4086D /* FUITextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUITextField.m; path = Classes/ios/FUITextField.m; sourceTree = "<group>"; };
+		89E8ED543EFD30AB3547CE04 /* UIImage+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+FlatUI.h"; path = "Classes/ios/UIImage+FlatUI.h"; sourceTree = "<group>"; };
+		8B115EE993348AEA57C8ADBA /* UINavigationBar+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+FlatUI.m"; path = "Classes/ios/UINavigationBar+FlatUI.m"; sourceTree = "<group>"; };
+		8B13AB7E8F284AFA9B8192B7 /* Pods-PictoCation-FastImageCache-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-FastImageCache-umbrella.h"; sourceTree = "<group>"; };
+		8E7536062E428CB3CB1E2FF1 /* Pods-PictoCation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation.debug.xcconfig"; sourceTree = "<group>"; };
+		8EC8FC0AC6C5DF8D44A555BC /* FICImageFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageFormat.h; path = FastImageCache/FICImageFormat.h; sourceTree = "<group>"; };
+		8FD983145DDDDDDCE5EE4784 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		918F11905C6E4F6CE4F2DD03 /* UIProgressView+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+FlatUI.h"; path = "Classes/ios/UIProgressView+FlatUI.h"; sourceTree = "<group>"; };
+		9320F19E769656FBC506403F /* NSString+Icons.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+Icons.m"; path = "Classes/ios/NSString+Icons.m"; sourceTree = "<group>"; };
+		94968C8AA110DA2A63C22D54 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		968A596C18E2CA21A76FA429 /* FUISwitch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUISwitch.h; path = Classes/ios/FUISwitch.h; sourceTree = "<group>"; };
+		97E7C8DAA4C16FFE436BE062 /* FICImageTableEntry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FICImageTableEntry.m; path = FastImageCache/FICImageTableEntry.m; sourceTree = "<group>"; };
+		9823B09B3B2D8C9067A0E5C3 /* UIColor+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+FlatUI.m"; path = "Classes/ios/UIColor+FlatUI.m"; sourceTree = "<group>"; };
+		9AFC553C4F7726D41189229D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BF5B7EE622985F6FD6E3771 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DC569D355EBA19115D5FA64 /* UIToolbar+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIToolbar+FlatUI.m"; path = "Classes/ios/UIToolbar+FlatUI.m"; sourceTree = "<group>"; };
+		9E7DB7B59B8FB753257F3005 /* FUIPopoverBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUIPopoverBackgroundView.h; path = Classes/ios/FUIPopoverBackgroundView.h; sourceTree = "<group>"; };
+		A1767070548B4DECF996C7D1 /* Pods-PictoCation-MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation-MBProgressHUD.modulemap"; sourceTree = "<group>"; };
+		A1CDB95F5678FD1FB38814DF /* Pods-PictoCation-SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation-SwiftyJSON.modulemap"; sourceTree = "<group>"; };
+		A3613661D0720FFE8D9CD24D /* UIPopoverController+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIPopoverController+FlatUI.m"; path = "Classes/ios/UIPopoverController+FlatUI.m"; sourceTree = "<group>"; };
+		A38293F056728F1B5CF243C7 /* FICUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICUtilities.h; path = FastImageCache/FICUtilities.h; sourceTree = "<group>"; };
+		A4E73E666FD9205103D3D6A2 /* FlatUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlatUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5058E543D59A9F97E042115 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6216600B336FAFE11B00F83 /* Pods-PictoCation-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
+		A6533CB48725B360A8F001D6 /* Pods-PictoCation-MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		A87A985C88515FC54B440416 /* UIStepper+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIStepper+FlatUI.h"; path = "Classes/ios/UIStepper+FlatUI.h"; sourceTree = "<group>"; };
+		ABAFDAC70F5BE65446CF2779 /* FUIPopoverBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUIPopoverBackgroundView.m; path = Classes/ios/FUIPopoverBackgroundView.m; sourceTree = "<group>"; };
+		B02A7925762B5D5053BA3B7E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		B06512F66DC8DF02706919FD /* UISlider+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UISlider+FlatUI.m"; path = "Classes/ios/UISlider+FlatUI.m"; sourceTree = "<group>"; };
+		B56A01FB89BE0C606391EEC6 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		B6AD517F77C7E8A69F61481C /* Pods-PictoCation-MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-MBProgressHUD.xcconfig"; sourceTree = "<group>"; };
+		B9070230DEFA9A31AB0F1BFC /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		BAFA91D04630B253A3B80C1D /* Pods-PictoCation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-dummy.m"; sourceTree = "<group>"; };
+		BB8C56B00F86EAC264B5BD0E /* Pods-PictoCation-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PictoCation-frameworks.sh"; sourceTree = "<group>"; };
+		BDFFAA3E605851687FAE26E0 /* UIFont+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+FlatUI.h"; path = "Classes/ios/UIFont+FlatUI.h"; sourceTree = "<group>"; };
+		C0D44DA08ED5FFBC72E4A9DA /* FUICellBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUICellBackgroundView.h; path = Classes/ios/FUICellBackgroundView.h; sourceTree = "<group>"; };
+		C2F2867AE1102E84F4D40FF2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		C76EF77C20D8E98ADA14EAE8 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C981734820933BEC03937399 /* UIPopoverController+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIPopoverController+FlatUI.h"; path = "Classes/ios/UIPopoverController+FlatUI.h"; sourceTree = "<group>"; };
+		CBCF6412143E0CD5512351D2 /* Pods-PictoCation-SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		CC0F6AEA0B51AA8CF470124F /* Pods-PictoCation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PictoCation.modulemap"; sourceTree = "<group>"; };
+		CDD270320A1AA2269311632C /* FUIAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FUIAlertView.h; path = Classes/ios/FUIAlertView.h; sourceTree = "<group>"; };
+		D01622A767CD6309CA8A3C52 /* Lato-Italic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Lato-Italic.ttf"; path = "Resources/Lato-Italic.ttf"; sourceTree = "<group>"; };
+		D0581CED7269B1241C991310 /* FlatUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlatUIKit.h; path = Classes/ios/FlatUIKit.h; sourceTree = "<group>"; };
+		D06BDF038F27D97D22527328 /* Pods-PictoCation-SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		D1CF0C47D0865E30D7A98DAF /* Pods-PictoCation-FlatUIKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-FlatUIKit-Private.xcconfig"; sourceTree = "<group>"; };
+		D21D022F6C773986EB5AB0A9 /* Pods-PictoCation-SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-SwiftyJSON.xcconfig"; sourceTree = "<group>"; };
+		D663C4865F58729567508B96 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D96DDBA1E63B70292FB32151 /* FICImageCache+FICErrorLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FICImageCache+FICErrorLogging.h"; path = "FastImageCache/FICImageCache+FICErrorLogging.h"; sourceTree = "<group>"; };
+		D9C28BDCDC00593745D542A2 /* FUISwitch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUISwitch.m; path = Classes/ios/FUISwitch.m; sourceTree = "<group>"; };
+		DE1100CE5D98E6C64DF53AEA /* flat-ui-icons-regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "flat-ui-icons-regular.ttf"; path = "Resources/flat-ui-icons-regular.ttf"; sourceTree = "<group>"; };
+		DFF94012813C3D7994F97BD2 /* Pods-PictoCation-FlatUIKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-FlatUIKit-dummy.m"; sourceTree = "<group>"; };
+		E0321B1DA17078F0E96A574D /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		E0C8F739DC9598EADF57A2CF /* Pods-PictoCation-MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
+		E2F5D3C80A8DA2B59250C809 /* Pods-PictoCation-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-Alamofire-dummy.m"; sourceTree = "<group>"; };
+		E80EE3488A67F46D537B9267 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E819EFB0B2F488CF9FB5CFE7 /* Pods-PictoCation-FastImageCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-FastImageCache-dummy.m"; sourceTree = "<group>"; };
+		ED10E9D27BAB00FB90900E3C /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		F0D2D411D8864F9CE052A9BD /* Lato-Light.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "Resources/Lato-Light.ttf"; sourceTree = "<group>"; };
+		F127E5D8E668029C1BEF3EFC /* Pods-PictoCation-FastImageCache.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-FastImageCache.xcconfig"; sourceTree = "<group>"; };
+		F3D2AC51A85037C56D0D79D3 /* Pods-PictoCation-FlatUIKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-FlatUIKit-prefix.pch"; sourceTree = "<group>"; };
+		F4F8EE500759E331BCCC597D /* Pods-PictoCation-SwiftyJSON-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-SwiftyJSON-Private.xcconfig"; sourceTree = "<group>"; };
+		F5BA4A93DFDE1D46F7A50942 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F83DB3C853E46EA156658C84 /* Pods_PictoCation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PictoCation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC85738AAACF014FD59005AC /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		FD32CAC1C8CBAD825B0D0933 /* FUIButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUIButton.m; path = Classes/ios/FUIButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0AFAAAA0AA591FCE7DAD83AC /* Frameworks */ = {
+		194A0BC14C218FAD0935B360 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF9E1C11CF2F7F18BD99418 /* Foundation.framework in Frameworks */,
+				B116EC9096CD0086E0070FF6 /* CoreGraphics.framework in Frameworks */,
+				E27A8BC8D5EB5C3E5CB65E83 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3B3FA6858A8FC1B70CE56260 /* Frameworks */ = {
+		368CA40F5BCECC9291BF1118 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87C0CBF13F5FE895A95687A9 /* Foundation.framework in Frameworks */,
+				7FC542D7FE71E617B1451511 /* CoreText.framework in Frameworks */,
+				4806D475379C7861CBA8F5F0 /* Foundation.framework in Frameworks */,
+				AB2EEC5A272405C391B68DA9 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D84EB2587A2E8536D954ABC /* Frameworks */ = {
+		729E905F7F99648DCC5F4C6E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E00C86B2A7B156AEC126D30A /* Foundation.framework in Frameworks */,
+				EE03CF67689BC8293387CA80 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6FAAF828549A0C351E8DD408 /* Frameworks */ = {
+		897B4EB9A22744201BCBEE02 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08EB4F8951AC8E70AB000D90 /* Foundation.framework in Frameworks */,
+				F23C190583F294DBE8AED592 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E7AD6486C4F27B087EEAC066 /* Frameworks */ = {
+		C3BF30B35976D99AD538FEEA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ACBAB7D62B00D3C6CDB0EEB /* CoreGraphics.framework in Frameworks */,
-				5B6E6A48E4A2BECD70FA86DC /* Foundation.framework in Frameworks */,
+				1F0E2114BAB1E53300934865 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAED72ECDFFBBA1287C15197 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEAE2763CC21D6853AE99428 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05684C1DE40DCAF171A2AD61 /* Support Files */ = {
+		04EC74D6E5ED4C30C8253C7C /* FastImageCache */ = {
 			isa = PBXGroup;
 			children = (
-				A7CF03DC8DB45A3DFAF2F61E /* Info.plist */,
-				F43B661F6F7DC912E71BF1DA /* Pods-PictoCation-FastImageCache.modulemap */,
-				118930DF7DF5AC0FCA61FA1F /* Pods-PictoCation-FastImageCache.xcconfig */,
-				87D7EE7CF3B3C48C73965A95 /* Pods-PictoCation-FastImageCache-Private.xcconfig */,
-				8DCE386499D96E0FCB27ED78 /* Pods-PictoCation-FastImageCache-dummy.m */,
-				D511908ABB42158708B3C30D /* Pods-PictoCation-FastImageCache-prefix.pch */,
-				B5CF1FF237991757D8E7A287 /* Pods-PictoCation-FastImageCache-umbrella.h */,
+				03111C21F7F65B9AEA7E7573 /* FICEntity.h */,
+				0D48C4AFD7AB927BB01AB695 /* FICImageCache.h */,
+				5A773B79066357E65D965031 /* FICImageCache.m */,
+				D96DDBA1E63B70292FB32151 /* FICImageCache+FICErrorLogging.h */,
+				8EC8FC0AC6C5DF8D44A555BC /* FICImageFormat.h */,
+				2A4EDF80D7808C80B0D8FDDA /* FICImageFormat.m */,
+				16C267393BDC7DC607AFE00B /* FICImageTable.h */,
+				4BA0E01594EF57DC66C2BAEC /* FICImageTable.m */,
+				5BEAF521840BAF0DD3ED86A7 /* FICImageTableChunk.h */,
+				75EC61013F356311B72750D0 /* FICImageTableChunk.m */,
+				5ACCEDE06F6B94F20D0FA6E2 /* FICImageTableEntry.h */,
+				97E7C8DAA4C16FFE436BE062 /* FICImageTableEntry.m */,
+				2FFC2E8A8879E1FEA82D43A9 /* FICImports.h */,
+				A38293F056728F1B5CF243C7 /* FICUtilities.h */,
+				501B85DB01276A0AFC94175D /* FICUtilities.m */,
+				793CC425A8C16D678F9A1A24 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-PictoCation-FastImageCache";
+			path = FastImageCache;
 			sourceTree = "<group>";
 		};
-		07F5B695862BD079ADECF03D /* Support Files */ = {
+		12593A84A708A4C9C5E72666 /* GoogleMaps */ = {
 			isa = PBXGroup;
 			children = (
-				0819B9F55580873D15DEBE8E /* Info.plist */,
-				A41CD4B11D7639320BE7ADED /* Pods-PictoCation-SwiftyJSON.modulemap */,
-				2F0DB570EEAF58E01C346F45 /* Pods-PictoCation-SwiftyJSON.xcconfig */,
-				F27C69405CCDAE67D0246E7B /* Pods-PictoCation-SwiftyJSON-Private.xcconfig */,
-				FE2EC5016A9443DD696A091B /* Pods-PictoCation-SwiftyJSON-dummy.m */,
-				650D75A16CC9EBA870768A7B /* Pods-PictoCation-SwiftyJSON-prefix.pch */,
-				7C16B8CEB319E1603A874FD3 /* Pods-PictoCation-SwiftyJSON-umbrella.h */,
+				6851677AE71A3DC6F79084E7 /* Frameworks */,
+				1D08DB34794F8F53BC44E149 /* Resources */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-PictoCation-SwiftyJSON";
+			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
-		16E9054557C4666D2DBACBB2 /* Support Files */ = {
+		186C4B80DE866793EC5518F9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9F269243BB6D88745AFFC8CF /* Info.plist */,
-				4D65CE755633348968483E06 /* Pods-PictoCation-Alamofire.modulemap */,
-				EFF7AAA0A5DD219292120B26 /* Pods-PictoCation-Alamofire.xcconfig */,
-				620AD7A48E0F3BD88FBB77ED /* Pods-PictoCation-Alamofire-Private.xcconfig */,
-				66D10542D143DB1B85736606 /* Pods-PictoCation-Alamofire-dummy.m */,
-				FA8CB9CE420B1B82E8E45961 /* Pods-PictoCation-Alamofire-prefix.pch */,
-				69C2A2571E3858DC11D2EC3A /* Pods-PictoCation-Alamofire-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-PictoCation-Alamofire";
-			sourceTree = "<group>";
-		};
-		30222780E04C0A9FA29909D3 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E3D6D10FCD326D8A548B8345 /* Info.plist */,
-				3606B9E791504CEFF156EA6D /* Pods-PictoCation-MBProgressHUD.modulemap */,
-				C761435D1560FD0CD7920325 /* Pods-PictoCation-MBProgressHUD.xcconfig */,
-				2C8641DB9037936B8D56A45B /* Pods-PictoCation-MBProgressHUD-Private.xcconfig */,
-				34FE5BD610C27881CFB8B6B3 /* Pods-PictoCation-MBProgressHUD-dummy.m */,
-				1B0032D9F0CA92CD4DAE0163 /* Pods-PictoCation-MBProgressHUD-prefix.pch */,
-				AA85728FD8C8E92222C2BEAF /* Pods-PictoCation-MBProgressHUD-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-PictoCation-MBProgressHUD";
-			sourceTree = "<group>";
-		};
-		33B19D256365B20E720A2416 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				76802B451FF2831B7DACC603 /* Alamofire */,
-				FCECFE97BE0513DB2EEAD90B /* FastImageCache */,
-				BD1BC5DB80B83D29AB8AF867 /* GoogleMaps */,
-				7A21AF9318BC61E9EC2FE59A /* MBProgressHUD */,
-				F52CC62706ADDD11CA4D560A /* SwiftyJSON */,
+				2CEDB233A72BED10CBDA0BF7 /* Alamofire */,
+				04EC74D6E5ED4C30C8253C7C /* FastImageCache */,
+				94C3C76BA074ED8A521FA917 /* FlatUIKit */,
+				12593A84A708A4C9C5E72666 /* GoogleMaps */,
+				343EE4C7C2BECB72C03CC88E /* MBProgressHUD */,
+				E279AF57E096A24010140275 /* SwiftyJSON */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		647AF330A3AFE955421E11DF /* Pods-PictoCation */ = {
+		1D08DB34794F8F53BC44E149 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				21ECD0DDDCA5D456B9D247D5 /* Info.plist */,
-				74136C3387A833DC01E1CEA7 /* Pods-PictoCation.modulemap */,
-				9FE24EC53A1250A4C6E8A469 /* Pods-PictoCation-acknowledgements.markdown */,
-				042CFE9C13EB9574005A788D /* Pods-PictoCation-acknowledgements.plist */,
-				C239E3740734429C891F0494 /* Pods-PictoCation-dummy.m */,
-				A89D462E09039CC2599A1468 /* Pods-PictoCation-environment.h */,
-				69C65A5FE77EFC1ECD058E2B /* Pods-PictoCation-frameworks.sh */,
-				6BD09E7634544311AB9C2920 /* Pods-PictoCation-resources.sh */,
-				DD7BAEC5B07DFCBF514621EF /* Pods-PictoCation-umbrella.h */,
-				AB2A9CC435D8889263E107F5 /* Pods-PictoCation.debug.xcconfig */,
-				B645F011FDAD56BB988797F9 /* Pods-PictoCation.release.xcconfig */,
+				94968C8AA110DA2A63C22D54 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2CEDB233A72BED10CBDA0BF7 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				735E7708D51FA93C785BF379 /* Alamofire.swift */,
+				000965E4674331C7C0C36EE9 /* Download.swift */,
+				1460D46DB2D6BD6EDAD35328 /* Manager.swift */,
+				B56A01FB89BE0C606391EEC6 /* MultipartFormData.swift */,
+				173D9471CA8FFDE78A73540B /* ParameterEncoding.swift */,
+				07F4FA56B51FBB9966A94864 /* Request.swift */,
+				0300B4CC89BD0BC8E4BD0858 /* ResponseSerialization.swift */,
+				FC85738AAACF014FD59005AC /* ServerTrustPolicy.swift */,
+				1B31C5BC80F7ECD0A850DE22 /* Upload.swift */,
+				E0321B1DA17078F0E96A574D /* Validation.swift */,
+				A1B7E626E669141D609BE281 /* Support Files */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		2D92D12029A67110EFA3491A /* Pods-PictoCation */ = {
+			isa = PBXGroup;
+			children = (
+				E80EE3488A67F46D537B9267 /* Info.plist */,
+				CC0F6AEA0B51AA8CF470124F /* Pods-PictoCation.modulemap */,
+				4C34361CDCCD28AACDE473BD /* Pods-PictoCation-acknowledgements.markdown */,
+				4BF4A86A9880D7B30F15249A /* Pods-PictoCation-acknowledgements.plist */,
+				BAFA91D04630B253A3B80C1D /* Pods-PictoCation-dummy.m */,
+				6EEF5E246628651B181AF48C /* Pods-PictoCation-environment.h */,
+				BB8C56B00F86EAC264B5BD0E /* Pods-PictoCation-frameworks.sh */,
+				5A4C295BD23E019558AEBFB9 /* Pods-PictoCation-resources.sh */,
+				237B14C1EFC126D934004643 /* Pods-PictoCation-umbrella.h */,
+				8E7536062E428CB3CB1E2FF1 /* Pods-PictoCation.debug.xcconfig */,
+				7B398A6E99DF63FC1749F574 /* Pods-PictoCation.release.xcconfig */,
 			);
 			name = "Pods-PictoCation";
 			path = "Target Support Files/Pods-PictoCation";
 			sourceTree = "<group>";
 		};
-		6EF2ABE8B67A2DCF378120F1 /* Frameworks */ = {
+		343EE4C7C2BECB72C03CC88E /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				BE43A7DF04B37237A48E826E /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		76802B451FF2831B7DACC603 /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				F9517A01DF07BE3EB32F3092 /* Alamofire.swift */,
-				95150F34F59CCAF3F5FEA451 /* Download.swift */,
-				C0A34BEE0DE966267BD040C0 /* Manager.swift */,
-				8F51AD9E3E497A24CA8B88BE /* MultipartFormData.swift */,
-				C1F3C4982B93670606778798 /* ParameterEncoding.swift */,
-				681AAA9EF968F9A145731F21 /* Request.swift */,
-				EBE1F3966D936E05704CFBDB /* ResponseSerialization.swift */,
-				C9DC314AAE9F1BC930D6910B /* ServerTrustPolicy.swift */,
-				2297BBF70E13CF7794B8D689 /* Upload.swift */,
-				A07608100FEECD2C979CFAE5 /* Validation.swift */,
-				16E9054557C4666D2DBACBB2 /* Support Files */,
-			);
-			path = Alamofire;
-			sourceTree = "<group>";
-		};
-		7A21AF9318BC61E9EC2FE59A /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				0783F149C3C6D99244E6FC42 /* MBProgressHUD.h */,
-				FF9830E6DD49DC60AD9BC2E6 /* MBProgressHUD.m */,
-				30222780E04C0A9FA29909D3 /* Support Files */,
+				ED10E9D27BAB00FB90900E3C /* MBProgressHUD.h */,
+				5B2545327484B8095CE68F5F /* MBProgressHUD.m */,
+				844D69F5E7106AAAEA7811D8 /* Support Files */,
 			);
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
-		86731D71BFEB8BED7BFDB4DC /* Products */ = {
+		367BF294ACBF241488F54AA6 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4F85EAF565066DFC1F0EB236 /* Alamofire.framework */,
-				A05E40DC40EE77C10D775D4A /* FastImageCache.framework */,
-				549C48CF58A461BE505C7DBF /* MBProgressHUD.framework */,
-				ADE40B4B51097D28EA514F62 /* Pods_PictoCation.framework */,
-				0745EB784C03BFC723544385 /* SwiftyJSON.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B978A7110681FC8AC9BE9147 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				689ADB9D8A7E5B6B7A1BC90C /* GoogleMaps.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BD1BC5DB80B83D29AB8AF867 /* GoogleMaps */ = {
-			isa = PBXGroup;
-			children = (
-				B978A7110681FC8AC9BE9147 /* Frameworks */,
-				C1FA785835AF51ED229E1777 /* Resources */,
-			);
-			path = GoogleMaps;
-			sourceTree = "<group>";
-		};
-		BE43A7DF04B37237A48E826E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				0E82C12A6201EC11E34739E6 /* CoreGraphics.framework */,
-				58E659CD51AAF07DC5F3DECB /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		C1FA785835AF51ED229E1777 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				15505F50925957D7FF37A9D1 /* GoogleMaps.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		F52CC62706ADDD11CA4D560A /* SwiftyJSON */ = {
-			isa = PBXGroup;
-			children = (
-				6715C0834D8D2CAA31FF3F4A /* SwiftyJSON.swift */,
-				07F5B695862BD079ADECF03D /* Support Files */,
-			);
-			path = SwiftyJSON;
-			sourceTree = "<group>";
-		};
-		FAB124B1C45DC06901B08DFD /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				647AF330A3AFE955421E11DF /* Pods-PictoCation */,
+				2D92D12029A67110EFA3491A /* Pods-PictoCation */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		FC46DFCDD794EDB0523AC8A2 = {
+		583AE9E317008F0BC50CB62C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				0EB9B6C873CB30261154F78D /* Podfile */,
-				6EF2ABE8B67A2DCF378120F1 /* Frameworks */,
-				33B19D256365B20E720A2416 /* Pods */,
-				86731D71BFEB8BED7BFDB4DC /* Products */,
-				FAB124B1C45DC06901B08DFD /* Targets Support Files */,
+				B02A7925762B5D5053BA3B7E /* CoreGraphics.framework */,
+				B9070230DEFA9A31AB0F1BFC /* CoreText.framework */,
+				45C8256711F76EEFAC1DB5DC /* Foundation.framework */,
+				C2F2867AE1102E84F4D40FF2 /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5E398CA1EB647BE7B829EF5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				613421C3B2B6317E82AD6777 /* Alamofire.framework */,
+				30B025512EA315A39275977A /* FastImageCache.framework */,
+				A4E73E666FD9205103D3D6A2 /* FlatUIKit.framework */,
+				4D423B96B4D06E437599E59B /* MBProgressHUD.framework */,
+				F83DB3C853E46EA156658C84 /* Pods_PictoCation.framework */,
+				C76EF77C20D8E98ADA14EAE8 /* SwiftyJSON.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6851677AE71A3DC6F79084E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FD983145DDDDDDCE5EE4784 /* GoogleMaps.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		793CC425A8C16D678F9A1A24 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5058E543D59A9F97E042115 /* Info.plist */,
+				695835C027BDC19B38088C29 /* Pods-PictoCation-FastImageCache.modulemap */,
+				F127E5D8E668029C1BEF3EFC /* Pods-PictoCation-FastImageCache.xcconfig */,
+				779DF71D1B304A5A655D94F2 /* Pods-PictoCation-FastImageCache-Private.xcconfig */,
+				E819EFB0B2F488CF9FB5CFE7 /* Pods-PictoCation-FastImageCache-dummy.m */,
+				587CCECD4A7DD8819302C1C1 /* Pods-PictoCation-FastImageCache-prefix.pch */,
+				8B13AB7E8F284AFA9B8192B7 /* Pods-PictoCation-FastImageCache-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-PictoCation-FastImageCache";
+			sourceTree = "<group>";
+		};
+		844D69F5E7106AAAEA7811D8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9AFC553C4F7726D41189229D /* Info.plist */,
+				A1767070548B4DECF996C7D1 /* Pods-PictoCation-MBProgressHUD.modulemap */,
+				B6AD517F77C7E8A69F61481C /* Pods-PictoCation-MBProgressHUD.xcconfig */,
+				53B89047A64678952275B82B /* Pods-PictoCation-MBProgressHUD-Private.xcconfig */,
+				252EF50D3F6A652793296E37 /* Pods-PictoCation-MBProgressHUD-dummy.m */,
+				A6533CB48725B360A8F001D6 /* Pods-PictoCation-MBProgressHUD-prefix.pch */,
+				E0C8F739DC9598EADF57A2CF /* Pods-PictoCation-MBProgressHUD-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-PictoCation-MBProgressHUD";
+			sourceTree = "<group>";
+		};
+		8DA37CDC05B5509BE1B13109 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9BF5B7EE622985F6FD6E3771 /* Info.plist */,
+				A1CDB95F5678FD1FB38814DF /* Pods-PictoCation-SwiftyJSON.modulemap */,
+				D21D022F6C773986EB5AB0A9 /* Pods-PictoCation-SwiftyJSON.xcconfig */,
+				F4F8EE500759E331BCCC597D /* Pods-PictoCation-SwiftyJSON-Private.xcconfig */,
+				CBCF6412143E0CD5512351D2 /* Pods-PictoCation-SwiftyJSON-dummy.m */,
+				D06BDF038F27D97D22527328 /* Pods-PictoCation-SwiftyJSON-prefix.pch */,
+				6971BB34C0E5CF1BCC079989 /* Pods-PictoCation-SwiftyJSON-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-PictoCation-SwiftyJSON";
+			sourceTree = "<group>";
+		};
+		94B3B89B15276443255DBAD5 = {
+			isa = PBXGroup;
+			children = (
+				326680BF967BFB91164E8287 /* Podfile */,
+				BC12F2997A3BF74630F0B4CE /* Frameworks */,
+				186C4B80DE866793EC5518F9 /* Pods */,
+				5E398CA1EB647BE7B829EF5F /* Products */,
+				367BF294ACBF241488F54AA6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		FCECFE97BE0513DB2EEAD90B /* FastImageCache */ = {
+		94C3C76BA074ED8A521FA917 /* FlatUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				46D6B7B8BF41CE76A17140F9 /* FICEntity.h */,
-				15F5FBCA87484FC720F66CFB /* FICImageCache.h */,
-				57C2C11313AED5387450D9A8 /* FICImageCache.m */,
-				FBBA7A3CB4CA27CC79D294E2 /* FICImageCache+FICErrorLogging.h */,
-				A4D6B2465CD10BAFF13882DF /* FICImageFormat.h */,
-				7FD8F11DE600BF017CFEB216 /* FICImageFormat.m */,
-				5CC4D158EE95E12EB55C951F /* FICImageTable.h */,
-				2BDB53B6335710C30FDEF290 /* FICImageTable.m */,
-				A815EEA0DF91A0DF7C1C5475 /* FICImageTableChunk.h */,
-				9E6174338E0A7A131205C046 /* FICImageTableChunk.m */,
-				B2F67DE397E68DA5B620823A /* FICImageTableEntry.h */,
-				CBBC0DE6AD0229FF96A2B744 /* FICImageTableEntry.m */,
-				62C5720F6BACF09257ADDE52 /* FICImports.h */,
-				C72C0ED0058D37630A0628C3 /* FICUtilities.h */,
-				6DDCEFC6CAB080CE044502F8 /* FICUtilities.m */,
-				05684C1DE40DCAF171A2AD61 /* Support Files */,
+				CDD270320A1AA2269311632C /* FUIAlertView.h */,
+				4D6F3FEC096EA364940979F4 /* FUIAlertView.m */,
+				7BCC9134C11009B6A77CB37C /* FUIButton.h */,
+				FD32CAC1C8CBAD825B0D0933 /* FUIButton.m */,
+				C0D44DA08ED5FFBC72E4A9DA /* FUICellBackgroundView.h */,
+				1C646D0E69B7EF90498B2F6C /* FUICellBackgroundView.m */,
+				9E7DB7B59B8FB753257F3005 /* FUIPopoverBackgroundView.h */,
+				ABAFDAC70F5BE65446CF2779 /* FUIPopoverBackgroundView.m */,
+				8038A47FEBED9E0B929F28D6 /* FUISegmentedControl.h */,
+				032D7FC9C313707A924EE04B /* FUISegmentedControl.m */,
+				968A596C18E2CA21A76FA429 /* FUISwitch.h */,
+				D9C28BDCDC00593745D542A2 /* FUISwitch.m */,
+				4CFF9DD2637E384ADC1FE0D1 /* FUITextField.h */,
+				8604FAC94E39F49E19F4086D /* FUITextField.m */,
+				D0581CED7269B1241C991310 /* FlatUIKit.h */,
+				5B465753BBEFBE3B59B0534F /* NSString+Icons.h */,
+				9320F19E769656FBC506403F /* NSString+Icons.m */,
+				093918177F066A5EAF5DACC9 /* UIBarButtonItem+FlatUI.h */,
+				7DD592D1ECD0C247A020510E /* UIBarButtonItem+FlatUI.m */,
+				5B38281A97D403852720579C /* UIColor+FlatUI.h */,
+				9823B09B3B2D8C9067A0E5C3 /* UIColor+FlatUI.m */,
+				BDFFAA3E605851687FAE26E0 /* UIFont+FlatUI.h */,
+				321FBC43900909BE42390D5C /* UIFont+FlatUI.m */,
+				89E8ED543EFD30AB3547CE04 /* UIImage+FlatUI.h */,
+				49A360386860DA841827951E /* UIImage+FlatUI.m */,
+				78B62CF5998A0C093AAD528E /* UINavigationBar+FlatUI.h */,
+				8B115EE993348AEA57C8ADBA /* UINavigationBar+FlatUI.m */,
+				C981734820933BEC03937399 /* UIPopoverController+FlatUI.h */,
+				A3613661D0720FFE8D9CD24D /* UIPopoverController+FlatUI.m */,
+				918F11905C6E4F6CE4F2DD03 /* UIProgressView+FlatUI.h */,
+				4D4E9A5568D8597AB321A91F /* UIProgressView+FlatUI.m */,
+				029004CC5ED8A8B2FFA6BDE9 /* UISlider+FlatUI.h */,
+				B06512F66DC8DF02706919FD /* UISlider+FlatUI.m */,
+				A87A985C88515FC54B440416 /* UIStepper+FlatUI.h */,
+				6DE2A9E286DCD6DA0E0DFEA7 /* UIStepper+FlatUI.m */,
+				2AC77A68FF57B133F3ADD5C7 /* UITabBar+FlatUI.h */,
+				612C11C99CE41F1A88CD3BB2 /* UITabBar+FlatUI.m */,
+				07C81B1B5CA6F3D4D98FEDBF /* UITableViewCell+FlatUI.h */,
+				016608DDC5A4CD03E91AD227 /* UITableViewCell+FlatUI.m */,
+				7DF7192EC24F3EE8852C055E /* UIToolbar+FlatUI.h */,
+				9DC569D355EBA19115D5FA64 /* UIToolbar+FlatUI.m */,
+				CA7804F1DD80DA9117F2944A /* Resources */,
+				B4C994623753614C9379C78A /* Support Files */,
 			);
-			path = FastImageCache;
+			path = FlatUIKit;
+			sourceTree = "<group>";
+		};
+		A1B7E626E669141D609BE281 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D663C4865F58729567508B96 /* Info.plist */,
+				834FDC11D981B92B5A7671C1 /* Pods-PictoCation-Alamofire.modulemap */,
+				1FE09CFBC35B01A0B4271A0E /* Pods-PictoCation-Alamofire.xcconfig */,
+				A6216600B336FAFE11B00F83 /* Pods-PictoCation-Alamofire-Private.xcconfig */,
+				E2F5D3C80A8DA2B59250C809 /* Pods-PictoCation-Alamofire-dummy.m */,
+				27938BDEF38DAF2F39EEA470 /* Pods-PictoCation-Alamofire-prefix.pch */,
+				42639D2BB2522121DBC9BF66 /* Pods-PictoCation-Alamofire-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-PictoCation-Alamofire";
+			sourceTree = "<group>";
+		};
+		B4C994623753614C9379C78A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5BA4A93DFDE1D46F7A50942 /* Info.plist */,
+				5B4F736024AFBA68F92C5656 /* Pods-PictoCation-FlatUIKit.modulemap */,
+				150D4FD99A5C7DA8376C3DD2 /* Pods-PictoCation-FlatUIKit.xcconfig */,
+				D1CF0C47D0865E30D7A98DAF /* Pods-PictoCation-FlatUIKit-Private.xcconfig */,
+				DFF94012813C3D7994F97BD2 /* Pods-PictoCation-FlatUIKit-dummy.m */,
+				F3D2AC51A85037C56D0D79D3 /* Pods-PictoCation-FlatUIKit-prefix.pch */,
+				5C72B717231436341C29A8A3 /* Pods-PictoCation-FlatUIKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-PictoCation-FlatUIKit";
+			sourceTree = "<group>";
+		};
+		BC12F2997A3BF74630F0B4CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				583AE9E317008F0BC50CB62C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA7804F1DD80DA9117F2944A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				096DC520A20678D08EA3252B /* Lato-Bold.ttf */,
+				D01622A767CD6309CA8A3C52 /* Lato-Italic.ttf */,
+				F0D2D411D8864F9CE052A9BD /* Lato-Light.ttf */,
+				29B7776A86F03009EA335499 /* Lato-Regular.ttf */,
+				DE1100CE5D98E6C64DF53AEA /* flat-ui-icons-regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E279AF57E096A24010140275 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				697AEFC8C95BB37E4B3A9CEE /* SwiftyJSON.swift */,
+				8DA37CDC05B5509BE1B13109 /* Support Files */,
+			);
+			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		07C72D3B9B8AC4A5F5CDCA55 /* Headers */ = {
+		14C6D309B0B1E6CD65299E51 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED868456237EAFF0134BC803 /* Pods-PictoCation-SwiftyJSON-umbrella.h in Headers */,
+				A693F683772F65FB8B068DAC /* Pods-PictoCation-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0A34CB8D160BC82AF2E4D9EB /* Headers */ = {
+		3DA405CB0D297B8511CC7B2D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FB7F39DB896E9C8913F3922 /* Pods-PictoCation-Alamofire-umbrella.h in Headers */,
+				099B56D2E77DD21B0D654B4C /* FUIAlertView.h in Headers */,
+				62BA18C9A7CDDC8B9419796A /* FUIButton.h in Headers */,
+				1A868C8CF413F280D37D00AF /* FUICellBackgroundView.h in Headers */,
+				0F24C4072A140470F545404C /* FUIPopoverBackgroundView.h in Headers */,
+				CE7AB6694380EFCCC5FE06AC /* FUISegmentedControl.h in Headers */,
+				C64C787BAA94AB40EF6AEDCE /* FUISwitch.h in Headers */,
+				CE83E0D401DADD7C1B57C1C2 /* FUITextField.h in Headers */,
+				9F294315D7A01B9C4C40A9CE /* FlatUIKit.h in Headers */,
+				C56ECD978EF7A6D1DBD3362F /* NSString+Icons.h in Headers */,
+				BF3E505C1076EC9A3B574E72 /* Pods-PictoCation-FlatUIKit-umbrella.h in Headers */,
+				E47383EA598339A105981DD6 /* UIBarButtonItem+FlatUI.h in Headers */,
+				BB026F887C105227FBD83C00 /* UIColor+FlatUI.h in Headers */,
+				F429D93EFB22D1446448D7BF /* UIFont+FlatUI.h in Headers */,
+				1EB9CD420C91534E2222AF7D /* UIImage+FlatUI.h in Headers */,
+				78DBD2ABC222986603B350C1 /* UINavigationBar+FlatUI.h in Headers */,
+				B56A9B486E3E2EB36996BC4D /* UIPopoverController+FlatUI.h in Headers */,
+				A7E5FB51A4EB14B96C353675 /* UIProgressView+FlatUI.h in Headers */,
+				C83EE08719A6487848C93B27 /* UISlider+FlatUI.h in Headers */,
+				08C414BF40001C30469F9724 /* UIStepper+FlatUI.h in Headers */,
+				14824A48CDD8BB53E4F278A6 /* UITabBar+FlatUI.h in Headers */,
+				C4D88220A94B2FB8960FA7F7 /* UITableViewCell+FlatUI.h in Headers */,
+				2B6E622F98D01A5490984FE0 /* UIToolbar+FlatUI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A9692DD0E9F5D2DE015979A /* Headers */ = {
+		874FC770D4E02491C978C6C5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36C010AEA66A0517BD9F5CB6 /* Pods-PictoCation-umbrella.h in Headers */,
+				BD615138C6471220A0BB9575 /* Pods-PictoCation-Alamofire-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6C4A4BB47822EDC8ABB73B7A /* Headers */ = {
+		9088E2E8A3185EA844121AD0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				774160E13FBFCE32FE0D2089 /* MBProgressHUD.h in Headers */,
-				9C3B1060DE58F40E34100BEB /* Pods-PictoCation-MBProgressHUD-umbrella.h in Headers */,
+				1CEF28A1D0641289EA79B33A /* FICEntity.h in Headers */,
+				C671709610A9B951B74AB0E6 /* FICImageCache+FICErrorLogging.h in Headers */,
+				27FFB092DEE026A39C8225EE /* FICImageCache.h in Headers */,
+				19A8EFE821EF35E29002FE0C /* FICImageFormat.h in Headers */,
+				064FA284C7421F1AA5D1B448 /* FICImageTable.h in Headers */,
+				88382DE98BE466A86C049D30 /* FICImageTableChunk.h in Headers */,
+				E8986E238309D49B9137DC42 /* FICImageTableEntry.h in Headers */,
+				71CB3F468B31442FD870CB41 /* FICImports.h in Headers */,
+				FC0D69155D6AB2CFB139AA72 /* FICUtilities.h in Headers */,
+				CABEA2BD67E95B264784C251 /* Pods-PictoCation-FastImageCache-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4B9852E3D8516BC7F5FDB2A /* Headers */ = {
+		9F5B5DC88FF9F344E65C1933 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				896A82885CECE5F681923CFF /* FICEntity.h in Headers */,
-				31C976634F17909BC62AA174 /* FICImageCache+FICErrorLogging.h in Headers */,
-				66326C192B054D95AD186CA8 /* FICImageCache.h in Headers */,
-				2EAA8D2C252F3BE086B1D88B /* FICImageFormat.h in Headers */,
-				6A02C686A499CBD60A8AC57A /* FICImageTable.h in Headers */,
-				5F2EEE7977AC28729BAB4D05 /* FICImageTableChunk.h in Headers */,
-				F4988B4B5CBCF91B2D44F20C /* FICImageTableEntry.h in Headers */,
-				DA88A7A23004DBA0BADE99EC /* FICImports.h in Headers */,
-				C1CEDE79641AEFDA18E7E97C /* FICUtilities.h in Headers */,
-				903630A6AF19AF5B687780C0 /* Pods-PictoCation-FastImageCache-umbrella.h in Headers */,
+				D1B14788878B8576F32ECADD /* Pods-PictoCation-SwiftyJSON-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F175BE6301F0966B53B65537 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F0903E8941364B666577CDE /* MBProgressHUD.h in Headers */,
+				0D151C0CB323A4B6592512B6 /* Pods-PictoCation-MBProgressHUD-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4129F200D04A0911A7BF867C /* Pods-PictoCation-FastImageCache */ = {
+		52E237F45B164BA697A3E062 /* Pods-PictoCation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 85BF32EF01F3D1C66BC6ED13 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-FastImageCache" */;
+			buildConfigurationList = E80BBBAF94BCC1A6592D0978 /* Build configuration list for PBXNativeTarget "Pods-PictoCation" */;
 			buildPhases = (
-				98443B453DFD85E172EF7991 /* Sources */,
-				3B3FA6858A8FC1B70CE56260 /* Frameworks */,
-				F4B9852E3D8516BC7F5FDB2A /* Headers */,
+				0AD78A35C2D530C5FA63B365 /* Sources */,
+				C3BF30B35976D99AD538FEEA /* Frameworks */,
+				14C6D309B0B1E6CD65299E51 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "Pods-PictoCation-FastImageCache";
-			productName = "Pods-PictoCation-FastImageCache";
-			productReference = A05E40DC40EE77C10D775D4A /* FastImageCache.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		4962DA8F49EB8FAE623BA003 /* Pods-PictoCation-SwiftyJSON */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 46C380E6A995CA1E8B3A3DF6 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-SwiftyJSON" */;
-			buildPhases = (
-				E389E7E96DBB6C96EC6819DC /* Sources */,
-				6D84EB2587A2E8536D954ABC /* Frameworks */,
-				07C72D3B9B8AC4A5F5CDCA55 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-PictoCation-SwiftyJSON";
-			productName = "Pods-PictoCation-SwiftyJSON";
-			productReference = 0745EB784C03BFC723544385 /* SwiftyJSON.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		8AF0A834EC055536A96E6A5D /* Pods-PictoCation */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 73328EA270520BA73F75D20E /* Build configuration list for PBXNativeTarget "Pods-PictoCation" */;
-			buildPhases = (
-				79885A60738B0E6653199C72 /* Sources */,
-				6FAAF828549A0C351E8DD408 /* Frameworks */,
-				6A9692DD0E9F5D2DE015979A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C292D3EEEC9C4139C9C59AB5 /* PBXTargetDependency */,
-				B56D3B9970F391D3EAF86BC9 /* PBXTargetDependency */,
-				073F31D0619048BAD97ED241 /* PBXTargetDependency */,
-				5B7430028A0E7403CD9E1044 /* PBXTargetDependency */,
+				DD64B1B2A141D3098245F00F /* PBXTargetDependency */,
+				2E68C0DCCA33DFA3F12E39C4 /* PBXTargetDependency */,
+				7B0B988E29D10ABE4C2075C1 /* PBXTargetDependency */,
+				AAAD1044F61FCD54A640FAB1 /* PBXTargetDependency */,
+				EC2EA48DD31CC1516A14BE21 /* PBXTargetDependency */,
 			);
 			name = "Pods-PictoCation";
 			productName = "Pods-PictoCation";
-			productReference = ADE40B4B51097D28EA514F62 /* Pods_PictoCation.framework */;
+			productReference = F83DB3C853E46EA156658C84 /* Pods_PictoCation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A1C16F1950EF41B8C54164B0 /* Pods-PictoCation-Alamofire */ = {
+		5C8F97C9D7094099B939B670 /* Pods-PictoCation-Alamofire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 822E74A73CF747CBD711F967 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-Alamofire" */;
+			buildConfigurationList = C53092D372FA36F589A180DC /* Build configuration list for PBXNativeTarget "Pods-PictoCation-Alamofire" */;
 			buildPhases = (
-				5DA456677F940A345CFF0286 /* Sources */,
-				0AFAAAA0AA591FCE7DAD83AC /* Frameworks */,
-				0A34CB8D160BC82AF2E4D9EB /* Headers */,
+				1D92D5563D2B6DCD64F5E894 /* Sources */,
+				CAED72ECDFFBBA1287C15197 /* Frameworks */,
+				874FC770D4E02491C978C6C5 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -558,16 +759,16 @@
 			);
 			name = "Pods-PictoCation-Alamofire";
 			productName = "Pods-PictoCation-Alamofire";
-			productReference = 4F85EAF565066DFC1F0EB236 /* Alamofire.framework */;
+			productReference = 613421C3B2B6317E82AD6777 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B18943714E0F01DA6270CC66 /* Pods-PictoCation-MBProgressHUD */ = {
+		8DF227023E94D7985B9694B7 /* Pods-PictoCation-MBProgressHUD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D65BE4D86FA2C3CF741516D0 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-MBProgressHUD" */;
+			buildConfigurationList = E87550A7F563F9BDCB8C9202 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-MBProgressHUD" */;
 			buildPhases = (
-				2CB8B9081E39AD56E1DE8C53 /* Sources */,
-				E7AD6486C4F27B087EEAC066 /* Frameworks */,
-				6C4A4BB47822EDC8ABB73B7A /* Headers */,
+				88FAB2A874AC4AF32C8826DA /* Sources */,
+				194A0BC14C218FAD0935B360 /* Frameworks */,
+				F175BE6301F0966B53B65537 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -575,236 +776,230 @@
 			);
 			name = "Pods-PictoCation-MBProgressHUD";
 			productName = "Pods-PictoCation-MBProgressHUD";
-			productReference = 549C48CF58A461BE505C7DBF /* MBProgressHUD.framework */;
+			productReference = 4D423B96B4D06E437599E59B /* MBProgressHUD.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		96F3C1336E9E92D4BEA9102E /* Pods-PictoCation-FastImageCache */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39B655C5E80E2C76F4319EAE /* Build configuration list for PBXNativeTarget "Pods-PictoCation-FastImageCache" */;
+			buildPhases = (
+				A048227BCF967FF87BD26B11 /* Sources */,
+				729E905F7F99648DCC5F4C6E /* Frameworks */,
+				9088E2E8A3185EA844121AD0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PictoCation-FastImageCache";
+			productName = "Pods-PictoCation-FastImageCache";
+			productReference = 30B025512EA315A39275977A /* FastImageCache.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9C43E3E32C942C8393FCA389 /* Pods-PictoCation-SwiftyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED9C0EE067E30686E5637B9F /* Build configuration list for PBXNativeTarget "Pods-PictoCation-SwiftyJSON" */;
+			buildPhases = (
+				2BF4AD615FA47BFA2C5E0905 /* Sources */,
+				897B4EB9A22744201BCBEE02 /* Frameworks */,
+				9F5B5DC88FF9F344E65C1933 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PictoCation-SwiftyJSON";
+			productName = "Pods-PictoCation-SwiftyJSON";
+			productReference = C76EF77C20D8E98ADA14EAE8 /* SwiftyJSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CECA8A3AC9A9527FEDFAD41D /* Pods-PictoCation-FlatUIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6F2B13022CB9C7FDB60B6C8 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-FlatUIKit" */;
+			buildPhases = (
+				686CD2A64FCB7D276D892BBD /* Sources */,
+				368CA40F5BCECC9291BF1118 /* Frameworks */,
+				3DA405CB0D297B8511CC7B2D /* Headers */,
+				C864FACA1CBB3E92ED4815C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PictoCation-FlatUIKit";
+			productName = "Pods-PictoCation-FlatUIKit";
+			productReference = A4E73E666FD9205103D3D6A2 /* FlatUIKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		112BDF2DB19B1852188A6E09 /* Project object */ = {
+		A21C3513C00DA42422BB8551 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 83D451D3F86CF36884D27A0A /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = F59F3F14BF0BA7F73036A0E8 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = FC46DFCDD794EDB0523AC8A2;
-			productRefGroup = 86731D71BFEB8BED7BFDB4DC /* Products */;
+			mainGroup = 94B3B89B15276443255DBAD5;
+			productRefGroup = 5E398CA1EB647BE7B829EF5F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8AF0A834EC055536A96E6A5D /* Pods-PictoCation */,
-				A1C16F1950EF41B8C54164B0 /* Pods-PictoCation-Alamofire */,
-				4129F200D04A0911A7BF867C /* Pods-PictoCation-FastImageCache */,
-				B18943714E0F01DA6270CC66 /* Pods-PictoCation-MBProgressHUD */,
-				4962DA8F49EB8FAE623BA003 /* Pods-PictoCation-SwiftyJSON */,
+				52E237F45B164BA697A3E062 /* Pods-PictoCation */,
+				5C8F97C9D7094099B939B670 /* Pods-PictoCation-Alamofire */,
+				96F3C1336E9E92D4BEA9102E /* Pods-PictoCation-FastImageCache */,
+				CECA8A3AC9A9527FEDFAD41D /* Pods-PictoCation-FlatUIKit */,
+				8DF227023E94D7985B9694B7 /* Pods-PictoCation-MBProgressHUD */,
+				9C43E3E32C942C8393FCA389 /* Pods-PictoCation-SwiftyJSON */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		C864FACA1CBB3E92ED4815C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AF1B4516304E73F5F6D1C32 /* Lato-Bold.ttf in Resources */,
+				87886304B1A2B79F95FB5EE2 /* Lato-Italic.ttf in Resources */,
+				20E848AEC14C0E3EBA5AC2A3 /* Lato-Light.ttf in Resources */,
+				850DE0A67EC52806D0F5AC02 /* Lato-Regular.ttf in Resources */,
+				471EF7586B19A4AC5BA76A39 /* flat-ui-icons-regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		2CB8B9081E39AD56E1DE8C53 /* Sources */ = {
+		0AD78A35C2D530C5FA63B365 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B599252419BAD9E5049A087E /* MBProgressHUD.m in Sources */,
-				77C446AB8F3F8D91DC93C6A8 /* Pods-PictoCation-MBProgressHUD-dummy.m in Sources */,
+				C9CAE6BF86D47FD3273F2A16 /* Pods-PictoCation-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5DA456677F940A345CFF0286 /* Sources */ = {
+		1D92D5563D2B6DCD64F5E894 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCED5FC3FE7E34F1DB06CE88 /* Alamofire.swift in Sources */,
-				9B739739F729D0D1C192EBA4 /* Download.swift in Sources */,
-				8BBBAC27B841B80E034E26C6 /* Manager.swift in Sources */,
-				4FE243BE1045B90CCA32B7F7 /* MultipartFormData.swift in Sources */,
-				1A4444A3D961F817DFCA22D2 /* ParameterEncoding.swift in Sources */,
-				FA9E8D37A836C7C4E90B11E5 /* Pods-PictoCation-Alamofire-dummy.m in Sources */,
-				B43CEB300732A0CEE9666D1B /* Request.swift in Sources */,
-				04726331AD2AD19F1839DBAA /* ResponseSerialization.swift in Sources */,
-				4AB7AE0510ECAA0AD9C1F8C4 /* ServerTrustPolicy.swift in Sources */,
-				BB6132B1FD8EB1FF71302711 /* Upload.swift in Sources */,
-				8624D87C5D4B55E1D842F242 /* Validation.swift in Sources */,
+				ECB11CD2217FA10B1DFA0202 /* Alamofire.swift in Sources */,
+				EC86F724990D03D8FB2862DC /* Download.swift in Sources */,
+				EE42C4FBD2793C801E9A37DA /* Manager.swift in Sources */,
+				444600EF43F19EA4FB2D0BB7 /* MultipartFormData.swift in Sources */,
+				A897E5628E8A1ED7F9E3FBE9 /* ParameterEncoding.swift in Sources */,
+				22ACD12E1936CCC1D8515493 /* Pods-PictoCation-Alamofire-dummy.m in Sources */,
+				91CC0A0CEE65F6EB02DA6A01 /* Request.swift in Sources */,
+				47B5B4CBB8841692568CDED1 /* ResponseSerialization.swift in Sources */,
+				C3FA474D082838250FB2B7E6 /* ServerTrustPolicy.swift in Sources */,
+				DA7FD4AAADD7708D0D793FB2 /* Upload.swift in Sources */,
+				747542F25D3FA854C3F1D1A3 /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79885A60738B0E6653199C72 /* Sources */ = {
+		2BF4AD615FA47BFA2C5E0905 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05D8E0DD47196101EF926EDE /* Pods-PictoCation-dummy.m in Sources */,
+				72D52E133E5E83BB48E22DB9 /* Pods-PictoCation-SwiftyJSON-dummy.m in Sources */,
+				FB1D60F4B014FE9EAC2F3E95 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98443B453DFD85E172EF7991 /* Sources */ = {
+		686CD2A64FCB7D276D892BBD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB31EF4298E840B0B59FD607 /* FICImageCache.m in Sources */,
-				96DD74107B133C788D885C65 /* FICImageFormat.m in Sources */,
-				B482230DF8906EBE7FC360C2 /* FICImageTable.m in Sources */,
-				C0F22532E8102C57A8E96268 /* FICImageTableChunk.m in Sources */,
-				FEC4DD73916F0277E3E1EA37 /* FICImageTableEntry.m in Sources */,
-				A1FEFB41EFF73398C9228858 /* FICUtilities.m in Sources */,
-				39A7F6EDC4CE8334FEFF5337 /* Pods-PictoCation-FastImageCache-dummy.m in Sources */,
+				B973BB2AF655CC60A45948A9 /* FUIAlertView.m in Sources */,
+				378D25F7F23A9879842E9E28 /* FUIButton.m in Sources */,
+				29C01E1145C80628A55EEF91 /* FUICellBackgroundView.m in Sources */,
+				F72D58967F10C0FD59570D3D /* FUIPopoverBackgroundView.m in Sources */,
+				465A4226089A448C8B457DAC /* FUISegmentedControl.m in Sources */,
+				C98565F803266922922D1631 /* FUISwitch.m in Sources */,
+				06EF6A735E9BF49FA43D099C /* FUITextField.m in Sources */,
+				A7E5EB5EA79725619C7DCB08 /* NSString+Icons.m in Sources */,
+				B6E7F60126D812463A122DA7 /* Pods-PictoCation-FlatUIKit-dummy.m in Sources */,
+				30763A270CA76B5FB91093D3 /* UIBarButtonItem+FlatUI.m in Sources */,
+				88E565F374AC5C138004B176 /* UIColor+FlatUI.m in Sources */,
+				EF674132F8654A80B3533E0E /* UIFont+FlatUI.m in Sources */,
+				20D730782C03B02538BDD07D /* UIImage+FlatUI.m in Sources */,
+				B3CD4D3AF85C4A1C3C5C32F0 /* UINavigationBar+FlatUI.m in Sources */,
+				573C91C4AF66AC124B70C621 /* UIPopoverController+FlatUI.m in Sources */,
+				D385C9651EB1E5FDEC182EEF /* UIProgressView+FlatUI.m in Sources */,
+				B6E34446D386A8EE4B0AB7A6 /* UISlider+FlatUI.m in Sources */,
+				2516C641B7B15E0B78CF6D76 /* UIStepper+FlatUI.m in Sources */,
+				B8488A27D481FF650190D1D5 /* UITabBar+FlatUI.m in Sources */,
+				98495463AFB72983A5AB41F6 /* UITableViewCell+FlatUI.m in Sources */,
+				D48785ECAA1931075B9BB7DD /* UIToolbar+FlatUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E389E7E96DBB6C96EC6819DC /* Sources */ = {
+		88FAB2A874AC4AF32C8826DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A719BC2D2EE0A35620D1BC3E /* Pods-PictoCation-SwiftyJSON-dummy.m in Sources */,
-				9C80D1E825B8D6B7FB0AD7D0 /* SwiftyJSON.swift in Sources */,
+				23C23B85C38CC3EBCAA20876 /* MBProgressHUD.m in Sources */,
+				68F4ADDD9FF151480D7C6449 /* Pods-PictoCation-MBProgressHUD-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A048227BCF967FF87BD26B11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F720A2BB6ECE964CD30FDA94 /* FICImageCache.m in Sources */,
+				6CE587854BEC56820AB99429 /* FICImageFormat.m in Sources */,
+				A6C1B91906BF4B4F6E0FCEBB /* FICImageTable.m in Sources */,
+				64BC62AEEA074FECDAA58017 /* FICImageTableChunk.m in Sources */,
+				BE3202F1403FA36AAC6462EA /* FICImageTableEntry.m in Sources */,
+				F00C8D86399CAC12076C3421 /* FICUtilities.m in Sources */,
+				CDAC112141FACFA3BD1728CF /* Pods-PictoCation-FastImageCache-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		073F31D0619048BAD97ED241 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-PictoCation-MBProgressHUD";
-			target = B18943714E0F01DA6270CC66 /* Pods-PictoCation-MBProgressHUD */;
-			targetProxy = 6659281E50A6344E89E10A98 /* PBXContainerItemProxy */;
-		};
-		5B7430028A0E7403CD9E1044 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-PictoCation-SwiftyJSON";
-			target = 4962DA8F49EB8FAE623BA003 /* Pods-PictoCation-SwiftyJSON */;
-			targetProxy = AE881966AD922DC72F68D07C /* PBXContainerItemProxy */;
-		};
-		B56D3B9970F391D3EAF86BC9 /* PBXTargetDependency */ = {
+		2E68C0DCCA33DFA3F12E39C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-PictoCation-FastImageCache";
-			target = 4129F200D04A0911A7BF867C /* Pods-PictoCation-FastImageCache */;
-			targetProxy = 070144FFE66E3FA0EB125778 /* PBXContainerItemProxy */;
+			target = 96F3C1336E9E92D4BEA9102E /* Pods-PictoCation-FastImageCache */;
+			targetProxy = ACCC2008D639A87ABE8DB9F2 /* PBXContainerItemProxy */;
 		};
-		C292D3EEEC9C4139C9C59AB5 /* PBXTargetDependency */ = {
+		7B0B988E29D10ABE4C2075C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-PictoCation-FlatUIKit";
+			target = CECA8A3AC9A9527FEDFAD41D /* Pods-PictoCation-FlatUIKit */;
+			targetProxy = 48E4F4130C9B7B1717930639 /* PBXContainerItemProxy */;
+		};
+		AAAD1044F61FCD54A640FAB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-PictoCation-MBProgressHUD";
+			target = 8DF227023E94D7985B9694B7 /* Pods-PictoCation-MBProgressHUD */;
+			targetProxy = F849B5126AE05CE8B677A139 /* PBXContainerItemProxy */;
+		};
+		DD64B1B2A141D3098245F00F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-PictoCation-Alamofire";
-			target = A1C16F1950EF41B8C54164B0 /* Pods-PictoCation-Alamofire */;
-			targetProxy = F55C04DE41B2461F182E79A8 /* PBXContainerItemProxy */;
+			target = 5C8F97C9D7094099B939B670 /* Pods-PictoCation-Alamofire */;
+			targetProxy = 418B2A20026485F2706B30E4 /* PBXContainerItemProxy */;
+		};
+		EC2EA48DD31CC1516A14BE21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-PictoCation-SwiftyJSON";
+			target = 9C43E3E32C942C8393FCA389 /* Pods-PictoCation-SwiftyJSON */;
+			targetProxy = CEA29C37B30CCF7ADB2EE8D4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2EFC8E70E40F3ECEF831DBFA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F27C69405CCDAE67D0246E7B /* Pods-PictoCation-SwiftyJSON-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-SwiftyJSON/Pods-PictoCation-SwiftyJSON-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-SwiftyJSON/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-SwiftyJSON/Pods-PictoCation-SwiftyJSON.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SwiftyJSON;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		39A5F46ABDE39C289705ABD5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87D7EE7CF3B3C48C73965A95 /* Pods-PictoCation-FastImageCache-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-FastImageCache/Pods-PictoCation-FastImageCache-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-FastImageCache/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-FastImageCache/Pods-PictoCation-FastImageCache.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = FastImageCache;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		3BB291DAE51BBC39D6D859A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 620AD7A48E0F3BD88FBB77ED /* Pods-PictoCation-Alamofire-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-Alamofire/Pods-PictoCation-Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-Alamofire/Pods-PictoCation-Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		506A8638082540ECA4851775 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C8641DB9037936B8D56A45B /* Pods-PictoCation-MBProgressHUD-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-MBProgressHUD/Pods-PictoCation-MBProgressHUD-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-MBProgressHUD/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-MBProgressHUD/Pods-PictoCation-MBProgressHUD.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = MBProgressHUD;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5D237FB837ED5DBC547E3B22 /* Debug */ = {
+		4469206086F8A1306F161288 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -843,94 +1038,9 @@
 			};
 			name = Debug;
 		};
-		DC8E67BF5D617193C57DCE6E /* Release */ = {
+		6182EEB113AF543AF35D5517 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B645F011FDAD56BB988797F9 /* Pods-PictoCation.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation/Pods-PictoCation.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_PictoCation;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		E01C249E5221EC78B827D1AE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 620AD7A48E0F3BD88FBB77ED /* Pods-PictoCation-Alamofire-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-Alamofire/Pods-PictoCation-Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-Alamofire/Pods-PictoCation-Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E0A1D1D62E153E47D20F28C0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F27C69405CCDAE67D0246E7B /* Pods-PictoCation-SwiftyJSON-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-SwiftyJSON/Pods-PictoCation-SwiftyJSON-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-SwiftyJSON/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-SwiftyJSON/Pods-PictoCation-SwiftyJSON.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SwiftyJSON;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E20E59850550E56D50DDEA8F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C8641DB9037936B8D56A45B /* Pods-PictoCation-MBProgressHUD-Private.xcconfig */;
+			baseConfigurationReference = 53B89047A64678952275B82B /* Pods-PictoCation-MBProgressHUD-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -955,9 +1065,9 @@
 			};
 			name = Debug;
 		};
-		EABA5CA783C02BA7EF02974A /* Debug */ = {
+		69A3E927C8A2FBFFE800615A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB2A9CC435D8889263E107F5 /* Pods-PictoCation.debug.xcconfig */;
+			baseConfigurationReference = 779DF71D1B304A5A655D94F2 /* Pods-PictoCation-FastImageCache-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -966,26 +1076,131 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-FastImageCache/Pods-PictoCation-FastImageCache-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-FastImageCache/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation/Pods-PictoCation.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_PictoCation;
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-FastImageCache/Pods-PictoCation-FastImageCache.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FastImageCache;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6A043D99A5FD0E09CEB13E18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4F8EE500759E331BCCC597D /* Pods-PictoCation-SwiftyJSON-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-SwiftyJSON/Pods-PictoCation-SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-SwiftyJSON/Pods-PictoCation-SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6E981889E20E61CEC79F7A5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6216600B336FAFE11B00F83 /* Pods-PictoCation-Alamofire-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-Alamofire/Pods-PictoCation-Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-Alamofire/Pods-PictoCation-Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8E37E629855F67B8556E183C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53B89047A64678952275B82B /* Pods-PictoCation-MBProgressHUD-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-MBProgressHUD/Pods-PictoCation-MBProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-MBProgressHUD/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-MBProgressHUD/Pods-PictoCation-MBProgressHUD.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MBProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8FC571713D171AC5937160AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1CF0C47D0865E30D7A98DAF /* Pods-PictoCation-FlatUIKit-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-FlatUIKit/Pods-PictoCation-FlatUIKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-FlatUIKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-FlatUIKit/Pods-PictoCation-FlatUIKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FlatUIKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		ED9D379DEE4C51024D744B59 /* Release */ = {
+		9BC5FB87AF980367AA7FCFB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1019,9 +1234,65 @@
 			};
 			name = Release;
 		};
-		F9DA1A91AA8A2DC462B11CE1 /* Release */ = {
+		AAB1E06497C6AA9F54FE94D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87D7EE7CF3B3C48C73965A95 /* Pods-PictoCation-FastImageCache-Private.xcconfig */;
+			baseConfigurationReference = F4F8EE500759E331BCCC597D /* Pods-PictoCation-SwiftyJSON-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-SwiftyJSON/Pods-PictoCation-SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-SwiftyJSON/Pods-PictoCation-SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AD376E343B50517844F6A808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6216600B336FAFE11B00F83 /* Pods-PictoCation-Alamofire-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-Alamofire/Pods-PictoCation-Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-Alamofire/Pods-PictoCation-Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C1DC6DD4349356AB5AAFA8A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 779DF71D1B304A5A655D94F2 /* Pods-PictoCation-FastImageCache-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1036,8 +1307,35 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-FastImageCache/Pods-PictoCation-FastImageCache.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = FastImageCache;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D9D8310394CD1431DF744E9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1CF0C47D0865E30D7A98DAF /* Pods-PictoCation-FlatUIKit-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-PictoCation-FlatUIKit/Pods-PictoCation-FlatUIKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation-FlatUIKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation-FlatUIKit/Pods-PictoCation-FlatUIKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FlatUIKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1046,64 +1344,132 @@
 			};
 			name = Release;
 		};
+		F7D76AC6F5309D7CB0D968DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B398A6E99DF63FC1749F574 /* Pods-PictoCation.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation/Pods-PictoCation.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PictoCation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FE4B666A356979145B6C24BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E7536062E428CB3CB1E2FF1 /* Pods-PictoCation.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PictoCation/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-PictoCation/Pods-PictoCation.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PictoCation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		46C380E6A995CA1E8B3A3DF6 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-SwiftyJSON" */ = {
+		39B655C5E80E2C76F4319EAE /* Build configuration list for PBXNativeTarget "Pods-PictoCation-FastImageCache" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E0A1D1D62E153E47D20F28C0 /* Debug */,
-				2EFC8E70E40F3ECEF831DBFA /* Release */,
+				C1DC6DD4349356AB5AAFA8A9 /* Debug */,
+				69A3E927C8A2FBFFE800615A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73328EA270520BA73F75D20E /* Build configuration list for PBXNativeTarget "Pods-PictoCation" */ = {
+		C53092D372FA36F589A180DC /* Build configuration list for PBXNativeTarget "Pods-PictoCation-Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EABA5CA783C02BA7EF02974A /* Debug */,
-				DC8E67BF5D617193C57DCE6E /* Release */,
+				AD376E343B50517844F6A808 /* Debug */,
+				6E981889E20E61CEC79F7A5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		822E74A73CF747CBD711F967 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-Alamofire" */ = {
+		C6F2B13022CB9C7FDB60B6C8 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-FlatUIKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E01C249E5221EC78B827D1AE /* Debug */,
-				3BB291DAE51BBC39D6D859A7 /* Release */,
+				8FC571713D171AC5937160AF /* Debug */,
+				D9D8310394CD1431DF744E9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83D451D3F86CF36884D27A0A /* Build configuration list for PBXProject "Pods" */ = {
+		E80BBBAF94BCC1A6592D0978 /* Build configuration list for PBXNativeTarget "Pods-PictoCation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5D237FB837ED5DBC547E3B22 /* Debug */,
-				ED9D379DEE4C51024D744B59 /* Release */,
+				FE4B666A356979145B6C24BF /* Debug */,
+				F7D76AC6F5309D7CB0D968DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		85BF32EF01F3D1C66BC6ED13 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-FastImageCache" */ = {
+		E87550A7F563F9BDCB8C9202 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-MBProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				39A5F46ABDE39C289705ABD5 /* Debug */,
-				F9DA1A91AA8A2DC462B11CE1 /* Release */,
+				6182EEB113AF543AF35D5517 /* Debug */,
+				8E37E629855F67B8556E183C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D65BE4D86FA2C3CF741516D0 /* Build configuration list for PBXNativeTarget "Pods-PictoCation-MBProgressHUD" */ = {
+		ED9C0EE067E30686E5637B9F /* Build configuration list for PBXNativeTarget "Pods-PictoCation-SwiftyJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E20E59850550E56D50DDEA8F /* Debug */,
-				506A8638082540ECA4851775 /* Release */,
+				AAB1E06497C6AA9F54FE94D8 /* Debug */,
+				6A043D99A5FD0E09CEB13E18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F59F3F14BF0BA7F73036A0E8 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4469206086F8A1306F161288 /* Debug */,
+				9BC5FB87AF980367AA7FCFB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 112BDF2DB19B1852188A6E09 /* Project object */;
+	rootObject = A21C3513C00DA42422BB8551 /* Project object */;
 }

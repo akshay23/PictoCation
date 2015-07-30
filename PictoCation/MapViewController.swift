@@ -11,12 +11,14 @@ import CoreData
 import CoreLocation
 import GoogleMaps
 import MBProgressHUD
+import FlatUIKit
 
 class MapViewController: UIViewController {
 
   @IBOutlet var mainMapView: GMSMapView!
   @IBOutlet var btnLogout: UIBarButtonItem!
   @IBOutlet var placesTable: UITableView!
+  @IBOutlet var btnRefresh: FUIButton!
 
   var locationManager: CLLocationManager!
   var coreDataStack: CoreDataStack!
@@ -42,6 +44,15 @@ class MapViewController: UIViewController {
     
     // Get PlacesManager instance
     placesManager = PlacesManager.sharedInstance
+    
+    // Update the look of the refresh button
+    btnRefresh.shadowHeight = 3.0
+    btnRefresh.cornerRadius = 6.0
+    btnRefresh.buttonColor = UIColor.turquoiseColor()
+    btnRefresh.shadowColor = UIColor.greenSeaColor()
+    btnRefresh.titleLabel?.font = UIFont.boldFlatFontOfSize(20)
+    btnRefresh.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Normal)
+    btnRefresh.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Highlighted)
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -52,14 +63,18 @@ class MapViewController: UIViewController {
       locationManager.stopUpdatingLocation()
       mainMapView.hidden = true
       btnLogout.enabled = false
+      btnRefresh.hidden = true
+      placesTable.hidden = true
       isUpdating = true
     } else {
       println("Logged in")
       locationManager.startUpdatingLocation()
       mainMapView.hidden = false
+      placesTable.hidden = false
       isUpdating = false
       mainMapView.setMinZoom(14, maxZoom: 14)
       btnLogout.enabled = true
+      btnRefresh.hidden = false
       locationManager.desiredAccuracy = kCLLocationAccuracyBest
       locationManager.startUpdatingLocation()
     }
@@ -83,10 +98,40 @@ class MapViewController: UIViewController {
   }
   
   @IBAction func unwindToMapView(segue : UIStoryboardSegue) {}
+
+  @IBAction func refreshPlaces(sender: AnyObject) {
+    btnRefresh.enabled = false
+    locationManager.startUpdatingLocation()
+  }
+  
+  private func showAlertWithMessage(message: String, title: String, buttons: [String]) {
+    let alert = FUIAlertView()
+    alert.title = title
+    alert.message = message
+    alert.delegate = nil
+    
+    for button in buttons {
+      alert.addButtonWithTitle(button)
+    }
+    
+    alert.titleLabel.textColor = UIColor.cloudsColor()
+    alert.titleLabel.font = UIFont.boldFlatFontOfSize(16);
+    alert.messageLabel.textColor = UIColor.cloudsColor()
+    alert.messageLabel.font = UIFont.flatFontOfSize(12)
+    alert.backgroundOverlay.backgroundColor = UIColor.cloudsColor().colorWithAlphaComponent(0.8)
+    alert.alertContainer.backgroundColor = UIColor.midnightBlueColor()
+    alert.defaultButtonColor = UIColor.cloudsColor()
+    alert.defaultButtonShadowColor = UIColor.asbestosColor()
+    alert.defaultButtonFont = UIFont.boldFlatFontOfSize(14)
+    alert.defaultButtonTitleColor = UIColor.asbestosColor()
+    alert.show()
+  }
 }
  
 extension MapViewController: CLLocationManagerDelegate {
   func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    locationManager.stopUpdatingLocation()
+    
     if (!isUpdating) {
       isUpdating = true
     } else {
@@ -98,9 +143,9 @@ extension MapViewController: CLLocationManagerDelegate {
     loadingNotification.mode = MBProgressHUDMode.Indeterminate
     loadingNotification.labelText = "Loading places..."
 
-    locationManager.stopUpdatingLocation()
     currentLocation = locations.first as! CLLocation
-    let camera = GMSCameraPosition.cameraWithLatitude(currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude, zoom: 14)
+    let camera = GMSCameraPosition.cameraWithLatitude(currentLocation.coordinate.latitude,
+      longitude: currentLocation.coordinate.longitude, zoom: 14)
     mainMapView.camera = camera
     mainMapView.myLocationEnabled = true
     mainMapView.settings.myLocationButton = true
@@ -112,18 +157,21 @@ extension MapViewController: CLLocationManagerDelegate {
       if (error == nil) {
         self.placesTable.reloadData()
       } else {
-        let alert = UIAlertController(title: "Could Not Fetch Places", message: "Click 'Refresh Places' to try again", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.showAlertWithMessage("Click 'Refresh Places' to try again", title: "Could Not Fetch Places", buttons: ["OK"])
       }
       
       // Stop the loading spinner
       MBProgressHUD.hideAllHUDsForView(self.placesTable, animated: true)
+      self.btnRefresh.enabled = true
       self.isUpdating = false
     }
   }
   
   func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {}
+  
+  func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+    println("LocationManager failed with error: \(error.localizedDescription)!")
+  }
 }
  
 extension MapViewController: UITableViewDelegate {
