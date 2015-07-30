@@ -54,6 +54,8 @@ class MapViewController: UIViewController {
     btnRefresh.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Normal)
     btnRefresh.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Highlighted)
     placesTable.backgroundColor = UIColor.wetAsphaltColor()
+    btnLogout.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
+    btnLogout.tintColor = UIColor.cloudsColor()
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -213,6 +215,12 @@ extension MapViewController: UITableViewDataSource {
     cell.configureFlatCellWithColor(UIColor.wetAsphaltColor(), selectedColor: UIColor.cloudsColor())
     cell.separatorHeight = 2.0
     cell.textLabel!.font = UIFont.boldFlatFontOfSize(16)
+    
+    // Add custom accessory view
+    let icon = UIImage(named: "InstagramIcon")
+    let accBtn = UIButton(frame: CGRectMake(0.0, 0.0, icon!.size.width, icon!.size.width))
+    accBtn.setBackgroundImage(icon, forState: .Normal)
+    cell.accessoryView = accBtn
     
     // Add the info
     let location = CLLocation(latitude: placesManager.places[indexPath.row].latitude, longitude: placesManager.places[indexPath.row].longitude)
