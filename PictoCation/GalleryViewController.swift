@@ -30,7 +30,7 @@ class GalleryViewController: UICollectionViewController {
     super.viewDidLoad()
     
     // Set navi bar title
-    self.title = "#" + hashtagTopic
+    self.title = "#\(hashtagTopic)"
     
     // Add back nav button
     let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: Selector("goBack"))
@@ -43,6 +43,19 @@ class GalleryViewController: UICollectionViewController {
     refreshButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     refreshButton.tintColor = UIColor.cloudsColor()
     navigationItem.rightBarButtonItem = refreshButton
+    
+    // Add text field to nav bar
+    let textfield = UITextField(frame: CGRectMake(0.0, 0.0, CGFloat(count(hashtagTopic) + 3),
+      navigationController!.navigationBar.frame.size.height))
+    textfield.text = "#\(hashtagTopic)"
+    textfield.backgroundColor = UIColor.clearColor()
+    textfield.layer.borderWidth = 0
+    textfield.font = UIFont.systemFontOfSize(20)
+    textfield.autocorrectionType = .No
+    textfield.textAlignment = .Center
+    textfield.returnKeyType = .Done
+    textfield.addTarget(self, action: Selector("goRefresh"), forControlEvents: .EditingDidEndOnExit)
+    navigationItem.titleView = textfield
     
     // Set up collection
     setupView()
@@ -58,10 +71,15 @@ class GalleryViewController: UICollectionViewController {
   }
   
   @objc func goBack() {
+    view.resignFirstResponder()
     navigationController?.popViewControllerAnimated(true)
   }
   
   @objc func goRefresh() {
+    let titleView = navigationItem.titleView as? UITextField
+    titleView!.resignFirstResponder()
+    let chars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789")
+    hashtagTopic = stripOutUnwantedCharactersFromText(titleView!.text, characterSet: chars)
     handleRefresh()
   }
   
@@ -138,6 +156,10 @@ class GalleryViewController: UICollectionViewController {
     refreshControl.tintColor = UIColor.whiteColor()
     refreshControl.addTarget(self, action: Selector("goRefresh"), forControlEvents: .ValueChanged)
     collectionView!.addSubview(refreshControl)
+  }
+  
+  private func stripOutUnwantedCharactersFromText(text: String, characterSet: Set<Character>) -> String {
+    return String(filter(text) { characterSet.contains($0) })
   }
 }
 

@@ -106,10 +106,8 @@ class MapViewController: UIViewController {
     } else if segue.identifier == "show gallery" && segue.destinationViewController.isKindOfClass(UICollectionViewController.classForCoder()) {
       if let galleryViewController = segue.destinationViewController as? GalleryViewController {
         galleryViewController.user = user
-        galleryViewController.hashtagTopic = selectedHastagTopic
-        
-        //let backButton = UIBarButtonItem(title: "BLAH", style: .Plain, target: self, action: nil)
-        //galleryViewController.navigationController?.navigationItem.leftBarButtonItem = backButton
+        let chars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789")
+        galleryViewController.hashtagTopic = stripOutUnwantedCharactersFromText(selectedHastagTopic!, characterSet: chars)
       }
     }
   }
@@ -146,6 +144,10 @@ class MapViewController: UIViewController {
     alert.defaultButtonFont = UIFont.boldFlatFontOfSize(14)
     alert.defaultButtonTitleColor = UIColor.asbestosColor()
     alert.show()
+  }
+  
+  private func stripOutUnwantedCharactersFromText(text: String, characterSet: Set<Character>) -> String {
+    return String(filter(text) { characterSet.contains($0) })
   }
   
   @objc func instaButtonTapped(sender: UIButton, event: AnyObject) {
