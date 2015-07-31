@@ -107,6 +107,9 @@ class MapViewController: UIViewController {
       if let galleryViewController = segue.destinationViewController as? GalleryViewController {
         galleryViewController.user = user
         galleryViewController.hashtagTopic = selectedHastagTopic
+        
+        //let backButton = UIBarButtonItem(title: "BLAH", style: .Plain, target: self, action: nil)
+        //galleryViewController.navigationController?.navigationItem.leftBarButtonItem = backButton
       }
     }
   }
@@ -145,7 +148,7 @@ class MapViewController: UIViewController {
     alert.show()
   }
   
-  @objc private func instaButtonTapped(sender: UIButton, event: AnyObject) {
+  @objc func instaButtonTapped(sender: UIButton, event: AnyObject) {
     let touches = event.allTouches()
     let firstTouch = touches?.first as? UITouch
     let currentTouchPosition = firstTouch?.locationInView(self.placesTable)
@@ -154,7 +157,7 @@ class MapViewController: UIViewController {
     if (indexPath != nil) {
       println("Clicked button in row \(indexPath!.row)")
       let place = placesManager.places[indexPath!.row].name
-      selectedHastagTopic = "#" + place.stringByReplacingOccurrencesOfString(" ", withString: "")
+      selectedHastagTopic = place.stringByReplacingOccurrencesOfString(" ", withString: "")
       performSegueWithIdentifier("show gallery", sender: self)
     }
   }

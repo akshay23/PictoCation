@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    
+    // Instantiate fastimagecache
+    FastImageCacheHelper.setUp(self)
 
     // Instantiate core data stack
     let navController = window!.rootViewController as! UINavigationController
@@ -104,5 +107,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     managedObjectContext.persistentStoreCoordinator = coordinator
     return managedObjectContext
     }()
+}
+
+extension AppDelegate: FICImageCacheDelegate {
+  func imageCache(imageCache: FICImageCache!, wantsSourceImageForEntity entity: FICEntity!, withFormatName formatName: String!, completionBlock: FICImageRequestCompletionBlock!) {
+    if let entity = entity as? PhotoInfo {
+      let imageURL = entity.sourceImageURLWithFormatName(formatName)
+      let request = NSURLRequest(URL: imageURL)
+      
+      entity.request = Alamofire.request(.GET, request).validate(contentType: ["image/*"]).responseImage() {
+        (_, _, image, error) in
+        if (error == nil) {
+          completionBlock(image)
+        }
+      }
+    }
+  }
+  
+  func imageCache(imageCache: FICImageCache!, cancelImageLoadingForEntity entity: FICEntity!, withFormatName formatName: String!) {
+    if let entity = entity as? PhotoInfo, request = entity.request {
+      request.cancel()
+      entity.request = nil
+    }
+  }
+  
+  func imageCache(imageCache: FICImageCache!, shouldProcessAllFormatsInFamily formatFamily: String!, forEntity entity: FICEntity!) -> Bool {
+    return true
+  }
+  
+  func imageCache(imageCache: FICImageCache!, errorDidOccurWithMessage errorMessage: String!) {
+    println("errorMessage" + errorMessage)
+  }
+
 }
 

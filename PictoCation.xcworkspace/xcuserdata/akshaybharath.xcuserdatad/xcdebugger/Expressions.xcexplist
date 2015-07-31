@@ -13,5 +13,30 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "PictoCation.Instagram.Router.(URLRequest.getter : ObjectiveC.NSURLRequest).(closure #1):Instagram.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PictoCation.GalleryViewController.((populatePhotos in _77D2D2045AB444E051DA6CEBCCE325EC) (PictoCation.GalleryViewController) -&gt; (Alamofire.URLRequestConvertible) -&gt; ()).(closure #1):GalleryViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;meta&quot;][&quot;code&quot;].intValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PictoCation.GalleryViewController.collectionView (PictoCation.GalleryViewController)(ObjectiveC.UICollectionView, cellForItemAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UICollectionViewCell:GalleryViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PictoCation.GalleryViewController.(populatePhotos in _77D2D2045AB444E051DA6CEBCCE325EC) (PictoCation.GalleryViewController)(Alamofire.URLRequestConvertible) -&gt; ():GalleryViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PictoCation.GalleryViewController.(collectionView (PictoCation.GalleryViewController) -&gt; (ObjectiveC.UICollectionView, cellForItemAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UICollectionViewCell).(closure #1):GalleryViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "photoInfo.request">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

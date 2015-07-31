@@ -21,32 +21,204 @@ class GalleryViewController: UICollectionViewController {
   var user: User?
   var hashtagTopic: String!
   
+  let refreshControl = UIRefreshControl()
+  let formatName = KMSmallImageFormatName
   let PhotoBrowserCellIdentifier = "PhotoBrowserCell"
+  let PhotoBrowserFooterViewIdentifier = "PhotoBrowserFooterView"
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Update the look of components
-    let back = navigationItem.backBarButtonItem!
-    navigationItem.backBarButtonItem?.tintColor = UIColor.turquoiseColor()
-//    
-//    let backItem = UIBarButtonItem(title: "BLAH", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
-//    navigationController!.navigationBar.backItem?.backBarButtonItem?.configureFlatButtonWithColor(UIColor.turquoiseColor(),
-//      highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
-//    navigationController!.navigationBar.tintColor = UIColor.turquoiseColor()
+    // Set navi bar title
+    self.title = "#" + hashtagTopic
+    
+    // Add back nav button
+    let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: Selector("goBack"))
+    backButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
+    backButton.tintColor = UIColor.cloudsColor()
+    navigationItem.leftBarButtonItem = backButton
+    
+    // Add refresh nav button
+    let refreshButton = UIBarButtonItem(title: "Refresh", style: .Plain, target: self, action: Selector("goRefresh"))
+    refreshButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
+    refreshButton.tintColor = UIColor.cloudsColor()
+    navigationItem.rightBarButtonItem = refreshButton
+    
+    // Set up collection
+    setupView()
   }
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-
-    self.title = hashtagTopic
+    handleRefresh()
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
+  
+  @objc func goBack() {
+    navigationController?.popViewControllerAnimated(true)
+  }
+  
+  @objc func goRefresh() {
+    handleRefresh()
+  }
+  
+  private func populatePhotos(request:URLRequestConvertible) {
+    if populatingPhotos {
+      return
+    }
+    
+    populatingPhotos = true
+    
+    Alamofire.request(request).responseJSON() {
+      (_ , _, jsonObject, error) in
+      
+      if (error == nil) {
+        let json = JSON(jsonObject!)
+        
+        if (json["meta"]["code"].intValue  == 200) {
+          dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+            if let urlString = json["pagination"]["next_url"].URL {
+              self.nextURLRequest = NSURLRequest(URL: urlString)
+            } else {
+              self.nextURLRequest = nil
+            }
+            let photoInfos = json["data"].arrayValue
+              
+              .filter {
+                $0["type"].stringValue == "image"
+              }.map({
+                PhotoInfo(sourceImageURL: $0["images"]["standard_resolution"]["url"].URL!)
+              })
+            
+            let lastItem = self.photos.count
+            self.photos.extend(photoInfos)
+            
+            let indexPaths = (lastItem..<self.photos.count).map { NSIndexPath(forItem: $0, inSection: 0) }
+            
+            dispatch_async(dispatch_get_main_queue()) {
+              self.collectionView!.insertItemsAtIndexPaths(indexPaths)
+            }
+            
+          }
+          
+        }
+        
+      }
+      self.populatingPhotos = false
+      
+    }
+  }
+  
+  private func handleRefresh() {
+    nextURLRequest = nil
+    refreshControl.beginRefreshing()
+    self.photos.removeAll(keepCapacity: false)
+    self.collectionView!.reloadData()
+    refreshControl.endRefreshing()
+    if user != nil {
+      let urlString = Instagram.Router.TaggedPhotos(user!.userID, user!.accessToken)
+      populatePhotos(urlString)
+    }
+  }
+  
+  private func setupView() {
+    let layout = UICollectionViewFlowLayout()
+    let itemWidth = (view.bounds.size.width - 2) / 3
+    layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
+    layout.minimumInteritemSpacing = 1.0
+    layout.minimumLineSpacing = 1.0
+    layout.footerReferenceSize = CGSize(width: collectionView!.bounds.size.width, height: 100.0)
+    collectionView!.collectionViewLayout = layout
+    collectionView!.registerClass(PhotoBrowserCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: PhotoBrowserCellIdentifier)
+    collectionView!.registerClass(PhotoBrowserLoadingCollectionView.classForCoder(), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: PhotoBrowserFooterViewIdentifier)
+    
+    refreshControl.tintColor = UIColor.whiteColor()
+    refreshControl.addTarget(self, action: Selector("goRefresh"), forControlEvents: .ValueChanged)
+    collectionView!.addSubview(refreshControl)
+  }
+}
+
+class PhotoBrowserCollectionViewCell: UICollectionViewCell {
+  let imageView = UIImageView()
+  var photoInfo: PhotoInfo?
+  
+  required init(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    
+    backgroundColor = UIColor(white: 0.1, alpha: 1.0)
+    imageView.frame = bounds
+    addSubview(imageView)
+  }
+}
+
+class PhotoBrowserLoadingCollectionView: UICollectionReusableView {
+  let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+  
+  required init(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    
+    spinner.startAnimating()
+    spinner.center = self.center
+    addSubview(spinner)
+  }
 }
 
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {
+  override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(PhotoBrowserCellIdentifier, forIndexPath: indexPath) as! PhotoBrowserCollectionViewCell
+    let sharedImageCache = FICImageCache.sharedImageCache()
+    cell.imageView.image = nil
+    
+    let photo = photos[indexPath.row] as PhotoInfo
+    if (cell.photoInfo != photo) {
+      sharedImageCache.cancelImageRetrievalForEntity(cell.photoInfo, withFormatName: formatName)
+      cell.photoInfo = photo
+    }
+    
+    sharedImageCache.retrieveImageForEntity(photo, withFormatName: formatName, completionBlock: {
+      (photoInfo, _, image) -> Void in
+      if (photoInfo as! PhotoInfo) == cell.photoInfo {
+        let p = photoInfo as! PhotoInfo
+        println(p.sourceImageURL)
+        cell.imageView.image = image
+      }
+    })
+    
+    return cell  }
   
+  override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return photos.count
+  }
+  
+  override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    let footerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: PhotoBrowserFooterViewIdentifier, forIndexPath: indexPath) as! PhotoBrowserLoadingCollectionView
+    if nextURLRequest == nil {
+      footerView.spinner.stopAnimating()
+    } else {
+      footerView.spinner.startAnimating()
+    }
+    return footerView
+  }
+  
+  override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    let photoInfo = photos[indexPath.row]
+    //performSegueWithIdentifier("show photo", sender: ["photoInfo": photoInfo])
+  }
+  
+  override func scrollViewDidScroll(scrollView: UIScrollView) {
+    if (self.nextURLRequest != nil && scrollView.contentOffset.y + view.frame.size.height > scrollView.contentSize.height * 0.8) {
+      populatePhotos(self.nextURLRequest!)
+    }
+  }
 }

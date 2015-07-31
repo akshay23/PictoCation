@@ -30,10 +30,8 @@
 		2F0903E8941364B666577CDE /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = ED10E9D27BAB00FB90900E3C /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30763A270CA76B5FB91093D3 /* UIBarButtonItem+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD592D1ECD0C247A020510E /* UIBarButtonItem+FlatUI.m */; };
 		378D25F7F23A9879842E9E28 /* FUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FD32CAC1C8CBAD825B0D0933 /* FUIButton.m */; };
-		444600EF43F19EA4FB2D0BB7 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56A01FB89BE0C606391EEC6 /* MultipartFormData.swift */; };
 		465A4226089A448C8B457DAC /* FUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 032D7FC9C313707A924EE04B /* FUISegmentedControl.m */; };
 		471EF7586B19A4AC5BA76A39 /* flat-ui-icons-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE1100CE5D98E6C64DF53AEA /* flat-ui-icons-regular.ttf */; };
-		47B5B4CBB8841692568CDED1 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0300B4CC89BD0BC8E4BD0858 /* ResponseSerialization.swift */; };
 		4806D475379C7861CBA8F5F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8256711F76EEFAC1DB5DC /* Foundation.framework */; };
 		573C91C4AF66AC124B70C621 /* UIPopoverController+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A3613661D0720FFE8D9CD24D /* UIPopoverController+FlatUI.m */; };
 		62BA18C9A7CDDC8B9419796A /* FUIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BCC9134C11009B6A77CB37C /* FUIButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,14 +40,12 @@
 		6CE587854BEC56820AB99429 /* FICImageFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4EDF80D7808C80B0D8FDDA /* FICImageFormat.m */; };
 		71CB3F468B31442FD870CB41 /* FICImports.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FFC2E8A8879E1FEA82D43A9 /* FICImports.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		72D52E133E5E83BB48E22DB9 /* Pods-PictoCation-SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCF6412143E0CD5512351D2 /* Pods-PictoCation-SwiftyJSON-dummy.m */; };
-		747542F25D3FA854C3F1D1A3 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0321B1DA17078F0E96A574D /* Validation.swift */; };
 		78DBD2ABC222986603B350C1 /* UINavigationBar+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B62CF5998A0C093AAD528E /* UINavigationBar+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7FC542D7FE71E617B1451511 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9070230DEFA9A31AB0F1BFC /* CoreText.framework */; };
 		850DE0A67EC52806D0F5AC02 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29B7776A86F03009EA335499 /* Lato-Regular.ttf */; };
 		87886304B1A2B79F95FB5EE2 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D01622A767CD6309CA8A3C52 /* Lato-Italic.ttf */; };
 		88382DE98BE466A86C049D30 /* FICImageTableChunk.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BEAF521840BAF0DD3ED86A7 /* FICImageTableChunk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88E565F374AC5C138004B176 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 9823B09B3B2D8C9067A0E5C3 /* UIColor+FlatUI.m */; };
-		91CC0A0CEE65F6EB02DA6A01 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4FA56B51FBB9966A94864 /* Request.swift */; };
 		98495463AFB72983A5AB41F6 /* UITableViewCell+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 016608DDC5A4CD03E91AD227 /* UITableViewCell+FlatUI.m */; };
 		9AF1B4516304E73F5F6D1C32 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 096DC520A20678D08EA3252B /* Lato-Bold.ttf */; };
 		9F294315D7A01B9C4C40A9CE /* FlatUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D0581CED7269B1241C991310 /* FlatUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -57,7 +53,6 @@
 		A6C1B91906BF4B4F6E0FCEBB /* FICImageTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA0E01594EF57DC66C2BAEC /* FICImageTable.m */; };
 		A7E5EB5EA79725619C7DCB08 /* NSString+Icons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9320F19E769656FBC506403F /* NSString+Icons.m */; };
 		A7E5FB51A4EB14B96C353675 /* UIProgressView+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 918F11905C6E4F6CE4F2DD03 /* UIProgressView+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A897E5628E8A1ED7F9E3FBE9 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D9471CA8FFDE78A73540B /* ParameterEncoding.swift */; };
 		AB2EEC5A272405C391B68DA9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F2867AE1102E84F4D40FF2 /* QuartzCore.framework */; };
 		B116EC9096CD0086E0070FF6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02A7925762B5D5053BA3B7E /* CoreGraphics.framework */; };
 		B3CD4D3AF85C4A1C3C5C32F0 /* UINavigationBar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B115EE993348AEA57C8ADBA /* UINavigationBar+FlatUI.m */; };
@@ -71,7 +66,6 @@
 		BE3202F1403FA36AAC6462EA /* FICImageTableEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E7C8DAA4C16FFE436BE062 /* FICImageTableEntry.m */; };
 		BEAE2763CC21D6853AE99428 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8256711F76EEFAC1DB5DC /* Foundation.framework */; };
 		BF3E505C1076EC9A3B574E72 /* Pods-PictoCation-FlatUIKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C72B717231436341C29A8A3 /* Pods-PictoCation-FlatUIKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C3FA474D082838250FB2B7E6 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC85738AAACF014FD59005AC /* ServerTrustPolicy.swift */; };
 		C4D88220A94B2FB8960FA7F7 /* UITableViewCell+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C81B1B5CA6F3D4D98FEDBF /* UITableViewCell+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C56ECD978EF7A6D1DBD3362F /* NSString+Icons.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B465753BBEFBE3B59B0534F /* NSString+Icons.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C64C787BAA94AB40EF6AEDCE /* FUISwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 968A596C18E2CA21A76FA429 /* FUISwitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -86,14 +80,11 @@
 		D1B14788878B8576F32ECADD /* Pods-PictoCation-SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6971BB34C0E5CF1BCC079989 /* Pods-PictoCation-SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D385C9651EB1E5FDEC182EEF /* UIProgressView+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4E9A5568D8597AB321A91F /* UIProgressView+FlatUI.m */; };
 		D48785ECAA1931075B9BB7DD /* UIToolbar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC569D355EBA19115D5FA64 /* UIToolbar+FlatUI.m */; };
-		DA7FD4AAADD7708D0D793FB2 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31C5BC80F7ECD0A850DE22 /* Upload.swift */; };
 		E27A8BC8D5EB5C3E5CB65E83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8256711F76EEFAC1DB5DC /* Foundation.framework */; };
 		E47383EA598339A105981DD6 /* UIBarButtonItem+FlatUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 093918177F066A5EAF5DACC9 /* UIBarButtonItem+FlatUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8986E238309D49B9137DC42 /* FICImageTableEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ACCEDE06F6B94F20D0FA6E2 /* FICImageTableEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC86F724990D03D8FB2862DC /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000965E4674331C7C0C36EE9 /* Download.swift */; };
 		ECB11CD2217FA10B1DFA0202 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E7708D51FA93C785BF379 /* Alamofire.swift */; };
 		EE03CF67689BC8293387CA80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8256711F76EEFAC1DB5DC /* Foundation.framework */; };
-		EE42C4FBD2793C801E9A37DA /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460D46DB2D6BD6EDAD35328 /* Manager.swift */; };
 		EF674132F8654A80B3533E0E /* UIFont+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 321FBC43900909BE42390D5C /* UIFont+FlatUI.m */; };
 		F00C8D86399CAC12076C3421 /* FICUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 501B85DB01276A0AFC94175D /* FICUtilities.m */; };
 		F23C190583F294DBE8AED592 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8256711F76EEFAC1DB5DC /* Foundation.framework */; };
@@ -143,22 +134,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		000965E4674331C7C0C36EE9 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
 		016608DDC5A4CD03E91AD227 /* UITableViewCell+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+FlatUI.m"; path = "Classes/ios/UITableViewCell+FlatUI.m"; sourceTree = "<group>"; };
 		029004CC5ED8A8B2FFA6BDE9 /* UISlider+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UISlider+FlatUI.h"; path = "Classes/ios/UISlider+FlatUI.h"; sourceTree = "<group>"; };
-		0300B4CC89BD0BC8E4BD0858 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		03111C21F7F65B9AEA7E7573 /* FICEntity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICEntity.h; path = FastImageCache/FICEntity.h; sourceTree = "<group>"; };
 		032D7FC9C313707A924EE04B /* FUISegmentedControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUISegmentedControl.m; path = Classes/ios/FUISegmentedControl.m; sourceTree = "<group>"; };
 		07C81B1B5CA6F3D4D98FEDBF /* UITableViewCell+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+FlatUI.h"; path = "Classes/ios/UITableViewCell+FlatUI.h"; sourceTree = "<group>"; };
-		07F4FA56B51FBB9966A94864 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		093918177F066A5EAF5DACC9 /* UIBarButtonItem+FlatUI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+FlatUI.h"; path = "Classes/ios/UIBarButtonItem+FlatUI.h"; sourceTree = "<group>"; };
 		096DC520A20678D08EA3252B /* Lato-Bold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "Resources/Lato-Bold.ttf"; sourceTree = "<group>"; };
 		0D48C4AFD7AB927BB01AB695 /* FICImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageCache.h; path = FastImageCache/FICImageCache.h; sourceTree = "<group>"; };
-		1460D46DB2D6BD6EDAD35328 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
 		150D4FD99A5C7DA8376C3DD2 /* Pods-PictoCation-FlatUIKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-FlatUIKit.xcconfig"; sourceTree = "<group>"; };
 		16C267393BDC7DC607AFE00B /* FICImageTable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FICImageTable.h; path = FastImageCache/FICImageTable.h; sourceTree = "<group>"; };
-		173D9471CA8FFDE78A73540B /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		1B31C5BC80F7ECD0A850DE22 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
 		1C646D0E69B7EF90498B2F6C /* FUICellBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUICellBackgroundView.m; path = Classes/ios/FUICellBackgroundView.m; sourceTree = "<group>"; };
 		1FE09CFBC35B01A0B4271A0E /* Pods-PictoCation-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-Alamofire.xcconfig"; sourceTree = "<group>"; };
 		237B14C1EFC126D934004643 /* Pods-PictoCation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-umbrella.h"; sourceTree = "<group>"; };
@@ -239,7 +224,6 @@
 		ABAFDAC70F5BE65446CF2779 /* FUIPopoverBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUIPopoverBackgroundView.m; path = Classes/ios/FUIPopoverBackgroundView.m; sourceTree = "<group>"; };
 		B02A7925762B5D5053BA3B7E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		B06512F66DC8DF02706919FD /* UISlider+FlatUI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UISlider+FlatUI.m"; path = "Classes/ios/UISlider+FlatUI.m"; sourceTree = "<group>"; };
-		B56A01FB89BE0C606391EEC6 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		B6AD517F77C7E8A69F61481C /* Pods-PictoCation-MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-MBProgressHUD.xcconfig"; sourceTree = "<group>"; };
 		B9070230DEFA9A31AB0F1BFC /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		BAFA91D04630B253A3B80C1D /* Pods-PictoCation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-dummy.m"; sourceTree = "<group>"; };
@@ -262,7 +246,6 @@
 		D9C28BDCDC00593745D542A2 /* FUISwitch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUISwitch.m; path = Classes/ios/FUISwitch.m; sourceTree = "<group>"; };
 		DE1100CE5D98E6C64DF53AEA /* flat-ui-icons-regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "flat-ui-icons-regular.ttf"; path = "Resources/flat-ui-icons-regular.ttf"; sourceTree = "<group>"; };
 		DFF94012813C3D7994F97BD2 /* Pods-PictoCation-FlatUIKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-FlatUIKit-dummy.m"; sourceTree = "<group>"; };
-		E0321B1DA17078F0E96A574D /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		E0C8F739DC9598EADF57A2CF /* Pods-PictoCation-MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PictoCation-MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
 		E2F5D3C80A8DA2B59250C809 /* Pods-PictoCation-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PictoCation-Alamofire-dummy.m"; sourceTree = "<group>"; };
 		E80EE3488A67F46D537B9267 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -274,7 +257,6 @@
 		F4F8EE500759E331BCCC597D /* Pods-PictoCation-SwiftyJSON-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PictoCation-SwiftyJSON-Private.xcconfig"; sourceTree = "<group>"; };
 		F5BA4A93DFDE1D46F7A50942 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F83DB3C853E46EA156658C84 /* Pods_PictoCation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PictoCation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC85738AAACF014FD59005AC /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		FD32CAC1C8CBAD825B0D0933 /* FUIButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FUIButton.m; path = Classes/ios/FUIButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -390,15 +372,6 @@
 			isa = PBXGroup;
 			children = (
 				735E7708D51FA93C785BF379 /* Alamofire.swift */,
-				000965E4674331C7C0C36EE9 /* Download.swift */,
-				1460D46DB2D6BD6EDAD35328 /* Manager.swift */,
-				B56A01FB89BE0C606391EEC6 /* MultipartFormData.swift */,
-				173D9471CA8FFDE78A73540B /* ParameterEncoding.swift */,
-				07F4FA56B51FBB9966A94864 /* Request.swift */,
-				0300B4CC89BD0BC8E4BD0858 /* ResponseSerialization.swift */,
-				FC85738AAACF014FD59005AC /* ServerTrustPolicy.swift */,
-				1B31C5BC80F7ECD0A850DE22 /* Upload.swift */,
-				E0321B1DA17078F0E96A574D /* Validation.swift */,
 				A1B7E626E669141D609BE281 /* Support Files */,
 			);
 			path = Alamofire;
@@ -890,16 +863,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECB11CD2217FA10B1DFA0202 /* Alamofire.swift in Sources */,
-				EC86F724990D03D8FB2862DC /* Download.swift in Sources */,
-				EE42C4FBD2793C801E9A37DA /* Manager.swift in Sources */,
-				444600EF43F19EA4FB2D0BB7 /* MultipartFormData.swift in Sources */,
-				A897E5628E8A1ED7F9E3FBE9 /* ParameterEncoding.swift in Sources */,
 				22ACD12E1936CCC1D8515493 /* Pods-PictoCation-Alamofire-dummy.m in Sources */,
-				91CC0A0CEE65F6EB02DA6A01 /* Request.swift in Sources */,
-				47B5B4CBB8841692568CDED1 /* ResponseSerialization.swift in Sources */,
-				C3FA474D082838250FB2B7E6 /* ServerTrustPolicy.swift in Sources */,
-				DA7FD4AAADD7708D0D793FB2 /* Upload.swift in Sources */,
-				747542F25D3FA854C3F1D1A3 /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
