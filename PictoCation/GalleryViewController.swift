@@ -119,7 +119,7 @@ class GalleryViewController: UICollectionViewController {
     self.collectionView!.reloadData()
     refreshControl.endRefreshing()
     if user != nil {
-      let urlString = Instagram.Router.TaggedPhotos(user!.userID, user!.accessToken)
+      let urlString = Instagram.Router.TaggedPhotos(hashtagTopic, user!.accessToken)
       populatePhotos(urlString)
     }
   }
@@ -190,7 +190,6 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
       (photoInfo, _, image) -> Void in
       if (photoInfo as! PhotoInfo) == cell.photoInfo {
         let p = photoInfo as! PhotoInfo
-        println(p.sourceImageURL)
         cell.imageView.image = image
       }
     })

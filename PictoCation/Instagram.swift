@@ -30,9 +30,9 @@ struct Instagram {
     var URLRequest: NSURLRequest {
       let (path: String, parameters: [String: AnyObject]) = {
         switch self {
-        case .TaggedPhotos (let userID, let accessToken):
+        case .TaggedPhotos (let topic, let accessToken):
           let params = ["access_token": accessToken]
-          let pathString = "/v1/users/" + userID + "/media/recent"
+          let pathString = "/v1/tags/" + topic + "/media/recent"
           return (pathString, params)
           
         case .requestOauthCode:
