@@ -51,6 +51,7 @@ class LoginViewController: UIViewController {
       let mapViewController = segue.destinationViewController as! MapViewController
       if let user = sender?.valueForKey("user") as? User {
         mapViewController.user = user
+        mapViewController.isFirstLogin = true
       }
     }
   }

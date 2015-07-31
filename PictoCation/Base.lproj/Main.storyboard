@@ -79,6 +79,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="I3V-Qg-SIz" kind="show" identifier="show gallery" trigger="accessoryAction" id="vqj-sQ-JN4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -143,6 +146,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAp-hh-Uh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="992" y="670"/>
+        </scene>
+        <!--Gallery View Controller-->
+        <scene sceneID="C5x-TP-7nR">
+            <objects>
+                <collectionViewController title="Photo Collection View Controller" id="I3V-Qg-SIz" userLabel="Gallery View Controller" customClass="GalleryViewController" customModule="PictoCation" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cZm-ul-Y7G">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6g8-rC-XjP">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="I3V-Qg-SIz" id="Ycg-rc-moq"/>
+                            <outlet property="delegate" destination="I3V-Qg-SIz" id="A5h-QO-N0d"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fBv-6p-otP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1734" y="670"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">

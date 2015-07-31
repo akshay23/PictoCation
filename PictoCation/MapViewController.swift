@@ -25,9 +25,11 @@ class MapViewController: UIViewController {
   var user: User?
   var placesManager: PlacesManager!
   var currentLocation: CLLocation!
-  var placeMarker: GMSMarker!
+  var placeMarker: GMSMarker?
   var bgOverlay: UIView!
   var isUpdating: Bool = false
+  var isFirstLogin: Bool = false
+  var selectedHastagTopic: String?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -42,6 +44,8 @@ class MapViewController: UIViewController {
     locationManager = CLLocationManager()
     locationManager.delegate = self
     locationManager.requestWhenInUseAuthorization()
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    locationManager.startUpdatingLocation()
     
     // Get PlacesManager instance
     placesManager = PlacesManager.sharedInstance
@@ -71,15 +75,19 @@ class MapViewController: UIViewController {
       isUpdating = true
     } else {
       println("Logged in")
-      locationManager.startUpdatingLocation()
+      
+      // First time login
+      if (isFirstLogin) {
+        locationManager.startUpdatingLocation()
+        isFirstLogin = false
+      }
+      
       mainMapView.hidden = false
       placesTable.hidden = false
       isUpdating = false
       mainMapView.setMinZoom(14, maxZoom: 14)
       btnLogout.enabled = true
       btnRefresh.hidden = false
-      locationManager.desiredAccuracy = kCLLocationAccuracyBest
-      locationManager.startUpdatingLocation()
     }
   }
   
@@ -90,13 +98,16 @@ class MapViewController: UIViewController {
         loginViewController.coreDataStack = coreDataStack
         locationManager.stopUpdatingLocation()
       }
-      
       // Delete existing user data
       if user != nil {
         coreDataStack.context.deleteObject(user!)
         coreDataStack.saveContext()
       }
-
+    } else if segue.identifier == "show gallery" && segue.destinationViewController.isKindOfClass(UICollectionViewController.classForCoder()) {
+      if let galleryViewController = segue.destinationViewController as? GalleryViewController {
+        galleryViewController.user = user
+        galleryViewController.hashtagTopic = selectedHastagTopic
+      }
     }
   }
   
@@ -141,8 +152,10 @@ class MapViewController: UIViewController {
     let indexPath = self.placesTable.indexPathForRowAtPoint(currentTouchPosition!)
     
     if (indexPath != nil) {
-      // TODO
       println("Clicked button in row \(indexPath!.row)")
+      let place = placesManager.places[indexPath!.row].name
+      selectedHastagTopic = "#" + place.stringByReplacingOccurrencesOfString(" ", withString: "")
+      performSegueWithIdentifier("show gallery", sender: self)
     }
   }
 }
@@ -169,7 +182,7 @@ extension MapViewController: CLLocationManagerDelegate {
     currentLocation = locations.first as! CLLocation
     let camera = GMSCameraPosition.cameraWithLatitude(currentLocation.coordinate.latitude,
       longitude: currentLocation.coordinate.longitude, zoom: 14)
-    mainMapView.camera = camera
+    mainMapView.animateToCameraPosition(camera)
     mainMapView.myLocationEnabled = true
     mainMapView.settings.myLocationButton = true
     
@@ -179,6 +192,9 @@ extension MapViewController: CLLocationManagerDelegate {
 
       if (error == nil) {
         self.placesTable.reloadData()
+        self.placesTable.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0),
+          atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+        self.placeMarker?.map = nil
       } else {
         self.showAlertWithMessage("Click 'Refresh Places' to try again", title: "Could Not Fetch Places", buttons: ["OK"])
       }
@@ -203,15 +219,13 @@ extension MapViewController: CLLocationManagerDelegate {
  
 extension MapViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    if (placeMarker != nil) {
-      placeMarker.map = nil
-    }
+    placeMarker?.map = nil
     
     let location = CLLocationCoordinate2DMake(placesManager.places[indexPath.row].latitude,
       placesManager.places[indexPath.row].longitude)
     placeMarker = GMSMarker(position: location)
-    placeMarker.title = placesManager.places[indexPath.row].name
-    placeMarker.map = mainMapView
+    placeMarker?.title = placesManager.places[indexPath.row].name
+    placeMarker?.map = mainMapView
     mainMapView.selectedMarker = placeMarker
     
     var locationCam = GMSCameraUpdate.setTarget(location)
