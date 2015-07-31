@@ -195,7 +195,7 @@ extension MapViewController: CLLocationManagerDelegate {
     placesManager.updateLatLong(currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude) {
       error in
 
-      if (error == nil) {
+      if (error == nil && self.placesManager.places.count != 0) {
         self.placesTable.reloadData()
         self.placesTable.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0),
           atScrollPosition: UITableViewScrollPosition.Top, animated: true)
