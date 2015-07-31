@@ -57,9 +57,15 @@ class MapViewController: UIViewController {
     btnRefresh.titleLabel?.font = UIFont.boldFlatFontOfSize(20)
     btnRefresh.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Normal)
     btnRefresh.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Highlighted)
-    placesTable.backgroundColor = UIColor.wetAsphaltColor()
+    placesTable.backgroundColor = UIColor.asbestosColor()
     btnLogout.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     btnLogout.tintColor = UIColor.cloudsColor()
+    
+    // Add change type button to left of navi
+    let typeButton = UIBarButtonItem(title: "Change Type", style: .Plain, target: self, action: Selector("changeType"))
+    typeButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
+    typeButton.tintColor = UIColor.cloudsColor()
+    navigationItem.leftBarButtonItem = typeButton
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -163,6 +169,9 @@ class MapViewController: UIViewController {
       performSegueWithIdentifier("show gallery", sender: self)
     }
   }
+  
+  @objc func changeType() {
+  }
 }
  
 extension MapViewController: CLLocationManagerDelegate {
@@ -178,11 +187,16 @@ extension MapViewController: CLLocationManagerDelegate {
     // Show progress HUD in table view
     bgOverlay = UIView(frame: self.view.bounds)
     bgOverlay.backgroundColor = UIColor.whiteColor()
-    bgOverlay.alpha = 0.7
-    self.view.addSubview(bgOverlay)
-    let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-    loadingNotification.mode = MBProgressHUDMode.Indeterminate
-    loadingNotification.labelText = "Loading places..."
+    bgOverlay.alpha = 0.0
+    navigationController!.view.addSubview(bgOverlay)
+    
+    // Fade in the overlay and HUD
+    UIView.animateWithDuration(0.5, animations: {
+      self.bgOverlay.alpha = 0.8
+      let loadingNotification = MBProgressHUD.showHUDAddedTo(self.navigationController!.view, animated: true)
+      loadingNotification.mode = MBProgressHUDMode.Indeterminate
+      loadingNotification.labelText = "Loading places..."
+    })
 
     currentLocation = locations.first as! CLLocation
     let camera = GMSCameraPosition.cameraWithLatitude(currentLocation.coordinate.latitude,
@@ -204,10 +218,11 @@ extension MapViewController: CLLocationManagerDelegate {
         self.showAlertWithMessage("Click 'Refresh Places' to try again", title: "Could Not Fetch Places", buttons: ["OK"])
       }
       
-      // Stop the loading spinner
-      MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
       self.btnRefresh.enabled = true
       self.isUpdating = false
+      
+      // Stop the loading spinner (fade out)
+      MBProgressHUD.hideAllHUDsForView(self.navigationController!.view, animated: true)
       if (self.bgOverlay != nil) {
         self.bgOverlay.removeFromSuperview()
         self.bgOverlay = nil
@@ -219,9 +234,10 @@ extension MapViewController: CLLocationManagerDelegate {
   
   func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
     println("LocationManager failed with error: \(error.localizedDescription)!")
+    self.showAlertWithMessage("Click 'Refresh Places' to try again", title: "Could Not Get Location", buttons: ["OK"])
   }
 }
- 
+
 extension MapViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     placeMarker?.map = nil
@@ -244,7 +260,6 @@ extension MapViewController: UITableViewDataSource {
     
     // Configure the look
     cell.configureFlatCellWithColor(UIColor.wetAsphaltColor(), selectedColor: UIColor.cloudsColor())
-    cell.separatorHeight = 2.0
     cell.textLabel!.font = UIFont.boldFlatFontOfSize(16)
     
     // Add custom accessory view

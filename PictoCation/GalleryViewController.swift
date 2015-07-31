@@ -8,10 +8,10 @@
 
 import UIKit
 import Foundation
-import CoreData
 import Alamofire
 import FastImageCache
 import SwiftyJSON
+import FlatUIKit
 
 class GalleryViewController: UICollectionViewController {
   
@@ -89,7 +89,6 @@ class GalleryViewController: UICollectionViewController {
     }
     
     populatingPhotos = true
-    
     Alamofire.request(request).responseJSON() {
       (_ , _, jsonObject, error) in
       
@@ -118,6 +117,9 @@ class GalleryViewController: UICollectionViewController {
             
             dispatch_async(dispatch_get_main_queue()) {
               self.collectionView!.insertItemsAtIndexPaths(indexPaths)
+              if (self.photos.count == 0) {
+                self.showAlertWithMessage("There are no images for #\(self.hashtagTopic)", title: "No Images", buttons: ["OK"])
+              }
             }
             
           }
@@ -136,6 +138,7 @@ class GalleryViewController: UICollectionViewController {
     self.photos.removeAll(keepCapacity: false)
     self.collectionView!.reloadData()
     refreshControl.endRefreshing()
+    
     if user != nil {
       let urlString = Instagram.Router.TaggedPhotos(hashtagTopic, user!.accessToken)
       populatePhotos(urlString)
@@ -160,6 +163,29 @@ class GalleryViewController: UICollectionViewController {
   
   private func stripOutUnwantedCharactersFromText(text: String, characterSet: Set<Character>) -> String {
     return String(filter(text) { characterSet.contains($0) })
+  }
+  
+  private func showAlertWithMessage(message: String, title: String, buttons: [String]) {
+    let alert = FUIAlertView()
+    alert.title = title
+    alert.message = message
+    alert.delegate = nil
+    
+    for button in buttons {
+      alert.addButtonWithTitle(button)
+    }
+    
+    alert.titleLabel.textColor = UIColor.cloudsColor()
+    alert.titleLabel.font = UIFont.boldFlatFontOfSize(16);
+    alert.messageLabel.textColor = UIColor.cloudsColor()
+    alert.messageLabel.font = UIFont.flatFontOfSize(12)
+    alert.backgroundOverlay.backgroundColor = UIColor.cloudsColor().colorWithAlphaComponent(0.8)
+    alert.alertContainer.backgroundColor = UIColor.midnightBlueColor()
+    alert.defaultButtonColor = UIColor.cloudsColor()
+    alert.defaultButtonShadowColor = UIColor.asbestosColor()
+    alert.defaultButtonFont = UIFont.boldFlatFontOfSize(14)
+    alert.defaultButtonTitleColor = UIColor.asbestosColor()
+    alert.show()
   }
 }
 
