@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ea0-wI-Ioh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -9,16 +10,13 @@
         <!--Navigation Controller-->
         <scene sceneID="4FX-Fp-YXP">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eu8-Z9-g5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Ea0-wI-Ioh" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Al2-av-KK4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="tLB-nQ-CaP" kind="relationship" relationship="rootViewController" id="UVB-SI-rBa"/>
-                    </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Eu8-Z9-g5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="145" y="670"/>
         </scene>
@@ -40,10 +38,38 @@
             </objects>
             <point key="canvasLocation" x="145" y="1462"/>
         </scene>
+        <!--Left View Controller-->
+        <scene sceneID="Vil-aJ-pcP">
+            <objects>
+                <tableViewController storyboardIdentifier="LeftViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z8A-6V-bwY" customClass="LeftViewController" customModule="PictoCation" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6kB-wq-AMC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Vbj-Fw-nz2">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vbj-Fw-nz2" id="dkG-Du-4kZ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Z8A-6V-bwY" id="nx8-Nv-kKH"/>
+                            <outlet property="delegate" destination="Z8A-6V-bwY" id="5wS-kV-A1W"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="lg6-HT-9cJ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dpq-5a-QU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992" y="-69"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="ouh-k2-ciY">
             <objects>
-                <viewController id="tLB-nQ-CaP" customClass="MapViewController" customModule="PictoCation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tLB-nQ-CaP" customClass="MapViewController" customModule="PictoCation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UEv-yp-aRh"/>
                         <viewControllerLayoutGuide type="bottom" id="Hqi-Og-K7A"/>
@@ -52,12 +78,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQK-DP-9j5" userLabel="MapHolder" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="283.5"/>
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQK-DP-9j5" userLabel="MapHolder" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="284"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JHD-LM-PSX">
-                                <rect key="frame" x="0.0" y="315.5" width="600" height="285.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JHD-LM-PSX">
+                                <rect key="frame" x="0.0" y="316" width="600" height="286"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="e4H-Qv-oLP" detailTextLabel="6fP-fz-bOf" style="IBUITableViewCellStyleSubtitle" id="5cl-9p-hk3">
@@ -89,8 +115,8 @@
                                     <outlet property="delegate" destination="tLB-nQ-CaP" id="eqB-aA-pbq"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Mi-IU-STJ" customClass="FUIButton">
-                                <rect key="frame" x="0.0" y="283.5" width="600" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Mi-IU-STJ" customClass="FUIButton">
+                                <rect key="frame" x="0.0" y="284" width="600" height="33"/>
                                 <state key="normal" title="Refresh Places"/>
                                 <connections>
                                     <action selector="refreshPlaces:" destination="tLB-nQ-CaP" eventType="touchUpInside" id="7AY-nc-nrk"/>
@@ -166,10 +192,46 @@
                             <outlet property="delegate" destination="I3V-Qg-SIz" id="A5h-QO-N0d"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="mainCollectionView" destination="cZm-ul-Y7G" id="XjM-s2-AOa"/>
+                        <segue destination="Q0T-Lu-91q" kind="show" identifier="show photo" id="CI1-O5-Wzs"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBv-6p-otP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1734" y="670"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="C48-82-YGh">
+            <objects>
+                <viewController id="Q0T-Lu-91q" customClass="PhotoViewController" customModule="PictoCation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="coL-JE-cAN"/>
+                        <viewControllerLayoutGuide type="bottom" id="dR7-IH-geT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PpR-b7-GdZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T2j-hq-GT7">
+                                <rect key="frame" x="150" y="74" width="300" height="286"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T2j-hq-GT7" firstAttribute="width" secondItem="PpR-b7-GdZ" secondAttribute="height" multiplier="1:2" id="A20-aR-FvD"/>
+                            <constraint firstItem="T2j-hq-GT7" firstAttribute="top" secondItem="coL-JE-cAN" secondAttribute="bottom" constant="10" id="AZg-R3-v1M"/>
+                            <constraint firstItem="T2j-hq-GT7" firstAttribute="bottom" secondItem="dR7-IH-geT" secondAttribute="top" multiplier="0.6" id="H9u-DM-p0x"/>
+                            <constraint firstAttribute="centerX" secondItem="T2j-hq-GT7" secondAttribute="centerX" id="zUW-E4-oHI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainPhotoView" destination="T2j-hq-GT7" id="7AP-g2-f2c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EQg-Zb-RdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2514" y="670"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">

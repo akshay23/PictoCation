@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     FastImageCacheHelper.setUp(self)
 
     // Instantiate core data stack
-    let navController = window!.rootViewController as! UINavigationController
-    let mapViewController = navController.topViewController as! MapViewController
-    mapViewController.coreDataStack = coreDataStack
+    let containerViewController = ContainerViewController()
+    window!.rootViewController = containerViewController
+    containerViewController.coreDataStack = coreDataStack
     
     // Google Maps auth
     GMSServices.provideAPIKey("AIzaSyC1ZOBSUT8Z5Xl7tzGZ6KnL9on5LoFsHWs")

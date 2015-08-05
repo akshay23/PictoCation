@@ -21,10 +21,13 @@ class PhotoInfo: NSObject, FICEntity {
     return UUID
   }
   
+  var instagramID: String
+  
   var sourceImageURL: NSURL
   var request: Alamofire.Request?
   
-  init(sourceImageURL: NSURL) {
+  init(instaID: String, sourceImageURL: NSURL) {
+    self.instagramID = instaID
     self.sourceImageURL = sourceImageURL
     super.init()
   }

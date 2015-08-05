@@ -12,6 +12,12 @@ import CoreLocation
 import GoogleMaps
 import MBProgressHUD
 import FlatUIKit
+ 
+@objc
+protocol CenterViewControllerDelegate {
+  optional func toggleLeftPanel()
+  optional func collapseSidePanel()
+}
 
 class MapViewController: UIViewController {
 
@@ -30,15 +36,10 @@ class MapViewController: UIViewController {
   var isUpdating: Bool = false
   var isFirstLogin: Bool = false
   var selectedHastagTopic: String?
+  var delegate: CenterViewControllerDelegate?
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    var error: NSError?
-    if let fetchRequest = coreDataStack.model.fetchRequestTemplateForName("UserFetchRequest") {
-      let results = coreDataStack.context.executeFetchRequest(fetchRequest, error: &error) as! [User]
-      user = results.first
-    }
 
     // Initialize all the location stuff
     locationManager = CLLocationManager()
@@ -70,6 +71,12 @@ class MapViewController: UIViewController {
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
+    
+    var error: NSError?
+    if let fetchRequest = coreDataStack.model.fetchRequestTemplateForName("UserFetchRequest") {
+      let results = coreDataStack.context.executeFetchRequest(fetchRequest, error: &error) as! [User]
+      user = results.first
+    }
 
     if (user == nil) {
       performSegueWithIdentifier("login", sender: self)
@@ -114,6 +121,7 @@ class MapViewController: UIViewController {
         galleryViewController.user = user
         let chars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789")
         galleryViewController.hashtagTopic = stripOutUnwantedCharactersFromText(selectedHastagTopic!, characterSet: chars)
+        galleryViewController.shouldRefresh = true
       }
     }
   }
@@ -171,6 +179,7 @@ class MapViewController: UIViewController {
   }
   
   @objc func changeType() {
+    delegate?.toggleLeftPanel?()
   }
 }
  
@@ -280,5 +289,13 @@ extension MapViewController: UITableViewDataSource {
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return placesManager.places.count
+  }
+}
+ 
+extension MapViewController: LeftViewControllerDelegate {
+  func typeSelected(type: String) {
+    delegate?.collapseSidePanel?()
+
+    // TODO
   }
 }

@@ -14,12 +14,15 @@ import SwiftyJSON
 import FlatUIKit
 
 class GalleryViewController: UICollectionViewController {
-  
+
+  @IBOutlet var mainCollectionView: UICollectionView!
+
   var photos = [PhotoInfo]()
   var populatingPhotos = false
   var nextURLRequest: NSURLRequest?
   var user: User?
   var hashtagTopic: String!
+  var shouldRefresh: Bool = false
   
   let refreshControl = UIRefreshControl()
   let formatName = KMSmallImageFormatName
@@ -31,6 +34,7 @@ class GalleryViewController: UICollectionViewController {
     
     // Set navi bar title
     self.title = "#\(hashtagTopic)"
+    mainCollectionView.backgroundColor = UIColor.wetAsphaltColor()
     
     // Add back nav button
     let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: Selector("goBack"))
@@ -63,11 +67,22 @@ class GalleryViewController: UICollectionViewController {
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-    handleRefresh()
+    
+    if (photos.count == 0 || shouldRefresh) {
+      shouldRefresh = false
+      refresh()
+    }
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "show photo" && segue.destinationViewController.isKindOfClass(PhotoViewController.classForCoder()) {
+      let photoViewController = segue.destinationViewController as! PhotoViewController
+      photoViewController.photoInfo = sender?.valueForKey("photoInfo") as? PhotoInfo
+    }
   }
   
   @objc func goBack() {
@@ -80,7 +95,7 @@ class GalleryViewController: UICollectionViewController {
     titleView!.resignFirstResponder()
     let chars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789")
     hashtagTopic = stripOutUnwantedCharactersFromText(titleView!.text, characterSet: chars)
-    handleRefresh()
+    refresh()
   }
   
   private func populatePhotos(request:URLRequestConvertible) {
@@ -107,7 +122,7 @@ class GalleryViewController: UICollectionViewController {
               .filter {
                 $0["type"].stringValue == "image"
               }.map({
-                PhotoInfo(sourceImageURL: $0["images"]["standard_resolution"]["url"].URL!)
+                PhotoInfo(instaID: $0["id"].stringValue, sourceImageURL: $0["images"]["standard_resolution"]["url"].URL!)
               })
             
             let lastItem = self.photos.count
@@ -132,7 +147,7 @@ class GalleryViewController: UICollectionViewController {
     }
   }
   
-  private func handleRefresh() {
+  private func refresh() {
     nextURLRequest = nil
     refreshControl.beginRefreshing()
     self.photos.removeAll(keepCapacity: false)
@@ -200,7 +215,7 @@ class PhotoBrowserCollectionViewCell: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
     
-    backgroundColor = UIColor(white: 0.1, alpha: 1.0)
+    backgroundColor = UIColor.midnightBlueColor()
     imageView.frame = bounds
     addSubview(imageView)
   }
@@ -260,7 +275,7 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
   
   override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     let photoInfo = photos[indexPath.row]
-    //performSegueWithIdentifier("show photo", sender: ["photoInfo": photoInfo])
+    performSegueWithIdentifier("show photo", sender: ["photoInfo": photoInfo])
   }
   
   override func scrollViewDidScroll(scrollView: UIScrollView) {
