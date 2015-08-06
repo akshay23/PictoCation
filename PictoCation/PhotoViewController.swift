@@ -19,11 +19,13 @@ class PhotoViewController: UIViewController {
   @IBOutlet var mainPhotoView: UIImageView!
 
   var photoInfo: PhotoInfo?
+  var hashtagTopic: String!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Set bg color
+    // Set bg color and title
+    self.title = "#\(hashtagTopic)"
     view.backgroundColor = UIColor.wetAsphaltColor()
     
     // Add back nav button

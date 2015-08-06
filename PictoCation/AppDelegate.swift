@@ -31,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // Google Maps auth
     GMSServices.provideAPIKey("AIzaSyC1ZOBSUT8Z5Xl7tzGZ6KnL9on5LoFsHWs")
+    
+    // Hide status bar
+    application.statusBarHidden = true
 
     return true
   }
