@@ -35,7 +35,7 @@ class PlacesManager {
   private var thirdSetofPlaces: [(name: String, latitude: Double, longitude: Double)] = []
   
   // Read-only
-  private(set) var places: [(name: String, latitude: Double, longitude: Double)] = []
+  private(set) var places: [(id: String, name: String, latitude: Double, longitude: Double)!] = []
   
   private init() {}
   
@@ -75,7 +75,7 @@ class PlacesManager {
             for place in json["results"].array! {
               let location = place["geometry"]["location"]
               if let lat = location["lat"].double, long = location["lng"].double {
-                self.places.append(name: place["name"].string!, latitude: lat, longitude: long)
+                self.places.append((id: place["place_id"].string!, name: place["name"].string!, latitude: lat, longitude: long))
               }
             }
           } else {

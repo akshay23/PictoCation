@@ -23,6 +23,7 @@
 		19A641F01B56D9DF00E8402A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A641EF1B56D9DF00E8402A /* Images.xcassets */; };
 		19A641F31B56D9DF00E8402A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A641F11B56D9DF00E8402A /* LaunchScreen.xib */; };
 		19A641FF1B56D9DF00E8402A /* PictoCationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A641FE1B56D9DF00E8402A /* PictoCationTests.swift */; };
+		19F4D7C21B753A9300623144 /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F4D7C11B753A9300623144 /* PlaceInfoViewController.swift */; };
 		19F72C691B56FC2800FA43E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C681B56FC2800FA43E9 /* MapViewController.swift */; };
 		19F72C6B1B57080500FA43E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C6A1B57080500FA43E9 /* User.swift */; };
 		19F72C6E1B57085F00FA43E9 /* PictoCation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C6C1B57085F00FA43E9 /* PictoCation.xcdatamodeld */; };
@@ -60,6 +61,7 @@
 		19A641F81B56D9DF00E8402A /* PictoCationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PictoCationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A641FD1B56D9DF00E8402A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19A641FE1B56D9DF00E8402A /* PictoCationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictoCationTests.swift; sourceTree = "<group>"; };
+		19F4D7C11B753A9300623144 /* PlaceInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceInfoViewController.swift; sourceTree = "<group>"; };
 		19F72C681B56FC2800FA43E9 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		19F72C6A1B57080500FA43E9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		19F72C6D1B57085F00FA43E9 /* PictoCation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PictoCation.xcdatamodel; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				1984BC5F1B7280FB00B2B7FA /* PhotoViewController.swift */,
 				1984BC611B72B5AB00B2B7FA /* LeftViewController.swift */,
 				1984BC631B72BBEF00B2B7FA /* ContainerViewController.swift */,
+				19F4D7C11B753A9300623144 /* PlaceInfoViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				1984BC621B72B5AB00B2B7FA /* LeftViewController.swift in Sources */,
 				19739C281B6A962B00A05F26 /* Reachability.swift in Sources */,
 				1984BC641B72BBEF00B2B7FA /* ContainerViewController.swift in Sources */,
+				19F4D7C21B753A9300623144 /* PlaceInfoViewController.swift in Sources */,
 				19F72C6E1B57085F00FA43E9 /* PictoCation.xcdatamodeld in Sources */,
 				190E79631B6AEF6B00DC2B48 /* PhotoInfo.swift in Sources */,
 				190E79611B6AECD900DC2B48 /* GalleryViewController.swift in Sources */,

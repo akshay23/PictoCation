@@ -30,13 +30,13 @@ class PhotoViewController: UIViewController {
     view.backgroundColor = UIColor.wetAsphaltColor()
     
     // Add back nav button
-    let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: Selector("goBack"))
+    let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: "goBack")
     backButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     backButton.tintColor = UIColor.cloudsColor()
     navigationItem.leftBarButtonItem = backButton
     
     // Add refresh nav button
-    let refreshButton = UIBarButtonItem(title: "Refresh", style: .Plain, target: self, action: Selector("goRefresh"))
+    let refreshButton = UIBarButtonItem(title: "Refresh", style: .Plain, target: self, action: "goRefresh")
     refreshButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     refreshButton.tintColor = UIColor.cloudsColor()
     navigationItem.rightBarButtonItem = refreshButton
@@ -67,12 +67,12 @@ class PhotoViewController: UIViewController {
     })
   }
   
-  @objc func goBack() {
+  func goBack() {
     view.resignFirstResponder()
     navigationController?.popViewControllerAnimated(true)
   }
   
-  @objc func goRefresh() {
+  func goRefresh() {
     refresh()
   }
   

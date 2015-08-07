@@ -31,6 +31,7 @@ class MapViewController: UIViewController {
   var user: User?
   var placesManager: PlacesManager!
   var currentLocation: CLLocation!
+  var selectedPlace: (id: String, name: String, latitude: Double, longitude: Double)!
   var placeMarker: GMSMarker?
   var bgOverlay: UIView!
   var isUpdating: Bool = false
@@ -124,6 +125,10 @@ class MapViewController: UIViewController {
         let chars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789")
         galleryViewController.hashtagTopic = stripOutUnwantedCharactersFromText(selectedHastagTopic!, characterSet: chars)
         galleryViewController.shouldRefresh = true
+      }
+    } else if segue.identifier == "show info" && segue.destinationViewController.isKindOfClass(UIViewController.classForCoder()) {
+      if let infoViewController = segue.destinationViewController as? PlaceInfoViewController {
+        infoViewController.place = selectedPlace
       }
     }
   }
@@ -273,6 +278,7 @@ extension MapViewController: UITableViewDelegate {
     placeMarker?.title = placesManager.places[indexPath.row].name
     placeMarker?.map = mainMapView
     mainMapView.selectedMarker = placeMarker
+    selectedPlace = placesManager.places[indexPath.row]
     
     var locationCam = GMSCameraUpdate.setTarget(location)
     mainMapView.animateWithCameraUpdate(locationCam)
@@ -319,7 +325,13 @@ extension MapViewController: GMSMapViewDelegate {
   
   func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
     closeLeftPanelOpenIfOpen()
+    mainMapView.selectedMarker = marker
     return true
+  }
+  
+  func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
+    closeLeftPanelOpenIfOpen()
+    performSegueWithIdentifier("show info", sender: self)
   }
 }
  

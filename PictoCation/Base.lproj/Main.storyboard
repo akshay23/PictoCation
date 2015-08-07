@@ -64,7 +64,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dpq-5a-QU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992" y="-69"/>
+            <point key="canvasLocation" x="560" y="-81"/>
+        </scene>
+        <!--Place Info View Controller-->
+        <scene sceneID="Gdg-Td-SfO">
+            <objects>
+                <viewController id="MWU-PT-XyU" userLabel="Place Info View Controller" customClass="PlaceInfoViewController" customModule="PictoCation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NQS-68-zXt"/>
+                        <viewControllerLayoutGuide type="bottom" id="GZ4-EA-vrV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="566-6V-f6b">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MXJ-Oj-1ey" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1734" y="-81"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="ouh-k2-ciY">
@@ -167,6 +185,7 @@
                         <outlet property="btnRefresh" destination="3Mi-IU-STJ" id="ima-sd-Kp7"/>
                         <outlet property="mainMapView" destination="hQK-DP-9j5" id="dhZ-Qy-Er7"/>
                         <outlet property="placesTable" destination="JHD-LM-PSX" id="dFO-bv-EYJ"/>
+                        <segue destination="MWU-PT-XyU" kind="show" identifier="show info" id="RGT-ez-SDY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAp-hh-Uh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
