@@ -27,7 +27,7 @@ class PlacesManager {
   private var requestURL: String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
   private var latitude: Double!
   private var longitude: Double!
-  private var radius: Int = 500
+  private var radius: Int = 1000  // In meters
   
   // Temp arrays
   private var firstSetofPlaces: [(name: String, latitude: Double, longitude: Double)] = []
@@ -51,10 +51,8 @@ class PlacesManager {
     var myRequest = requestURL + params
     
     if let user = user {
-      if (user.placesType != nil && user.placesType != "ALL") {
-        let formattedString = user.placesType!.stringByReplacingOccurrencesOfString(" ", withString: "_")
-        myRequest = myRequest + "&types=\(formattedString.lowercaseString)"
-      }
+      let formattedString = user.placesType!.stringByReplacingOccurrencesOfString(" ", withString: "_")
+      myRequest = myRequest + "&types=\(formattedString.lowercaseString)"
     }
     
     if let token = nextPageToken {

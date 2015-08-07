@@ -134,7 +134,7 @@ class GalleryViewController: UICollectionViewController {
             
             dispatch_async(dispatch_get_main_queue()) {
               self.collectionView!.insertItemsAtIndexPaths(indexPaths)
-              MBProgressHUD.hideAllHUDsForView(self.navigationController!.view, animated: true)
+              MBProgressHUD.hideAllHUDsForView(self.navigationController?.view, animated: true)
               if (self.photos.count == 0) {
                 self.showAlertWithMessage("There are no images for #\(self.hashtagTopic)", title: "No Images", buttons: ["OK"])
               }
