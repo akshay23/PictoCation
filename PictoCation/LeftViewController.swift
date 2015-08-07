@@ -73,7 +73,10 @@ class LeftViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    selectedCell.configureFlatCellWithColor(UIColor.concreteColor(), selectedColor: UIColor.cloudsColor())
+    if (selectedCell != nil) {
+      selectedCell.configureFlatCellWithColor(UIColor.concreteColor(), selectedColor: UIColor.cloudsColor())
+    }
+
     delegate?.typeSelected(types[indexPath.row])
   }
   

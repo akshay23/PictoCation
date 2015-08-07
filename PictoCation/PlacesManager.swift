@@ -51,7 +51,7 @@ class PlacesManager {
     var myRequest = requestURL + params
     
     if let user = user {
-      let formattedString = user.placesType!.stringByReplacingOccurrencesOfString(" ", withString: "_")
+      let formattedString = user.placesType.stringByReplacingOccurrencesOfString(" ", withString: "_")
       myRequest = myRequest + "&types=\(formattedString.lowercaseString)"
     }
     
@@ -88,7 +88,7 @@ class PlacesManager {
       
       if let tok = token {
         println("Getting more results")
-        sleep(2)
+        sleep(2)  // Google only allows 1 request every 2 seconds (http://stackoverflow.com/questions/21265756/paging-on-google-places-api-returns-status-invalid-request)
         self.refreshPlaces(false, nextPageToken: tok, handler: handler)
       } else {
         println("Full places count is \(self.places.count)")

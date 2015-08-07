@@ -134,7 +134,11 @@ class GalleryViewController: UICollectionViewController {
             
             dispatch_async(dispatch_get_main_queue()) {
               self.collectionView!.insertItemsAtIndexPaths(indexPaths)
-              MBProgressHUD.hideAllHUDsForView(self.navigationController?.view, animated: true)
+
+              if let navi = self.navigationController {
+                MBProgressHUD.hideAllHUDsForView(navi.view, animated: true)
+              }
+
               if (self.photos.count == 0) {
                 self.showAlertWithMessage("There are no images for #\(self.hashtagTopic)", title: "No Images", buttons: ["OK"])
               }
@@ -148,8 +152,12 @@ class GalleryViewController: UICollectionViewController {
   
   private func refresh() {
     nextURLRequest = nil
-    let loadingNotification = MBProgressHUD.showHUDAddedTo(self.navigationController!.view, animated: true)
-    loadingNotification.mode = MBProgressHUDMode.Indeterminate
+    
+    if let navi = self.navigationController {
+      let loadingNotification = MBProgressHUD.showHUDAddedTo(navi.view, animated: true)
+      loadingNotification.mode = MBProgressHUDMode.Indeterminate
+    }
+
     self.photos.removeAll(keepCapacity: false)
     self.collectionView!.reloadData()
     

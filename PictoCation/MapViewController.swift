@@ -35,6 +35,7 @@ class MapViewController: UIViewController {
   var bgOverlay: UIView!
   var isUpdating: Bool = false
   var isFirstLogin: Bool = false
+  var isLeftPanelOpen: Bool = false
   var selectedHastagTopic: String?
   var delegate: CenterViewControllerDelegate?
 
@@ -47,6 +48,7 @@ class MapViewController: UIViewController {
     locationManager.requestWhenInUseAuthorization()
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
     locationManager.startUpdatingLocation()
+    mainMapView.delegate = self
     
     // Get PlacesManager instance
     placesManager = PlacesManager.sharedInstance
@@ -129,6 +131,7 @@ class MapViewController: UIViewController {
   @IBAction func unwindToMapView(segue : UIStoryboardSegue) {}
 
   @IBAction func refreshPlaces(sender: AnyObject) {
+    closeLeftPanelOpenIfOpen()
     doRefresh()
   }
   
@@ -168,6 +171,13 @@ class MapViewController: UIViewController {
     return String(filter(text) { characterSet.contains($0) })
   }
   
+  private func closeLeftPanelOpenIfOpen() {
+    if (isLeftPanelOpen) {
+      delegate?.toggleLeftPanel?(user)
+      isLeftPanelOpen = false
+    }
+  }
+  
   @objc func instaButtonTapped(sender: UIButton, event: AnyObject) {
     let touches = event.allTouches()
     let firstTouch = touches?.first as? UITouch
@@ -175,7 +185,6 @@ class MapViewController: UIViewController {
     let indexPath = self.placesTable.indexPathForRowAtPoint(currentTouchPosition!)
     
     if (indexPath != nil) {
-      println("Clicked button in row \(indexPath!.row)")
       let place = placesManager.places[indexPath!.row].name
       selectedHastagTopic = place.stringByReplacingOccurrencesOfString(" ", withString: "")
       performSegueWithIdentifier("show gallery", sender: self)
@@ -183,6 +192,7 @@ class MapViewController: UIViewController {
   }
   
   @objc func changeType() {
+    isLeftPanelOpen = !isLeftPanelOpen
     delegate?.toggleLeftPanel?(user)
   }
 }
@@ -255,6 +265,7 @@ extension MapViewController: CLLocationManagerDelegate {
 extension MapViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     placeMarker?.map = nil
+    closeLeftPanelOpenIfOpen()
     
     let location = CLLocationCoordinate2DMake(placesManager.places[indexPath.row].latitude,
       placesManager.places[indexPath.row].longitude)
@@ -297,8 +308,24 @@ extension MapViewController: UITableViewDataSource {
   }
 }
  
+extension MapViewController: GMSMapViewDelegate {
+  func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
+    closeLeftPanelOpenIfOpen()
+  }
+  
+  func mapView(mapView: GMSMapView!, willMove gesture: Bool) {
+    closeLeftPanelOpenIfOpen()
+  }
+  
+  func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
+    closeLeftPanelOpenIfOpen()
+    return true
+  }
+}
+ 
 extension MapViewController: LeftViewControllerDelegate {
   func typeSelected(type: String) {
+    isLeftPanelOpen = false
     delegate?.collapseSidePanel?()
 
     // Save to CoreData
