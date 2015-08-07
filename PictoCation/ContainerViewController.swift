@@ -47,24 +47,24 @@ class ContainerViewController: UIViewController {
 }
 
 extension ContainerViewController: CenterViewControllerDelegate {
-  func toggleLeftPanel() {
+  func toggleLeftPanel(user: User!) {
     let notAlreadyExpanded = (currentState != .LeftPanelExpanded)
     
     if notAlreadyExpanded {
-      addLeftPanelViewController()
+      addLeftPanelViewController(user)
     }
     
     animateLeftPanel(shouldExpand: notAlreadyExpanded)
   }
   
   func collapseSidePanel() {
-    toggleLeftPanel()
+    toggleLeftPanel(nil)
   }
   
-  func addLeftPanelViewController() {
+  func addLeftPanelViewController(user: User!) {
     if (leftViewController == nil) {
       leftViewController = UIStoryboard.leftViewController()
-      //leftViewController!.animals = Animal.allCats()
+      leftViewController!.user = user
       
       if let controller = leftViewController {
         addChildSidePanelController(controller)

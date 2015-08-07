@@ -15,7 +15,7 @@ import FlatUIKit
  
 @objc
 protocol CenterViewControllerDelegate {
-  optional func toggleLeftPanel()
+  optional func toggleLeftPanel(user: User!)
   optional func collapseSidePanel()
 }
 
@@ -129,6 +129,10 @@ class MapViewController: UIViewController {
   @IBAction func unwindToMapView(segue : UIStoryboardSegue) {}
 
   @IBAction func refreshPlaces(sender: AnyObject) {
+    doRefresh()
+  }
+  
+  private func doRefresh() {
     if (!Reachability.isConnectedToNetwork()) {
       self.showAlertWithMessage("Please check your connection and try again", title: "No Internet Connection", buttons: ["OK"])
     } else {
@@ -179,7 +183,7 @@ class MapViewController: UIViewController {
   }
   
   @objc func changeType() {
-    delegate?.toggleLeftPanel?()
+    delegate?.toggleLeftPanel?(user)
   }
 }
  
@@ -215,6 +219,7 @@ extension MapViewController: CLLocationManagerDelegate {
     mainMapView.settings.myLocationButton = true
     
     // Get places near current location
+    placesManager.user = user
     placesManager.updateLatLong(currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude) {
       error in
 
@@ -296,6 +301,15 @@ extension MapViewController: LeftViewControllerDelegate {
   func typeSelected(type: String) {
     delegate?.collapseSidePanel?()
 
-    // TODO
+    // Save to CoreData
+    // then refresh places
+    var error: NSError?
+    if let fetchRequest = coreDataStack.model.fetchRequestTemplateForName("UserFetchRequest") {
+      let results = coreDataStack.context.executeFetchRequest(fetchRequest, error: &error) as! [User]
+      user = results.first
+      user?.placesType = type
+      coreDataStack.saveContext()
+      doRefresh()
+    }
   }
 }

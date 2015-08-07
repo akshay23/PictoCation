@@ -2,10 +2,11 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="User" representedClassName="PictoCation.User" syncable="YES">
         <attribute name="accessToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="placesType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <fetchRequest name="UserFetchRequest" entity="User"/>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

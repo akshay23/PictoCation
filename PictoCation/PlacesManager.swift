@@ -20,6 +20,8 @@ class PlacesManager {
     }
     return Static.instance
   }
+  
+  var user: User?
 
   private let apiKey: String = "AIzaSyDBVyaAIfNn1tcLuns6JMqGd5984ZPuomc"
   private var requestURL: String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
@@ -47,6 +49,13 @@ class PlacesManager {
     let location: String = "\(latitude),\(longitude)"
     let params = "location=\(location)&radius=\(radius)&key=\(apiKey)"
     var myRequest = requestURL + params
+    
+    if let user = user {
+      if (user.placesType != nil && user.placesType != "ALL") {
+        let formattedString = user.placesType!.stringByReplacingOccurrencesOfString(" ", withString: "_")
+        myRequest = myRequest + "&types=\(formattedString.lowercaseString)"
+      }
+    }
     
     if let token = nextPageToken {
       myRequest = myRequest + "&pagetoken=\(token)"

@@ -18,20 +18,45 @@ class LeftViewController: UITableViewController {
   
   var delegate: LeftViewControllerDelegate?
   var types: Array<String> = []
+  var user: User!
+  var selectedIndex: Int!
+  var selectedCell: UITableViewCell!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    types.append("ALL")
-    types.append("atm")
-    types.append("bar")
-    types.append("cafe")
-    types.append("establishment")
-    types.append("restaurant")
+    // Initialize types
+    types.append("Art Gallery")
+    types.append("Bakery")
+    types.append("Bar")
+    types.append("Cafe")
+    types.append("Clothing Store")
+    types.append("Establishment")
+    types.append("Gym")
+    types.append("Library")
+    types.append("Lodging")
+    types.append("Museum")
+    types.append("Night Club")
+    types.append("Park")
+    types.append("Restaurant")
+    types.append("School")
+    types.append("Spa")
+    types.append("Stadium")
+    types.append("Store")
     
+    // Remove separator line and set bg color of table
     let table = self.view as! UITableView
-    table.separatorColor = UIColor.clearColor()
+    table.separatorStyle = .None
     table.backgroundColor = UIColor.concreteColor()
+    
+    // Get selected type index
+    let selectedType = user.placesType
+    selectedIndex = types.find { $0 == selectedType }
+    println("Selected type is \(selectedType) and index is \(selectedIndex)")
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
   }
   
   override func didReceiveMemoryWarning() {
@@ -48,13 +73,34 @@ class LeftViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    selectedCell.configureFlatCellWithColor(UIColor.concreteColor(), selectedColor: UIColor.cloudsColor())
     delegate?.typeSelected(types[indexPath.row])
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+    
     cell.textLabel?.text = types[indexPath.row]
-    cell.configureFlatCellWithColor(UIColor.concreteColor(), selectedColor: UIColor.cloudsColor())
+    cell.textLabel?.font = UIFont.systemFontOfSize(15)
+    
+    if (indexPath.row == selectedIndex) {
+      cell.configureFlatCellWithColor(UIColor.cloudsColor(), selectedColor: UIColor.concreteColor())
+      selectedCell = cell
+    } else {
+      cell.configureFlatCellWithColor(UIColor.concreteColor(), selectedColor: UIColor.cloudsColor())
+    }
+    
     return cell
+  }
+}
+
+extension Array {
+  func find(includedElement: T -> Bool) -> Int? {
+    for (idx, element) in enumerate(self) {
+      if includedElement(element) {
+        return idx
+      }
+    }
+    return nil
   }
 }

@@ -90,6 +90,7 @@ extension LoginViewController: UIWebViewDelegate {
             let user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: self.coreDataStack.context) as! User
             user.userID = userID
             user.accessToken = accessToken
+            user.placesType = "Establishment"
             self.coreDataStack.saveContext()
             self.performSegueWithIdentifier("unwindToMapView", sender: ["user": user])
           }

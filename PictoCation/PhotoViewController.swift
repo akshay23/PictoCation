@@ -13,6 +13,7 @@ import SwiftyJSON
 import FlatUIKit
 import FastImageCache
 import QuartzCore
+import MBProgressHUD
 
 class PhotoViewController: UIViewController {
   

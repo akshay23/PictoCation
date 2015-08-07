@@ -12,6 +12,7 @@ import Alamofire
 import FastImageCache
 import SwiftyJSON
 import FlatUIKit
+import MBProgressHUD
 
 class GalleryViewController: UICollectionViewController {
 
@@ -67,7 +68,7 @@ class GalleryViewController: UICollectionViewController {
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-    
+
     if (photos.count == 0 || shouldRefresh) {
       shouldRefresh = false
       refresh()
@@ -133,27 +134,24 @@ class GalleryViewController: UICollectionViewController {
             
             dispatch_async(dispatch_get_main_queue()) {
               self.collectionView!.insertItemsAtIndexPaths(indexPaths)
+              MBProgressHUD.hideAllHUDsForView(self.navigationController!.view, animated: true)
               if (self.photos.count == 0) {
                 self.showAlertWithMessage("There are no images for #\(self.hashtagTopic)", title: "No Images", buttons: ["OK"])
               }
             }
-            
           }
-          
         }
-        
       }
       self.populatingPhotos = false
-      
     }
   }
   
   private func refresh() {
     nextURLRequest = nil
-    refreshControl.beginRefreshing()
+    let loadingNotification = MBProgressHUD.showHUDAddedTo(self.navigationController!.view, animated: true)
+    loadingNotification.mode = MBProgressHUDMode.Indeterminate
     self.photos.removeAll(keepCapacity: false)
     self.collectionView!.reloadData()
-    refreshControl.endRefreshing()
     
     if user != nil {
       let urlString = Instagram.Router.TaggedPhotos(hashtagTopic, user!.accessToken)
