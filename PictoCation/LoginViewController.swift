@@ -29,21 +29,23 @@ class LoginViewController: UIViewController {
     webView.hidden = true
     NSURLCache.sharedURLCache().removeAllCachedResponses()
     
-    // Show progress HUD
-    let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-    loadingNotification.mode = MBProgressHUDMode.Indeterminate
-    loadingNotification.labelText = "Loading"
-
-    // Delete all cookies (if any)
-    if let cookies = NSHTTPCookieStorage.sharedHTTPCookieStorage().cookies as? [NSHTTPCookie]{
-      for cookie in cookies {
-        NSHTTPCookieStorage.sharedHTTPCookieStorage().deleteCookie(cookie)
+    checkReachabilityWithBlock {
+      // Show progress HUD
+      let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+      loadingNotification.mode = MBProgressHUDMode.Indeterminate
+      loadingNotification.labelText = "Loading"
+      
+      // Delete all cookies (if any)
+      if let cookies = NSHTTPCookieStorage.sharedHTTPCookieStorage().cookies as? [NSHTTPCookie]{
+        for cookie in cookies {
+          NSHTTPCookieStorage.sharedHTTPCookieStorage().deleteCookie(cookie)
+        }
       }
+      
+      // Create new request
+      let request = NSURLRequest(URL: Instagram.Router.authorizationURL, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+      self.webView.loadRequest(request)
     }
-    
-    // Create new request
-    let request = NSURLRequest(URL: Instagram.Router.authorizationURL, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
-    self.webView.loadRequest(request)
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

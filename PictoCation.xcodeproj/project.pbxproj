@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		19091B191B5812D4005420DE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19091B181B5812D4005420DE /* CoreDataStack.swift */; };
 		19091B1E1B597A72005420DE /* PlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19091B1D1B597A72005420DE /* PlacesManager.swift */; };
+		190AFA431B7661BE003CEB93 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190AFA421B7661BE003CEB93 /* Utils.swift */; };
 		190E79611B6AECD900DC2B48 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E79601B6AECD900DC2B48 /* GalleryViewController.swift */; };
 		190E79631B6AEF6B00DC2B48 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E79621B6AEF6B00DC2B48 /* PhotoInfo.swift */; };
 		190E79651B6B392C00DC2B48 /* FastImageCacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E79641B6B392C00DC2B48 /* FastImageCacheHelper.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		19091B181B5812D4005420DE /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		19091B1D1B597A72005420DE /* PlacesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesManager.swift; sourceTree = "<group>"; };
+		190AFA421B7661BE003CEB93 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		190E79601B6AECD900DC2B48 /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		190E79621B6AEF6B00DC2B48 /* PhotoInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
 		190E79641B6B392C00DC2B48 /* FastImageCacheHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastImageCacheHelper.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				19F72C6C1B57085F00FA43E9 /* PictoCation.xcdatamodeld */,
 				19739C271B6A962B00A05F26 /* Reachability.swift */,
 				190E79641B6B392C00DC2B48 /* FastImageCacheHelper.swift */,
+				190AFA421B7661BE003CEB93 /* Utils.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				19739C281B6A962B00A05F26 /* Reachability.swift in Sources */,
 				1984BC641B72BBEF00B2B7FA /* ContainerViewController.swift in Sources */,
 				19F4D7C21B753A9300623144 /* PlaceInfoViewController.swift in Sources */,
+				190AFA431B7661BE003CEB93 /* Utils.swift in Sources */,
 				19F72C6E1B57085F00FA43E9 /* PictoCation.xcdatamodeld in Sources */,
 				190E79631B6AEF6B00DC2B48 /* PhotoInfo.swift in Sources */,
 				190E79611B6AECD900DC2B48 /* GalleryViewController.swift in Sources */,

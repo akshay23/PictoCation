@@ -71,7 +71,7 @@ class GalleryViewController: UICollectionViewController {
 
     if (photos.count == 0 || shouldRefresh) {
       shouldRefresh = false
-      refresh()
+      goRefresh()
     }
   }
   
@@ -97,10 +97,13 @@ class GalleryViewController: UICollectionViewController {
     titleView!.resignFirstResponder()
     let chars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789")
     hashtagTopic = stripOutUnwantedCharactersFromText(titleView!.text, characterSet: chars)
-    refresh()
+
+    checkReachabilityWithBlock {
+      self.refresh()
+    }
   }
   
-  private func populatePhotos(request:URLRequestConvertible) {
+  func populatePhotos(request:URLRequestConvertible) {
     if populatingPhotos {
       return
     }
@@ -111,7 +114,6 @@ class GalleryViewController: UICollectionViewController {
       
       if (error == nil) {
         let json = JSON(jsonObject!)
-        
         if (json["meta"]["code"].intValue  == 200) {
           dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
             if let urlString = json["pagination"]["next_url"].URL {
@@ -140,17 +142,19 @@ class GalleryViewController: UICollectionViewController {
               }
 
               if (self.photos.count == 0) {
-                self.showAlertWithMessage("There are no images for #\(self.hashtagTopic)", title: "No Images", buttons: ["OK"])
+                self.showAlertWithMessage("There are no photos for #\(self.hashtagTopic)", title: "No Photos", button: "OK")
               }
             }
           }
         }
+      } else {
+        self.showAlertWithMessage("Click 'Refresh' to try again", title: "Error Getting Photos", button: "OK")
       }
       self.populatingPhotos = false
     }
   }
   
-  private func refresh() {
+  func refresh() {
     nextURLRequest = nil
     
     if let navi = self.navigationController {
@@ -167,7 +171,7 @@ class GalleryViewController: UICollectionViewController {
     }
   }
   
-  private func setupView() {
+  func setupView() {
     let layout = UICollectionViewFlowLayout()
     let itemWidth = (view.bounds.size.width - 2) / 3
     layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
@@ -183,31 +187,8 @@ class GalleryViewController: UICollectionViewController {
     collectionView!.addSubview(refreshControl)
   }
   
-  private func stripOutUnwantedCharactersFromText(text: String, characterSet: Set<Character>) -> String {
+  func stripOutUnwantedCharactersFromText(text: String, characterSet: Set<Character>) -> String {
     return String(filter(text) { characterSet.contains($0) })
-  }
-  
-  private func showAlertWithMessage(message: String, title: String, buttons: [String]) {
-    let alert = FUIAlertView()
-    alert.title = title
-    alert.message = message
-    alert.delegate = nil
-    
-    for button in buttons {
-      alert.addButtonWithTitle(button)
-    }
-    
-    alert.titleLabel.textColor = UIColor.cloudsColor()
-    alert.titleLabel.font = UIFont.boldFlatFontOfSize(16);
-    alert.messageLabel.textColor = UIColor.cloudsColor()
-    alert.messageLabel.font = UIFont.flatFontOfSize(12)
-    alert.backgroundOverlay.backgroundColor = UIColor.cloudsColor().colorWithAlphaComponent(0.8)
-    alert.alertContainer.backgroundColor = UIColor.midnightBlueColor()
-    alert.defaultButtonColor = UIColor.cloudsColor()
-    alert.defaultButtonShadowColor = UIColor.asbestosColor()
-    alert.defaultButtonFont = UIFont.boldFlatFontOfSize(14)
-    alert.defaultButtonTitleColor = UIColor.asbestosColor()
-    alert.show()
   }
 }
 

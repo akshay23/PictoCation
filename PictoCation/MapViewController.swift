@@ -140,43 +140,18 @@ class MapViewController: UIViewController {
     doRefresh()
   }
   
-  private func doRefresh() {
-    if (!Reachability.isConnectedToNetwork()) {
-      self.showAlertWithMessage("Please check your connection and try again", title: "No Internet Connection", buttons: ["OK"])
-    } else {
-      btnRefresh.enabled = false
-      locationManager.startUpdatingLocation()
+  func doRefresh() {
+    checkReachabilityWithBlock {
+      self.btnRefresh.enabled = false
+      self.locationManager.startUpdatingLocation()
     }
   }
-  
-  private func showAlertWithMessage(message: String, title: String, buttons: [String]) {
-    let alert = FUIAlertView()
-    alert.title = title
-    alert.message = message
-    alert.delegate = nil
-    
-    for button in buttons {
-      alert.addButtonWithTitle(button)
-    }
-    
-    alert.titleLabel.textColor = UIColor.cloudsColor()
-    alert.titleLabel.font = UIFont.boldFlatFontOfSize(16);
-    alert.messageLabel.textColor = UIColor.cloudsColor()
-    alert.messageLabel.font = UIFont.flatFontOfSize(12)
-    alert.backgroundOverlay.backgroundColor = UIColor.cloudsColor().colorWithAlphaComponent(0.8)
-    alert.alertContainer.backgroundColor = UIColor.midnightBlueColor()
-    alert.defaultButtonColor = UIColor.cloudsColor()
-    alert.defaultButtonShadowColor = UIColor.asbestosColor()
-    alert.defaultButtonFont = UIFont.boldFlatFontOfSize(14)
-    alert.defaultButtonTitleColor = UIColor.asbestosColor()
-    alert.show()
-  }
-  
-  private func stripOutUnwantedCharactersFromText(text: String, characterSet: Set<Character>) -> String {
+
+  func stripOutUnwantedCharactersFromText(text: String, characterSet: Set<Character>) -> String {
     return String(filter(text) { characterSet.contains($0) })
   }
   
-  private func closeLeftPanelOpenIfOpen() {
+  func closeLeftPanelOpenIfOpen() {
     if (isLeftPanelOpen) {
       delegate?.toggleLeftPanel?(user)
       isLeftPanelOpen = false
@@ -244,7 +219,7 @@ extension MapViewController: CLLocationManagerDelegate {
           atScrollPosition: UITableViewScrollPosition.Top, animated: true)
         self.placeMarker?.map = nil
       } else {
-        self.showAlertWithMessage("Click 'Refresh Places' to try again", title: "Could Not Fetch Places", buttons: ["OK"])
+        self.showAlertWithMessage("Click 'Refresh Places' to try again", title: "Couldn't Get Any Places", button: "OK")
       }
       
       self.btnRefresh.enabled = true
@@ -263,7 +238,7 @@ extension MapViewController: CLLocationManagerDelegate {
   
   func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
     println("LocationManager failed with error: \(error.localizedDescription)!")
-    self.showAlertWithMessage("Click 'Refresh Places' to try again", title: "Could Not Get Location", buttons: ["OK"])
+    self.showAlertWithMessage("Click 'Refresh Places' to try again", title: "Could Not Get Location", button: "OK")
   }
 }
 

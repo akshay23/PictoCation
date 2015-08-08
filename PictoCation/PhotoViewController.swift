@@ -55,7 +55,7 @@ class PhotoViewController: UIViewController {
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-    refresh()
+    goRefresh()
   }
   
   func refresh() {
@@ -73,7 +73,9 @@ class PhotoViewController: UIViewController {
   }
   
   func goRefresh() {
-    refresh()
+    checkReachabilityWithBlock {
+      self.refresh()
+    }
   }
   
   // TODO: Like/Unlike photo
