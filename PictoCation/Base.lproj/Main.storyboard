@@ -77,8 +77,22 @@
                     <view key="view" contentMode="scaleToFill" id="566-6V-f6b">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VAq-rE-Rhk">
+                                <rect key="frame" x="150" y="30" width="300" height="270"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VAq-rE-Rhk" firstAttribute="width" secondItem="566-6V-f6b" secondAttribute="height" multiplier="1:2" id="8Rj-NH-gXB"/>
+                            <constraint firstItem="VAq-rE-Rhk" firstAttribute="top" secondItem="NQS-68-zXt" secondAttribute="bottom" constant="10" id="FZC-h5-Mra"/>
+                            <constraint firstAttribute="centerX" secondItem="VAq-rE-Rhk" secondAttribute="centerX" id="Q4z-2z-uE4"/>
+                            <constraint firstItem="VAq-rE-Rhk" firstAttribute="bottom" secondItem="GZ4-EA-vrV" secondAttribute="top" multiplier="0.5" id="xwb-Z4-mMY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgMap" destination="VAq-rE-Rhk" id="szf-Ba-Das"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MXJ-Oj-1ey" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

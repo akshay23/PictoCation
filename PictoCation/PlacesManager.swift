@@ -23,7 +23,7 @@ class PlacesManager {
   
   var user: User?
 
-  private let apiKey: String = "AIzaSyDBVyaAIfNn1tcLuns6JMqGd5984ZPuomc"
+  private let apiKey: String = "AIzaSyA_wPXkAMWJDVdV7M7-ZG28cwCdRX7Y5-E"
   private var requestURL: String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
   private var latitude: Double!
   private var longitude: Double!

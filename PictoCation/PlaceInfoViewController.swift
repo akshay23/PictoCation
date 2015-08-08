@@ -13,9 +13,11 @@ import MBProgressHUD
 
 class PlaceInfoViewController: UIViewController {
   
+  @IBOutlet var imgMap: UIImageView!
+  
   var placesClient: GMSPlacesClient?
   var place: (id: String, name: String, latitude: Double, longitude: Double)!
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -63,6 +65,23 @@ class PlaceInfoViewController: UIViewController {
     }
   }
   
+  func getDataFromUrl(urL: NSURL, completion: ((data: NSData?) -> Void)) {
+    NSURLSession.sharedSession().dataTaskWithURL(urL) {
+      (data, response, error) in
+      completion(data: data)
+      }.resume()
+  }
+  
+  func downloadAndSetMapImage(url: NSURL){
+    println("Started downloading \(url)")
+    getDataFromUrl(url) { data in
+      dispatch_async(dispatch_get_main_queue()) {
+        println("Finished downloading \(url)")
+        self.imgMap.image = UIImage(data: data!)
+      }
+    }
+  }
+  
   // TODO
   func populateInfo() {
     // Show loading HUD
@@ -80,7 +99,14 @@ class PlaceInfoViewController: UIViewController {
       }
       
       if let gmsPlace = gmsPlace {
-        self.showAlertWithMessage(gmsPlace.formattedAddress, title: "Address", button: "OK")
+        // Get and set static map image
+        let size = "&size=\(Int(self.imgMap.frame.width))x\(Int(self.imgMap.frame.height))"
+        let marker = "&markers=\(gmsPlace.coordinate.latitude),\(gmsPlace.coordinate.longitude)"
+        let url = "https://maps.googleapis.com/maps/api/staticmap?zoom=15\(size)\(marker)"
+        self.downloadAndSetMapImage(NSURL(string: url)!)
+        
+        // TODO: Populate labels
+        // self.showAlertWithMessage(gmsPlace.formattedAddress, title: "Address", button: "OK")
       }
     })
   }

@@ -25,8 +25,7 @@ class PhotoViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Set bg color and title
-    self.title = "#\(hashtagTopic)"
+    // Set bg color
     view.backgroundColor = UIColor.wetAsphaltColor()
     
     // Add back nav button
@@ -55,6 +54,7 @@ class PhotoViewController: UIViewController {
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
+    self.title = "#\(hashtagTopic)"
     goRefresh()
   }
   
