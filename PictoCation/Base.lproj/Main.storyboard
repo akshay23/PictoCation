@@ -96,12 +96,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQK-DP-9j5" userLabel="MapHolder" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="284"/>
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQK-DP-9j5" userLabel="MapHolder" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="285"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JHD-LM-PSX">
-                                <rect key="frame" x="0.0" y="316" width="600" height="286"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JHD-LM-PSX">
+                                <rect key="frame" x="0.0" y="315" width="600" height="286"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="e4H-Qv-oLP" detailTextLabel="6fP-fz-bOf" style="IBUITableViewCellStyleSubtitle" id="5cl-9p-hk3">
@@ -133,8 +133,8 @@
                                     <outlet property="delegate" destination="tLB-nQ-CaP" id="eqB-aA-pbq"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Mi-IU-STJ" customClass="FUIButton">
-                                <rect key="frame" x="0.0" y="284" width="600" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Mi-IU-STJ" customClass="FUIButton">
+                                <rect key="frame" x="0.0" y="285" width="600" height="31"/>
                                 <state key="normal" title="Refresh Places"/>
                                 <connections>
                                     <action selector="refreshPlaces:" destination="tLB-nQ-CaP" eventType="touchUpInside" id="7AY-nc-nrk"/>
@@ -232,8 +232,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T2j-hq-GT7">
-                                <rect key="frame" x="150" y="74" width="300" height="286"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T2j-hq-GT7">
+                                <rect key="frame" x="150" y="30" width="300" height="330"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -92,14 +92,3 @@ class LeftViewController: UITableViewController {
     return cell
   }
 }
-
-extension Array {
-  func find(includedElement: T -> Bool) -> Int? {
-    for (idx, element) in enumerate(self) {
-      if includedElement(element) {
-        return idx
-      }
-    }
-    return nil
-  }
-}

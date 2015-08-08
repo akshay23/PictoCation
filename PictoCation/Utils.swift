@@ -41,3 +41,15 @@ extension UIViewController {
     }
   }
 }
+
+extension Array {
+  // Return index of element in array (if any)
+  func find(includedElement: T -> Bool) -> Int? {
+    for (idx, element) in enumerate(self) {
+      if includedElement(element) {
+        return idx
+      }
+    }
+    return nil
+  }
+}
