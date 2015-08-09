@@ -59,6 +59,11 @@ class LeftViewController: UITableViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: selectedIndex, inSection: 0), atScrollPosition: .None, animated: true)
+  }
 
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1

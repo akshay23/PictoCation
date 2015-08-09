@@ -61,7 +61,7 @@ class MapViewController: UIViewController {
     btnRefresh.titleLabel?.font = UIFont.boldFlatFontOfSize(20)
     btnRefresh.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Normal)
     btnRefresh.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Highlighted)
-    placesTable.backgroundColor = UIColor.asbestosColor()
+    placesTable.backgroundColor = UIColor.wetAsphaltColor()
     btnLogout.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     btnLogout.tintColor = UIColor.cloudsColor()
     

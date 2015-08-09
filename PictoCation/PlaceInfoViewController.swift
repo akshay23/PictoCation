@@ -14,7 +14,13 @@ import MBProgressHUD
 class PlaceInfoViewController: UIViewController {
   
   @IBOutlet var imgMap: UIImageView!
-  
+  @IBOutlet var lblAddress: UILabel!
+  @IBOutlet var lblAddressTitle: UILabel!
+  @IBOutlet var lblPhone: UILabel!
+  @IBOutlet var lblPhoneTitle: UILabel!
+  @IBOutlet var lblStatus: UILabel!
+  @IBOutlet var lblStatusTitle: UILabel!
+
   var placesClient: GMSPlacesClient?
   var place: (id: String, name: String, latitude: Double, longitude: Double)!
 
@@ -23,6 +29,14 @@ class PlaceInfoViewController: UIViewController {
     
     // BG color
     view.backgroundColor = UIColor.wetAsphaltColor()
+    
+    // Set label colors and font
+    lblAddressTitle.textColor = UIColor.carrotColor()
+    lblAddress.textColor = UIColor.cloudsColor()
+    lblPhoneTitle.textColor = UIColor.carrotColor()
+    lblPhone.textColor = UIColor.cloudsColor()
+    lblStatusTitle.textColor = UIColor.carrotColor()
+    lblStatus.textColor = UIColor.cloudsColor()
     
     // Add back nav button
     let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: "goBack")
@@ -104,9 +118,18 @@ class PlaceInfoViewController: UIViewController {
         let marker = "&markers=\(gmsPlace.coordinate.latitude),\(gmsPlace.coordinate.longitude)"
         let url = "https://maps.googleapis.com/maps/api/staticmap?zoom=15\(size)\(marker)"
         self.downloadAndSetMapImage(NSURL(string: url)!)
+
+        self.lblAddress.text = gmsPlace.formattedAddress
+        self.lblPhone.text = gmsPlace.phoneNumber
         
-        // TODO: Populate labels
-        // self.showAlertWithMessage(gmsPlace.formattedAddress, title: "Address", button: "OK")
+        switch(gmsPlace.openNowStatus.rawValue) {
+        case 0:
+          self.lblStatus.text = "Open"
+        case 1:
+          self.lblStatus.text = "Closed"
+        default:
+          self.lblStatus.text = "Closed"
+        }
       }
     })
   }
