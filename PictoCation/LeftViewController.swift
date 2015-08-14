@@ -43,6 +43,8 @@ class LeftViewController: UITableViewController {
     types.append("Spa")
     types.append("Stadium")
     types.append("Store")
+    types.append("Train Station")
+    types.append("Zoo")
     
     // Remove separator line and set bg color of table
     let table = self.view as! UITableView

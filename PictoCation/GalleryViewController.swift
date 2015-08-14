@@ -83,7 +83,8 @@ class GalleryViewController: UICollectionViewController {
     if segue.identifier == "show photo" && segue.destinationViewController.isKindOfClass(PhotoViewController.classForCoder()) {
       let photoViewController = segue.destinationViewController as! PhotoViewController
       photoViewController.photoInfo = sender?.valueForKey("photoInfo") as? PhotoInfo
-      photoViewController.hashtagTopic = sender?.valueForKey("hashtagTopic") as? String
+      photoViewController.hashtagTopic = hashtagTopic
+      photoViewController.user = user
     }
   }
   
@@ -263,7 +264,7 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
   
   override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     let photoInfo = photos[indexPath.row]
-    performSegueWithIdentifier("show photo", sender: ["photoInfo": photoInfo, "hashtagTopic": hashtagTopic])
+    performSegueWithIdentifier("show photo", sender: ["photoInfo": photoInfo])
   }
   
   override func scrollViewDidScroll(scrollView: UIScrollView) {

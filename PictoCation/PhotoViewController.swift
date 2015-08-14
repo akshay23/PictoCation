@@ -18,7 +18,10 @@ import MBProgressHUD
 class PhotoViewController: UIViewController {
   
   @IBOutlet var mainPhotoView: UIImageView!
+  @IBOutlet var buttonsView: UIView!
+  @IBOutlet var commentsTable: UITableView!
 
+  var user: User?
   var photoInfo: PhotoInfo?
   var hashtagTopic: String!
 
@@ -44,6 +47,13 @@ class PhotoViewController: UIViewController {
     mainPhotoView.layer.shadowOpacity = 0.5
     mainPhotoView.layer.shadowRadius = 5
     mainPhotoView.layer.shadowOffset = CGSize(width: 10, height: 10)
+    
+    // Set up the appearance of buttonsView and table
+    buttonsView.layer.cornerRadius = 4
+    buttonsView.backgroundColor = UIColor.cloudsColor()
+    commentsTable.layer.cornerRadius = 4
+    commentsTable.backgroundColor = UIColor.wetAsphaltColor()
+    commentsTable.tableFooterView = UIView(frame: CGRectZero)
     
     // Add double-tap recognzier to image view
     let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: "handleDoubleTap:")
@@ -98,4 +108,21 @@ class PhotoViewController: UIViewController {
     alert.show()
     alert.show()
   }
+}
+
+extension PhotoViewController: UITableViewDataSource {
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+    cell.textLabel!.text = "This is a #fake comment!"
+    cell.detailTextLabel!.text = "@john\(indexPath.row)"
+    cell.backgroundColor = UIColor.cloudsColor()
+    return cell
+  }
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 3
+  }
+}
+
+extension PhotoViewController: UITableViewDelegate {
 }

@@ -70,6 +70,9 @@ class MapViewController: UIViewController {
     typeButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     typeButton.tintColor = UIColor.cloudsColor()
     navigationItem.leftBarButtonItem = typeButton
+    
+    // Hide any empty cells
+    placesTable.tableFooterView = UIView(frame: CGRectZero)
   }
   
   override func viewWillAppear(animated: Bool) {
