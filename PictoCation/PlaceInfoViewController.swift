@@ -96,7 +96,6 @@ class PlaceInfoViewController: UIViewController {
     }
   }
   
-  // TODO
   func populateInfo() {
     // Show loading HUD
     if let navi = self.navigationController {
@@ -120,7 +119,12 @@ class PlaceInfoViewController: UIViewController {
         self.downloadAndSetMapImage(NSURL(string: url)!)
 
         self.lblAddress.text = gmsPlace.formattedAddress
-        self.lblPhone.text = gmsPlace.phoneNumber
+        
+        if let phone = gmsPlace.phoneNumber {
+          self.lblPhone.text = gmsPlace.phoneNumber
+        } else {
+          self.lblPhone.text = "N/A"
+        }
         
         switch(gmsPlace.openNowStatus.rawValue) {
         case 0:

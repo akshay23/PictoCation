@@ -127,7 +127,9 @@ class GalleryViewController: UICollectionViewController {
               .filter {
                 $0["type"].stringValue == "image"
               }.map({
-                PhotoInfo(instaID: $0["id"].stringValue, sourceImageURL: $0["images"]["standard_resolution"]["url"].URL!)
+                PhotoInfo(instaID: $0["id"].stringValue,
+                  sourceImageURL: $0["images"]["standard_resolution"]["url"].URL!,
+                  isLiked: $0["user_has_liked"].boolValue)
               })
             
             let lastItem = self.photos.count
@@ -149,7 +151,7 @@ class GalleryViewController: UICollectionViewController {
           }
         }
       } else {
-        self.showAlertWithMessage("Click 'Refresh' to try again", title: "Error Getting Photos", button: "OK")
+        self.showAlertWithMessage("Click 'Refresh' to try again", title: "Couldn't Get Photos", button: "OK")
       }
       self.populatingPhotos = false
     }

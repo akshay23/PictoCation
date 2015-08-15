@@ -29,11 +29,6 @@ class PlacesManager {
   private var longitude: Double!
   private var radius: Int = 1000  // In meters
   
-  // Temp arrays
-  private var firstSetofPlaces: [(name: String, latitude: Double, longitude: Double)] = []
-  private var secondSetofPlaces: [(name: String, latitude: Double, longitude: Double)] = []
-  private var thirdSetofPlaces: [(name: String, latitude: Double, longitude: Double)] = []
-  
   // Read-only
   private(set) var places: [(id: String, name: String, latitude: Double, longitude: Double)!] = []
   

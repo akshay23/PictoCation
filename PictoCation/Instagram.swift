@@ -18,6 +18,7 @@ struct Instagram {
     static let authorizationURL = NSURL(string: Router.baseURLString + "/oauth/authorize/?client_id=" + Router.clientID + "&redirect_uri=" + Router.redirectURI + "&response_type=code")!
     
     case TaggedPhotos(String, String)
+    case PhotoComments(String, String)
     case requestOauthCode
     
     static func requestAccessTokenURLStringAndParms(code: String) -> (URLString: String, Params: [String: AnyObject]) {
@@ -33,6 +34,11 @@ struct Instagram {
         case .TaggedPhotos (let topic, let accessToken):
           let params = ["access_token": accessToken]
           let pathString = "/v1/tags/" + topic + "/media/recent"
+          return (pathString, params)
+          
+        case .PhotoComments(let instagramID, let accessToken):
+          let params = ["access_token": accessToken]
+          let pathString = "/v1/media/\(instagramID)"
           return (pathString, params)
           
         case .requestOauthCode:

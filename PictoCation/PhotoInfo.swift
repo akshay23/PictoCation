@@ -22,13 +22,15 @@ class PhotoInfo: NSObject, FICEntity {
   }
   
   var instagramID: String
+  var isLiked: Bool = false
   
   var sourceImageURL: NSURL
   var request: Alamofire.Request?
   
-  init(instaID: String, sourceImageURL: NSURL) {
+  init(instaID: String, sourceImageURL: NSURL, isLiked: Bool) {
     self.instagramID = instaID
     self.sourceImageURL = sourceImageURL
+    self.isLiked = isLiked
     super.init()
   }
   
