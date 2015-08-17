@@ -51,6 +51,7 @@ class MapViewController: UIViewController {
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
     locationManager.startUpdatingLocation()
     mainMapView.delegate = self
+    isFirstLogin = true
     
     // Get PlacesManager instance
     placesManager = PlacesManager.sharedInstance
@@ -62,7 +63,7 @@ class MapViewController: UIViewController {
     
     // Setup options view
     let optionsWidth: CGFloat = (view.frame.size.width / 2) + 30
-    let optionsHeight: CGFloat = 140
+    let optionsHeight: CGFloat = 230
     let centerX = (view.frame.size.width / 2) - (optionsWidth / 2)
     let bottomOfFrame = view.frame.maxY - 10
     optionsView = OptionsView(frame: CGRectMake(centerX, bottomOfFrame, optionsWidth, optionsHeight), delegate: self)
@@ -96,31 +97,27 @@ class MapViewController: UIViewController {
       let results = coreDataStack.context.executeFetchRequest(fetchRequest, error: &error) as! [User]
       user = results.first
     }
-
-    if (user == nil) {
-      performSegueWithIdentifier("login", sender: self)
-      locationManager.stopUpdatingLocation()
-      mainMapView.hidden = true
-      btnLogout.enabled = false
-      btnRefresh.hidden = true
-      placesTable.hidden = true
+    
+    // First time login
+    if (isFirstLogin) {
       isUpdating = true
-    } else {
-      println("Logged in")
-      
-      // First time login
-      if (isFirstLogin) {
-        locationManager.startUpdatingLocation()
-        isFirstLogin = false
-      }
-      
-      mainMapView.hidden = false
-      placesTable.hidden = false
-      isUpdating = false
-      mainMapView.setMinZoom(14, maxZoom: 14)
-      btnLogout.enabled = true
-      btnRefresh.hidden = false
+      locationManager.startUpdatingLocation()
+      isFirstLogin = false
     }
+    
+    // Not logged in
+    if (user == nil) {
+      btnLogout.enabled = false
+    } else {
+      btnLogout.enabled = false
+    }
+    
+    mainMapView.hidden = false
+    placesTable.hidden = false
+    isUpdating = false
+    mainMapView.setMinZoom(14, maxZoom: 14)
+    btnLogout.enabled = true
+    btnRefresh.hidden = false
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -174,7 +171,7 @@ class MapViewController: UIViewController {
     }
   }
   
-  @objc func instaButtonTapped(sender: UIButton, event: AnyObject) {
+  @objc func elipsesTapped(sender: UIButton, event: AnyObject) {
     let touches = event.allTouches()
     let firstTouch = touches?.first as? UITouch
     let currentTouchPosition = firstTouch?.locationInView(self.placesTable)
@@ -185,10 +182,10 @@ class MapViewController: UIViewController {
       selectedHastagTopic = place.stringByReplacingOccurrencesOfString(" ", withString: "")
       navigationController!.view.addSubview(bgOverlay)
       navigationController!.view.addSubview(optionsView)
-      UIView.animateWithDuration(0.5) {
+      UIView.animateWithDuration(0.2) {
         self.bgOverlay.alpha = 0.9
         var optionsFrame = self.optionsView.frame
-        optionsFrame.origin.y = (self.view.frame.size.height / 3) - (optionsFrame.size.height / 2)
+        optionsFrame.origin.y = (self.bgOverlay.frame.size.height / 2) - (optionsFrame.size.height / 2)
         self.optionsView!.frame = optionsFrame
       }
     }
@@ -287,7 +284,7 @@ extension MapViewController: UITableViewDataSource {
     let icon = UIImage(named: "InstagramIcon")
     let accBtn = UIButton(frame: CGRectMake(0.0, 0.0, icon!.size.width, icon!.size.width))
     accBtn.setBackgroundImage(icon, forState: .Normal)
-    accBtn.addTarget(self, action: Selector("instaButtonTapped:event:"), forControlEvents: UIControlEvents.TouchUpInside)
+    accBtn.addTarget(self, action: Selector("elipsesTapped:event:"), forControlEvents: UIControlEvents.TouchUpInside)
     cell.accessoryView = accBtn
     
     // Add the info
@@ -367,12 +364,27 @@ extension MapViewController: OptionsDelegate {
         (value: Bool) in
         self.bgOverlay.removeFromSuperview()
         self.optionsView.removeFromSuperview()
-        self.performSegueWithIdentifier("show gallery", sender: self)
+        
+        if (self.user == nil) {
+          self.performSegueWithIdentifier("login", sender: self)
+        } else {
+          self.performSegueWithIdentifier("show gallery", sender: self)
+        }
     }
   }
   
   // TODO
   func yelp() {
+    cancel()
+  }
+  
+  // TODO
+  func reserve() {
+    cancel()
+  }
+  
+  // TODO
+  func uber() {
     cancel()
   }
 }

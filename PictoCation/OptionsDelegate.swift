@@ -12,4 +12,6 @@ protocol OptionsDelegate {
   func cancel()
   func instagram()
   func yelp()
+  func reserve()
+  func uber()
 }

@@ -400,22 +400,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Inh-zp-xnW">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="520"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="YWS-0Q-eb8"/>
                                 </connections>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUE-l5-nfg" customClass="FUIButton">
+                                <rect key="frame" x="225" y="545" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AR5-HW-zey"/>
+                                    <constraint firstAttribute="width" constant="150" id="p4y-oh-aiw"/>
+                                </constraints>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="1" green="0.60344653193755082" blue="0.45077290952219395" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.68887172080000003" green="0.84889764940000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Inh-zp-xnW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3oX-aw-h7R"/>
+                            <constraint firstItem="GUE-l5-nfg" firstAttribute="top" secondItem="Inh-zp-xnW" secondAttribute="bottom" constant="10" id="42A-I7-8a8"/>
                             <constraint firstItem="Inh-zp-xnW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="6ge-C8-4SD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Inh-zp-xnW" secondAttribute="bottom" constant="60" id="Dnx-Wq-duz"/>
                             <constraint firstItem="Inh-zp-xnW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="H8p-m4-Ehh"/>
                             <constraint firstAttribute="centerY" secondItem="Inh-zp-xnW" secondAttribute="centerY" id="NfN-Wh-ft3"/>
+                            <constraint firstAttribute="centerX" secondItem="GUE-l5-nfg" secondAttribute="centerX" id="Ud2-B2-7yO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GUE-l5-nfg" secondAttribute="bottom" constant="5" id="Zjb-Vi-gR8"/>
+                            <constraint firstItem="Inh-zp-xnW" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="50" id="cy9-MU-aAV"/>
                             <constraint firstAttribute="centerX" secondItem="Inh-zp-xnW" secondAttribute="centerX" id="sy2-3n-Xys"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="H8p-m4-Ehh"/>
+                                <exclude reference="NfN-Wh-ft3"/>
+                                <exclude reference="cy9-MU-aAV"/>
+                                <exclude reference="42A-I7-8a8"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Tag-5o-iQ1"/>
                     <connections>
+                        <outlet property="closeButton" destination="GUE-l5-nfg" id="caG-oc-vwG"/>
                         <outlet property="webView" destination="Inh-zp-xnW" id="i9Z-B1-6GB"/>
                         <segue destination="Gki-Tv-B0q" kind="unwind" identifier="unwindToMapView" unwindAction="unwindToMapView:" id="zZ1-tO-dsR"/>
                     </connections>
@@ -423,6 +449,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="992" y="1468"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="H3F-Bh-SMx">
+            <objects>
+                <viewController id="oVy-e5-1GV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iET-wz-sZ7"/>
+                        <viewControllerLayoutGuide type="bottom" id="esO-8R-26c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5CO-Yc-nHb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Frm-aW-qCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1761" y="1468"/>
         </scene>
     </scenes>
 </document>

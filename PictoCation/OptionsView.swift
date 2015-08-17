@@ -37,7 +37,6 @@ class OptionsView: UIView {
     instaButton.shadowHeight = 3.0
     instaButton.buttonColor = UIColor.turquoiseColor()
     instaButton.shadowColor = UIColor.greenSeaColor()
-    instaButton.layer.cornerRadius = 3
     instaButton.setTitle("Instagram Photos", forState: .Normal)
     instaButton.titleLabel?.font = UIFont.boldFlatFontOfSize(20)
     instaButton.addTarget(self, action: "instagram", forControlEvents: UIControlEvents.TouchUpInside)
@@ -47,17 +46,33 @@ class OptionsView: UIView {
     yelpButton.shadowHeight = 3.0
     yelpButton.buttonColor = UIColor.turquoiseColor()
     yelpButton.shadowColor = UIColor.greenSeaColor()
-    yelpButton.layer.cornerRadius = 3
     yelpButton.setTitle("Yelp Reviews", forState: .Normal)
     yelpButton.titleLabel?.font = UIFont.boldFlatFontOfSize(20)
     yelpButton.addTarget(self, action: "yelp", forControlEvents: UIControlEvents.TouchUpInside)
     addSubview(yelpButton)
     
-    let cancelButton = FUIButton(frame: CGRectMake(8, yelpButton.frame.origin.y + 45, frame.size.width - 15, 40))
+    let reserveButton = FUIButton(frame: CGRectMake(8, yelpButton.frame.origin.y + 45, frame.size.width - 15, 40))
+    reserveButton.shadowHeight = 3.0
+    reserveButton.buttonColor = UIColor.turquoiseColor()
+    reserveButton.shadowColor = UIColor.greenSeaColor()
+    reserveButton.setTitle("Make Reservation", forState: .Normal)
+    reserveButton.titleLabel?.font = UIFont.boldFlatFontOfSize(40)
+    reserveButton.addTarget(self, action: "reserve", forControlEvents: UIControlEvents.TouchUpInside)
+    addSubview(reserveButton)
+    
+    let uberButton = FUIButton(frame: CGRectMake(8, reserveButton.frame.origin.y + 45, frame.size.width - 15, 40))
+    uberButton.shadowHeight = 3.0
+    uberButton.buttonColor = UIColor.turquoiseColor()
+    uberButton.shadowColor = UIColor.greenSeaColor()
+    uberButton.setTitle("Book an Uber", forState: .Normal)
+    uberButton.titleLabel?.font = UIFont.boldFlatFontOfSize(40)
+    uberButton.addTarget(self, action: "uber", forControlEvents: UIControlEvents.TouchUpInside)
+    addSubview(uberButton)
+    
+    let cancelButton = FUIButton(frame: CGRectMake(8, uberButton.frame.origin.y + 45, frame.size.width - 15, 40))
     cancelButton.shadowHeight = 3.0
     cancelButton.buttonColor = UIColor.turquoiseColor()
     cancelButton.shadowColor = UIColor.greenSeaColor()
-    cancelButton.layer.cornerRadius = 3
     cancelButton.setTitle("Cancel", forState: .Normal)
     cancelButton.titleLabel?.font = UIFont.boldFlatFontOfSize(20)
     cancelButton.addTarget(self, action: "cancel", forControlEvents: UIControlEvents.TouchUpInside)
@@ -79,6 +94,18 @@ class OptionsView: UIView {
   func yelp() {
     if let delegate = delegate {
       delegate.yelp()
+    }
+  }
+  
+  func reserve() {
+    if let delegate = delegate {
+      delegate.reserve()
+    }
+  }
+  
+  func uber() {
+    if let delegate = delegate {
+      delegate.uber()
     }
   }
 }
