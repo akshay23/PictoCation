@@ -39,6 +39,7 @@ class MapViewController: UIViewController {
   var isLeftPanelOpen: Bool = false
   var selectedHastagTopic: String?
   var delegate: CenterViewControllerDelegate?
+  var optionsView: OptionsView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -53,6 +54,18 @@ class MapViewController: UIViewController {
     
     // Get PlacesManager instance
     placesManager = PlacesManager.sharedInstance
+    
+    // Setup overlay
+    bgOverlay = UIView(frame: self.view.bounds)
+    bgOverlay.backgroundColor = UIColor.whiteColor()
+    bgOverlay.alpha = 0.0
+    
+    // Setup options view
+    let optionsWidth: CGFloat = (view.frame.size.width / 2) + 30
+    let optionsHeight: CGFloat = 140
+    let centerX = (view.frame.size.width / 2) - (optionsWidth / 2)
+    let bottomOfFrame = view.frame.maxY - 10
+    optionsView = OptionsView(frame: CGRectMake(centerX, bottomOfFrame, optionsWidth, optionsHeight), delegate: self)
     
     // Update the look of components
     btnRefresh.shadowHeight = 4.0
@@ -170,7 +183,14 @@ class MapViewController: UIViewController {
     if (indexPath != nil) {
       let place = placesManager.places[indexPath!.row].name
       selectedHastagTopic = place.stringByReplacingOccurrencesOfString(" ", withString: "")
-      performSegueWithIdentifier("show gallery", sender: self)
+      navigationController!.view.addSubview(bgOverlay)
+      navigationController!.view.addSubview(optionsView)
+      UIView.animateWithDuration(0.5) {
+        self.bgOverlay.alpha = 0.9
+        var optionsFrame = self.optionsView.frame
+        optionsFrame.origin.y = (self.view.frame.size.height / 3) - (optionsFrame.size.height / 2)
+        self.optionsView!.frame = optionsFrame
+      }
     }
   }
   
@@ -189,14 +209,9 @@ extension MapViewController: CLLocationManagerDelegate {
     } else {
       return
     }
-    
-    // Show progress HUD in table view
-    bgOverlay = UIView(frame: self.view.bounds)
-    bgOverlay.backgroundColor = UIColor.whiteColor()
-    bgOverlay.alpha = 0.0
-    navigationController!.view.addSubview(bgOverlay)
-    
+
     // Fade in the overlay and HUD
+    navigationController!.view.addSubview(bgOverlay)
     UIView.animateWithDuration(0.5, animations: {
       self.bgOverlay.alpha = 0.8
       let loadingNotification = MBProgressHUD.showHUDAddedTo(self.navigationController!.view, animated: true)
@@ -230,10 +245,7 @@ extension MapViewController: CLLocationManagerDelegate {
       
       // Stop the loading spinner (fade out)
       MBProgressHUD.hideAllHUDsForView(self.navigationController!.view, animated: true)
-      if (self.bgOverlay != nil) {
-        self.bgOverlay.removeFromSuperview()
-        self.bgOverlay = nil
-      }
+      self.bgOverlay.removeFromSuperview()
     }
   }
   
@@ -328,5 +340,39 @@ extension MapViewController: LeftViewControllerDelegate {
       coreDataStack.saveContext()
       doRefresh()
     }
+  }
+}
+ 
+extension MapViewController: OptionsDelegate {
+  func cancel() {
+    UIView.animateWithDuration(0.2, animations: {
+      var optionsFrame = self.optionsView.frame
+      optionsFrame.origin.y = self.view.frame.maxY
+      self.optionsView.frame = optionsFrame
+      self.bgOverlay.alpha = 0.0
+    }) {
+        (value: Bool) in
+        self.bgOverlay.removeFromSuperview()
+        self.optionsView.removeFromSuperview()
+    }
+  }
+
+  func instagram() {
+    UIView.animateWithDuration(0.2, animations: {
+      var optionsFrame = self.optionsView.frame
+      optionsFrame.origin.y = self.view.frame.maxY
+      self.optionsView.frame = optionsFrame
+      self.bgOverlay.alpha = 0.0
+      }) {
+        (value: Bool) in
+        self.bgOverlay.removeFromSuperview()
+        self.optionsView.removeFromSuperview()
+        self.performSegueWithIdentifier("show gallery", sender: self)
+    }
+  }
+  
+  // TODO
+  func yelp() {
+    cancel()
   }
 }

@@ -24,8 +24,7 @@ class GalleryViewController: UICollectionViewController {
   var user: User?
   var hashtagTopic: String!
   var shouldRefresh: Bool = false
-  
-  let refreshControl = UIRefreshControl()
+
   let formatName = KMSmallImageFormatName
   let PhotoBrowserCellIdentifier = "PhotoBrowserCell"
   let PhotoBrowserFooterViewIdentifier = "PhotoBrowserFooterView"
@@ -184,10 +183,6 @@ class GalleryViewController: UICollectionViewController {
     collectionView!.collectionViewLayout = layout
     collectionView!.registerClass(PhotoBrowserCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: PhotoBrowserCellIdentifier)
     collectionView!.registerClass(PhotoBrowserLoadingCollectionView.classForCoder(), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: PhotoBrowserFooterViewIdentifier)
-    
-    refreshControl.tintColor = UIColor.whiteColor()
-    refreshControl.addTarget(self, action: Selector("goRefresh"), forControlEvents: .ValueChanged)
-    collectionView!.addSubview(refreshControl)
   }
   
   func stripOutUnwantedCharactersFromText(text: String, characterSet: Set<Character>) -> String {

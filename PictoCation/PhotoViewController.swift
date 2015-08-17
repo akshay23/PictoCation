@@ -18,11 +18,7 @@ import MBProgressHUD
 class PhotoViewController: UIViewController {
   
   @IBOutlet var mainPhotoView: UIImageView!
-  @IBOutlet var buttonsView: UIView!
   @IBOutlet var commentsTable: UITableView!
-  @IBOutlet var lineView: UIView!
-  @IBOutlet var likeBtn: UIButton!
-  @IBOutlet var commentBtn: UIButton!
 
   var user: User?
   var photoInfo: PhotoInfo?
@@ -53,17 +49,11 @@ class PhotoViewController: UIViewController {
     mainPhotoView.layer.shadowOffset = CGSize(width: 10, height: 10)
     
     // Set up the appearances
-    buttonsView.layer.cornerRadius = 4
-    buttonsView.backgroundColor = UIColor.cloudsColor()
     commentsTable.layer.cornerRadius = 4
     commentsTable.backgroundColor = UIColor.wetAsphaltColor()
     commentsTable.tableFooterView = UIView(frame: CGRectZero)
     commentsTable.rowHeight = UITableViewAutomaticDimension
     commentsTable.estimatedRowHeight = 160.0
-    lineView.backgroundColor = UIColor.silverColor()
-    
-    // Set like button icon
-    updateLikeButton()
     
     // Add double-tap recognzier to image view
     let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: "handleDoubleTap:")
@@ -114,19 +104,10 @@ class PhotoViewController: UIViewController {
           self.photoInfo!.isLiked = json["data"]["user_has_liked"].boolValue
 
           self.commentsTable.reloadData()
-          self.updateLikeButton()
         }
       } else {
         self.showAlertWithMessage("Click 'Refresh' to try again", title: "Couldn't Get Comments", button: "OK")
       }
-    }
-  }
-  
-  func updateLikeButton() {
-    if (photoInfo!.isLiked) {
-      likeBtn.setImage(UIImage(named: "Heart-red"), forState: .Normal)
-    } else {
-      likeBtn.setImage(UIImage(named: "Heart-white"), forState: .Normal)
     }
   }
   
@@ -141,31 +122,8 @@ class PhotoViewController: UIViewController {
     }
   }
   
-  @IBAction func comment(sender: AnyObject) {
-  }
-  
-  @IBAction func like(sender: AnyObject) {
-  }
-  
-  // TODO: Like/Unlike photo
   func handleDoubleTap(recognizer: UITapGestureRecognizer!) {
-    let alert = FUIAlertView()
-    alert.title = "Double-tap"
-    alert.message = "Eventually this image will be 'liked'"
-    alert.delegate = nil
-    alert.addButtonWithTitle("OK")
-    alert.titleLabel.textColor = UIColor.cloudsColor()
-    alert.titleLabel.font = UIFont.boldFlatFontOfSize(16);
-    alert.messageLabel.textColor = UIColor.cloudsColor()
-    alert.messageLabel.font = UIFont.flatFontOfSize(12)
-    alert.backgroundOverlay.backgroundColor = UIColor.cloudsColor().colorWithAlphaComponent(0.8)
-    alert.alertContainer.backgroundColor = UIColor.midnightBlueColor()
-    alert.defaultButtonColor = UIColor.cloudsColor()
-    alert.defaultButtonShadowColor = UIColor.asbestosColor()
-    alert.defaultButtonFont = UIFont.boldFlatFontOfSize(14)
-    alert.defaultButtonTitleColor = UIColor.asbestosColor()
-    alert.show()
-    alert.show()
+    
   }
 }
 

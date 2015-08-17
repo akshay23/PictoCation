@@ -333,63 +333,8 @@
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T2j-hq-GT7">
                                 <rect key="frame" x="150" y="30" width="300" height="330"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeC-Ki-Hdu" userLabel="Buttons">
-                                <rect key="frame" x="150" y="378" width="300" height="50"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFq-1g-L8K" userLabel="Line">
-                                        <rect key="frame" x="149" y="0.0" width="2" height="50"/>
-                                        <color key="backgroundColor" red="0.93704530423280419" green="0.93704530423280419" blue="0.93704530423280419" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="2" id="zGT-rO-mnR"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toU-kr-mbr" userLabel="CommentButton">
-                                        <rect key="frame" x="191" y="5" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="GJv-cf-ZJk"/>
-                                            <constraint firstAttribute="height" constant="40" id="aae-fJ-YgR"/>
-                                        </constraints>
-                                        <state key="normal" image="CommentIcon">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="comment:" destination="Q0T-Lu-91q" eventType="touchUpInside" id="NDD-dJ-sdc"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhK-Kf-a6k" userLabel="LikeButton">
-                                        <rect key="frame" x="74" y="7.5" width="35" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="Ezc-oV-Kqb"/>
-                                            <constraint firstAttribute="height" constant="35" id="FyB-1O-O32"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="Heart-white">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="like:" destination="Q0T-Lu-91q" eventType="touchUpInside" id="Aa1-kK-2W9"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.81184520307297348" blue="0.24077337148979383" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerY" secondItem="FhK-Kf-a6k" secondAttribute="centerY" constant="-5" id="AMV-1D-l5F"/>
-                                    <constraint firstAttribute="centerX" secondItem="NFq-1g-L8K" secondAttribute="centerX" id="Bgh-hS-wR8"/>
-                                    <constraint firstItem="NFq-1g-L8K" firstAttribute="leading" secondItem="FhK-Kf-a6k" secondAttribute="trailing" constant="40" id="OHY-HC-TFS"/>
-                                    <constraint firstAttribute="centerY" secondItem="NFq-1g-L8K" secondAttribute="centerY" id="TPm-Wq-ykn"/>
-                                    <constraint firstItem="NFq-1g-L8K" firstAttribute="height" secondItem="XeC-Ki-Hdu" secondAttribute="height" id="Ty8-0C-csr"/>
-                                    <constraint firstAttribute="centerY" secondItem="toU-kr-mbr" secondAttribute="centerY" id="i3C-vc-1v9"/>
-                                    <constraint firstAttribute="centerY" secondItem="FhK-Kf-a6k" secondAttribute="centerY" id="kS9-du-zLW"/>
-                                    <constraint firstAttribute="height" constant="50" id="uPf-Gt-chE"/>
-                                    <constraint firstItem="toU-kr-mbr" firstAttribute="leading" secondItem="NFq-1g-L8K" secondAttribute="trailing" constant="40" id="w1d-qC-pCq"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="AMV-1D-l5F"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Mxh-Hr-PKE">
-                                <rect key="frame" x="150" y="433" width="300" height="167"/>
+                                <rect key="frame" x="150" y="380" width="300" height="220"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -427,21 +372,14 @@
                             <constraint firstItem="T2j-hq-GT7" firstAttribute="width" secondItem="PpR-b7-GdZ" secondAttribute="height" multiplier="1:2" id="A20-aR-FvD"/>
                             <constraint firstItem="T2j-hq-GT7" firstAttribute="top" secondItem="coL-JE-cAN" secondAttribute="bottom" constant="10" id="AZg-R3-v1M"/>
                             <constraint firstItem="T2j-hq-GT7" firstAttribute="bottom" secondItem="dR7-IH-geT" secondAttribute="top" multiplier="0.6" id="H9u-DM-p0x"/>
-                            <constraint firstItem="Mxh-Hr-PKE" firstAttribute="top" secondItem="XeC-Ki-Hdu" secondAttribute="bottom" constant="5" id="M4p-Yb-KCy"/>
-                            <constraint firstItem="T2j-hq-GT7" firstAttribute="width" secondItem="XeC-Ki-Hdu" secondAttribute="width" id="PZJ-20-EEf"/>
-                            <constraint firstItem="Mxh-Hr-PKE" firstAttribute="width" secondItem="XeC-Ki-Hdu" secondAttribute="width" id="lhD-7i-tJv"/>
-                            <constraint firstAttribute="centerX" secondItem="XeC-Ki-Hdu" secondAttribute="centerX" id="mmB-rj-qw1"/>
+                            <constraint firstItem="T2j-hq-GT7" firstAttribute="width" secondItem="Mxh-Hr-PKE" secondAttribute="width" id="L9G-Bx-jHb"/>
+                            <constraint firstItem="Mxh-Hr-PKE" firstAttribute="top" secondItem="T2j-hq-GT7" secondAttribute="bottom" constant="20" id="fWX-sm-dfN"/>
                             <constraint firstAttribute="centerX" secondItem="Mxh-Hr-PKE" secondAttribute="centerX" id="sPO-SV-Fcq"/>
-                            <constraint firstItem="XeC-Ki-Hdu" firstAttribute="top" secondItem="T2j-hq-GT7" secondAttribute="bottom" constant="18" id="vkD-qb-uj7"/>
                             <constraint firstAttribute="centerX" secondItem="T2j-hq-GT7" secondAttribute="centerX" id="zUW-E4-oHI"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonsView" destination="XeC-Ki-Hdu" id="97e-7a-RB3"/>
-                        <outlet property="commentBtn" destination="toU-kr-mbr" id="2RT-b8-uuO"/>
                         <outlet property="commentsTable" destination="Mxh-Hr-PKE" id="9PH-Kg-LXc"/>
-                        <outlet property="likeBtn" destination="FhK-Kf-a6k" id="dVh-UA-4sr"/>
-                        <outlet property="lineView" destination="NFq-1g-L8K" id="wYx-Gh-Ddc"/>
                         <outlet property="mainPhotoView" destination="T2j-hq-GT7" id="7AP-g2-f2c"/>
                     </connections>
                 </viewController>
@@ -487,8 +425,4 @@
             <point key="canvasLocation" x="992" y="1468"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="CommentIcon" width="256" height="256"/>
-        <image name="Heart-white" width="512" height="512"/>
-    </resources>
 </document>
