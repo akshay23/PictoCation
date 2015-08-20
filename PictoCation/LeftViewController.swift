@@ -52,7 +52,10 @@ class LeftViewController: UITableViewController {
     table.backgroundColor = UIColor.concreteColor()
     
     // Get selected type index
-    let selectedType = user.placesType
+    var selectedType: String = "Establishment"
+    if let user = user {
+      selectedType = user.placesType
+    }
     selectedIndex = types.find { $0 == selectedType }
     println("Selected type is \(selectedType) and index is \(selectedIndex)")
   }
