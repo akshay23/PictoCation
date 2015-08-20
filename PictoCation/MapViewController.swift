@@ -182,7 +182,7 @@ class MapViewController: UIViewController {
       selectedHastagTopic = place.stringByReplacingOccurrencesOfString(" ", withString: "")
       navigationController!.view.addSubview(bgOverlay)
       navigationController!.view.addSubview(optionsView)
-      UIView.animateWithDuration(0.2) {
+      UIView.animateWithDuration(0.4) {
         self.bgOverlay.alpha = 0.9
         var optionsFrame = self.optionsView.frame
         optionsFrame.origin.y = (self.bgOverlay.frame.size.height / 2) - (optionsFrame.size.height / 2)
@@ -385,6 +385,17 @@ extension MapViewController: OptionsDelegate {
   
   // TODO
   func uber() {
-    cancel()
+    UIView.animateWithDuration(0.2, animations: {
+      var optionsFrame = self.optionsView.frame
+      optionsFrame.origin.y = self.view.frame.maxY
+      self.optionsView.frame = optionsFrame
+      self.bgOverlay.alpha = 0.0
+      }) {
+        (value: Bool) in
+        self.bgOverlay.removeFromSuperview()
+        self.optionsView.removeFromSuperview()
+        self.performSegueWithIdentifier("show uber", sender: self)
+    }
+
   }
 }
