@@ -1,6 +1,0 @@
-framework module FlatUIKit {
-  umbrella header "Pods-PictoCation-FlatUIKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

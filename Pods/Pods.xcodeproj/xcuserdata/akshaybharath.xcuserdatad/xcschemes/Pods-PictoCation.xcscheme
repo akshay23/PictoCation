@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0640"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52E237F45B164BA697A3E062"
+               BlueprintIdentifier = "1F45E52A3DCC5483E11A88AE"
                BuildableName = "Pods_PictoCation.framework"
                BlueprintName = "Pods-PictoCation"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -27,6 +27,8 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
+      <AdditionalOptions>
+      </AdditionalOptions>
       <Testables>
       </Testables>
    </TestAction>
@@ -38,6 +40,7 @@
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
       <AdditionalOptions>
       </AdditionalOptions>

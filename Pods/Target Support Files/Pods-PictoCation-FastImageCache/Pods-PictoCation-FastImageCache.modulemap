@@ -1,6 +1,0 @@
-framework module FastImageCache {
-  umbrella header "Pods-PictoCation-FastImageCache-umbrella.h"
-
-  export *
-  module * { export * }
-}

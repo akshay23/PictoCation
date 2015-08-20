@@ -4,27 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-PictoCation-Alamofire.xcscheme</key>
+		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-PictoCation-FastImageCache.xcscheme</key>
+		<key>FastImageCache.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-PictoCation-FlatUIKit.xcscheme</key>
+		<key>FlatUIKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-PictoCation-MBProgressHUD.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-PictoCation-SwiftyJSON.xcscheme</key>
+		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -34,35 +29,40 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>52E237F45B164BA697A3E062</key>
+		<key>138BC1846F003FB714A8AD2BBABEDC16</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C8F97C9D7094099B939B670</key>
+		<key>20ECF87BCB708E16464D932BE6CBEFCB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8DF227023E94D7985B9694B7</key>
+		<key>5CAA2FC94480B4E891EA1D926F5DF3BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96F3C1336E9E92D4BEA9102E</key>
+		<key>7E8C0CC6300FDD5C95FBC12E4DCC4AD9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9C43E3E32C942C8393FCA389</key>
+		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CECA8A3AC9A9527FEDFAD41D</key>
+		<key>CC2E411A7F38358416613329AF38491C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

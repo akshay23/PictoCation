@@ -1,6 +1,0 @@
-framework module MBProgressHUD {
-  umbrella header "Pods-PictoCation-MBProgressHUD-umbrella.h"
-
-  export *
-  module * { export * }
-}

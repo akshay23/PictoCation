@@ -56,11 +56,8 @@ struct Instagram {
 }
 
 extension Alamofire.Request {
-  
-  public typealias Serializer = (NSURLRequest, NSHTTPURLResponse?, NSData?) -> (AnyObject?, NSError?)
-  
-  class func imageResponseSerializer() -> Serializer {
-    return { request, response, data in
+  public static func imageResponseSerializer() -> GenericResponseSerializer<UIImage> {
+    return GenericResponseSerializer{ request, response, data in
       if data == nil {
         return (nil, nil)
       }
@@ -71,8 +68,6 @@ extension Alamofire.Request {
   }
   
   func responseImage(completionHandler: (NSURLRequest, NSHTTPURLResponse?, UIImage?, NSError?) -> Void) -> Self {
-    return response(serializer: Request.imageResponseSerializer(), completionHandler: { (request, response, image, error) in
-      completionHandler(request, response, image as? UIImage, error)
-    })
+    return response(responseSerializer: Request.imageResponseSerializer(), completionHandler: completionHandler)
   }
 }

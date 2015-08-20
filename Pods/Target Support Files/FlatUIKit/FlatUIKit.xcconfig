@@ -1,0 +1,1 @@
+FLATUIKIT_OTHER_LDFLAGS = -framework "CoreText" -framework "QuartzCore"
