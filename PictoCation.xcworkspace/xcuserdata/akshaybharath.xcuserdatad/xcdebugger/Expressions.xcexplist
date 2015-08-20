@@ -14,14 +14,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "PictoCation.UberViewController.(viewWillAppear (PictoCation.UberViewController) -&gt; (Swift.Bool) -&gt; ()).(closure #1):UberViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "Uber.Router.authorizationURL">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "PictoCation.PlacesManager.(refreshPlaces (PictoCation.PlacesManager) -&gt; () -&gt; ()).(closure #1):PlacesManager.swift">
          <PersistentStrings>
             <PersistentString

@@ -20,8 +20,6 @@
 		1984BC601B7280FB00B2B7FA /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984BC5F1B7280FB00B2B7FA /* PhotoViewController.swift */; };
 		1984BC621B72B5AB00B2B7FA /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984BC611B72B5AB00B2B7FA /* LeftViewController.swift */; };
 		1984BC641B72BBEF00B2B7FA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984BC631B72BBEF00B2B7FA /* ContainerViewController.swift */; };
-		198DB1071B83997C0061E246 /* UberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198DB1061B83997C0061E246 /* UberViewController.swift */; };
-		198DB1091B839A530061E246 /* Uber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198DB1081B839A530061E246 /* Uber.swift */; };
 		19A641E91B56D9DF00E8402A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A641E81B56D9DF00E8402A /* AppDelegate.swift */; };
 		19A641EB1B56D9DF00E8402A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A641EA1B56D9DF00E8402A /* LoginViewController.swift */; };
 		19A641EE1B56D9DF00E8402A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A641EC1B56D9DF00E8402A /* Main.storyboard */; };
@@ -59,8 +57,6 @@
 		1984BC5F1B7280FB00B2B7FA /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		1984BC611B72B5AB00B2B7FA /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		1984BC631B72BBEF00B2B7FA /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		198DB1061B83997C0061E246 /* UberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UberViewController.swift; sourceTree = "<group>"; };
-		198DB1081B839A530061E246 /* Uber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uber.swift; sourceTree = "<group>"; };
 		19A641E31B56D9DF00E8402A /* PictoCation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictoCation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A641E71B56D9DF00E8402A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19A641E81B56D9DF00E8402A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,7 +161,6 @@
 				19091B181B5812D4005420DE /* CoreDataStack.swift */,
 				19091B1D1B597A72005420DE /* PlacesManager.swift */,
 				190E79621B6AEF6B00DC2B48 /* PhotoInfo.swift */,
-				198DB1081B839A530061E246 /* Uber.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -180,7 +175,6 @@
 				1984BC611B72B5AB00B2B7FA /* LeftViewController.swift */,
 				1984BC631B72BBEF00B2B7FA /* ContainerViewController.swift */,
 				19F4D7C11B753A9300623144 /* PlaceInfoViewController.swift */,
-				198DB1061B83997C0061E246 /* UberViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -387,10 +381,8 @@
 				1984BC621B72B5AB00B2B7FA /* LeftViewController.swift in Sources */,
 				19739C281B6A962B00A05F26 /* Reachability.swift in Sources */,
 				1984BC641B72BBEF00B2B7FA /* ContainerViewController.swift in Sources */,
-				198DB1091B839A530061E246 /* Uber.swift in Sources */,
 				19F4D7C21B753A9300623144 /* PlaceInfoViewController.swift in Sources */,
 				190AFA431B7661BE003CEB93 /* Utils.swift in Sources */,
-				198DB1071B83997C0061E246 /* UberViewController.swift in Sources */,
 				19F72C6E1B57085F00FA43E9 /* PictoCation.xcdatamodeld in Sources */,
 				190E79631B6AEF6B00DC2B48 /* PhotoInfo.swift in Sources */,
 				190E79611B6AECD900DC2B48 /* GalleryViewController.swift in Sources */,

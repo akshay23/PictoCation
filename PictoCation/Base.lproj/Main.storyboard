@@ -38,39 +38,6 @@
             </objects>
             <point key="canvasLocation" x="145" y="1462"/>
         </scene>
-        <!--Uber View Controller-->
-        <scene sceneID="jlS-Qd-r3W">
-            <objects>
-                <viewController id="G7P-gr-SA0" userLabel="Uber View Controller" customClass="UberViewController" customModule="PictoCation" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vfP-IT-wlr"/>
-                        <viewControllerLayoutGuide type="bottom" id="I36-eO-zrR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BzT-pY-0hx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qF-eb-ame">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" secondItem="8qF-eb-ame" secondAttribute="height" id="9VJ-uz-BBs"/>
-                            <constraint firstAttribute="centerX" secondItem="8qF-eb-ame" secondAttribute="centerX" id="Ff2-kR-fTu"/>
-                            <constraint firstAttribute="width" secondItem="8qF-eb-ame" secondAttribute="width" id="vDm-gS-cbE"/>
-                            <constraint firstAttribute="centerY" secondItem="8qF-eb-ame" secondAttribute="centerY" id="zzt-oC-7jG"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="8qF-eb-ame" id="Vra-uG-mYs"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wWx-jP-B2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1670" y="-785"/>
-        </scene>
         <!--Left View Controller-->
         <scene sceneID="Vil-aJ-pcP">
             <objects>
@@ -317,7 +284,6 @@
                         <outlet property="mainMapView" destination="hQK-DP-9j5" id="dhZ-Qy-Er7"/>
                         <outlet property="placesTable" destination="JHD-LM-PSX" id="dFO-bv-EYJ"/>
                         <segue destination="MWU-PT-XyU" kind="show" identifier="show info" id="RGT-ez-SDY"/>
-                        <segue destination="G7P-gr-SA0" kind="show" identifier="show uber" id="e3d-04-RMO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAp-hh-Uh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
