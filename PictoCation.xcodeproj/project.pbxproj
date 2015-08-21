@@ -15,6 +15,7 @@
 		190E79611B6AECD900DC2B48 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E79601B6AECD900DC2B48 /* GalleryViewController.swift */; };
 		190E79631B6AEF6B00DC2B48 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E79621B6AEF6B00DC2B48 /* PhotoInfo.swift */; };
 		190E79651B6B392C00DC2B48 /* FastImageCacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E79641B6B392C00DC2B48 /* FastImageCacheHelper.swift */; };
+		195084AE1B87864000F0ADE7 /* Yelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195084AD1B87864000F0ADE7 /* Yelp.swift */; };
 		195AEEFD1B56F4E30046B628 /* Instagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195AEEFC1B56F4E30046B628 /* Instagram.swift */; };
 		19739C281B6A962B00A05F26 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19739C271B6A962B00A05F26 /* Reachability.swift */; };
 		1984BC601B7280FB00B2B7FA /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984BC5F1B7280FB00B2B7FA /* PhotoViewController.swift */; };
@@ -52,6 +53,8 @@
 		190E79601B6AECD900DC2B48 /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		190E79621B6AEF6B00DC2B48 /* PhotoInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
 		190E79641B6B392C00DC2B48 /* FastImageCacheHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastImageCacheHelper.swift; sourceTree = "<group>"; };
+		195084AD1B87864000F0ADE7 /* Yelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yelp.swift; sourceTree = "<group>"; };
+		195084AF1B87BF2700F0ADE7 /* PictoCation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PictoCation-Bridging-Header.h"; sourceTree = "<group>"; };
 		195AEEFC1B56F4E30046B628 /* Instagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
 		19739C271B6A962B00A05F26 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		1984BC5F1B7280FB00B2B7FA /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +164,7 @@
 				19091B181B5812D4005420DE /* CoreDataStack.swift */,
 				19091B1D1B597A72005420DE /* PlacesManager.swift */,
 				190E79621B6AEF6B00DC2B48 /* PhotoInfo.swift */,
+				195084AD1B87864000F0ADE7 /* Yelp.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -198,6 +202,7 @@
 				190E79641B6B392C00DC2B48 /* FastImageCacheHelper.swift */,
 				190AFA421B7661BE003CEB93 /* Utils.swift */,
 				190AF10B1B82486D0038E335 /* OptionsDelegate.swift */,
+				195084AF1B87BF2700F0ADE7 /* PictoCation-Bridging-Header.h */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 				19739C281B6A962B00A05F26 /* Reachability.swift in Sources */,
 				1984BC641B72BBEF00B2B7FA /* ContainerViewController.swift in Sources */,
 				19F4D7C21B753A9300623144 /* PlaceInfoViewController.swift in Sources */,
+				195084AE1B87864000F0ADE7 /* Yelp.swift in Sources */,
 				190AFA431B7661BE003CEB93 /* Utils.swift in Sources */,
 				19F72C6E1B57085F00FA43E9 /* PictoCation.xcdatamodeld in Sources */,
 				190E79631B6AEF6B00DC2B48 /* PhotoInfo.swift in Sources */,
@@ -525,6 +531,7 @@
 				INFOPLIST_FILE = PictoCation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PictoCation/PictoCation-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -537,6 +544,7 @@
 				INFOPLIST_FILE = PictoCation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PictoCation/PictoCation-Bridging-Header.h";
 			};
 			name = Release;
 		};

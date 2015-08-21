@@ -49,7 +49,7 @@ class MapViewController: UIViewController {
     locationManager.delegate = self
     locationManager.requestWhenInUseAuthorization()
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    locationManager.startUpdatingLocation()
+    locationManager.stopUpdatingLocation()
     mainMapView.delegate = self
     isFirstLogin = true
     
@@ -76,6 +76,7 @@ class MapViewController: UIViewController {
     btnRefresh.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Normal)
     btnRefresh.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Highlighted)
     placesTable.backgroundColor = UIColor.wetAsphaltColor()
+    placesTable.tableFooterView = UIView(frame: CGRectZero)
     btnLogout.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     btnLogout.tintColor = UIColor.cloudsColor()
     
@@ -84,9 +85,6 @@ class MapViewController: UIViewController {
     typeButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     typeButton.tintColor = UIColor.cloudsColor()
     navigationItem.leftBarButtonItem = typeButton
-    
-    // Hide any empty cells
-    placesTable.tableFooterView = UIView(frame: CGRectZero)
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -98,17 +96,30 @@ class MapViewController: UIViewController {
       user = results.first
     }
     
-    // First time login
-    if (isFirstLogin) {
-      isUpdating = true
-      locationManager.startUpdatingLocation()
-      isFirstLogin = false
-    }
-    
     // Not logged in
     if (user == nil) {
+      locationManager.stopUpdatingLocation()
+      performSegueWithIdentifier("login", sender: self)
+      mainMapView.hidden = true
       btnLogout.enabled = false
+      btnRefresh.hidden = true
+      placesTable.hidden = true
+      isUpdating = true
     } else {
+      println("Logged in")
+      
+      // First time login
+      if (isFirstLogin) {
+        locationManager.startUpdatingLocation()
+        isFirstLogin = false
+      }
+      
+      mainMapView.hidden = false
+      placesTable.hidden = false
+      isUpdating = false
+      mainMapView.setMinZoom(14, maxZoom: 14)
+      btnLogout.enabled = true
+      btnRefresh.hidden = false
       btnLogout.enabled = false
     }
     
