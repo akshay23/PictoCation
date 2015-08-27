@@ -1,5 +1,14 @@
+Version 1.10.2 - July 2015
+==========================
+Resolved Issues:
+  - Fixed a crash releasing a map view while in background.
+  - Resolved a conflict with apps using gtm-session-fetcher resumable downloads.
+  - Recompiled with Xcode 6.4 to avoid some bugs in Xcode 6.3 compiler.
+  - Updated GoogleMaps.bundle info.plist to avoid triggering new checks in
+    pre-submission verification.
+
 Version 1.10.1 - June 2015
-=============================
+==========================
 Resolved Issues:
   - Fixed an issue where instantiating GMSPlacesClient triggered a request to enable Bluetooth.
   - Miscellaneous improvements to the GMSPlacePicker UI.

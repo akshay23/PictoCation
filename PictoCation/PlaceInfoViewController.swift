@@ -76,6 +76,18 @@ class PlaceInfoViewController: UIViewController {
   func refresh() {
     checkReachabilityWithBlock {
       self.populateInfo()
+      
+      var params = ["term": self.place.name, "ll": "\(self.place.latitude),\(self.place.longitude)"]
+      Yelp.sharedInstance.searchWithParams(params, completion: {
+        (businesses: [NSDictionary]?, error: NSError?) -> Void in
+        if error == nil {
+          if let dictionaries = businesses {
+            for business in dictionaries {
+              println(business["name"]!)
+            }
+          }
+        }
+      })
     }
   }
   

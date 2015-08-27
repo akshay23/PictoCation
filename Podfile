@@ -9,6 +9,8 @@ target 'PictoCation' do
   pod 'MBProgressHUD'
   pod 'GoogleMaps'
   pod 'FlatUIKit'
+  pod 'BDBOAuth1Manager'
+  pod 'AFNetworking'
 end
 
 target 'PictoCationTests' do

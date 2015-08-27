@@ -8,7 +8,9 @@
 //  Service: https://developers.google.com/maps/terms
 //
 
-#if !__has_feature(nullability)
+#if !__has_feature(nullability) \
+    || !defined(NS_ASSUME_NONNULL_BEGIN) \
+    || !defined(NS_ASSUME_NONNULL_END)
 #define GMS_ASSUME_NONNULL_BEGIN
 #define GMS_ASSUME_NONNULL_END
 #define GMS_NULLABLE

@@ -6,9 +6,6 @@
 //  Copyright (c) 2015 Akshay Bharath. All rights reserved.
 //
 
-#ifndef PictoCation_PictoCation_Bridging_Header_h
-#define PictoCation_PictoCation_Bridging_Header_h
-
 #import <CommonCrypto/CommonHMAC.h>
-
-#endif
+#import <AFNetworking/AFNetworking.h>
+#import <BDBOAuth1Manager/BDBOAuth1RequestOperationManager.h>
