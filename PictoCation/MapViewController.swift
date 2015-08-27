@@ -154,6 +154,10 @@ class MapViewController: UIViewController {
       if let infoViewController = segue.destinationViewController as? PlaceInfoViewController {
         infoViewController.place = selectedPlace
       }
+    } else if segue.identifier == "show yelp" && segue.destinationViewController.isKindOfClass(UIViewController.classForCoder()) {
+      if let yelpViewController = segue.destinationViewController as? YelpViewController {
+        yelpViewController.place = selectedPlace
+      }
     }
   }
   
@@ -189,8 +193,8 @@ class MapViewController: UIViewController {
     let indexPath = self.placesTable.indexPathForRowAtPoint(currentTouchPosition!)
     
     if (indexPath != nil) {
-      let place = placesManager.places[indexPath!.row].name
-      selectedHastagTopic = place.stringByReplacingOccurrencesOfString(" ", withString: "")
+      selectedPlace = placesManager.places[indexPath!.row]
+      selectedHastagTopic = selectedPlace.name.stringByReplacingOccurrencesOfString(" ", withString: "")
       navigationController!.view.addSubview(bgOverlay)
       navigationController!.view.addSubview(optionsView)
       UIView.animateWithDuration(0.2) {
@@ -375,18 +379,22 @@ extension MapViewController: OptionsDelegate {
         (value: Bool) in
         self.bgOverlay.removeFromSuperview()
         self.optionsView.removeFromSuperview()
-        
-        if (self.user == nil) {
-          self.performSegueWithIdentifier("login", sender: self)
-        } else {
-          self.performSegueWithIdentifier("show gallery", sender: self)
-        }
+        self.performSegueWithIdentifier("show gallery", sender: self)
     }
   }
-  
-  // TODO
+
   func yelp() {
-    cancel()
+    UIView.animateWithDuration(0.2, animations: {
+      var optionsFrame = self.optionsView.frame
+      optionsFrame.origin.y = self.view.frame.maxY
+      self.optionsView.frame = optionsFrame
+      self.bgOverlay.alpha = 0.0
+      }) {
+        (value: Bool) in
+        self.bgOverlay.removeFromSuperview()
+        self.optionsView.removeFromSuperview()
+        self.performSegueWithIdentifier("show yelp", sender: self)
+    }
   }
   
   // TODO

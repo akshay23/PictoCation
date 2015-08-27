@@ -46,7 +46,7 @@ class OptionsView: UIView {
     yelpButton.shadowHeight = 3.0
     yelpButton.buttonColor = UIColor.turquoiseColor()
     yelpButton.shadowColor = UIColor.greenSeaColor()
-    yelpButton.setTitle("Yelp Reviews", forState: .Normal)
+    yelpButton.setTitle("Yelp Info & Reviews", forState: .Normal)
     yelpButton.titleLabel?.font = UIFont.boldFlatFontOfSize(20)
     yelpButton.addTarget(self, action: "yelp", forControlEvents: UIControlEvents.TouchUpInside)
     addSubview(yelpButton)

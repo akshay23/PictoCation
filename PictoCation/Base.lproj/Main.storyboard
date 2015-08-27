@@ -36,7 +36,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rnx-hg-Pu0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Gki-Tv-B0q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="145" y="1462"/>
+            <point key="canvasLocation" x="-271" y="1424"/>
         </scene>
         <!--Left View Controller-->
         <scene sceneID="Vil-aJ-pcP">
@@ -284,6 +284,7 @@
                         <outlet property="mainMapView" destination="hQK-DP-9j5" id="dhZ-Qy-Er7"/>
                         <outlet property="placesTable" destination="JHD-LM-PSX" id="dFO-bv-EYJ"/>
                         <segue destination="MWU-PT-XyU" kind="show" identifier="show info" id="RGT-ez-SDY"/>
+                        <segue destination="kAp-wa-TQ7" kind="show" identifier="show yelp" id="bwc-hq-QxP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAp-hh-Uh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -448,7 +449,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992" y="1468"/>
+            <point key="canvasLocation" x="416" y="1424"/>
+        </scene>
+        <!--Yelp View Controller-->
+        <scene sceneID="KHG-Fb-3pJ">
+            <objects>
+                <viewController id="kAp-wa-TQ7" userLabel="Yelp View Controller" customClass="YelpViewController" customModule="PictoCation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I2r-Uy-YL2"/>
+                        <viewControllerLayoutGuide type="bottom" id="ndm-Sf-S1C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wQI-Q4-bgM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jx3-5u-2z3">
+                                <rect key="frame" x="0.0" y="20" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="UVP-J1-ZGP"/>
+                                    <constraint firstAttribute="height" constant="100" id="eFj-iU-rZE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Jx3-5u-2z3" secondAttribute="trailing" id="gbP-ga-1xC"/>
+                            <constraint firstItem="Jx3-5u-2z3" firstAttribute="top" secondItem="I2r-Uy-YL2" secondAttribute="bottom" id="qnq-FF-pne"/>
+                            <constraint firstItem="Jx3-5u-2z3" firstAttribute="leading" secondItem="wQI-Q4-bgM" secondAttribute="leading" id="xjY-Vf-ScN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gbP-ga-1xC"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="businessImage" destination="Jx3-5u-2z3" id="CrG-rr-TLU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bf2-r4-JCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1282" y="1424"/>
         </scene>
     </scenes>
 </document>
