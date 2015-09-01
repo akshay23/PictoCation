@@ -10,6 +10,7 @@ import UIKit
 import FlatUIKit
 import MBProgressHUD
 import GoogleMaps
+import MapKit
 
 class YelpViewController: UIViewController {
 
@@ -23,9 +24,9 @@ class YelpViewController: UIViewController {
   @IBOutlet var addressLabel: UILabel!
   @IBOutlet var mapView: GMSMapView!
   @IBOutlet var callButton: FUIButton!
+  @IBOutlet var directionsButton: FUIButton!
   
-  var businessPhoneNumber: String?
-  var businessAddress: String?
+  var businessPhoneNumber: String!
   var place: (id: String, name: String, latitude: Double, longitude: Double)!
   
   override func viewDidLoad() {
@@ -61,6 +62,17 @@ class YelpViewController: UIViewController {
     callButton.buttonColor = UIColor.turquoiseColor()
     callButton.shadowColor = UIColor.greenSeaColor()
     callButton.setTitle("Call Business", forState: .Normal)
+    callButton.addTarget(self, action: "callBusiness", forControlEvents: .TouchUpInside)
+    callButton.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
+    callButton.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
+    
+    directionsButton.shadowHeight = 3.0
+    directionsButton.buttonColor = UIColor.turquoiseColor()
+    directionsButton.shadowColor = UIColor.greenSeaColor()
+    directionsButton.setTitle("Get Directions", forState: .Normal)
+    directionsButton.addTarget(self, action: "getDirections", forControlEvents: .TouchUpInside)
+    directionsButton.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
+    directionsButton.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -101,6 +113,7 @@ class YelpViewController: UIViewController {
             let formattedPlace = self.place.name.lowercaseString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             for business in dictionaries {
               let name = business["name"] as! String
+              println(name)
               let formattedBusiness = name.lowercaseString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
               if formattedBusiness.rangeOfString(formattedPlace) != nil {
                 self.populateInfoForBusiness(business)
@@ -116,6 +129,22 @@ class YelpViewController: UIViewController {
         }
       })
     }
+  }
+  
+  func callBusiness() {
+    let url: NSURL = NSURL(string: "tel://\(businessPhoneNumber)")!
+    UIApplication.sharedApplication().openURL(url);
+  }
+  
+  func getDirections() {
+    var coordinates = CLLocationCoordinate2DMake(place.latitude, place.longitude)
+    var options = [
+      MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving
+    ]
+    var placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+    var mapItem = MKMapItem(placemark: placemark)
+    mapItem.name = place.name
+    mapItem.openInMapsWithLaunchOptions(options)
   }
   
   // TODO
@@ -188,11 +217,13 @@ class YelpViewController: UIViewController {
     }
     addressView.hidden = false
     addressLabel.text = addressString
-    businessAddress = addressString
-    businessPhoneNumber = business["phone"] as? String
     callButton.hidden = false
-    if let phone = businessPhoneNumber {
+    directionsButton.hidden = false
+    
+    // Check if phone number exists
+    if let phone = business["phone"] as? String {
       callButton.enabled = true
+      businessPhoneNumber = phone
     } else {
       callButton.enabled = false
     }
