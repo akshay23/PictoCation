@@ -16,29 +16,18 @@ import FlatUIKit
 class LoginViewController: UIViewController {
 
   @IBOutlet var webView: UIWebView!
-  @IBOutlet var closeButton: FUIButton!
   
   var coreDataStack: CoreDataStack!
   var progressHUD: MBProgressHUD!
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    closeButton.shadowHeight = 4.0
-    closeButton.buttonColor = UIColor.turquoiseColor()
-    closeButton.shadowColor = UIColor.greenSeaColor()
-    closeButton.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Normal)
-    closeButton.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Highlighted)
-    closeButton.setTitle("Close", forState: .Normal)
-    closeButton.addTarget(self, action: "close", forControlEvents: UIControlEvents.TouchUpInside)
-    closeButton.hidden = true
   }
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     webView.delegate = self
     webView.hidden = true
-    closeButton.hidden = false
     NSURLCache.sharedURLCache().removeAllCachedResponses()
     
     checkReachabilityWithBlock {

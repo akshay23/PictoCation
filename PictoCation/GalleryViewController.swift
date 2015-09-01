@@ -32,8 +32,7 @@ class GalleryViewController: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Set navi bar title
-    self.title = "#\(hashtagTopic)"
+    // BG color
     mainCollectionView.backgroundColor = UIColor.wetAsphaltColor()
     
     // Add back nav button
