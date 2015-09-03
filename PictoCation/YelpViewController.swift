@@ -25,8 +25,10 @@ class YelpViewController: UIViewController {
   @IBOutlet var mapView: GMSMapView!
   @IBOutlet var callButton: FUIButton!
   @IBOutlet var directionsButton: FUIButton!
+  @IBOutlet var yelpButton: FUIButton!
   
   var businessPhoneNumber: String!
+  var businessYelpPage: String!
   var place: (id: String, name: String, latitude: Double, longitude: Double)!
   
   override func viewDidLoad() {
@@ -73,6 +75,14 @@ class YelpViewController: UIViewController {
     directionsButton.addTarget(self, action: "getDirections", forControlEvents: .TouchUpInside)
     directionsButton.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
     directionsButton.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
+    
+    yelpButton.shadowHeight = 3.0
+    yelpButton.buttonColor = UIColor.turquoiseColor()
+    yelpButton.shadowColor = UIColor.greenSeaColor()
+    yelpButton.setTitle("View in Yelp", forState: .Normal)
+    yelpButton.addTarget(self, action: "viewYelp", forControlEvents: .TouchUpInside)
+    yelpButton.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
+    yelpButton.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -147,6 +157,11 @@ class YelpViewController: UIViewController {
     mapItem.openInMapsWithLaunchOptions(options)
   }
   
+  func viewYelp() {
+    let yelpURL: NSURL = NSURL(string: businessYelpPage)!
+    UIApplication.sharedApplication().openURL(yelpURL);
+  }
+  
   // TODO
   func populateInfoForBusiness(business: NSDictionary) {
     // Image
@@ -219,6 +234,7 @@ class YelpViewController: UIViewController {
     addressLabel.text = addressString
     callButton.hidden = false
     directionsButton.hidden = false
+    yelpButton.hidden = false
     
     // Check if phone number exists
     if let phone = business["phone"] as? String {
@@ -236,7 +252,8 @@ class YelpViewController: UIViewController {
     marker?.map = mapView
     mapView.hidden = false
     
-    // Reviews
+    // Yelp Page
+    businessYelpPage = business["url"] as? String
   }
 }
 
