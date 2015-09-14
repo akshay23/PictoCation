@@ -3,13 +3,62 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "PictoCation.AppDelegate.application (PictoCation.AppDelegate)(ObjectiveC.UIApplication, didFinishLaunchingWithOptions : Swift.Optional&lt;Swift.Dictionary&lt;ObjectiveC.NSObject, Swift.AnyObject&gt;&gt;) -&gt; Swift.Bool:AppDelegate.swift">
+         contextName = "PictoCation.Instagram.Router.(URLRequest.getter : ObjectiveC.NSURLRequest).(closure #1):Instagram.swift">
+      </ContextState>
+      <ContextState
+         contextName = "static ext.PictoCation.ObjectiveC.UIStoryboard.(leftViewController in _D3D5C8211F217D6EEA25DF77B4826286) (ObjectiveC.UIStoryboard.Type)() -&gt; Swift.Optional&lt;PictoCation.LeftViewController&gt;:ContainerViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "mainStoryboard()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PictoCation.LoginViewController.(viewWillAppear (PictoCation.LoginViewController) -&gt; (Swift.Bool) -&gt; ()).(closure #1):LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "println(request)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PictoCation.LoginViewController.(requestAccessToken (PictoCation.LoginViewController) -&gt; (Swift.String) -&gt; ()).(closure #1):LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json.arrayValue">
+            </PersistentString>
+            <PersistentString
+               value = "json[&quot;user&quot;][&quot;id&quot;].string">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PictoCation.ContainerViewController.addLeftPanelViewController (PictoCation.ContainerViewController)() -&gt; ():ContainerViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PictoCation.LoginViewController.requestAccessToken (PictoCation.LoginViewController)(Swift.String) -&gt; ():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "println(request.URLString)">
+            </PersistentString>
+            <PersistentString
+               value = "println(request.Params)">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "PictoCation.GalleryViewController.((populatePhotos in _77D2D2045AB444E051DA6CEBCCE325EC) (PictoCation.GalleryViewController) -&gt; (Alamofire.URLRequestConvertible) -&gt; ()).(closure #1):GalleryViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "json[&quot;meta&quot;][&quot;code&quot;].intValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PictoCation.GalleryViewController.(collectionView (PictoCation.GalleryViewController) -&gt; (ObjectiveC.UICollectionView, cellForItemAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UICollectionViewCell).(closure #1):GalleryViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "photoInfo.request">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -28,26 +77,7 @@
          contextName = "PictoCation.GalleryViewController.collectionView (PictoCation.GalleryViewController)(ObjectiveC.UICollectionView, cellForItemAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UICollectionViewCell:GalleryViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "PictoCation.ContainerViewController.addLeftPanelViewController (PictoCation.ContainerViewController)() -&gt; ():ContainerViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "static ext.PictoCation.ObjectiveC.UIStoryboard.(leftViewController in _D3D5C8211F217D6EEA25DF77B4826286) (ObjectiveC.UIStoryboard.Type)() -&gt; Swift.Optional&lt;PictoCation.LeftViewController&gt;:ContainerViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "mainStoryboard()">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "PictoCation.Instagram.Router.(URLRequest.getter : ObjectiveC.NSURLRequest).(closure #1):Instagram.swift">
-      </ContextState>
-      <ContextState
-         contextName = "PictoCation.GalleryViewController.(collectionView (PictoCation.GalleryViewController) -&gt; (ObjectiveC.UICollectionView, cellForItemAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UICollectionViewCell).(closure #1):GalleryViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "photoInfo.request">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "PictoCation.AppDelegate.application (PictoCation.AppDelegate)(ObjectiveC.UIApplication, didFinishLaunchingWithOptions : Swift.Optional&lt;Swift.Dictionary&lt;ObjectiveC.NSObject, Swift.AnyObject&gt;&gt;) -&gt; Swift.Bool:AppDelegate.swift">
       </ContextState>
       <ContextState
          contextName = "PictoCation.GalleryViewController.(populatePhotos in _77D2D2045AB444E051DA6CEBCCE325EC) (PictoCation.GalleryViewController)(Alamofire.URLRequestConvertible) -&gt; ():GalleryViewController.swift">

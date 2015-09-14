@@ -16,6 +16,8 @@
 		190E79631B6AEF6B00DC2B48 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E79621B6AEF6B00DC2B48 /* PhotoInfo.swift */; };
 		190E79651B6B392C00DC2B48 /* FastImageCacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E79641B6B392C00DC2B48 /* FastImageCacheHelper.swift */; };
 		195084AE1B87864000F0ADE7 /* Yelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195084AD1B87864000F0ADE7 /* Yelp.swift */; };
+		1954632B1B9A2F1500314081 /* Uber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954632A1B9A2F1500314081 /* Uber.swift */; };
+		1954632D1B9A335E00314081 /* UberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1954632C1B9A335E00314081 /* UberViewController.swift */; };
 		195AEEFD1B56F4E30046B628 /* Instagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195AEEFC1B56F4E30046B628 /* Instagram.swift */; };
 		19739C281B6A962B00A05F26 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19739C271B6A962B00A05F26 /* Reachability.swift */; };
 		1984BC601B7280FB00B2B7FA /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984BC5F1B7280FB00B2B7FA /* PhotoViewController.swift */; };
@@ -56,6 +58,8 @@
 		190E79641B6B392C00DC2B48 /* FastImageCacheHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastImageCacheHelper.swift; sourceTree = "<group>"; };
 		195084AD1B87864000F0ADE7 /* Yelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yelp.swift; sourceTree = "<group>"; };
 		195084AF1B87BF2700F0ADE7 /* PictoCation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PictoCation-Bridging-Header.h"; sourceTree = "<group>"; };
+		1954632A1B9A2F1500314081 /* Uber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uber.swift; sourceTree = "<group>"; };
+		1954632C1B9A335E00314081 /* UberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UberViewController.swift; sourceTree = "<group>"; };
 		195AEEFC1B56F4E30046B628 /* Instagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
 		19739C271B6A962B00A05F26 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		1984BC5F1B7280FB00B2B7FA /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				19091B1D1B597A72005420DE /* PlacesManager.swift */,
 				190E79621B6AEF6B00DC2B48 /* PhotoInfo.swift */,
 				195084AD1B87864000F0ADE7 /* Yelp.swift */,
+				1954632A1B9A2F1500314081 /* Uber.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				1984BC631B72BBEF00B2B7FA /* ContainerViewController.swift */,
 				19F4D7C11B753A9300623144 /* PlaceInfoViewController.swift */,
 				1996135D1B8F74EB00F5C351 /* YelpViewController.swift */,
+				1954632C1B9A335E00314081 /* UberViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -396,8 +402,10 @@
 				19F72C6E1B57085F00FA43E9 /* PictoCation.xcdatamodeld in Sources */,
 				190E79631B6AEF6B00DC2B48 /* PhotoInfo.swift in Sources */,
 				190E79611B6AECD900DC2B48 /* GalleryViewController.swift in Sources */,
+				1954632B1B9A2F1500314081 /* Uber.swift in Sources */,
 				19F72C6B1B57080500FA43E9 /* User.swift in Sources */,
 				190E79651B6B392C00DC2B48 /* FastImageCacheHelper.swift in Sources */,
+				1954632D1B9A335E00314081 /* UberViewController.swift in Sources */,
 				19F72C691B56FC2800FA43E9 /* MapViewController.swift in Sources */,
 				1984BC601B7280FB00B2B7FA /* PhotoViewController.swift in Sources */,
 			);

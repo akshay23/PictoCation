@@ -13,15 +13,29 @@ import CoreData
 import MBProgressHUD
 import FlatUIKit
 
+enum LoginType {
+  case Instagram, Uber
+}
+
 class LoginViewController: UIViewController {
 
   @IBOutlet var webView: UIWebView!
+  @IBOutlet var closeButton: FUIButton!
   
   var coreDataStack: CoreDataStack!
   var progressHUD: MBProgressHUD!
+  var loginType: LoginType!
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    closeButton.shadowHeight = 3.0
+    closeButton.buttonColor = UIColor.turquoiseColor()
+    closeButton.shadowColor = UIColor.greenSeaColor()
+    closeButton.setTitle("Close", forState: .Normal)
+    closeButton.addTarget(self, action: "close", forControlEvents: .TouchUpInside)
+    closeButton.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
+    closeButton.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -44,7 +58,15 @@ class LoginViewController: UIViewController {
       }
       
       // Create new request
-      let request = NSURLRequest(URL: Instagram.Router.authorizationURL, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+      var request: NSURLRequest!
+      if (self.loginType == .Instagram) {
+        self.closeButton.hidden = true
+        request = NSURLRequest(URL: Instagram.Router.authorizationURL, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+      } else if (self.loginType == .Uber) {
+        self.closeButton.hidden = false
+        request = NSURLRequest(URL: Uber.Router.authorizationURL, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+      }
+      
       self.webView.loadRequest(request)
     }
   }
@@ -55,6 +77,11 @@ class LoginViewController: UIViewController {
       if let user = sender?.valueForKey("user") as? User {
         mapViewController.user = user
         mapViewController.isFirstLogin = true
+      }
+    } else if segue.identifier == "unwindToUberView" && segue.destinationViewController.isKindOfClass(MapViewController.classForCoder()) {
+      let uberViewController = segue.destinationViewController as! UberViewController
+      if let user = sender?.valueForKey("user") as? User {
+        uberViewController.user = user
       }
     }
   }
@@ -72,18 +99,30 @@ extension LoginViewController: UIWebViewDelegate {
   func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
     println(request.URLString)
     let urlString = request.URLString
-    if let range = urlString.rangeOfString(Instagram.Router.redirectURI + "?code=") {
+    var redirectURI: String!
+    if (loginType == .Instagram) {
+      redirectURI = Instagram.Router.redirectURI
+    } else if(loginType == .Uber) {
+      redirectURI = Uber.Router.redirectURI
+    }
+    
+    if let range = urlString.rangeOfString(redirectURI + "?code=") {
       let location = range.endIndex
       let code = urlString.substringFromIndex(location)
       println(code)
       requestAccessToken(code)
-      return false
+      return true
     }
     return true
   }
   
   func requestAccessToken(code: String) {
-    let request = Instagram.Router.requestAccessTokenURLStringAndParms(code)
+    var request: (URLString: String, Params: [String: AnyObject])!
+    if (loginType == .Instagram) {
+      request = Instagram.Router.requestAccessTokenURLStringAndParms(code)
+    } else if (loginType == .Uber) {
+      request = Uber.Router.requestAccessTokenURLStringAndParms(code)
+    }
     
     Alamofire.request(.POST, request.URLString, parameters: request.Params)
       .responseJSON {
@@ -92,14 +131,35 @@ extension LoginViewController: UIWebViewDelegate {
         if (error == nil) {
           let json = JSON(jsonObject!)
           
-          if let accessToken = json["access_token"].string, userID = json["user"]["id"].string {
-            println("Logged in")
-            let user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: self.coreDataStack.context) as! User
-            user.userID = userID
-            user.accessToken = accessToken
-            user.placesType = "Establishment"
-            self.coreDataStack.saveContext()
-            self.performSegueWithIdentifier("unwindToMapView", sender: ["user": user])
+          if (self.loginType == .Instagram) {
+            if let accessToken = json["access_token"].string, userID = json["user"]["id"].string {
+              println("Logged into Instagram")
+              let user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: self.coreDataStack.context) as! User
+              user.userID = userID
+              user.accessToken = accessToken
+              user.placesType = "Establishment"
+              user.uberAccessToken = ""
+              self.coreDataStack.saveContext()
+              self.performSegueWithIdentifier("unwindToMapView", sender: ["user": user])
+            }
+          } else if (self.loginType == .Uber) {
+            if let accessToken = json["access_token"].string {
+              println("Logged into Uber")
+              if let fetchRequest = self.coreDataStack.model.fetchRequestTemplateForName("UserFetchRequest") {
+                var fetchError: NSError?
+                let results = self.coreDataStack.context.executeFetchRequest(fetchRequest, error: &fetchError) as! [User]
+                if fetchError == nil {
+                  let user = results.first!
+                  user.uberAccessToken = accessToken
+                  self.coreDataStack.saveContext()
+                  self.performSegueWithIdentifier("unwindToUberView", sender: ["user": user])
+                } else {
+                  self.showAlertWithMessage("Please try again!", title: "Couln't Fetch User", button: "Ok")
+                  println("Couldn't fetch user \(fetchError!.description)")
+                  self.close()
+                }
+              }
+            }
           }
         }
         
@@ -109,8 +169,5 @@ extension LoginViewController: UIWebViewDelegate {
   func webViewDidFinishLoad(webView: UIWebView) {
     webView.hidden = false
     MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-  }
-  
-  func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
   }
 }

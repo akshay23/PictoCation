@@ -269,9 +269,11 @@
                         <outlet property="placesTable" destination="JHD-LM-PSX" id="dFO-bv-EYJ"/>
                         <segue destination="MWU-PT-XyU" kind="show" identifier="show info" id="RGT-ez-SDY"/>
                         <segue destination="kAp-wa-TQ7" kind="show" identifier="show yelp" id="bwc-hq-QxP"/>
+                        <segue destination="14a-Tj-cq4" kind="show" identifier="show uber" id="PEg-Gg-wpG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAp-hh-Uh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="IE4-fr-O3e" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="992" y="670"/>
         </scene>
@@ -385,34 +387,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Inh-zp-xnW">
-                                <rect key="frame" x="0.0" y="20" width="600" height="520"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="540"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="YWS-0Q-eb8"/>
                                 </connections>
                             </webView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcr-0u-WMH" customClass="FUIButton">
+                                <rect key="frame" x="255" y="565" width="90" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="TMY-lc-ClP"/>
+                                    <constraint firstAttribute="height" constant="30" id="f7f-0T-f2K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Inh-zp-xnW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3oX-aw-h7R"/>
                             <constraint firstItem="Inh-zp-xnW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="6ge-C8-4SD"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Inh-zp-xnW" secondAttribute="bottom" constant="60" id="Dnx-Wq-duz"/>
-                            <constraint firstItem="Inh-zp-xnW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="H8p-m4-Ehh"/>
-                            <constraint firstAttribute="centerY" secondItem="Inh-zp-xnW" secondAttribute="centerY" id="NfN-Wh-ft3"/>
-                            <constraint firstItem="Inh-zp-xnW" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="50" id="cy9-MU-aAV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Inh-zp-xnW" secondAttribute="bottom" constant="40" id="Dnx-Wq-duz"/>
+                            <constraint firstItem="wcr-0u-WMH" firstAttribute="top" secondItem="Inh-zp-xnW" secondAttribute="bottom" constant="5" id="XRc-3Y-cqP"/>
+                            <constraint firstAttribute="centerX" secondItem="wcr-0u-WMH" secondAttribute="centerX" id="rxD-9K-UZa"/>
                             <constraint firstAttribute="centerX" secondItem="Inh-zp-xnW" secondAttribute="centerX" id="sy2-3n-Xys"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="H8p-m4-Ehh"/>
-                                <exclude reference="NfN-Wh-ft3"/>
-                                <exclude reference="cy9-MU-aAV"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Tag-5o-iQ1"/>
                     <connections>
+                        <outlet property="closeButton" destination="wcr-0u-WMH" id="hYf-Vh-rVU"/>
                         <outlet property="webView" destination="Inh-zp-xnW" id="i9Z-B1-6GB"/>
                         <segue destination="Gki-Tv-B0q" kind="unwind" identifier="unwindToMapView" unwindAction="unwindToMapView:" id="zZ1-tO-dsR"/>
+                        <segue destination="IE4-fr-O3e" kind="unwind" identifier="unwindToUberView" unwindAction="unwindToUberView:" id="lEk-Bh-vz6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -650,7 +658,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bf2-r4-JCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1282" y="1424"/>
+            <point key="canvasLocation" x="1206" y="1424"/>
+        </scene>
+        <!--Uber View Controller-->
+        <scene sceneID="8cS-fC-4zm">
+            <objects>
+                <viewController id="14a-Tj-cq4" userLabel="Uber View Controller" customClass="UberViewController" customModule="PictoCation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UUf-pJ-Op9"/>
+                        <viewControllerLayoutGuide type="bottom" id="4fD-UZ-Pgz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6yt-Io-zfp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="BCt-tC-xTQ" kind="presentation" identifier="login" id="vlT-Bo-pBl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GAO-Ic-epu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1933" y="1424"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vlT-Bo-pBl"/>
+    </inferredMetricsTieBreakers>
 </document>

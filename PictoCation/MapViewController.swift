@@ -136,6 +136,7 @@ class MapViewController: UIViewController {
       let navigationController = segue.destinationViewController as! UINavigationController
       if let loginViewController = navigationController.topViewController as? LoginViewController {
         loginViewController.coreDataStack = coreDataStack
+        loginViewController.loginType = .Instagram
         locationManager.stopUpdatingLocation()
       }
       // Delete existing user data
@@ -157,6 +158,13 @@ class MapViewController: UIViewController {
     } else if segue.identifier == "show yelp" && segue.destinationViewController.isKindOfClass(UIViewController.classForCoder()) {
       if let yelpViewController = segue.destinationViewController as? YelpViewController {
         yelpViewController.place = selectedPlace
+      }
+    } else if segue.identifier == "show uber" && segue.destinationViewController.isKindOfClass(UIViewController.classForCoder()) {
+      if let uberViewController = segue.destinationViewController as? UberViewController {
+        uberViewController.user = user
+        uberViewController.coreDataStack = coreDataStack
+        uberViewController.place = selectedPlace
+        uberViewController.currentLocation = currentLocation
       }
     }
   }
@@ -401,9 +409,18 @@ extension MapViewController: OptionsDelegate {
   func reserve() {
     cancel()
   }
-  
-  // TODO
+
   func uber() {
-    cancel()
+    UIView.animateWithDuration(0.2, animations: {
+      var optionsFrame = self.optionsView.frame
+      optionsFrame.origin.y = self.view.frame.maxY
+      self.optionsView.frame = optionsFrame
+      self.bgOverlay.alpha = 0.0
+      }) {
+        (value: Bool) in
+        self.bgOverlay.removeFromSuperview()
+        self.optionsView.removeFromSuperview()
+        self.performSegueWithIdentifier("show uber", sender: self)
+    }
   }
 }

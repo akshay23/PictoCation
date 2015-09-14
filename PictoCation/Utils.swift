@@ -39,7 +39,6 @@ enum CryptoAlgorithm {
   }
 }
 
-
 extension UIViewController {
   // Show an alert
   func showAlertWithMessage(message: String, title: String, button: String) {

@@ -13,4 +13,5 @@ class User: NSManagedObject {
   @NSManaged var userID: String
   @NSManaged var accessToken: String
   @NSManaged var placesType: String
+  @NSManaged var uberAccessToken: String
 }
