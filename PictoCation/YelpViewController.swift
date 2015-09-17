@@ -161,8 +161,7 @@ class YelpViewController: UIViewController {
     let yelpURL: NSURL = NSURL(string: businessYelpPage)!
     UIApplication.sharedApplication().openURL(yelpURL);
   }
-  
-  // TODO
+
   func populateInfoForBusiness(business: NSDictionary) {
     // Image
     let imageURL = business["image_url"] as? String

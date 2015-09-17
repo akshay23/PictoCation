@@ -199,7 +199,7 @@ class PhotoBrowserCollectionViewCell: UICollectionViewCell {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    
+
     backgroundColor = UIColor.midnightBlueColor()
     imageView.frame = bounds
     addSubview(imageView)
@@ -242,7 +242,8 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
       }
     })
     
-    return cell  }
+    return cell
+  }
   
   override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return photos.count

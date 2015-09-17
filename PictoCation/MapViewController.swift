@@ -12,6 +12,7 @@ import CoreLocation
 import GoogleMaps
 import MBProgressHUD
 import FlatUIKit
+import AVFoundation
  
 @objc
 protocol CenterViewControllerDelegate {
@@ -304,7 +305,7 @@ extension MapViewController: UITableViewDataSource {
     cell.textLabel!.font = UIFont.boldFlatFontOfSize(16)
     
     // Add custom accessory view
-    let icon = UIImage(named: "InstagramIcon")
+    let icon = UIImage(named: "Elipses")
     let accBtn = UIButton(frame: CGRectMake(0.0, 0.0, icon!.size.width, icon!.size.width))
     accBtn.setBackgroundImage(icon, forState: .Normal)
     accBtn.addTarget(self, action: Selector("elipsesTapped:event:"), forControlEvents: UIControlEvents.TouchUpInside)
@@ -341,7 +342,12 @@ extension MapViewController: GMSMapViewDelegate {
   
   func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
     closeLeftPanelOpenIfOpen()
-    performSegueWithIdentifier("show info", sender: self)
+    
+    let synth = AVSpeechSynthesizer()
+    var speak = AVSpeechUtterance(string: selectedPlace.name)
+    speak.rate = 0.1
+    synth.speakUtterance(speak)
+    //performSegueWithIdentifier("show info", sender: self)
   }
 }
  

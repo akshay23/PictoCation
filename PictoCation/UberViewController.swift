@@ -19,8 +19,11 @@ class UberViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // BG color
+    // BG color & title image
     view.backgroundColor = UIColor.wetAsphaltColor()
+    let uberIconView = UIImageView(image: UIImage(named: "UberIcon"))
+    uberIconView.frame = CGRectMake(0, 0, 70, 20)
+    navigationItem.titleView = uberIconView
     
     // Add back nav button
     let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: "goBack")
