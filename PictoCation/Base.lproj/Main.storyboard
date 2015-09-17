@@ -513,7 +513,7 @@
                                             <constraint firstAttribute="height" constant="50" id="ko3-jA-3WW"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -671,9 +671,88 @@
                     <view key="view" contentMode="scaleToFill" id="6yt-Io-zfp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick-Up Location:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9D-L8-nig">
+                                <rect key="frame" x="217" y="24" width="166" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.78740906079999995" green="0.70473982759999998" blue="0.5563835265" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drop-Off Location:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ia4-GB-AwL">
+                                <rect key="frame" x="214" y="231" width="172" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.78740906079999995" green="0.70473982759999998" blue="0.5563835265" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkA-HT-OMc" userLabel="PickUpMap" customClass="GMSMapView">
+                                <rect key="frame" x="4" y="49" width="592" height="172"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hm0-Ey-tHq" userLabel="DropOffMap" customClass="GMSMapView">
+                                <rect key="frame" x="4" y="256" width="592" height="172"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wqa-Be-HaV" userLabel="TypeView">
+                                <rect key="frame" x="177" y="438" width="247" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQl-Qs-BJ4" customClass="FUIButton">
+                                        <rect key="frame" x="131" y="5" width="113" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="9Mu-UJ-ZDe"/>
+                                            <constraint firstAttribute="width" constant="113" id="rBK-sr-AMz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Change Type">
+                                            <color key="titleColor" red="1" green="0.60344653189999997" blue="0.45077290949999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uber X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbG-CT-V65">
+                                        <rect key="frame" x="3" y="5" width="115" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="Sfi-Ga-MXW"/>
+                                            <constraint firstAttribute="width" constant="115" id="rNM-yG-xCX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="oQl-Qs-BJ4" secondAttribute="trailing" constant="3" id="9hj-8z-w9g"/>
+                                    <constraint firstAttribute="height" constant="40" id="Chu-Gv-Mfq"/>
+                                    <constraint firstAttribute="centerY" secondItem="ZbG-CT-V65" secondAttribute="centerY" constant="0.5" id="U4U-qI-Kjg"/>
+                                    <constraint firstAttribute="centerY" secondItem="oQl-Qs-BJ4" secondAttribute="centerY" id="d3c-mC-7Yg"/>
+                                    <constraint firstAttribute="width" constant="247" id="wlN-4W-mZG"/>
+                                    <constraint firstItem="ZbG-CT-V65" firstAttribute="leading" secondItem="wqa-Be-HaV" secondAttribute="leading" constant="3" id="zSL-Pf-nnV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Ia4-GB-AwL" secondAttribute="centerX" id="2OZ-bo-NWm"/>
+                            <constraint firstItem="hm0-Ey-tHq" firstAttribute="height" secondItem="6yt-Io-zfp" secondAttribute="height" multiplier="1:3.5" id="Hwq-bM-xsp"/>
+                            <constraint firstItem="Ia4-GB-AwL" firstAttribute="top" secondItem="fkA-HT-OMc" secondAttribute="bottom" constant="10" id="IPI-Zq-GsP"/>
+                            <constraint firstItem="fkA-HT-OMc" firstAttribute="top" secondItem="X9D-L8-nig" secondAttribute="bottom" constant="1" id="Krd-ue-4GA"/>
+                            <constraint firstItem="hm0-Ey-tHq" firstAttribute="leading" secondItem="6yt-Io-zfp" secondAttribute="leading" constant="4" id="Vff-Nh-J56"/>
+                            <constraint firstItem="hm0-Ey-tHq" firstAttribute="top" secondItem="Ia4-GB-AwL" secondAttribute="bottom" constant="1" id="XUY-hq-jVh"/>
+                            <constraint firstAttribute="centerX" secondItem="X9D-L8-nig" secondAttribute="centerX" id="YIc-Bh-EWm"/>
+                            <constraint firstItem="fkA-HT-OMc" firstAttribute="leading" secondItem="6yt-Io-zfp" secondAttribute="leading" constant="4" id="bK3-Um-O91"/>
+                            <constraint firstAttribute="trailing" secondItem="hm0-Ey-tHq" secondAttribute="trailing" constant="4" id="goM-Ld-y9E"/>
+                            <constraint firstAttribute="trailing" secondItem="fkA-HT-OMc" secondAttribute="trailing" constant="4" id="hqX-J1-NYS"/>
+                            <constraint firstItem="X9D-L8-nig" firstAttribute="top" secondItem="UUf-pJ-Op9" secondAttribute="bottom" constant="4" id="kZm-nr-j9R"/>
+                            <constraint firstItem="wqa-Be-HaV" firstAttribute="top" secondItem="hm0-Ey-tHq" secondAttribute="bottom" constant="10" id="mZ5-qm-TmE"/>
+                            <constraint firstAttribute="centerX" secondItem="wqa-Be-HaV" secondAttribute="centerX" id="wXC-DT-Zaj"/>
+                            <constraint firstItem="fkA-HT-OMc" firstAttribute="height" secondItem="6yt-Io-zfp" secondAttribute="height" multiplier="1:3.5" id="wf2-C1-6bk"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="changeTypeBtn" destination="oQl-Qs-BJ4" id="Rza-Z0-AvO"/>
+                        <outlet property="dropOffMap" destination="hm0-Ey-tHq" id="IxR-ct-i2a"/>
+                        <outlet property="pickUpMap" destination="fkA-HT-OMc" id="7ZS-1s-PJa"/>
+                        <outlet property="typeView" destination="wqa-Be-HaV" id="ndy-7d-DX2"/>
+                        <outlet property="uberTypeText" destination="ZbG-CT-V65" id="R57-SA-Su8"/>
                         <segue destination="BCt-tC-xTQ" kind="presentation" identifier="login" id="vlT-Bo-pBl"/>
                     </connections>
                 </viewController>
