@@ -87,10 +87,10 @@ class PlaceInfoViewController: UIViewController {
   }
   
   func downloadAndSetMapImage(url: NSURL){
-    println("Started downloading \(url)")
+    print("Started downloading \(url)")
     getDataFromUrl(url) { data in
       dispatch_async(dispatch_get_main_queue()) {
-        println("Finished downloading \(url)")
+        print("Finished downloading \(url)")
         self.imgMap.image = UIImage(data: data!)
       }
     }
@@ -121,7 +121,7 @@ class PlaceInfoViewController: UIViewController {
         self.lblAddress.text = gmsPlace.formattedAddress
         
         if let phone = gmsPlace.phoneNumber {
-          self.lblPhone.text = gmsPlace.phoneNumber
+          self.lblPhone.text = phone
         } else {
           self.lblPhone.text = "N/A"
         }

@@ -57,7 +57,7 @@ class LeftViewController: UITableViewController {
       selectedType = user.placesType
     }
     selectedIndex = types.find { $0 == selectedType }
-    println("Selected type is \(selectedType) and index is \(selectedIndex)")
+    print("Selected type is \(selectedType) and index is \(selectedIndex)")
   }
   
   override func didReceiveMemoryWarning() {
@@ -87,7 +87,7 @@ class LeftViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
     
     cell.textLabel?.text = types[indexPath.row]
     cell.textLabel?.font = UIFont.systemFontOfSize(15)

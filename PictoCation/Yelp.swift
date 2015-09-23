@@ -35,23 +35,23 @@ class Yelp: BDBOAuth1RequestOperationManager {
   }
   
   required init(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
+    super.init(coder: aDecoder)!
   }
   
   init(consumerKey key: String!, consumerSecret secret: String!, accessToken: String!, accessSecret: String!) {
     self.accessToken = accessToken
     self.accessSecret = accessSecret
-    var baseUrl = NSURL(string: yelpBaseURLString)
+    let baseUrl = NSURL(string: yelpBaseURLString)
     super.init(baseURL: baseUrl, consumerKey: key, consumerSecret: secret);
     
-    var token = BDBOAuth1Credential(token: accessToken, secret: accessSecret, expiration: nil)
+    let token = BDBOAuth1Credential(token: accessToken, secret: accessSecret, expiration: nil)
     self.requestSerializer.saveAccessToken(token)
   }
   
   func searchWithParams(parameters: [String: String], completion: ([NSDictionary]?, NSError?) -> Void) {
     self.GET("search", parameters: parameters, success: {
       (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-      var dictionaries = response["businesses"] as? [NSDictionary]
+      let dictionaries = response["businesses"] as? [NSDictionary]
       if dictionaries != nil {
         completion(dictionaries, nil)
       }

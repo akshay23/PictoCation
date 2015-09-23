@@ -29,8 +29,8 @@ struct Uber {
       return (urlString, params)
     }
     
-    var URLRequest: NSURLRequest {
-      let (baseURL: String, path: String, parameters: [String: AnyObject]) = {
+    var URLRequest: NSMutableURLRequest {
+      let (baseURL, path, parameters): (String, String, [String: AnyObject]) = {
         switch self {
         case .requestOauthCode:
           let pathString = "/oauth/authorize?response_type=code&scope=request&client_id=" + Router.clientID
@@ -49,7 +49,7 @@ struct Uber {
         }()
       
       let BaseURL = NSURL(string: baseURL)
-      var URLRequest = NSURLRequest(URL: BaseURL!.URLByAppendingPathComponent(path))
+      let URLRequest = NSURLRequest(URL: BaseURL!.URLByAppendingPathComponent(path))
       let encoding = Alamofire.ParameterEncoding.URL
       return encoding.encode(URLRequest, parameters: parameters).0
     }

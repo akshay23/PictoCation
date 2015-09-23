@@ -1,5 +1,13 @@
-Version 1.10.2 - July 2015
-==========================
+Version 1.10.3 - September 2015
+===============================
+Features:
+  - Google logos have been updated.
+
+Resolved Issues:
+  - Framework now ships with the device version of bundles to pass Xcode 7 archive checks.
+
+Version 1.10.2 - August 2015
+============================
 Resolved Issues:
   - Fixed a crash releasing a map view while in background.
   - Resolved a conflict with apps using gtm-session-fetcher resumable downloads.

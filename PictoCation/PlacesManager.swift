@@ -34,13 +34,13 @@ class PlacesManager {
   
   private init() {}
   
-  func updateLatLong(latitude: Double, longitude: Double, handler: (error: NSError?) -> ()) {
+  func updateLatLong(latitude: Double, longitude: Double, handler: (error: Result<AnyObject>) -> ()) {
     self.latitude = latitude
     self.longitude = longitude
     refreshPlaces(true, nextPageToken: nil, handler: handler)
   }
   
-  func refreshPlaces(isFirstRequest: Bool, nextPageToken: String?, handler: (error: NSError?) -> ()) {
+  func refreshPlaces(isFirstRequest: Bool, nextPageToken: String?, handler: (error: Result<AnyObject>) -> ()) {
     let location: String = "\(latitude),\(longitude)"
     let params = "location=\(location)&radius=\(radius)&key=\(apiKey)"
     var myRequest = requestURL + params
@@ -57,13 +57,13 @@ class PlacesManager {
     if (isFirstRequest) {
       places = []
     }
-
+    
     Alamofire.request(.GET, myRequest, parameters: nil).responseJSON {
-      (_, _, data, error) in
+      (_, _, result) in
       
       var token: String?
-      if (error == nil) {
-        let json = JSON(data!)
+      if (result.isSuccess) {
+        let json = JSON(result.value!)
         if let status = json["status"].string {
           if (status == "OK") {
             token = json["next_page_token"].string
@@ -74,21 +74,21 @@ class PlacesManager {
               }
             }
           } else {
-            println("Got \(status) status from results")
+            print("Got \(status) status from results")
           }
         }
       } else {
-        println(error!.localizedDescription)
+        print(result.description)
       }
       
       if let tok = token {
-        println("Getting more results")
+        print("Getting more results")
         sleep(2)  // Google only allows 1 request every 2 seconds (http://stackoverflow.com/questions/21265756/paging-on-google-places-api-returns-status-invalid-request)
         self.refreshPlaces(false, nextPageToken: tok, handler: handler)
       } else {
-        println("Full places count is \(self.places.count)")
-        self.places.sort({ $0.name < $1.name })
-        handler(error: error)
+        print("Full places count is \(self.places.count)")
+        self.places.sortInPlace({ $0.name < $1.name })
+        handler(error: result)
       }
     }
   }

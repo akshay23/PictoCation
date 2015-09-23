@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
       loadingNotification.labelText = "Loading"
       
       // Delete all cookies (if any)
-      if let cookies = NSHTTPCookieStorage.sharedHTTPCookieStorage().cookies as? [NSHTTPCookie]{
+      if let cookies = NSHTTPCookieStorage.sharedHTTPCookieStorage().cookies as [NSHTTPCookie]?{
         for cookie in cookies {
           NSHTTPCookieStorage.sharedHTTPCookieStorage().deleteCookie(cookie)
         }
@@ -97,7 +97,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: UIWebViewDelegate {
   func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-    println(request.URLString)
+    print(request.URLString)
     let urlString = request.URLString
     var redirectURI: String!
     if (loginType == .Instagram) {
@@ -109,7 +109,7 @@ extension LoginViewController: UIWebViewDelegate {
     if let range = urlString.rangeOfString(redirectURI + "?code=") {
       let location = range.endIndex
       let code = urlString.substringFromIndex(location)
-      println(code)
+      print(code)
       requestAccessToken(code)
       return true
     }
@@ -126,14 +126,14 @@ extension LoginViewController: UIWebViewDelegate {
     
     Alamofire.request(.POST, request.URLString, parameters: request.Params)
       .responseJSON {
-        (_, _, jsonObject, error) in
+        (_, _, result) in
         
-        if (error == nil) {
-          let json = JSON(jsonObject!)
+        if (result.isSuccess) {
+          let json = JSON(result.value!)
           
           if (self.loginType == .Instagram) {
             if let accessToken = json["access_token"].string, userID = json["user"]["id"].string {
-              println("Logged into Instagram")
+              print("Logged into Instagram")
               let user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: self.coreDataStack.context) as! User
               user.userID = userID
               user.accessToken = accessToken
@@ -144,18 +144,17 @@ extension LoginViewController: UIWebViewDelegate {
             }
           } else if (self.loginType == .Uber) {
             if let accessToken = json["access_token"].string {
-              println("Logged into Uber")
+              print("Logged into Uber")
               if let fetchRequest = self.coreDataStack.model.fetchRequestTemplateForName("UserFetchRequest") {
-                var fetchError: NSError?
-                let results = self.coreDataStack.context.executeFetchRequest(fetchRequest, error: &fetchError) as! [User]
-                if fetchError == nil {
+                do {
+                  let results = try self.coreDataStack.context.executeFetchRequest(fetchRequest) as! [User]
                   let user = results.first!
                   user.uberAccessToken = accessToken
                   self.coreDataStack.saveContext()
                   self.performSegueWithIdentifier("unwindToUberView", sender: ["user": user])
-                } else {
+                } catch {
                   self.showAlertWithMessage("Please try again!", title: "Couln't Fetch User", button: "Ok")
-                  println("Couldn't fetch user \(fetchError!.description)")
+                  print("Couldn't fetch user")
                   self.close()
                 }
               }

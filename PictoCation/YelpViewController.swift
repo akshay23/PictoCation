@@ -108,8 +108,7 @@ class YelpViewController: UIViewController {
     }
     
     checkReachabilityWithBlock {
-      let test = self.place
-      var params = ["term": self.place.name, "ll": "\(self.place.latitude),\(self.place.longitude)"]
+      let params = ["term": self.place.name, "ll": "\(self.place.latitude),\(self.place.longitude)"]
       Yelp.sharedInstance.searchWithParams(params, completion: {
         (businesses: [NSDictionary]?, error: NSError?) -> Void in
         
@@ -123,7 +122,7 @@ class YelpViewController: UIViewController {
             let formattedPlace = self.place.name.lowercaseString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             for business in dictionaries {
               let name = business["name"] as! String
-              println(name)
+              print(name)
               let formattedBusiness = name.lowercaseString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
               if formattedBusiness.rangeOfString(formattedPlace) != nil {
                 self.populateInfoForBusiness(business)
@@ -147,12 +146,12 @@ class YelpViewController: UIViewController {
   }
   
   func getDirections() {
-    var coordinates = CLLocationCoordinate2DMake(place.latitude, place.longitude)
-    var options = [
+    let coordinates = CLLocationCoordinate2DMake(place.latitude, place.longitude)
+    let options = [
       MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving
     ]
-    var placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
-    var mapItem = MKMapItem(placemark: placemark)
+    let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+    let mapItem = MKMapItem(placemark: placemark)
     mapItem.name = place.name
     mapItem.openInMapsWithLaunchOptions(options)
   }
@@ -166,7 +165,7 @@ class YelpViewController: UIViewController {
     // Image
     let imageURL = business["image_url"] as? String
     if let imageURL = imageURL {
-      println("Yelp image url: \(imageURL)")
+      print("Yelp image url: \(imageURL)")
       let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
       dispatch_async(backgroundQueue) {
         let imageData = NSData(contentsOfURL: NSURL(string: imageURL)!)
@@ -177,13 +176,13 @@ class YelpViewController: UIViewController {
         }
       }
     } else {
-      println("No business image")
+      print("No business image")
     }
     
     // Ratings Image
     let ratingsURL = business["rating_img_url"] as? String
     if let ratingsURL = ratingsURL {
-      println("Yelp ratings image url: \(ratingsURL)")
+      print("Yelp ratings image url: \(ratingsURL)")
       let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
       dispatch_async(backgroundQueue) {
         let imageData = NSData(contentsOfURL: NSURL(string: ratingsURL)!)
@@ -194,7 +193,7 @@ class YelpViewController: UIViewController {
         }
       }
     } else {
-      println("No ratings image")
+      print("No ratings image")
     }
     
     // Basic info

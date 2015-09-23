@@ -76,9 +76,9 @@ class UberViewController: UIViewController {
       if (user.uberAccessToken == "") {
         performSegueWithIdentifier("login", sender: self)
       } else {
-        println("Uber access token: \(user.uberAccessToken)")
-        println("Current location: \(currentLocation)")
-        println("Destination location: \(place.name)")
+        print("Uber access token: \(user.uberAccessToken)")
+        print("Current location: \(currentLocation)")
+        print("Destination location: \(place.name)")
         refresh()
       }
     } else {
@@ -134,14 +134,14 @@ class UberViewController: UIViewController {
   
   func getUberTypes() {
     let urlString: URLRequestConvertible = Uber.Router.getUberTypes(user!.accessToken)
-    println("Request is: \(urlString.URLRequest.URLString)")
+    print("Request is: \(urlString.URLRequest.URLString)")
     Alamofire.request(urlString).responseJSON() {
-      (_ , _, jsonObject, error) in
+      (_ , _, result) in
       
-      if (error == nil) {
-        let json = JSON(jsonObject!)
+      if (result.isSuccess) {
+        let json = JSON(result.value!)
         if let products = json["products"].array {
-          println("Number of Uber types is \(products.count)")
+          print("Number of Uber types is \(products.count)")
         }
       } else {
         self.showAlertWithMessage("Click 'Refresh' to try again", title: "Couldn't Get Uber Types", button: "OK")

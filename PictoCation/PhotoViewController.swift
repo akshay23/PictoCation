@@ -71,8 +71,7 @@ class PhotoViewController: UIViewController {
   func refresh() {
     // Get image
     let sharedImageCache = FICImageCache.sharedImageCache()
-    var photo: UIImage?
-    let exists = sharedImageCache.retrieveImageForEntity(photoInfo, withFormatName: KMBigImageFormatName, completionBlock: {
+    sharedImageCache.retrieveImageForEntity(photoInfo, withFormatName: KMBigImageFormatName, completionBlock: {
       (photoInfo, _, image) -> Void in
       self.mainPhotoView.image = image
     })
@@ -85,20 +84,23 @@ class PhotoViewController: UIViewController {
   
   func populateComments(request: URLRequestConvertible) {
     Alamofire.request(request).responseJSON() {
-      (_ , _, jsonObject, error) in
+      (_ , _, result) in
       
-      if (error == nil) {
-        let json = JSON(jsonObject!)
+      if (result.isSuccess) {
+        let json = JSON(result.value!)
         if (json["meta"]["code"].intValue  == 200) {
           if let caption = json["data"]["caption"]["text"].string {
-            self.comments.append(user: "@" + json["data"]["caption"]["from"]["username"].stringValue, comment: caption)
+            let comment = ("@" + json["data"]["caption"]["from"]["username"].stringValue, caption)
+            self.comments.append(comment)
           }
           
           if (json["data"]["comments"]["count"].intValue == 0 && self.comments.count == 0) {
-            self.comments.append(user: "", comment: "No Comments for this Photo")
+            let comment = ("", "No Comments for this Photo")
+            self.comments.append(comment)
           } else {
             for comment in json["data"]["comments"]["data"].arrayValue {
-              self.comments.append(user: "@" + comment["from"]["username"].stringValue, comment: comment["text"].stringValue)
+              let comment = ("@" + comment["from"]["username"].stringValue, comment["text"].stringValue)
+              self.comments.append(comment)
             }
           }
           self.photoInfo!.isLiked = json["data"]["user_has_liked"].boolValue
@@ -121,15 +123,11 @@ class PhotoViewController: UIViewController {
       self.refresh()
     }
   }
-  
-  func handleDoubleTap(recognizer: UITapGestureRecognizer!) {
-    
-  }
 }
 
 extension PhotoViewController: UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
     let comment = comments[indexPath.row]
     cell.textLabel!.text = comment.comment
     cell.detailTextLabel!.text = comment.user

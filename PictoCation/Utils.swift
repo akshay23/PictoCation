@@ -48,12 +48,12 @@ extension UIViewController {
     alert.delegate = nil
     alert.addButtonWithTitle(button)
     
-    alert.titleLabel.textColor = UIColor.cloudsColor()
-    alert.titleLabel.font = UIFont.boldFlatFontOfSize(16);
-    alert.messageLabel.textColor = UIColor.cloudsColor()
-    alert.messageLabel.font = UIFont.flatFontOfSize(12)
-    alert.backgroundOverlay.backgroundColor = UIColor.cloudsColor().colorWithAlphaComponent(0.8)
-    alert.alertContainer.backgroundColor = UIColor.midnightBlueColor()
+    alert.titleLabel!.textColor = UIColor.cloudsColor()
+    alert.titleLabel!.font = UIFont.boldFlatFontOfSize(16);
+    alert.messageLabel!.textColor = UIColor.cloudsColor()
+    alert.messageLabel!.font = UIFont.flatFontOfSize(12)
+    alert.backgroundOverlay!.backgroundColor = UIColor.cloudsColor().colorWithAlphaComponent(0.8)
+    alert.alertContainer!.backgroundColor = UIColor.midnightBlueColor()
     alert.defaultButtonColor = UIColor.cloudsColor()
     alert.defaultButtonShadowColor = UIColor.asbestosColor()
     alert.defaultButtonFont = UIFont.boldFlatFontOfSize(14)
@@ -74,8 +74,8 @@ extension UIViewController {
 
 extension Array {
   // Return index of element in array (if any)
-  func find(includedElement: T -> Bool) -> Int? {
-    for (idx, element) in enumerate(self) {
+  func find(includedElement: Element -> Bool) -> Int? {
+    for (idx, element) in self.enumerate() {
       if includedElement(element) {
         return idx
       }
@@ -91,9 +91,9 @@ extension Dictionary {
     var urlString = ""
     
     for (paramNameObject, paramValueObject) in self {
-      var paramNameEncoded = (paramNameObject as! String).stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
-      var paramValueEncoded = (paramValueObject as! String).stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
-      var oneUrlPiece = paramNameEncoded! + "=" + paramValueEncoded!
+      let paramNameEncoded = (paramNameObject as! String).stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLUserAllowedCharacterSet())
+      let paramValueEncoded = (paramValueObject as! String).stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLUserAllowedCharacterSet())
+      let oneUrlPiece = paramNameEncoded! + "=" + paramValueEncoded!
       urlString = urlString + (urlString == "" ? "" : "&") + oneUrlPiece
     }
     
@@ -120,7 +120,7 @@ extension String {
   }
   
   private func stringFromResult(result: UnsafeMutablePointer<CUnsignedChar>, length: Int) -> String {
-    var hash = NSMutableString()
+    let hash = NSMutableString()
     for i in 0..<length {
       hash.appendFormat("%02x", result[i])
     }

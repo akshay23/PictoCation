@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "LoginViewController.(requestAccessToken(LoginViewController) -&gt; (String) -&gt; ()).(closure #1):LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "PictoCation.Instagram.Router.(URLRequest.getter : ObjectiveC.NSURLRequest).(closure #1):Instagram.swift">
       </ContextState>
       <ContextState

@@ -48,7 +48,7 @@ class GalleryViewController: UICollectionViewController {
     navigationItem.rightBarButtonItem = refreshButton
     
     // Add text field to nav bar
-    let textfield = UITextField(frame: CGRectMake(0.0, 0.0, CGFloat(count(hashtagTopic) + 3),
+    let textfield = UITextField(frame: CGRectMake(0.0, 0.0, CGFloat(hashtagTopic.characters.count + 3),
       navigationController!.navigationBar.frame.size.height))
     textfield.text = "#\(hashtagTopic)"
     textfield.backgroundColor = UIColor.clearColor()
@@ -57,6 +57,7 @@ class GalleryViewController: UICollectionViewController {
     textfield.autocorrectionType = .No
     textfield.textAlignment = .Center
     textfield.returnKeyType = .Done
+    textfield.delegate = self
     textfield.addTarget(self, action: Selector("goRefresh"), forControlEvents: .EditingDidEndOnExit)
     navigationItem.titleView = textfield
     
@@ -94,8 +95,9 @@ class GalleryViewController: UICollectionViewController {
   func goRefresh() {
     let titleView = navigationItem.titleView as? UITextField
     titleView!.resignFirstResponder()
-    let chars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789")
-    hashtagTopic = stripOutUnwantedCharactersFromText(titleView!.text, characterSet: chars)
+    
+    let charsToRemove = NSCharacterSet.alphanumericCharacterSet().invertedSet
+    hashtagTopic = titleView!.text!.componentsSeparatedByCharactersInSet(charsToRemove).joinWithSeparator("")
 
     checkReachabilityWithBlock {
       self.refresh()
@@ -108,11 +110,12 @@ class GalleryViewController: UICollectionViewController {
     }
     
     populatingPhotos = true
+    print(request.URLRequest.URLString)
     Alamofire.request(request).responseJSON() {
-      (_ , _, jsonObject, error) in
+      (_ , _, result) in
       
-      if (error == nil) {
-        let json = JSON(jsonObject!)
+      if (result.isSuccess) {
+        let json = JSON(result.value!)
         if (json["meta"]["code"].intValue  == 200) {
           dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
             if let urlString = json["pagination"]["next_url"].URL {
@@ -131,7 +134,7 @@ class GalleryViewController: UICollectionViewController {
               })
             
             let lastItem = self.photos.count
-            self.photos.extend(photoInfos)
+            self.photos.appendContentsOf(photoInfos)
             
             let indexPaths = (lastItem..<self.photos.count).map { NSIndexPath(forItem: $0, inSection: 0) }
             
@@ -144,6 +147,9 @@ class GalleryViewController: UICollectionViewController {
 
               if (self.photos.count == 0) {
                 self.showAlertWithMessage("There are no photos for #\(self.hashtagTopic)", title: "No Photos", button: "OK")
+                if let navi = self.navigationController {
+                  MBProgressHUD.hideAllHUDsForView(navi.view, animated: true)
+                }
               }
             }
           }
@@ -185,7 +191,7 @@ class GalleryViewController: UICollectionViewController {
   }
   
   func stripOutUnwantedCharactersFromText(text: String, characterSet: Set<Character>) -> String {
-    return String(filter(text) { characterSet.contains($0) })
+    return String(text.characters.filter { characterSet.contains($0) })
   }
 }
 
@@ -193,7 +199,7 @@ class PhotoBrowserCollectionViewCell: UICollectionViewCell {
   let imageView = UIImageView()
   var photoInfo: PhotoInfo?
   
-  required init(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
   
@@ -209,7 +215,7 @@ class PhotoBrowserCollectionViewCell: UICollectionViewCell {
 class PhotoBrowserLoadingCollectionView: UICollectionReusableView {
   let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
   
-  required init(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
   
@@ -237,7 +243,7 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     sharedImageCache.retrieveImageForEntity(photo, withFormatName: formatName, completionBlock: {
       (photoInfo, _, image) -> Void in
       if (photoInfo as! PhotoInfo) == cell.photoInfo {
-        let p = photoInfo as! PhotoInfo
+        _ = photoInfo as! PhotoInfo
         cell.imageView.image = image
       }
     })
@@ -268,5 +274,14 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     if (self.nextURLRequest != nil && scrollView.contentOffset.y + view.frame.size.height > scrollView.contentSize.height * 0.8) {
       populatePhotos(self.nextURLRequest!)
     }
+  }
+}
+
+extension GalleryViewController: UITextFieldDelegate {
+  func textFieldDidEndEditing(textField: UITextField) {
+    let charsToRemove = NSCharacterSet.alphanumericCharacterSet().invertedSet
+    let topic = textField.text!.componentsSeparatedByCharactersInSet(charsToRemove).joinWithSeparator("")
+    textField.text = "#\(topic)"
+    print("DID FINISH EDITING #\(topic)")
   }
 }

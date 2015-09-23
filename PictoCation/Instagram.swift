@@ -28,8 +28,8 @@ struct Instagram {
       return (urlString, params)
     }
     
-    var URLRequest: NSURLRequest {
-      let (path: String, parameters: [String: AnyObject]) = {
+    var URLRequest: NSMutableURLRequest {
+      let (path, parameters): (String, [String: AnyObject]) = {
         switch self {
         case .TaggedPhotos (let topic, let accessToken):
           let params = ["access_token": accessToken]
@@ -43,12 +43,12 @@ struct Instagram {
           
         case .requestOauthCode:
           let pathString = "/oauth/authorize/?client_id=" + Router.clientID + "&redirect_uri=" + Router.redirectURI + "&response_type=code"
-          return ("/photos", [:])
+          return (pathString, [:])
         }
         }()
       
       let BaseURL = NSURL(string: Router.baseURLString)
-      var URLRequest = NSURLRequest(URL: BaseURL!.URLByAppendingPathComponent(path))
+      let URLRequest = NSURLRequest(URL: BaseURL!.URLByAppendingPathComponent(path))
       let encoding = Alamofire.ParameterEncoding.URL
       return encoding.encode(URLRequest, parameters: parameters).0
     }
@@ -56,18 +56,5 @@ struct Instagram {
 }
 
 extension Alamofire.Request {
-  public static func imageResponseSerializer() -> GenericResponseSerializer<UIImage> {
-    return GenericResponseSerializer{ request, response, data in
-      if data == nil {
-        return (nil, nil)
-      }
-      
-      let image = UIImage(data: data!, scale: UIScreen.mainScreen().scale)
-      return (image, nil)
-    }
-  }
-  
-  func responseImage(completionHandler: (NSURLRequest, NSHTTPURLResponse?, UIImage?, NSError?) -> Void) -> Self {
-    return response(responseSerializer: Request.imageResponseSerializer(), completionHandler: completionHandler)
-  }
+
 }

@@ -90,10 +90,9 @@ class MapViewController: UIViewController {
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-    
-    var error: NSError?
+
     if let fetchRequest = coreDataStack.model.fetchRequestTemplateForName("UserFetchRequest") {
-      let results = coreDataStack.context.executeFetchRequest(fetchRequest, error: &error) as! [User]
+      let results = (try! coreDataStack.context.executeFetchRequest(fetchRequest)) as! [User]
       user = results.first
     }
     
@@ -107,7 +106,7 @@ class MapViewController: UIViewController {
       placesTable.hidden = true
       isUpdating = true
     } else {
-      println("Logged in")
+      print("Logged in")
       
       // First time login
       if (isFirstLogin) {
@@ -148,8 +147,9 @@ class MapViewController: UIViewController {
     } else if segue.identifier == "show gallery" && segue.destinationViewController.isKindOfClass(UICollectionViewController.classForCoder()) {
       if let galleryViewController = segue.destinationViewController as? GalleryViewController {
         galleryViewController.user = user
-        let chars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ0123456789")
-        galleryViewController.hashtagTopic = stripOutUnwantedCharactersFromText(selectedHastagTopic!, characterSet: chars)
+        let charsToRemove = NSCharacterSet.alphanumericCharacterSet().invertedSet
+        let strippedTopic = selectedHastagTopic!.componentsSeparatedByCharactersInSet(charsToRemove).joinWithSeparator("")
+        galleryViewController.hashtagTopic = strippedTopic
         galleryViewController.shouldRefresh = true
       }
     } else if segue.identifier == "show info" && segue.destinationViewController.isKindOfClass(UIViewController.classForCoder()) {
@@ -185,7 +185,7 @@ class MapViewController: UIViewController {
   }
 
   func stripOutUnwantedCharactersFromText(text: String, characterSet: Set<Character>) -> String {
-    return String(filter(text) { characterSet.contains($0) })
+    return String(text.characters.filter { characterSet.contains($0) })
   }
   
   func closeLeftPanelOpenIfOpen() {
@@ -197,7 +197,7 @@ class MapViewController: UIViewController {
   
   @objc func elipsesTapped(sender: UIButton, event: AnyObject) {
     let touches = event.allTouches()
-    let firstTouch = touches?.first as? UITouch
+    let firstTouch = touches?.first as UITouch?
     let currentTouchPosition = firstTouch?.locationInView(self.placesTable)
     let indexPath = self.placesTable.indexPathForRowAtPoint(currentTouchPosition!)
     
@@ -222,7 +222,7 @@ class MapViewController: UIViewController {
 }
  
 extension MapViewController: CLLocationManagerDelegate {
-  func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+  func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     locationManager.stopUpdatingLocation()
     
     if (!isUpdating) {
@@ -240,7 +240,7 @@ extension MapViewController: CLLocationManagerDelegate {
       loadingNotification.labelText = "Loading places..."
     })
 
-    currentLocation = locations.first as! CLLocation
+    currentLocation = locations.first as CLLocation!
     let camera = GMSCameraPosition.cameraWithLatitude(currentLocation.coordinate.latitude,
       longitude: currentLocation.coordinate.longitude, zoom: 14)
     mainMapView.animateToCameraPosition(camera)
@@ -250,9 +250,9 @@ extension MapViewController: CLLocationManagerDelegate {
     // Get places near current location
     placesManager.user = user
     placesManager.updateLatLong(currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude) {
-      error in
+      result in
 
-      if (error == nil && self.placesManager.places.count != 0) {
+      if (result.isSuccess && self.placesManager.places.count != 0) {
         self.placesTable.reloadData()
         self.placesTable.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0),
           atScrollPosition: UITableViewScrollPosition.Top, animated: true)
@@ -270,10 +270,10 @@ extension MapViewController: CLLocationManagerDelegate {
     }
   }
   
-  func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {}
+  func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {}
   
-  func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-    println("LocationManager failed with error: \(error.localizedDescription)!")
+  func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    print("LocationManager failed with error: \(error.localizedDescription)!")
     self.showAlertWithMessage("Click 'Refresh Places' to try again", title: "Could Not Get Location", button: "OK")
   }
 }
@@ -291,14 +291,14 @@ extension MapViewController: UITableViewDelegate {
     mainMapView.selectedMarker = placeMarker
     selectedPlace = placesManager.places[indexPath.row]
     
-    var locationCam = GMSCameraUpdate.setTarget(location)
+    let locationCam = GMSCameraUpdate.setTarget(location)
     mainMapView.animateWithCameraUpdate(locationCam)
   }
 }
  
 extension MapViewController: UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
     
     // Configure the look
     cell.configureFlatCellWithColor(UIColor.wetAsphaltColor(), selectedColor: UIColor.cloudsColor())
@@ -344,10 +344,9 @@ extension MapViewController: GMSMapViewDelegate {
     closeLeftPanelOpenIfOpen()
     
     let synth = AVSpeechSynthesizer()
-    var speak = AVSpeechUtterance(string: selectedPlace.name)
-    speak.rate = 0.1
+    let speak = AVSpeechUtterance(string: selectedPlace.name)
+    speak.rate = 0.5
     synth.speakUtterance(speak)
-    //performSegueWithIdentifier("show info", sender: self)
   }
 }
  
@@ -358,9 +357,8 @@ extension MapViewController: LeftViewControllerDelegate {
 
     // Save to CoreData
     // then refresh places
-    var error: NSError?
     if let fetchRequest = coreDataStack.model.fetchRequestTemplateForName("UserFetchRequest") {
-      let results = coreDataStack.context.executeFetchRequest(fetchRequest, error: &error) as! [User]
+      let results = (try! coreDataStack.context.executeFetchRequest(fetchRequest)) as! [User]
       user = results.first
       user?.placesType = type
       coreDataStack.saveContext()
