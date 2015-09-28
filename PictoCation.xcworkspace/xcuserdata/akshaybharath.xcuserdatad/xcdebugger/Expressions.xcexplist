@@ -3,12 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "LoginViewController.(requestAccessToken(LoginViewController) -&gt; (String) -&gt; ()).(closure #1):LoginViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "json">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "PictoCation.GalleryViewController.(populatePhotos in _77D2D2045AB444E051DA6CEBCCE325EC) (PictoCation.GalleryViewController)(Alamofire.URLRequestConvertible) -&gt; ():GalleryViewController.swift">
       </ContextState>
       <ContextState
          contextName = "PictoCation.Instagram.Router.(URLRequest.getter : ObjectiveC.NSURLRequest).(closure #1):Instagram.swift">
@@ -18,6 +13,14 @@
          <PersistentStrings>
             <PersistentString
                value = "mainStoryboard()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UberViewController.(getUberTypes(UberViewController) -&gt; () -&gt; ()).(closure #1):UberViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.uberTypes.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -88,7 +91,12 @@
          contextName = "PictoCation.AppDelegate.application (PictoCation.AppDelegate)(ObjectiveC.UIApplication, didFinishLaunchingWithOptions : Swift.Optional&lt;Swift.Dictionary&lt;ObjectiveC.NSObject, Swift.AnyObject&gt;&gt;) -&gt; Swift.Bool:AppDelegate.swift">
       </ContextState>
       <ContextState
-         contextName = "PictoCation.GalleryViewController.(populatePhotos in _77D2D2045AB444E051DA6CEBCCE325EC) (PictoCation.GalleryViewController)(Alamofire.URLRequestConvertible) -&gt; ():GalleryViewController.swift">
+         contextName = "LoginViewController.(requestAccessToken(LoginViewController) -&gt; (String) -&gt; ()).(closure #1):LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -14,4 +14,5 @@ class User: NSManagedObject {
   @NSManaged var accessToken: String
   @NSManaged var placesType: String
   @NSManaged var uberAccessToken: String
+  @NSManaged var uberMostRecentRequestID: String
 }

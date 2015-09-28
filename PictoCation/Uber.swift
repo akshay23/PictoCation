@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import CoreLocation
 
 struct Uber {
   enum Router: URLRequestConvertible {
@@ -20,7 +21,7 @@ struct Uber {
     
     case requestOauthCode
     case requestRide(String)
-    case getUberTypes(String)
+    case getUberTypes(String, CLLocation)
     
     static func requestAccessTokenURLStringAndParms(code: String) -> (URLString: String, Params: [String: AnyObject]) {
       let params = ["client_id": Router.clientID, "client_secret": Router.clientSecret, "grant_type": "authorization_code", "redirect_uri": Router.redirectURI, "code": code]
@@ -41,10 +42,10 @@ struct Uber {
           let pathString = "/v1/sandbox/requests"
           return (Uber.Router.baseURLString, pathString, params)
         
-        case .getUberTypes(let accessToken):
-          let params = ["access_token": accessToken]
+        case .getUberTypes(let accessToken, let currentLocation):
+          let params = ["access_token": accessToken, "latitude": currentLocation.coordinate.latitude, "longitude": currentLocation.coordinate.longitude]
           let pathString = "/v1/products"
-          return (Uber.Router.baseURLString, pathString, params)
+          return (Uber.Router.baseURLString, pathString, params as! [String : AnyObject])
         }
         }()
       

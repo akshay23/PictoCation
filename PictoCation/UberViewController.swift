@@ -12,6 +12,7 @@ import GoogleMaps
 import FlatUIKit
 import Alamofire
 import SwiftyJSON
+import MBProgressHUD
 
 class UberViewController: UIViewController {
   
@@ -27,6 +28,7 @@ class UberViewController: UIViewController {
   @IBOutlet var changeTypeBtn: FUIButton!
   @IBOutlet var uberTypeText: UILabel!
   @IBOutlet var typeView: UIView!
+  @IBOutlet var requestBtn: FUIButton!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -60,6 +62,13 @@ class UberViewController: UIViewController {
     changeTypeBtn.addTarget(self, action: "changeType", forControlEvents: .TouchUpInside)
     changeTypeBtn.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
     changeTypeBtn.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
+    requestBtn.shadowHeight = 3.0
+    requestBtn.buttonColor = UIColor.turquoiseColor()
+    requestBtn.shadowColor = UIColor.greenSeaColor()
+    requestBtn.setTitle("Request Uber", forState: .Normal)
+    //requestBtn.addTarget(self, action: "changeType", forControlEvents: .TouchUpInside)
+    requestBtn.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
+    requestBtn.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
     
     // Map init
     pickUpMap.delegate = self
@@ -105,6 +114,11 @@ class UberViewController: UIViewController {
   
   func refresh() {
     checkReachabilityWithBlock {
+      if let navi = self.navigationController {
+        let loadingNotification = MBProgressHUD.showHUDAddedTo(navi.view, animated: true)
+        loadingNotification.mode = MBProgressHUDMode.Indeterminate
+      }
+
       // Pick-up Map
       var camera = GMSCameraPosition.cameraWithLatitude(self.currentLocation.coordinate.latitude, longitude: self.currentLocation.coordinate.longitude, zoom: 15)
       self.pickUpMap.animateToCameraPosition(camera)
@@ -120,6 +134,9 @@ class UberViewController: UIViewController {
       
       // Populate Uber types
       self.getUberTypes()
+      
+      // Make sure user doesn't have any pending requests
+      self.checkForActiveRequests()
     }
   }
   
@@ -129,26 +146,57 @@ class UberViewController: UIViewController {
   }
   
   func changeType() {
+    let actionSheet = UIAlertController(title: "Please Select Uber Type", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) {
+      (action) in
+      // Do Nothing
+    }
+    actionSheet.addAction(cancelAction)
     
+    for type in uberTypes {
+      let typeButton = UIAlertAction(title: type, style: .Default) {
+        (action) in
+        self.uberTypeText.text = type
+      }
+      actionSheet.addAction(typeButton)
+    }
+    
+    self.presentViewController(actionSheet, animated: true, completion: nil)
   }
   
   func getUberTypes() {
-    let urlString: URLRequestConvertible = Uber.Router.getUberTypes(user!.accessToken)
-    print("Request is: \(urlString.URLRequest.URLString)")
+    let urlString: URLRequestConvertible = Uber.Router.getUberTypes(user!.uberAccessToken, currentLocation)
     Alamofire.request(urlString).responseJSON() {
       (_ , _, result) in
       
       if (result.isSuccess) {
         let json = JSON(result.value!)
+        print(json)
         if let products = json["products"].array {
           print("Number of Uber types is \(products.count)")
+          for type in products {
+            self.uberTypes.append(type["display_name"].stringValue)
+          }
         }
       } else {
         self.showAlertWithMessage("Click 'Refresh' to try again", title: "Couldn't Get Uber Types", button: "OK")
       }
+      
+      if let navi = self.navigationController {
+        MBProgressHUD.hideAllHUDsForView(navi.view, animated: true)
+      }
+    }
+  }
+  
+  func checkForActiveRequests() {
+    if (user!.uberMostRecentRequestID != "") {
+      //let urlString: URLRequestConvertible = Uber.Router.getUberTypes(user!.uberAccessToken, currentLocation)
     }
   }
 }
 
 extension UberViewController: GMSMapViewDelegate {
+}
+
+extension UberViewController: UIActionSheetDelegate {
 }

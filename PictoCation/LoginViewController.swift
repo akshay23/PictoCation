@@ -150,6 +150,7 @@ extension LoginViewController: UIWebViewDelegate {
                   let results = try self.coreDataStack.context.executeFetchRequest(fetchRequest) as! [User]
                   let user = results.first!
                   user.uberAccessToken = accessToken
+                  user.uberMostRecentRequestID = ""
                   self.coreDataStack.saveContext()
                   self.performSegueWithIdentifier("unwindToUberView", sender: ["user": user])
                 } catch {
