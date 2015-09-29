@@ -11,6 +11,8 @@ import CoreData
 import Alamofire
 import FastImageCache
 import GoogleMaps
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,6 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // Hide status bar
     application.statusBarHidden = true
+    
+    // Initialize Crashlytics
+    Fabric.with([Crashlytics.self()])
 
     return true
   }

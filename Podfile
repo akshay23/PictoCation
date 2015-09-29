@@ -11,6 +11,8 @@ target 'PictoCation' do
   pod 'FlatUIKit'
   pod 'BDBOAuth1Manager'
   pod 'AFNetworking'
+  pod 'Fabric'
+  pod 'Crashlytics'
 end
 
 target 'PictoCationTests' do
