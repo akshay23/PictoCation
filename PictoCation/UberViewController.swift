@@ -20,8 +20,9 @@ class UberViewController: UIViewController {
   var coreDataStack: CoreDataStack!
   var place: (id: String, name: String, latitude: Double, longitude: Double)!
   var currentLocation: CLLocation!
-  var uberTypes:[String] = []
-  var requestId:String?
+  var uberTypes = Dictionary<String, String>()
+  var requestId: String?
+  var currentUberType: (id: String, name: String)!
 
   @IBOutlet var pickUpMap: GMSMapView!
   @IBOutlet var dropOffMap: GMSMapView!
@@ -29,6 +30,7 @@ class UberViewController: UIViewController {
   @IBOutlet var uberTypeText: UILabel!
   @IBOutlet var typeView: UIView!
   @IBOutlet var requestBtn: FUIButton!
+  @IBOutlet var messageLabel: UILabel!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -69,6 +71,7 @@ class UberViewController: UIViewController {
     //requestBtn.addTarget(self, action: "changeType", forControlEvents: .TouchUpInside)
     requestBtn.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
     requestBtn.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
+    messageLabel.textColor = UIColor.cloudsColor()
     
     // Map init
     pickUpMap.delegate = self
@@ -113,6 +116,10 @@ class UberViewController: UIViewController {
   @IBAction func unwindToUberView(segue : UIStoryboardSegue) {}
   
   func refresh() {
+    self.uberTypes = Dictionary<String, String>()
+    self.uberTypeText.text = "---"
+    self.requestBtn.enabled = false
+    self.changeTypeBtn.enabled = false
     checkReachabilityWithBlock {
       if let navi = self.navigationController {
         let loadingNotification = MBProgressHUD.showHUDAddedTo(navi.view, animated: true)
@@ -146,7 +153,7 @@ class UberViewController: UIViewController {
   }
   
   func changeType() {
-    let actionSheet = UIAlertController(title: "Please Select Uber Type", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+    let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
     let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) {
       (action) in
       // Do Nothing
@@ -154,9 +161,48 @@ class UberViewController: UIViewController {
     actionSheet.addAction(cancelAction)
     
     for type in uberTypes {
-      let typeButton = UIAlertAction(title: type, style: .Default) {
+      let typeButton = UIAlertAction(title: type.1, style: UIAlertActionStyle.Default) {
         (action) in
-        self.uberTypeText.text = type
+        
+        if let navi = self.navigationController {
+          let loadingNotification = MBProgressHUD.showHUDAddedTo(navi.view, animated: true)
+          loadingNotification.mode = MBProgressHUDMode.Indeterminate
+        }
+        
+        print("Current Uber type is \(type.1) with id \(type.0)")
+        self.uberTypeText.text = type.1
+        self.currentUberType = (type.0, type.1)
+        self.requestBtn.enabled = true
+
+        // Get estimates
+        let endLocation = CLLocation(latitude: self.place.latitude, longitude: self.place.longitude)
+        let params = [
+          "product_id": self.currentUberType.id,
+          "start_latitude": self.currentLocation.coordinate.latitude,
+          "start_longitude": self.currentLocation.coordinate.longitude,
+          "end_latitude": endLocation.coordinate.latitude,
+          "end_longitude": endLocation.coordinate.longitude
+        ]
+        let myRequest: URLRequestConvertible = Uber.Router.getEstimate(self.user!.uberAccessToken)
+        Alamofire.request(.POST, myRequest.URLRequest, parameters: params as? [String : AnyObject], encoding: .JSON).responseJSON {
+          (request, _, result) in
+
+          if (result.isSuccess) {
+            let json = JSON(result.value!)
+            if let pickup = json["pickup_estimate"].int {
+              self.messageLabel.text = "Closest driver is about \(pickup) minutes away"
+            } else {
+              self.messageLabel.text = "There are no drivers nearby"
+              self.requestBtn.enabled = false
+            }
+          } else {
+            self.messageLabel.text = "Could not get trip estimate!"
+          }
+          
+          if let navi = self.navigationController {
+            MBProgressHUD.hideAllHUDsForView(navi.view, animated: true)
+          }
+        }
       }
       actionSheet.addAction(typeButton)
     }
@@ -171,12 +217,19 @@ class UberViewController: UIViewController {
       
       if (result.isSuccess) {
         let json = JSON(result.value!)
-        print(json)
         if let products = json["products"].array {
           print("Number of Uber types is \(products.count)")
           for type in products {
-            self.uberTypes.append(type["display_name"].stringValue)
+            self.uberTypes[type["product_id"].stringValue] = type["display_name"].stringValue
           }
+        }
+        
+        if (self.uberTypes.count > 0) {
+          self.changeTypeBtn.enabled = true
+          self.messageLabel.text = "Please choose an Uber type"
+        } else {
+          self.changeTypeBtn.enabled = false
+          self.messageLabel.text = "No Ubers in current location"
         }
       } else {
         self.showAlertWithMessage("Click 'Refresh' to try again", title: "Couldn't Get Uber Types", button: "OK")

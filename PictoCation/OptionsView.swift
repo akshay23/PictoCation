@@ -58,6 +58,7 @@ class OptionsView: UIView {
     reserveButton.setTitle("Make Reservation", forState: .Normal)
     reserveButton.titleLabel?.font = UIFont.boldFlatFontOfSize(40)
     reserveButton.addTarget(self, action: "reserve", forControlEvents: UIControlEvents.TouchUpInside)
+    reserveButton.enabled = false
     addSubview(reserveButton)
     
     let uberButton = FUIButton(frame: CGRectMake(8, reserveButton.frame.origin.y + 45, frame.size.width - 15, 40))
