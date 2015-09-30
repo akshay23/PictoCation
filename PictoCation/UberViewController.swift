@@ -23,6 +23,7 @@ class UberViewController: UIViewController {
   var uberTypes = Dictionary<String, String>()
   var requestId: String?
   var currentUberType: (id: String, name: String)!
+  var activeRequestExists: Bool = false
 
   @IBOutlet var pickUpMap: GMSMapView!
   @IBOutlet var dropOffMap: GMSMapView!
@@ -68,7 +69,7 @@ class UberViewController: UIViewController {
     requestBtn.buttonColor = UIColor.turquoiseColor()
     requestBtn.shadowColor = UIColor.greenSeaColor()
     requestBtn.setTitle("Request Uber", forState: .Normal)
-    //requestBtn.addTarget(self, action: "changeType", forControlEvents: .TouchUpInside)
+    requestBtn.addTarget(self, action: "requestUber", forControlEvents: .TouchUpInside)
     requestBtn.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
     requestBtn.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
     messageLabel.textColor = UIColor.cloudsColor()
@@ -85,12 +86,13 @@ class UberViewController: UIViewController {
     super.viewWillAppear(animated)
     
     if let user = user {
-      if (user.uberAccessToken == "") {
+      if (user.uberAccessToken == "" || (user.uberAccessToken != "" && (NSDate().isGreaterThanDate(user.uberAccessTokenExpiryDate) || NSDate().isEqualToDate(user.uberAccessTokenExpiryDate)))) {
         performSegueWithIdentifier("login", sender: self)
       } else {
-        print("Uber access token: \(user.uberAccessToken)")
-        print("Current location: \(currentLocation)")
-        print("Destination location: \(place.name)")
+        print("Uber access token is \(user.uberAccessToken)")
+        print("Uber access token expires \(user.uberAccessTokenExpiryDate)")
+        print("Current location is \(currentLocation)")
+        print("Destination location is \(place.name)")
         refresh()
       }
     } else {
@@ -120,6 +122,7 @@ class UberViewController: UIViewController {
     self.uberTypeText.text = "---"
     self.requestBtn.enabled = false
     self.changeTypeBtn.enabled = false
+
     checkReachabilityWithBlock {
       if let navi = self.navigationController {
         let loadingNotification = MBProgressHUD.showHUDAddedTo(navi.view, animated: true)
@@ -141,15 +144,62 @@ class UberViewController: UIViewController {
       
       // Populate Uber types
       self.getUberTypes()
-      
-      // Make sure user doesn't have any pending requests
-      self.checkForActiveRequests()
     }
   }
   
   func goBack() {
     view.resignFirstResponder()
     navigationController?.popViewControllerAnimated(true)
+  }
+  
+  func requestUber() {
+    if let navi = self.navigationController {
+      let loadingNotification = MBProgressHUD.showHUDAddedTo(navi.view, animated: true)
+      loadingNotification.mode = MBProgressHUDMode.Indeterminate
+    }
+
+    let endLocation = CLLocation(latitude: self.place.latitude, longitude: self.place.longitude)
+    let params = [
+      "product_id": self.currentUberType.id,
+      "start_latitude": self.currentLocation.coordinate.latitude,
+      "start_longitude": self.currentLocation.coordinate.longitude,
+      "end_latitude": endLocation.coordinate.latitude,
+      "end_longitude": endLocation.coordinate.longitude
+    ]
+    let myRequest: URLRequestConvertible = Uber.Router.requestSandboxRide(self.user!.uberAccessToken)
+    print(myRequest.URLRequest.URLString)
+    Alamofire.request(.POST, myRequest.URLRequest, parameters: params as? [String : AnyObject], encoding: .JSON)
+      .validate()
+      .responseJSON {
+      (_, _, result) in
+      
+        if (result.isSuccess) {
+          let json = JSON(result.value!)
+          if let status = json["status"].string {
+            if (status == "processing" || status == "accepted") {
+              if let fetchRequest = self.coreDataStack.model.fetchRequestTemplateForName("UserFetchRequest") {
+                do {
+                  let results = try self.coreDataStack.context.executeFetchRequest(fetchRequest) as! [User]
+                  let user = results.first!
+                  user.uberMostRecentRequestID = json["request_id"].stringValue
+                  self.coreDataStack.saveContext()
+                  self.user = user
+                } catch {
+                  self.showAlertWithMessage("Please try again!", title: "Couln't Fetch User", button: "Ok")
+                  print("Couldn't fetch user")
+                }
+              }
+              self.checkForActiveRequests()
+            }
+          }
+        } else {
+          self.showAlertWithMessage("Please try again after a few seconds.", title: "Couldn't Request an Uber", button: "OK")
+        }
+        
+        if let navi = self.navigationController {
+          MBProgressHUD.hideAllHUDsForView(navi.view, animated: true)
+        }
+    }
   }
   
   func changeType() {
@@ -172,7 +222,10 @@ class UberViewController: UIViewController {
         print("Current Uber type is \(type.1) with id \(type.0)")
         self.uberTypeText.text = type.1
         self.currentUberType = (type.0, type.1)
-        self.requestBtn.enabled = true
+        
+        if (!self.activeRequestExists) {
+          self.requestBtn.enabled = true
+        }
 
         // Get estimates
         let endLocation = CLLocation(latitude: self.place.latitude, longitude: self.place.longitude)
@@ -184,24 +237,26 @@ class UberViewController: UIViewController {
           "end_longitude": endLocation.coordinate.longitude
         ]
         let myRequest: URLRequestConvertible = Uber.Router.getEstimate(self.user!.uberAccessToken)
-        Alamofire.request(.POST, myRequest.URLRequest, parameters: params as? [String : AnyObject], encoding: .JSON).responseJSON {
-          (request, _, result) in
+        Alamofire.request(.POST, myRequest.URLRequest, parameters: params as? [String : AnyObject], encoding: .JSON)
+          .validate()
+          .responseJSON {
+          (_, _, result) in
 
-          if (result.isSuccess) {
-            let json = JSON(result.value!)
-            if let pickup = json["pickup_estimate"].int {
-              self.messageLabel.text = "Closest driver is about \(pickup) minutes away"
+            if (result.isSuccess) {
+              let json = JSON(result.value!)
+              if let pickup = json["pickup_estimate"].int {
+                self.messageLabel.text = "Closest driver is about \(pickup) minutes away"
+              } else {
+                self.messageLabel.text = "There are no drivers nearby"
+                self.requestBtn.enabled = false
+              }
             } else {
-              self.messageLabel.text = "There are no drivers nearby"
-              self.requestBtn.enabled = false
+              self.messageLabel.text = "Could not get trip estimate!"
             }
-          } else {
-            self.messageLabel.text = "Could not get trip estimate!"
-          }
-          
-          if let navi = self.navigationController {
-            MBProgressHUD.hideAllHUDsForView(navi.view, animated: true)
-          }
+            
+            if let navi = self.navigationController {
+              MBProgressHUD.hideAllHUDsForView(navi.view, animated: true)
+            }
         }
       }
       actionSheet.addAction(typeButton)
@@ -212,38 +267,110 @@ class UberViewController: UIViewController {
   
   func getUberTypes() {
     let urlString: URLRequestConvertible = Uber.Router.getUberTypes(user!.uberAccessToken, currentLocation)
-    Alamofire.request(urlString).responseJSON() {
+    Alamofire.request(urlString)
+      .validate()
+      .responseJSON() {
       (_ , _, result) in
       
-      if (result.isSuccess) {
-        let json = JSON(result.value!)
-        if let products = json["products"].array {
-          print("Number of Uber types is \(products.count)")
-          for type in products {
-            self.uberTypes[type["product_id"].stringValue] = type["display_name"].stringValue
+        if (result.isSuccess) {
+          let json = JSON(result.value!)
+          if let products = json["products"].array {
+            print("Number of Uber types is \(products.count)")
+            for type in products {
+              self.uberTypes[type["product_id"].stringValue] = type["display_name"].stringValue
+            }
           }
+          
+          if (self.uberTypes.count > 0) {
+            self.changeTypeBtn.enabled = true
+            self.messageLabel.text = "Please choose an Uber type"
+          } else {
+            self.changeTypeBtn.enabled = false
+            self.messageLabel.text = "No Ubers in current location"
+          }
+        } else {
+          self.showAlertWithMessage("Click 'Refresh' to try again", title: "Couldn't Get Uber Types", button: "OK")
         }
         
-        if (self.uberTypes.count > 0) {
-          self.changeTypeBtn.enabled = true
-          self.messageLabel.text = "Please choose an Uber type"
-        } else {
-          self.changeTypeBtn.enabled = false
-          self.messageLabel.text = "No Ubers in current location"
+        if let navi = self.navigationController {
+          MBProgressHUD.hideAllHUDsForView(navi.view, animated: true)
         }
-      } else {
-        self.showAlertWithMessage("Click 'Refresh' to try again", title: "Couldn't Get Uber Types", button: "OK")
-      }
-      
-      if let navi = self.navigationController {
-        MBProgressHUD.hideAllHUDsForView(navi.view, animated: true)
-      }
+        
+        // Make sure user doesn't have any pending requests
+        self.checkForActiveRequests()
     }
   }
   
   func checkForActiveRequests() {
     if (user!.uberMostRecentRequestID != "") {
-      //let urlString: URLRequestConvertible = Uber.Router.getUberTypes(user!.uberAccessToken, currentLocation)
+      print("Mose recent request_id is \(user!.uberMostRecentRequestID)")
+      if let navi = self.navigationController {
+        let loadingNotification = MBProgressHUD.showHUDAddedTo(navi.view, animated: true)
+        loadingNotification.mode = MBProgressHUDMode.Indeterminate
+      }
+
+      let myRequest: URLRequestConvertible = Uber.Router.getSandboxRequestInfo(user!.uberAccessToken, user!.uberMostRecentRequestID)
+      print(myRequest.URLRequest.URLString)
+      Alamofire.request(myRequest)
+        .validate()
+        .responseJSON() {
+        (_ , _, result) in
+        
+          if (result.isSuccess) {
+            let json = JSON(result.value!)
+            if let status = json["status"].string {
+              if (status == "processing") {
+                let eta = json["eta"].stringValue
+                self.requestBtn.enabled = false
+                self.changeTypeBtn.enabled = false
+                self.activeRequestExists = true
+                self.showAlertWithMessage("Uber request has been sent. Please wait for driver.", title: "Request Sent", button: "OK")
+                self.messageLabel.text = "Driver will arrive in about \(eta) mins"
+                
+//                self.activeRequestExists = false
+//                self.changeTypeBtn.enabled = true
+//                if let fetchRequest = self.coreDataStack.model.fetchRequestTemplateForName("UserFetchRequest") {
+//                  do {
+//                    let results = try self.coreDataStack.context.executeFetchRequest(fetchRequest) as! [User]
+//                    let user = results.first!
+//                    user.uberMostRecentRequestID = ""
+//                    self.coreDataStack.saveContext()
+//                    self.user = user
+//                  } catch {
+//                    self.showAlertWithMessage("Please try again!", title: "Couln't Fetch User", button: "Ok")
+//                    print("Couldn't fetch user")
+//                  }
+//                }
+              } else if (status == "accepted" || status == "arriving") {
+                let licensePlate = json["vehicle"]["license_plate"].stringValue
+                self.requestBtn.enabled = false
+                self.changeTypeBtn.enabled = false
+                self.activeRequestExists = true
+                self.showAlertWithMessage("You currently have an active request. Driver will arrive soon.", title: "Active Request", button: "OK")
+                self.messageLabel.text = "Look for license plate \(licensePlate)"
+              } else {
+                self.activeRequestExists = false
+                self.changeTypeBtn.enabled = true
+                if let fetchRequest = self.coreDataStack.model.fetchRequestTemplateForName("UserFetchRequest") {
+                  do {
+                    let results = try self.coreDataStack.context.executeFetchRequest(fetchRequest) as! [User]
+                    let user = results.first!
+                    user.uberMostRecentRequestID = ""
+                    self.coreDataStack.saveContext()
+                    self.user = user
+                  } catch {
+                    self.showAlertWithMessage("Please try again!", title: "Couln't Fetch User", button: "Ok")
+                    print("Couldn't fetch user")
+                  }
+                }
+              }
+            }
+          }
+          
+          if let navi = self.navigationController {
+            MBProgressHUD.hideAllHUDsForView(navi.view, animated: true)
+          }
+      }
     }
   }
 }

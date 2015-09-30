@@ -13,6 +13,7 @@ import CoreLocation
 struct Uber {
   enum Router: URLRequestConvertible {
     static let baseAuthURLString = "https://login.uber.com"
+    static let baseSandboxURLString = "https://sandbox-api.uber.com"
     static let baseURLString = "https://api.uber.com"
     static let clientID = "bks5_JosU049Lie_odAfZC12R_IDo8sd"
     static let clientSecret = "J-uS6vz0qdlQGgKgtR7s8ld_PJyTexoVhAAEZFfK"
@@ -21,6 +22,9 @@ struct Uber {
     
     case requestOauthCode
     case requestRide(String)
+    case requestSandboxRide(String)
+    case getRequestInfo(String, String)
+    case getSandboxRequestInfo(String, String)
     case getUberTypes(String, CLLocation)
     case getEstimate(String)
     
@@ -40,8 +44,23 @@ struct Uber {
           
         case .requestRide(let accessToken):
           let params = ["access_token": accessToken]
-          let pathString = "/v1/sandbox/requests"
+          let pathString = "/v1/requests"
           return (Uber.Router.baseURLString, pathString, params)
+          
+        case .getRequestInfo(let accessToken, let requestID):
+          let params = ["access_token": accessToken]
+          let pathString = "/v1/requests/\(requestID)"
+          return (Uber.Router.baseURLString, pathString, params)
+          
+        case .getSandboxRequestInfo(let accessToken, let requestID):
+          let params = ["access_token": accessToken]
+          let pathString = "/v1/requests/\(requestID)"
+          return (Uber.Router.baseSandboxURLString, pathString, params)
+          
+        case .requestSandboxRide(let accessToken):
+          let params = ["access_token": accessToken]
+          let pathString = "/v1/requests"
+          return (Uber.Router.baseSandboxURLString, pathString, params)
         
         case .getUberTypes(let accessToken, let currentLocation):
           let params = ["access_token": accessToken, "latitude": currentLocation.coordinate.latitude, "longitude": currentLocation.coordinate.longitude]

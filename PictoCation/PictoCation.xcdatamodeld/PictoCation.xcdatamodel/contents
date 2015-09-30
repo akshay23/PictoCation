@@ -4,11 +4,12 @@
         <attribute name="accessToken" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="placesType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uberAccessToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uberAccessTokenExpiryDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="uberMostRecentRequestID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <fetchRequest name="UserFetchRequest" entity="User"/>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>

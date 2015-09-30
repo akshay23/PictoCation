@@ -127,3 +127,15 @@ extension String {
     return String(hash)
   }
 }
+
+extension NSDate {
+  func isGreaterThanDate(dateToCompare : NSDate) -> Bool {
+    var isGreater = false
+    
+    if self.compare(dateToCompare) == NSComparisonResult.OrderedDescending {
+      isGreater = true
+    }
+    
+    return isGreater
+  }
+}
