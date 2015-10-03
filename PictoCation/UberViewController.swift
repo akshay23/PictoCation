@@ -16,7 +16,7 @@ import MBProgressHUD
 
 class UberViewController: UIViewController {
   
-  var user: User?
+  var user: User!
   var coreDataStack: CoreDataStack!
   var place: (id: String, name: String, latitude: Double, longitude: Double)!
   var currentLocation: CLLocation!
@@ -85,19 +85,14 @@ class UberViewController: UIViewController {
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     
-    if let user = user {
-      if (user.uberAccessToken == "" || (user.uberAccessToken != "" && (NSDate().isGreaterThanDate(user.uberAccessTokenExpiryDate) || NSDate().isEqualToDate(user.uberAccessTokenExpiryDate)))) {
-        performSegueWithIdentifier("login", sender: self)
-      } else {
-        print("Uber access token is \(user.uberAccessToken)")
-        print("Uber access token expires \(user.uberAccessTokenExpiryDate)")
-        print("Current location is \(currentLocation)")
-        print("Destination location is \(place.name)")
-        refresh()
-      }
+    if (user.uberAccessToken == "" || (user.uberAccessToken != "" && (NSDate().isGreaterThanDate(user.uberAccessTokenExpiryDate) || NSDate().isEqualToDate(user.uberAccessTokenExpiryDate)))) {
+      performSegueWithIdentifier("login", sender: self)
     } else {
-      // Should never get here!
-      goBack()
+      print("Uber access token is \(user.uberAccessToken)")
+      print("Uber access token expires \(user.uberAccessTokenExpiryDate)")
+      print("Current location is \(currentLocation)")
+      print("Destination location is \(place.name)")
+      refresh()
     }
   }
   
@@ -166,7 +161,7 @@ class UberViewController: UIViewController {
       "end_latitude": endLocation.coordinate.latitude,
       "end_longitude": endLocation.coordinate.longitude
     ]
-    let myRequest: URLRequestConvertible = Uber.Router.requestSandboxRide(self.user!.uberAccessToken)
+    let myRequest: URLRequestConvertible = Uber.Router.requestSandboxRide(self.user.uberAccessToken)
     print(myRequest.URLRequest.URLString)
     Alamofire.request(.POST, myRequest.URLRequest, parameters: params as? [String : AnyObject], encoding: .JSON)
       .validate()
@@ -204,10 +199,8 @@ class UberViewController: UIViewController {
   
   func changeType() {
     let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) {
-      (action) in
-      // Do Nothing
-    }
+    
+    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
     actionSheet.addAction(cancelAction)
     
     for type in uberTypes {
@@ -236,7 +229,7 @@ class UberViewController: UIViewController {
           "end_latitude": endLocation.coordinate.latitude,
           "end_longitude": endLocation.coordinate.longitude
         ]
-        let myRequest: URLRequestConvertible = Uber.Router.getEstimate(self.user!.uberAccessToken)
+        let myRequest: URLRequestConvertible = Uber.Router.getEstimate(self.user.uberAccessToken)
         Alamofire.request(.POST, myRequest.URLRequest, parameters: params as? [String : AnyObject], encoding: .JSON)
           .validate()
           .responseJSON {
@@ -266,7 +259,7 @@ class UberViewController: UIViewController {
   }
   
   func getUberTypes() {
-    let urlString: URLRequestConvertible = Uber.Router.getUberTypes(user!.uberAccessToken, currentLocation)
+    let urlString: URLRequestConvertible = Uber.Router.getUberTypes(user.uberAccessToken, currentLocation)
     Alamofire.request(urlString)
       .validate()
       .responseJSON() {
@@ -302,14 +295,14 @@ class UberViewController: UIViewController {
   }
   
   func checkForActiveRequests() {
-    if (user!.uberMostRecentRequestID != "") {
+    if (user.uberMostRecentRequestID != "") {
       print("Mose recent request_id is \(user!.uberMostRecentRequestID)")
       if let navi = self.navigationController {
         let loadingNotification = MBProgressHUD.showHUDAddedTo(navi.view, animated: true)
         loadingNotification.mode = MBProgressHUDMode.Indeterminate
       }
 
-      let myRequest: URLRequestConvertible = Uber.Router.getSandboxRequestInfo(user!.uberAccessToken, user!.uberMostRecentRequestID)
+      let myRequest: URLRequestConvertible = Uber.Router.getSandboxRequestInfo(user.uberAccessToken, user.uberMostRecentRequestID)
       print(myRequest.URLRequest.URLString)
       Alamofire.request(myRequest)
         .validate()
@@ -375,8 +368,6 @@ class UberViewController: UIViewController {
   }
 }
 
-extension UberViewController: GMSMapViewDelegate {
-}
+extension UberViewController: GMSMapViewDelegate {}
 
-extension UberViewController: UIActionSheetDelegate {
-}
+extension UberViewController: UIActionSheetDelegate {}

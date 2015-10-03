@@ -120,15 +120,7 @@ class MapViewController: UIViewController {
       mainMapView.setMinZoom(14, maxZoom: 14)
       btnLogout.enabled = true
       btnRefresh.hidden = false
-      btnLogout.enabled = false
     }
-    
-    mainMapView.hidden = false
-    placesTable.hidden = false
-    isUpdating = false
-    mainMapView.setMinZoom(14, maxZoom: 14)
-    btnLogout.enabled = true
-    btnRefresh.hidden = false
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -146,15 +138,11 @@ class MapViewController: UIViewController {
       }
     } else if segue.identifier == "show gallery" && segue.destinationViewController.isKindOfClass(UICollectionViewController.classForCoder()) {
       if let galleryViewController = segue.destinationViewController as? GalleryViewController {
-        galleryViewController.user = user
+        galleryViewController.user = user!
         let charsToRemove = NSCharacterSet.alphanumericCharacterSet().invertedSet
         let strippedTopic = selectedHastagTopic!.componentsSeparatedByCharactersInSet(charsToRemove).joinWithSeparator("")
         galleryViewController.hashtagTopic = strippedTopic
         galleryViewController.shouldRefresh = true
-      }
-    } else if segue.identifier == "show info" && segue.destinationViewController.isKindOfClass(UIViewController.classForCoder()) {
-      if let infoViewController = segue.destinationViewController as? PlaceInfoViewController {
-        infoViewController.place = selectedPlace
       }
     } else if segue.identifier == "show yelp" && segue.destinationViewController.isKindOfClass(UIViewController.classForCoder()) {
       if let yelpViewController = segue.destinationViewController as? YelpViewController {
@@ -162,7 +150,7 @@ class MapViewController: UIViewController {
       }
     } else if segue.identifier == "show uber" && segue.destinationViewController.isKindOfClass(UIViewController.classForCoder()) {
       if let uberViewController = segue.destinationViewController as? UberViewController {
-        uberViewController.user = user
+        uberViewController.user = user!
         uberViewController.coreDataStack = coreDataStack
         uberViewController.place = selectedPlace
         uberViewController.currentLocation = currentLocation
@@ -183,14 +171,10 @@ class MapViewController: UIViewController {
       self.locationManager.startUpdatingLocation()
     }
   }
-
-  func stripOutUnwantedCharactersFromText(text: String, characterSet: Set<Character>) -> String {
-    return String(text.characters.filter { characterSet.contains($0) })
-  }
   
   func closeLeftPanelOpenIfOpen() {
     if (isLeftPanelOpen) {
-      delegate?.toggleLeftPanel?(user)
+      delegate?.toggleLeftPanel?(user!)
       isLeftPanelOpen = false
     }
   }
@@ -217,7 +201,7 @@ class MapViewController: UIViewController {
   
   @objc func changeType() {
     isLeftPanelOpen = !isLeftPanelOpen
-    delegate?.toggleLeftPanel?(user)
+    delegate?.toggleLeftPanel?(user!)
   }
 }
  
@@ -235,9 +219,11 @@ extension MapViewController: CLLocationManagerDelegate {
     navigationController!.view.addSubview(bgOverlay)
     UIView.animateWithDuration(0.5, animations: {
       self.bgOverlay.alpha = 0.8
-      let loadingNotification = MBProgressHUD.showHUDAddedTo(self.navigationController!.view, animated: true)
-      loadingNotification.mode = MBProgressHUDMode.Indeterminate
-      loadingNotification.labelText = "Loading places..."
+      if let navi = self.navigationController {
+        let loadingNotification = MBProgressHUD.showHUDAddedTo(navi.view, animated: true)
+        loadingNotification.mode = MBProgressHUDMode.Indeterminate
+        loadingNotification.labelText = "Loading places..."
+      }
     })
 
     currentLocation = locations.first as CLLocation!
@@ -248,10 +234,10 @@ extension MapViewController: CLLocationManagerDelegate {
     mainMapView.settings.myLocationButton = true
     
     // Get places near current location
-    placesManager.user = user
+    placesManager.user = user!
     placesManager.updateLatLong(currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude) {
-      result in
-
+      (result) in
+      
       if (result.isSuccess && self.placesManager.places.count != 0) {
         self.placesTable.reloadData()
         self.placesTable.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0),
@@ -264,8 +250,10 @@ extension MapViewController: CLLocationManagerDelegate {
       self.btnRefresh.enabled = true
       self.isUpdating = false
       
-      // Stop the loading spinner (fade out)
-      MBProgressHUD.hideAllHUDsForView(self.navigationController!.view, animated: true)
+      // Stop the loading spinner
+      if let navi = self.navigationController {
+        MBProgressHUD.hideAllHUDsForView(navi.view, animated: true)
+      }
       self.bgOverlay.removeFromSuperview()
     }
   }

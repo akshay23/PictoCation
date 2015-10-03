@@ -21,7 +21,7 @@ class PlacesManager {
     return Static.instance
   }
   
-  var user: User?
+  var user: User!
 
   private let apiKey: String = "AIzaSyA_wPXkAMWJDVdV7M7-ZG28cwCdRX7Y5-E"
   private var requestURL: String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"

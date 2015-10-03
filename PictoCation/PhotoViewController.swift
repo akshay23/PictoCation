@@ -20,7 +20,7 @@ class PhotoViewController: UIViewController {
   @IBOutlet var mainPhotoView: UIImageView!
   @IBOutlet var commentsTable: UITableView!
 
-  var user: User?
+  var user: User!
   var photoInfo: PhotoInfo?
   var hashtagTopic: String!
   var comments: [(user: String, comment: String)] = []

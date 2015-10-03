@@ -21,7 +21,7 @@ class GalleryViewController: UICollectionViewController {
   var photos = [PhotoInfo]()
   var populatingPhotos = false
   var nextURLRequest: NSURLRequest?
-  var user: User?
+  var user: User!
   var hashtagTopic: String!
   var shouldRefresh: Bool = false
 
@@ -146,10 +146,8 @@ class GalleryViewController: UICollectionViewController {
               }
 
               if (self.photos.count == 0) {
-                self.showAlertWithMessage("There are no photos for #\(self.hashtagTopic)", title: "No Photos", button: "OK")
-                if let navi = self.navigationController {
-                  MBProgressHUD.hideAllHUDsForView(navi.view, animated: true)
-                }
+                self.showAlertWithMessage("There are no photos for #\(self.hashtagTopic). You can edit the topic by tapping on it and then press Enter to refresh.",
+                  title: "No Photos", button: "OK")
               }
             }
           }
@@ -180,7 +178,7 @@ class GalleryViewController: UICollectionViewController {
   
   func setupView() {
     let layout = UICollectionViewFlowLayout()
-    let itemWidth = (view.bounds.size.width - 2) / 3
+    let itemWidth = (view.bounds.size.width - 3) / 3.0
     layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
     layout.minimumInteritemSpacing = 1.0
     layout.minimumLineSpacing = 1.0
@@ -188,10 +186,6 @@ class GalleryViewController: UICollectionViewController {
     collectionView!.collectionViewLayout = layout
     collectionView!.registerClass(PhotoBrowserCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: PhotoBrowserCellIdentifier)
     collectionView!.registerClass(PhotoBrowserLoadingCollectionView.classForCoder(), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: PhotoBrowserFooterViewIdentifier)
-  }
-  
-  func stripOutUnwantedCharactersFromText(text: String, characterSet: Set<Character>) -> String {
-    return String(text.characters.filter { characterSet.contains($0) })
   }
 }
 

@@ -35,6 +35,12 @@ class FastImageCacheHelper {
     let bigImageFormat = FICImageFormat(name: KMBigImageFormatName, family: KMPhotoImageFormatFamily, imageSize: KMBigImageSize, style: .Style32BitBGRA, maximumCount: squareImageFormatMaximumCount, devices: .Phone, protectionMode: .None)
     imageFormats.append(bigImageFormat)
     
+    let smallImageFormatIPad = FICImageFormat(name: KMSmallImageFormatName, family: KMPhotoImageFormatFamily, imageSize: KMSmallImageSize, style: .Style32BitBGRA, maximumCount: squareImageFormatMaximumCount, devices: .Pad, protectionMode: .None)
+    imageFormats.append(smallImageFormatIPad)
+    
+    let bigImageFormatIPad = FICImageFormat(name: KMBigImageFormatName, family: KMPhotoImageFormatFamily, imageSize: KMBigImageSize, style: .Style32BitBGRA, maximumCount: squareImageFormatMaximumCount, devices: .Pad, protectionMode: .None)
+    imageFormats.append(bigImageFormatIPad)
+    
     let sharedImageCache = FICImageCache.sharedImageCache()
     sharedImageCache.delegate = delegate
     sharedImageCache.setFormats(imageFormats)

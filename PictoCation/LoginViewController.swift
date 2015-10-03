@@ -125,6 +125,7 @@ extension LoginViewController: UIWebViewDelegate {
     }
     
     Alamofire.request(.POST, request.URLString, parameters: request.Params)
+      .validate()
       .responseJSON {
         (_, _, result) in
         
