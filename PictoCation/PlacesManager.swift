@@ -58,7 +58,9 @@ class PlacesManager {
       places = []
     }
     
-    Alamofire.request(.GET, myRequest, parameters: nil).responseJSON {
+    Alamofire.request(.GET, myRequest, parameters: nil)
+      .validate()
+      .responseJSON {
       (_, _, result) in
       
       var token: String?

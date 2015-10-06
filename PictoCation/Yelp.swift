@@ -15,7 +15,6 @@ let yelpConsumerKey = "9TeaSQnM6v0o_aiVTrxmOw"
 let yelpConsumerSecret = "d0Dkb217FKE4Jw-j5fZnhgaaEzs"
 let yelpToken = "3VVNQLAzOloYeKUVR8paY0f9ObmuXAqZ"
 let yelpTokenSecret = "Vt-fhy2RAbOo-d4OJnHbyg6dftI"
-let signatureMethod = "HMAC-SHA1"
 let dataEncoding = NSUTF8StringEncoding
 
 class Yelp: BDBOAuth1RequestOperationManager {
@@ -51,10 +50,10 @@ class Yelp: BDBOAuth1RequestOperationManager {
   func searchWithParams(parameters: [String: String], completion: ([NSDictionary]?, NSError?) -> Void) {
     self.GET("search", parameters: parameters, success: {
       (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-      let dictionaries = response["businesses"] as? [NSDictionary]
-      if dictionaries != nil {
-        completion(dictionaries, nil)
-      }
+        let dictionaries = response["businesses"] as? [NSDictionary]
+        if dictionaries != nil {
+          completion(dictionaries, nil)
+        }
       }, failure: {
         (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
         completion(nil, error)

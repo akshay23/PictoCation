@@ -43,9 +43,9 @@ class PhotoInfo: NSObject, FICEntity {
   }
   
   func drawingBlockForImage(image: UIImage!, withFormatName formatName: String!) -> FICEntityImageDrawingBlock! {
-    
-    let drawingBlock:FICEntityImageDrawingBlock = {
-      (context:CGContextRef!, contextSize:CGSize) in
+    let drawingBlock: FICEntityImageDrawingBlock = {
+      (context: CGContextRef!, contextSize:CGSize) in
+
       var contextBounds = CGRectZero
       contextBounds.size = contextSize
       CGContextClearRect(context, contextBounds)

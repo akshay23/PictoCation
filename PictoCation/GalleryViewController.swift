@@ -111,7 +111,9 @@ class GalleryViewController: UICollectionViewController {
     
     populatingPhotos = true
     print(request.URLRequest.URLString)
-    Alamofire.request(request).responseJSON() {
+    Alamofire.request(request)
+      .validate()
+      .responseJSON() {
       (_ , _, result) in
       
       if (result.isSuccess) {

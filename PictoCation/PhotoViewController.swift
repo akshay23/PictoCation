@@ -83,7 +83,9 @@ class PhotoViewController: UIViewController {
   }
   
   func populateComments(request: URLRequestConvertible) {
-    Alamofire.request(request).responseJSON() {
+    Alamofire.request(request)
+      .validate()
+      .responseJSON() {
       (_ , _, result) in
       
       if (result.isSuccess) {
@@ -140,5 +142,4 @@ extension PhotoViewController: UITableViewDataSource {
   }
 }
 
-extension PhotoViewController: UITableViewDelegate {
-}
+extension PhotoViewController: UITableViewDelegate {}

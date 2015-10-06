@@ -82,7 +82,7 @@ extension ContainerViewController: CenterViewControllerDelegate {
   func animateLeftPanel(shouldExpand shouldExpand: Bool) {
     if (shouldExpand) {
       currentState = .LeftPanelExpanded
-      animateCenterPanelXPosition(targetPosition: CGRectGetWidth(centerNavigationController.view.frame) - CenterPanelExpandedOffset)
+      animateCenterPanelXPosition(targetPosition: CGRectGetWidth(centerNavigationController.view.frame) - (centerNavigationController.view.frame.width - 150))
     } else {
       animateCenterPanelXPosition(targetPosition: 0) { finished in
         self.currentState = .BothCollapsed
@@ -110,7 +110,9 @@ extension ContainerViewController: CenterViewControllerDelegate {
 }
 
 private extension UIStoryboard {
-  class func mainStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()) }
+  class func mainStoryboard() -> UIStoryboard {
+    return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+  }
   
   class func leftViewController() -> LeftViewController? {
     return mainStoryboard().instantiateViewControllerWithIdentifier("LeftViewController") as? LeftViewController

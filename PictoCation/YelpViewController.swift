@@ -147,9 +147,7 @@ class YelpViewController: UIViewController {
   
   func getDirections() {
     let coordinates = CLLocationCoordinate2DMake(place.latitude, place.longitude)
-    let options = [
-      MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving
-    ]
+    let options = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
     let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
     let mapItem = MKMapItem(placemark: placemark)
     mapItem.name = place.name
@@ -255,5 +253,4 @@ class YelpViewController: UIViewController {
   }
 }
 
-extension YelpViewController: GMSMapViewDelegate {
-}
+extension YelpViewController: GMSMapViewDelegate {}
