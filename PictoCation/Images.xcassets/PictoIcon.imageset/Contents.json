@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "powered_by_google_on_white.png",
+      "filename" : "pictlocation_logo.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "powered_by_google_on_white@2x.png",
+      "filename" : "pictlocation_logo-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "powered_by_google_on_white@3x.png",
+      "filename" : "pictlocation_logo-2.png",
       "scale" : "3x"
     }
   ],

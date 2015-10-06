@@ -251,7 +251,6 @@ class UberViewController: UIViewController {
     }
 
     hokusai.colorScheme = HOKColorScheme.Asagi
-    hokusai.cancelButtonTitle = "Cancel"
     hokusai.show()
   }
   

@@ -333,7 +333,7 @@ extension MapViewController: GMSMapViewDelegate {
     
     let synth = AVSpeechSynthesizer()
     let speak = AVSpeechUtterance(string: selectedPlace.name)
-    speak.rate = 0.5
+    speak.rate = 0.1
     synth.speakUtterance(speak)
   }
 }

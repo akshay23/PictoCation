@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,49 +11,43 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Akshay Bharath. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PictoCation" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="20" y="140" width="441" height="43"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoogleIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ud3-dp-xFq">
-                    <rect key="frame" x="165" y="345" width="150" height="30"/>
+                    <rect key="frame" x="165" y="390" width="150" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="2VE-B5-KPr"/>
                         <constraint firstAttribute="height" constant="30" id="jEp-rK-7SK"/>
                     </constraints>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PictoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="6xm-tR-cDl">
+                    <rect key="frame" x="190" y="170" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="eAv-ma-ofW"/>
+                        <constraint firstAttribute="width" constant="100" id="kgs-B8-4xJ"/>
+                    </constraints>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.83921568627450982" green="0.77254901960784317" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="5cJ-9S-tgC"/>
                 <constraint firstAttribute="centerX" secondItem="ud3-dp-xFq" secondAttribute="centerX" id="JZg-FQ-x4b"/>
-                <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstItem="ud3-dp-xFq" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="162" id="VFF-Ij-L1d"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="top" secondItem="ud3-dp-xFq" secondAttribute="bottom" constant="68" id="mlq-B8-iI8"/>
+                <constraint firstItem="6xm-tR-cDl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="XY7-Ci-6cY"/>
+                <constraint firstAttribute="bottom" secondItem="ud3-dp-xFq" secondAttribute="bottom" constant="60" id="YN3-BA-KRu"/>
+                <constraint firstItem="ud3-dp-xFq" firstAttribute="top" secondItem="6xm-tR-cDl" secondAttribute="bottom" constant="100" id="bh7-6f-TSg"/>
+                <constraint firstItem="6xm-tR-cDl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fHg-qb-BLP"/>
+                <constraint firstItem="6xm-tR-cDl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-20" id="zQu-2A-CiV"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="mlq-B8-iI8"/>
+                    <exclude reference="XY7-Ci-6cY"/>
+                    <exclude reference="bh7-6f-TSg"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
     <resources>
-        <image name="GoogleIcon" width="104" height="16"/>
+        <image name="GoogleIcon" width="144" height="18"/>
+        <image name="PictoIcon" width="500" height="500"/>
     </resources>
 </document>
