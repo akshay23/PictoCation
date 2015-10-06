@@ -13,6 +13,7 @@ import FlatUIKit
 import Alamofire
 import SwiftyJSON
 import MBProgressHUD
+import Hokusai
 
 class UberViewController: UIViewController {
   
@@ -198,15 +199,10 @@ class UberViewController: UIViewController {
   }
   
   func changeType() {
-    let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-    
-    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-    actionSheet.addAction(cancelAction)
+    let hokusai = Hokusai()
     
     for type in uberTypes {
-      let typeButton = UIAlertAction(title: type.1, style: UIAlertActionStyle.Default) {
-        (action) in
-        
+      hokusai.addButton(type.1) {
         if let navi = self.navigationController {
           let loadingNotification = MBProgressHUD.showHUDAddedTo(navi.view, animated: true)
           loadingNotification.mode = MBProgressHUDMode.Indeterminate
@@ -219,7 +215,7 @@ class UberViewController: UIViewController {
         if (!self.activeRequestExists) {
           self.requestBtn.enabled = true
         }
-
+        
         // Get estimates
         let endLocation = CLLocation(latitude: self.place.latitude, longitude: self.place.longitude)
         let params = [
@@ -233,8 +229,8 @@ class UberViewController: UIViewController {
         Alamofire.request(.POST, myRequest.URLRequest, parameters: params as? [String : AnyObject], encoding: .JSON)
           .validate()
           .responseJSON {
-          (_, _, result) in
-
+            (_, _, result) in
+            
             if (result.isSuccess) {
               let json = JSON(result.value!)
               if let pickup = json["pickup_estimate"].int {
@@ -252,10 +248,11 @@ class UberViewController: UIViewController {
             }
         }
       }
-      actionSheet.addAction(typeButton)
     }
-    
-    self.presentViewController(actionSheet, animated: true, completion: nil)
+
+    hokusai.colorScheme = HOKColorScheme.Asagi
+    hokusai.cancelButtonTitle = "Cancel"
+    hokusai.show()
   }
   
   func getUberTypes() {

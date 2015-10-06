@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Hokusai.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,42 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2439D0ACB2320D9D91ED90D41B6404CD</key>
+		<key>3429FCD444D6203E7C34E4EE78C7266D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>422779FF22B7696F0183AAA58CF60445</key>
+		<key>62053283FE15A665E42119CAA88B9F87</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>56475A3A1CB6023AF4AD2745596A9A2F</key>
+		<key>67BD822FC4A7C4EEEE56B0EF1BCA0E3A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65543B9021FB21CA5696D2B6ECCEE47A</key>
+		<key>7C13C3091AB96274E761DEB9EFE51301</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8C985DE571120A8A9CFCE005D884A18E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B03908B8C6061C82E16CAB1A070A3982</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B63BDC5B7B3843779A78EC8D03ED3655</key>
+		<key>944B1C0B670993A11D7D9DC55CAAC56F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CD988CA4989591E8CBB76E4B83BCC8E5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA2304A7DE1DFE37CEEE5041BA75365D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F0DFB21F25EB65107F09D12BD88E7329</key>
 		<dict>
 			<key>primary</key>
 			<true/>

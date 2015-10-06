@@ -13,6 +13,7 @@ target 'PictoCation' do
   pod 'AFNetworking'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'Hokusai'
 end
 
 target 'PictoCationTests' do

@@ -57,6 +57,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-PictoCation/BDBOAuth1Manager.framework'
   install_framework 'Pods-PictoCation/FastImageCache.framework'
   install_framework 'Pods-PictoCation/FlatUIKit.framework'
+  install_framework 'Pods-PictoCation/Hokusai.framework'
   install_framework 'Pods-PictoCation/MBProgressHUD.framework'
   install_framework 'Pods-PictoCation/SwiftyJSON.framework'
 fi
@@ -66,6 +67,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-PictoCation/BDBOAuth1Manager.framework'
   install_framework 'Pods-PictoCation/FastImageCache.framework'
   install_framework 'Pods-PictoCation/FlatUIKit.framework'
+  install_framework 'Pods-PictoCation/Hokusai.framework'
   install_framework 'Pods-PictoCation/MBProgressHUD.framework'
   install_framework 'Pods-PictoCation/SwiftyJSON.framework'
 fi
