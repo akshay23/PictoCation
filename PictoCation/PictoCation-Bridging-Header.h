@@ -6,6 +6,4 @@
 //  Copyright (c) 2015 Akshay Bharath. All rights reserved.
 //
 
-#import <CommonCrypto/CommonHMAC.h>
-#import <AFNetworking/AFNetworking.h>
-#import <BDBOAuth1Manager/BDBOAuth1RequestOperationManager.h>
+#import "iRate.h"

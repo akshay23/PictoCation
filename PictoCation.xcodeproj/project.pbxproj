@@ -33,6 +33,7 @@
 		19F72C691B56FC2800FA43E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C681B56FC2800FA43E9 /* MapViewController.swift */; };
 		19F72C6B1B57080500FA43E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C6A1B57080500FA43E9 /* User.swift */; };
 		19F72C6E1B57085F00FA43E9 /* PictoCation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C6C1B57085F00FA43E9 /* PictoCation.xcdatamodeld */; };
+		19FA1A5D1BC42A1E005C6493 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FA1A5C1BC42A1E005C6493 /* iRate.m */; settings = {ASSET_TAGS = (); }; };
 		968AAF2498DB9E720678F377 /* Pods_PictoCation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4063455072B457624267AD /* Pods_PictoCation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,8 @@
 		19F72C681B56FC2800FA43E9 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		19F72C6A1B57080500FA43E9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		19F72C6D1B57085F00FA43E9 /* PictoCation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PictoCation.xcdatamodel; sourceTree = "<group>"; };
+		19FA1A5C1BC42A1E005C6493 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
+		19FA1A5E1BC42A2A005C6493 /* iRate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
 		25A8054865C2CCA8F35EA597 /* Pods-PictoCation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictoCation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictoCation/Pods-PictoCation.debug.xcconfig"; sourceTree = "<group>"; };
 		5C4063455072B457624267AD /* Pods_PictoCation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PictoCation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F6593EBA73DFAFA1996CEE /* Pods-PictoCation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictoCation.release.xcconfig"; path = "Pods/Target Support Files/Pods-PictoCation/Pods-PictoCation.release.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 				190AFA421B7661BE003CEB93 /* Utils.swift */,
 				190AF10B1B82486D0038E335 /* OptionsDelegate.swift */,
 				195084AF1B87BF2700F0ADE7 /* PictoCation-Bridging-Header.h */,
+				19FA1A5C1BC42A1E005C6493 /* iRate.m */,
+				19FA1A5E1BC42A2A005C6493 /* iRate.h */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -280,7 +285,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Akshay Bharath";
 				TargetAttributes = {
 					19A641E21B56D9DF00E8402A = {
@@ -412,6 +417,7 @@
 				1996135E1B8F74EB00F5C351 /* YelpViewController.swift in Sources */,
 				190AFA431B7661BE003CEB93 /* Utils.swift in Sources */,
 				19F72C6E1B57085F00FA43E9 /* PictoCation.xcdatamodeld in Sources */,
+				19FA1A5D1BC42A1E005C6493 /* iRate.m in Sources */,
 				190E79631B6AEF6B00DC2B48 /* PhotoInfo.swift in Sources */,
 				190E79611B6AECD900DC2B48 /* GalleryViewController.swift in Sources */,
 				1954632B1B9A2F1500314081 /* Uber.swift in Sources */,
@@ -482,6 +488,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -556,6 +563,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = PictoCation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.actionman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PictoCation/PictoCation-Bridging-Header.h";
 			};
@@ -571,6 +579,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = PictoCation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.actionman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PictoCation/PictoCation-Bridging-Header.h";
 			};
@@ -590,6 +599,7 @@
 				);
 				INFOPLIST_FILE = PictoCationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.actionman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PictoCation.app/PictoCation";
 			};
@@ -605,6 +615,7 @@
 				);
 				INFOPLIST_FILE = PictoCationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.actionman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PictoCation.app/PictoCation";
 			};

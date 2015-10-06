@@ -39,6 +39,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // Initialize Crashlytics
     Fabric.with([Crashlytics.self()])
+    
+    // Setup iRate
+    iRate.sharedInstance().onlyPromptIfLatestVersion = true
+    iRate.sharedInstance().daysUntilPrompt = 5
+    iRate.sharedInstance().remindPeriod = 3
+    iRate.sharedInstance().message = "Please rate PictoCation in the app store."
+    iRate.sharedInstance().cancelButtonLabel = "No Thanks"
+    iRate.sharedInstance().rateButtonLabel = "Rate Now"
 
     return true
   }
