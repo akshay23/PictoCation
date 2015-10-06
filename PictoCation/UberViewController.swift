@@ -162,7 +162,7 @@ class UberViewController: UIViewController {
       "end_latitude": endLocation.coordinate.latitude,
       "end_longitude": endLocation.coordinate.longitude
     ]
-    let myRequest: URLRequestConvertible = Uber.Router.requestSandboxRide(self.user.uberAccessToken)
+    let myRequest: URLRequestConvertible = Uber.Router.requestRide(self.user.uberAccessToken)
     print(myRequest.URLRequest.URLString)
     Alamofire.request(.POST, myRequest.URLRequest, parameters: params as? [String : AnyObject], encoding: .JSON)
       .validate()
@@ -298,7 +298,7 @@ class UberViewController: UIViewController {
         loadingNotification.mode = MBProgressHUDMode.Indeterminate
       }
 
-      let myRequest: URLRequestConvertible = Uber.Router.getSandboxRequestInfo(user.uberAccessToken, user.uberMostRecentRequestID)
+      let myRequest: URLRequestConvertible = Uber.Router.getRequestInfo(user.uberAccessToken, user.uberMostRecentRequestID)
       print(myRequest.URLRequest.URLString)
       Alamofire.request(myRequest)
         .validate()
@@ -315,21 +315,6 @@ class UberViewController: UIViewController {
                 self.activeRequestExists = true
                 self.showAlertWithMessage("Uber request has been sent. Please wait for driver.", title: "Request Sent", button: "OK")
                 self.messageLabel.text = "Driver will arrive in about \(eta) mins"
-                
-//                self.activeRequestExists = false
-//                self.changeTypeBtn.enabled = true
-//                if let fetchRequest = self.coreDataStack.model.fetchRequestTemplateForName("UserFetchRequest") {
-//                  do {
-//                    let results = try self.coreDataStack.context.executeFetchRequest(fetchRequest) as! [User]
-//                    let user = results.first!
-//                    user.uberMostRecentRequestID = ""
-//                    self.coreDataStack.saveContext()
-//                    self.user = user
-//                  } catch {
-//                    self.showAlertWithMessage("Please try again!", title: "Couln't Fetch User", button: "Ok")
-//                    print("Couldn't fetch user")
-//                  }
-//                }
               } else if (status == "accepted" || status == "arriving") {
                 let licensePlate = json["vehicle"]["license_plate"].stringValue
                 self.requestBtn.enabled = false
