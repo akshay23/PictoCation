@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		19091B191B5812D4005420DE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19091B181B5812D4005420DE /* CoreDataStack.swift */; };
 		19091B1E1B597A72005420DE /* PlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19091B1D1B597A72005420DE /* PlacesManager.swift */; };
+		190A34FE1BC5A1D0003A5E76 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190A34FD1BC5A1D0003A5E76 /* RouterTests.swift */; settings = {ASSET_TAGS = (); }; };
 		190AF10A1B82450C0038E335 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190AF1091B82450C0038E335 /* OptionsView.swift */; };
 		190AF10C1B82486D0038E335 /* OptionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190AF10B1B82486D0038E335 /* OptionsDelegate.swift */; };
 		190AFA431B7661BE003CEB93 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190AFA421B7661BE003CEB93 /* Utils.swift */; };
@@ -29,11 +30,11 @@
 		19A641EE1B56D9DF00E8402A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A641EC1B56D9DF00E8402A /* Main.storyboard */; };
 		19A641F01B56D9DF00E8402A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A641EF1B56D9DF00E8402A /* Images.xcassets */; };
 		19A641F31B56D9DF00E8402A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A641F11B56D9DF00E8402A /* LaunchScreen.xib */; };
-		19A641FF1B56D9DF00E8402A /* PictoCationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A641FE1B56D9DF00E8402A /* PictoCationTests.swift */; };
 		19F72C691B56FC2800FA43E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C681B56FC2800FA43E9 /* MapViewController.swift */; };
 		19F72C6B1B57080500FA43E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C6A1B57080500FA43E9 /* User.swift */; };
 		19F72C6E1B57085F00FA43E9 /* PictoCation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C6C1B57085F00FA43E9 /* PictoCation.xcdatamodeld */; };
 		19FA1A5D1BC42A1E005C6493 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FA1A5C1BC42A1E005C6493 /* iRate.m */; settings = {ASSET_TAGS = (); }; };
+		1A78094DD9D021A84875E76B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02273179CE0741C27D7195C9 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		968AAF2498DB9E720678F377 /* Pods_PictoCation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4063455072B457624267AD /* Pods_PictoCation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -48,8 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02273179CE0741C27D7195C9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19091B181B5812D4005420DE /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		19091B1D1B597A72005420DE /* PlacesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesManager.swift; sourceTree = "<group>"; };
+		190A34FD1BC5A1D0003A5E76 /* RouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
 		190AF1091B82450C0038E335 /* OptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
 		190AF10B1B82486D0038E335 /* OptionsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsDelegate.swift; sourceTree = "<group>"; };
 		190AFA421B7661BE003CEB93 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -75,7 +78,6 @@
 		19A641F21B56D9DF00E8402A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		19A641F81B56D9DF00E8402A /* PictoCationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PictoCationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A641FD1B56D9DF00E8402A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19A641FE1B56D9DF00E8402A /* PictoCationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictoCationTests.swift; sourceTree = "<group>"; };
 		19F72C681B56FC2800FA43E9 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		19F72C6A1B57080500FA43E9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		19F72C6D1B57085F00FA43E9 /* PictoCation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PictoCation.xcdatamodel; sourceTree = "<group>"; };
@@ -83,6 +85,8 @@
 		19FA1A5E1BC42A2A005C6493 /* iRate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
 		25A8054865C2CCA8F35EA597 /* Pods-PictoCation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictoCation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictoCation/Pods-PictoCation.debug.xcconfig"; sourceTree = "<group>"; };
 		5C4063455072B457624267AD /* Pods_PictoCation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PictoCation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66DAD7ACD3F7E82DD797FD0D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		87AF648F1577E282B09B146F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E8F6593EBA73DFAFA1996CEE /* Pods-PictoCation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictoCation.release.xcconfig"; path = "Pods/Target Support Files/Pods-PictoCation/Pods-PictoCation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				968AAF2498DB9E720678F377 /* Pods_PictoCation.framework in Frameworks */,
+				1A78094DD9D021A84875E76B /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,8 +154,8 @@
 		19A641FB1B56D9DF00E8402A /* PictoCationTests */ = {
 			isa = PBXGroup;
 			children = (
-				19A641FE1B56D9DF00E8402A /* PictoCationTests.swift */,
 				19A641FC1B56D9DF00E8402A /* Supporting Files */,
+				190A34FD1BC5A1D0003A5E76 /* RouterTests.swift */,
 			);
 			path = PictoCationTests;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				5C4063455072B457624267AD /* Pods_PictoCation.framework */,
+				02273179CE0741C27D7195C9 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -231,6 +237,8 @@
 			children = (
 				25A8054865C2CCA8F35EA597 /* Pods-PictoCation.debug.xcconfig */,
 				E8F6593EBA73DFAFA1996CEE /* Pods-PictoCation.release.xcconfig */,
+				66DAD7ACD3F7E82DD797FD0D /* Pods.debug.xcconfig */,
+				87AF648F1577E282B09B146F /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -378,7 +386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PictoCation/Pods-PictoCation-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FC3B9C2B3B3BEFD106296C0D /* Copy Pods Resources */ = {
@@ -393,7 +401,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PictoCation/Pods-PictoCation-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -433,7 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19A641FF1B56D9DF00E8402A /* PictoCationTests.swift in Sources */,
+				190A34FE1BC5A1D0003A5E76 /* RouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,7 +563,7 @@
 		};
 		19A642031B56D9DF00E8402A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25A8054865C2CCA8F35EA597 /* Pods-PictoCation.debug.xcconfig */;
+			baseConfigurationReference = 66DAD7ACD3F7E82DD797FD0D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -572,7 +580,7 @@
 		};
 		19A642041B56D9DF00E8402A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8F6593EBA73DFAFA1996CEE /* Pods-PictoCation.release.xcconfig */;
+			baseConfigurationReference = 87AF648F1577E282B09B146F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -591,10 +599,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -611,10 +616,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = PictoCationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.actionman.$(PRODUCT_NAME:rfc1034identifier)";
