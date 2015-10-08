@@ -54,7 +54,3 @@ struct Instagram {
     }
   }
 }
-
-extension Alamofire.Request {
-
-}
