@@ -127,10 +127,10 @@ extension LoginViewController: UIWebViewDelegate {
     Alamofire.request(.POST, request.URLString, parameters: request.Params)
       .validate()
       .responseJSON {
-        (_, _, result) in
+        (result) in
         
-        if (result.isSuccess) {
-          let json = JSON(result.value!)
+        if (result.result.isSuccess) {
+          let json = JSON(result.result.value!)
           
           if (self.loginType == .Instagram) {
             if let accessToken = json["access_token"].string, userID = json["user"]["id"].string {

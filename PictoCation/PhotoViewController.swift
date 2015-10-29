@@ -86,10 +86,10 @@ class PhotoViewController: UIViewController {
     Alamofire.request(request)
       .validate()
       .responseJSON() {
-      (_ , _, result) in
+      (result) in
       
-      if (result.isSuccess) {
-        let json = JSON(result.value!)
+      if (result.result.isSuccess) {
+        let json = JSON(result.result.value!)
         if (json["meta"]["code"].intValue  == 200) {
           if let caption = json["data"]["caption"]["text"].string {
             let comment = ("@" + json["data"]["caption"]["from"]["username"].stringValue, caption)

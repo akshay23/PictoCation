@@ -134,7 +134,7 @@ extension AppDelegate: FICImageCacheDelegate {
       let imageURL = entity.sourceImageURLWithFormatName(formatName)
       let request = NSURLRequest(URL: imageURL)
       
-      entity.request = Alamofire.request(.GET, request).validate(contentType: ["image/*"]).responseImage() {
+      entity.request = Alamofire.request(request).validate(contentType: ["image/*"]).responseImage() {
         (_, _, image, error) in
         if (error == nil) {
           completionBlock(image)

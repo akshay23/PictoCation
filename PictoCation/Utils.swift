@@ -8,6 +8,7 @@
 
 import Foundation
 import FlatUIKit
+import Alamofire
 
 extension UIViewController {
   // Show an alert

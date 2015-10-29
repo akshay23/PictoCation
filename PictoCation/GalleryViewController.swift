@@ -114,10 +114,10 @@ class GalleryViewController: UICollectionViewController {
     Alamofire.request(request)
       .validate()
       .responseJSON() {
-      (_ , _, result) in
+      (result) in
       
-      if (result.isSuccess) {
-        let json = JSON(result.value!)
+      if (result.result.isSuccess) {
+        let json = JSON(result.result.value!)
         if (json["meta"]["code"].intValue  == 200) {
           dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
             if let urlString = json["pagination"]["next_url"].URL {

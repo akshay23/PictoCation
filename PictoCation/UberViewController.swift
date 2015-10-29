@@ -167,10 +167,10 @@ class UberViewController: UIViewController {
     Alamofire.request(.POST, myRequest.URLRequest, parameters: params as? [String : AnyObject], encoding: .JSON)
       .validate()
       .responseJSON {
-      (_, _, result) in
+      (result) in
       
-        if (result.isSuccess) {
-          let json = JSON(result.value!)
+        if (result.result.isSuccess) {
+          let json = JSON(result.result.value!)
           if let status = json["status"].string {
             if (status == "processing" || status == "accepted") {
               if let fetchRequest = self.coreDataStack.model.fetchRequestTemplateForName("UserFetchRequest") {
@@ -229,10 +229,10 @@ class UberViewController: UIViewController {
         Alamofire.request(.POST, myRequest.URLRequest, parameters: params as? [String : AnyObject], encoding: .JSON)
           .validate()
           .responseJSON {
-            (_, _, result) in
+            (result) in
             
-            if (result.isSuccess) {
-              let json = JSON(result.value!)
+            if (result.result.isSuccess) {
+              let json = JSON(result.result.value!)
               if let pickup = json["pickup_estimate"].int {
                 self.messageLabel.text = "Closest driver is about \(pickup) minutes away"
               } else {
@@ -259,10 +259,10 @@ class UberViewController: UIViewController {
     Alamofire.request(urlString)
       .validate()
       .responseJSON() {
-      (_ , _, result) in
+      (result) in
       
-        if (result.isSuccess) {
-          let json = JSON(result.value!)
+        if (result.result.isSuccess) {
+          let json = JSON(result.result.value!)
           if let products = json["products"].array {
             print("Number of Uber types is \(products.count)")
             for type in products {
@@ -303,10 +303,10 @@ class UberViewController: UIViewController {
       Alamofire.request(myRequest)
         .validate()
         .responseJSON() {
-        (_ , _, result) in
+        (result) in
         
-          if (result.isSuccess) {
-            let json = JSON(result.value!)
+          if (result.result.isSuccess) {
+            let json = JSON(result.result.value!)
             if let status = json["status"].string {
               if (status == "processing") {
                 let eta = json["eta"].stringValue

@@ -1,7 +1,7 @@
 //
 //  BDBOAuth1SessionManager.m
 //
-//  Copyright (c) 2013-2014 Bradley David Bergeron
+//  Copyright (c) 2013-2015 Bradley David Bergeron
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of
 //  this software and associated documentation files (the "Software"), to deal in
@@ -23,7 +23,7 @@
 #import "AFURLConnectionOperation.h"
 #import "BDBOAuth1SessionManager.h"
 
-#if (defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000) || (defined(__MAC_OS_X_VERSION_MIN_REQUIRED) && __MAC_OS_X_VERSION_MIN_REQUIRED >= 1090)
+#if (defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000) || (defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090)
 
 #pragma mark -
 @interface BDBOAuth1SessionManager ()
@@ -33,6 +33,8 @@
 
 #pragma mark -
 @implementation BDBOAuth1SessionManager
+
+@dynamic requestSerializer;
 
 #pragma mark Initialization
 - (instancetype)initWithBaseURL:(NSURL *)baseURL
@@ -87,11 +89,11 @@
         return;
     }
 
-    void (^completionBlock)(NSURLResponse * __unused, id, NSError *) = ^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+    void (^completionBlock)(NSURLResponse * __unused, id, NSError *) = ^(NSURLResponse * __unused response, id responseObject, NSError *completionError) {
         self.responseSerializer = defaultSerializer;
 
-        if (error) {
-            failure(error);
+        if (completionError) {
+            failure(completionError);
 
             return;
         }
@@ -138,12 +140,12 @@
         return;
     }
 
-    void (^completionBlock)(NSURLResponse * __unused, id, NSError *) = ^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+    void (^completionBlock)(NSURLResponse * __unused, id, NSError *) = ^(NSURLResponse * __unused response, id responseObject, NSError *completionError) {
         self.responseSerializer = defaultSerializer;
         self.requestSerializer.requestToken = nil;
 
-        if (error) {
-            failure(error);
+        if (completionError) {
+            failure(completionError);
 
             return;
         }

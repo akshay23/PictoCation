@@ -1,7 +1,7 @@
 //
 //  BDBOAuth1RequestOperationManager.h
 //
-//  Copyright (c) 2013-2014 Bradley David Bergeron
+//  Copyright (c) 2013-2015 Bradley David Bergeron
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of
 //  this software and associated documentation files (the "Software"), to deal in
@@ -20,7 +20,8 @@
 //  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "AFNetworking/AFHTTPRequestOperationManager.h"
+#import <AFNetworking/AFHTTPRequestOperationManager.h>
+
 #import "BDBOAuth1RequestSerializer.h"
 
 

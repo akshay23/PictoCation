@@ -1,7 +1,7 @@
 //
 //  BDBOAuth1RequestSerializer.m
 //
-//  Copyright (c) 2013-2014 Bradley David Bergeron
+//  Copyright (c) 2013-2015 Bradley David Bergeron
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of
 //  this software and associated documentation files (the "Software"), to deal in
@@ -334,7 +334,7 @@ static NSDictionary *OAuthKeychainDictionaryForService(NSString *service) {
     NSString *requestURL    = [[[[request URL] absoluteString] componentsSeparatedByString:@"?"][0] bdb_URLEncode];
 
     NSArray *sortedQueryString = [[[[request URL] query] componentsSeparatedByString:@"&"] sortedArrayUsingSelector:@selector(compare:)];
-    NSString *queryString   = [[sortedQueryString componentsJoinedByString:@"&"] bdb_URLEncode];
+    NSString *queryString   = [[[sortedQueryString componentsJoinedByString:@"&"] bdb_URLEncodeSlashesAndQuestionMarks] bdb_URLEncode];
 
     NSString *requestString = [NSString stringWithFormat:@"%@&%@&%@", requestMethod, requestURL, queryString];
     NSData *requestData = [requestString dataUsingEncoding:NSUTF8StringEncoding];

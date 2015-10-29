@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		19091B191B5812D4005420DE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19091B181B5812D4005420DE /* CoreDataStack.swift */; };
 		19091B1E1B597A72005420DE /* PlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19091B1D1B597A72005420DE /* PlacesManager.swift */; };
-		190A34FE1BC5A1D0003A5E76 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190A34FD1BC5A1D0003A5E76 /* RouterTests.swift */; settings = {ASSET_TAGS = (); }; };
+		190A34FE1BC5A1D0003A5E76 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190A34FD1BC5A1D0003A5E76 /* RouterTests.swift */; };
 		190AF10A1B82450C0038E335 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190AF1091B82450C0038E335 /* OptionsView.swift */; };
 		190AF10C1B82486D0038E335 /* OptionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190AF10B1B82486D0038E335 /* OptionsDelegate.swift */; };
 		190AFA431B7661BE003CEB93 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190AFA421B7661BE003CEB93 /* Utils.swift */; };
@@ -33,8 +33,8 @@
 		19F72C691B56FC2800FA43E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C681B56FC2800FA43E9 /* MapViewController.swift */; };
 		19F72C6B1B57080500FA43E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C6A1B57080500FA43E9 /* User.swift */; };
 		19F72C6E1B57085F00FA43E9 /* PictoCation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C6C1B57085F00FA43E9 /* PictoCation.xcdatamodeld */; };
-		19FA1A5D1BC42A1E005C6493 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FA1A5C1BC42A1E005C6493 /* iRate.m */; settings = {ASSET_TAGS = (); }; };
-		1A78094DD9D021A84875E76B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02273179CE0741C27D7195C9 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		19FA1A5D1BC42A1E005C6493 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FA1A5C1BC42A1E005C6493 /* iRate.m */; };
+		1A78094DD9D021A84875E76B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02273179CE0741C27D7195C9 /* Pods.framework */; };
 		968AAF2498DB9E720678F377 /* Pods_PictoCation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4063455072B457624267AD /* Pods_PictoCation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -599,6 +599,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -616,6 +617,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = PictoCationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

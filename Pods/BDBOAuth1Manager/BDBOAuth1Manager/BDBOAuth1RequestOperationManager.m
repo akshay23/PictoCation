@@ -1,7 +1,7 @@
 //
 //  BDBOAuth1RequestOperationManager.m
 //
-//  Copyright (c) 2013-2014 Bradley David Bergeron
+//  Copyright (c) 2013-2015 Bradley David Bergeron
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of
 //  this software and associated documentation files (the "Software"), to deal in
@@ -31,6 +31,8 @@
 
 #pragma mark -
 @implementation BDBOAuth1RequestOperationManager
+
+@dynamic requestSerializer;
 
 #pragma mark Initialization
 - (instancetype)initWithBaseURL:(NSURL *)baseURL
@@ -94,10 +96,10 @@
         success(requestToken);
     };
 
-    void (^failureBlock)(AFHTTPRequestOperation *, NSError *) = ^(AFHTTPRequestOperation *operation, NSError *error) {
+    void (^failureBlock)(AFHTTPRequestOperation *, NSError *) = ^(AFHTTPRequestOperation *operation, NSError *completionError) {
         self.responseSerializer = defaultSerializer;
 
-        failure(error);
+        failure(completionError);
     };
 
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:successBlock failure:failureBlock];
@@ -147,11 +149,11 @@
         success(accessToken);
     };
 
-    void (^failureBlock)(AFHTTPRequestOperation *, NSError *) = ^(AFHTTPRequestOperation *operation, NSError *error) {
+    void (^failureBlock)(AFHTTPRequestOperation *, NSError *) = ^(AFHTTPRequestOperation *operation, NSError *completionError) {
         self.responseSerializer = defaultSerializer;
         self.requestSerializer.requestToken = nil;
 
-        failure(error);
+        failure(completionError);
     };
 
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:successBlock failure:failureBlock];

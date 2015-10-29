@@ -1,3 +1,18 @@
+Version 1.10.5 - October 2015
+=============================
+Resolved Issues:
+  - Workaround an issue in the Swift compiler's handling of umbrella header
+    module entries.
+
+Version 1.10.4 - October 2015
+=============================
+Resolved Issues:
+  - Fixed a crash on iOS 9 when dismissing the place picker without a selection.
+  - Fixed a crash when using both a GMSMapView and a UIWebView or WKWebView in the view
+    hierarchy at the same time.
+  - Recompiled with Xcode 7 to avoid raising failed to load optimized model log messages
+    on iOS 9 devices.
+
 Version 1.10.3 - September 2015
 ===============================
 Features:

@@ -34,13 +34,13 @@ class PlacesManager {
   
   private init() {}
   
-  func updateLatLong(latitude: Double, longitude: Double, handler: (error: Result<AnyObject>) -> ()) {
+  func updateLatLong(latitude: Double, longitude: Double, handler: (error: Result<AnyObject, NSError>) -> ()) {
     self.latitude = latitude
     self.longitude = longitude
     refreshPlaces(true, nextPageToken: nil, handler: handler)
   }
   
-  func refreshPlaces(isFirstRequest: Bool, nextPageToken: String?, handler: (error: Result<AnyObject>) -> ()) {
+  func refreshPlaces(isFirstRequest: Bool, nextPageToken: String?, handler: (error: Result<AnyObject, NSError>) -> ()) {
     let location: String = "\(latitude),\(longitude)"
     let params = "location=\(location)&radius=\(radius)&key=\(apiKey)"
     var myRequest = requestURL + params
@@ -61,11 +61,11 @@ class PlacesManager {
     Alamofire.request(.GET, myRequest, parameters: nil)
       .validate()
       .responseJSON {
-      (_, _, result) in
-      
+      (result) in
+
       var token: String?
-      if (result.isSuccess) {
-        let json = JSON(result.value!)
+      if (result.result.isSuccess) {
+        let json = JSON(result.result.value!)
         if let status = json["status"].string {
           if (status == "OK") {
             token = json["next_page_token"].string
@@ -90,7 +90,7 @@ class PlacesManager {
       } else {
         print("Full places count is \(self.places.count)")
         self.places.sortInPlace({ $0.name < $1.name })
-        handler(error: result)
+        handler(error: result.result)
       }
     }
   }
