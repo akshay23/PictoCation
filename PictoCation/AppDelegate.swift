@@ -13,6 +13,8 @@ import FastImageCache
 import GoogleMaps
 import Fabric
 import Crashlytics
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -47,6 +49,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     iRate.sharedInstance().message = "Please rate PictoCation in the app store."
     iRate.sharedInstance().cancelButtonLabel = "No Thanks"
     iRate.sharedInstance().rateButtonLabel = "Rate Now"
+    
+    // Initialize Parse.
+    Parse.setApplicationId("elNhCUZJesysEPkQjetYsEGR6MIxVbRNtJ6wYb9k",
+      clientKey: "NQyU93M3jeSjDfj7Xf3hSj3kKnwT2r4467Wjm8Sr")
+    
+    // [Optional] Track statistics around application opens.
+    PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
 
     return true
   }

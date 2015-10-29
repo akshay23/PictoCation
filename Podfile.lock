@@ -24,6 +24,7 @@ PODS:
   - BDBOAuth1Manager (1.6.0):
     - AFNetworking/NSURLConnection (~> 2.6.0)
     - AFNetworking/NSURLSession (~> 2.6.0)
+  - Bolts/Tasks (1.4.0)
   - Crashlytics (3.3.4)
   - Fabric (1.5.5):
     - Fabric/Base (= 1.5.5)
@@ -33,6 +34,8 @@ PODS:
   - GoogleMaps (1.10.5)
   - Hokusai (0.1.19)
   - MBProgressHUD (0.9.1)
+  - Parse (1.9.1):
+    - Bolts/Tasks (>= 1.4.0)
   - SwiftyJSON (2.3.1)
 
 DEPENDENCIES:
@@ -46,12 +49,14 @@ DEPENDENCIES:
   - GoogleMaps
   - Hokusai
   - MBProgressHUD
+  - Parse
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
   Alamofire: 415bd7f56197722978759078486689f7ef913dce
   BDBOAuth1Manager: cd5a5872f355ca38180d52ca2dd844f0b0c84797
+  Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   Crashlytics: 41c082440d2e14da444186fff65e79c0b4b35d4c
   Fabric: 190bf1a6eb65f7500de1347d027d2e59a7e53db1
   FastImageCache: 25f214fd46405daca3d1995d783fb83b9036c62e
@@ -59,6 +64,7 @@ SPEC CHECKSUMS:
   GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
   Hokusai: 2b3a0c31bb2b1c2dbc9f39f2e94294697d69f8f2
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
 
 COCOAPODS: 0.39.0

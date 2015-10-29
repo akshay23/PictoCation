@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FastImageCache.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -35,6 +40,11 @@
 			<false/>
 		</dict>
 		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -62,17 +72,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>101D9D65491BF32F151456F17BD6B765</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1C7391438FCD9691F52F0DCE677A2071</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>2BA7290F6E1B87B832ACC4A172AD19AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3A590302CE9EC0342BA46F5287F8A5E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +97,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7B3B5ED0FAFA0C7FD67CEC944378C153</key>
+		<key>708E01B006A9F88B3C13711562282B5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9E60A384EC1FCA4A284664CBB2839EED</key>
+		<key>8B2F2088D006A5A8071A769FA1C97166</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>94D7CADAC6AF0A711F0B0E0A52455682</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -108,6 +118,16 @@
 			<true/>
 		</dict>
 		<key>AE6A4AC269D91F7FF73F67FEEEF0FC11</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B18B60BD7BADEA12155772378DAD0F9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B8A759F57254B6094CF99273E5ECEE8B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

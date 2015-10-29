@@ -13,6 +13,7 @@ pod 'AFNetworking'
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'Hokusai'
+pod 'Parse'
 
 target 'PictoCation' do
 

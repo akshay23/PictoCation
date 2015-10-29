@@ -87,19 +87,23 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/AFNetworking.framework"
   install_framework "Pods/Alamofire.framework"
   install_framework "Pods/BDBOAuth1Manager.framework"
+  install_framework "Pods/Bolts.framework"
   install_framework "Pods/FastImageCache.framework"
   install_framework "Pods/FlatUIKit.framework"
   install_framework "Pods/Hokusai.framework"
   install_framework "Pods/MBProgressHUD.framework"
+  install_framework "Pods/Parse.framework"
   install_framework "Pods/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/AFNetworking.framework"
   install_framework "Pods/Alamofire.framework"
   install_framework "Pods/BDBOAuth1Manager.framework"
+  install_framework "Pods/Bolts.framework"
   install_framework "Pods/FastImageCache.framework"
   install_framework "Pods/FlatUIKit.framework"
   install_framework "Pods/Hokusai.framework"
   install_framework "Pods/MBProgressHUD.framework"
+  install_framework "Pods/Parse.framework"
   install_framework "Pods/SwiftyJSON.framework"
 fi

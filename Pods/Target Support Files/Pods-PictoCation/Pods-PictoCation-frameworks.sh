@@ -87,19 +87,23 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-PictoCation/AFNetworking.framework"
   install_framework "Pods-PictoCation/Alamofire.framework"
   install_framework "Pods-PictoCation/BDBOAuth1Manager.framework"
+  install_framework "Pods-PictoCation/Bolts.framework"
   install_framework "Pods-PictoCation/FastImageCache.framework"
   install_framework "Pods-PictoCation/FlatUIKit.framework"
   install_framework "Pods-PictoCation/Hokusai.framework"
   install_framework "Pods-PictoCation/MBProgressHUD.framework"
+  install_framework "Pods-PictoCation/Parse.framework"
   install_framework "Pods-PictoCation/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-PictoCation/AFNetworking.framework"
   install_framework "Pods-PictoCation/Alamofire.framework"
   install_framework "Pods-PictoCation/BDBOAuth1Manager.framework"
+  install_framework "Pods-PictoCation/Bolts.framework"
   install_framework "Pods-PictoCation/FastImageCache.framework"
   install_framework "Pods-PictoCation/FlatUIKit.framework"
   install_framework "Pods-PictoCation/Hokusai.framework"
   install_framework "Pods-PictoCation/MBProgressHUD.framework"
+  install_framework "Pods-PictoCation/Parse.framework"
   install_framework "Pods-PictoCation/SwiftyJSON.framework"
 fi
