@@ -14,11 +14,14 @@ import FlatUIKit
 import FastImageCache
 import QuartzCore
 import MBProgressHUD
+import Hokusai
+import Parse
 
 class PhotoViewController: UIViewController {
   
   @IBOutlet var mainPhotoView: UIImageView!
   @IBOutlet var commentsTable: UITableView!
+  @IBOutlet var spamButton: UIButton!
 
   var user: User!
   var photoInfo: PhotoInfo?
@@ -54,12 +57,6 @@ class PhotoViewController: UIViewController {
     commentsTable.tableFooterView = UIView(frame: CGRectZero)
     commentsTable.rowHeight = UITableViewAutomaticDimension
     commentsTable.estimatedRowHeight = 160.0
-    
-    // Add double-tap recognzier to image view
-    let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: "handleDoubleTap:")
-    doubleTapRecognizer.numberOfTapsRequired = 2
-    doubleTapRecognizer.numberOfTouchesRequired = 1
-    mainPhotoView.addGestureRecognizer(doubleTapRecognizer)
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -123,6 +120,35 @@ class PhotoViewController: UIViewController {
   func goRefresh() {
     checkReachabilityWithBlock {
       self.refresh()
+    }
+  }
+  
+  @IBAction func reportSpam(sender: AnyObject) {
+    checkReachabilityWithBlock {
+      let hokusai = Hokusai()
+
+      hokusai.addButton("Report this post as spam") {
+        let filtered = PFObject(className: "FilteredPost")
+        filtered["postID"] = self.photoInfo?.instagramID
+        filtered.saveInBackgroundWithBlock {
+          (success, error) in
+          
+          if (success) {
+            print("Post with ID \(self.photoInfo!.instagramID) as been reported as spam")
+            let gvc = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 2]
+              as! GalleryViewController
+            gvc.shouldRefresh = true
+            self.goBack()
+          } else {
+            print("Could not talk to Parse")
+            self.showAlertWithMessage("Please try again later", title: "Couldn't Report as Spam", button: "Ok")
+          }
+        }
+      }
+      
+      hokusai.colorScheme = HOKColorScheme.Inari
+      hokusai.cancelButtonTitle = "No"
+      hokusai.show()
     }
   }
 }

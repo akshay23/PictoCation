@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ea0-wI-Ioh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ea0-wI-Ioh">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -211,7 +211,7 @@
                                 <rect key="frame" x="150" y="30" width="300" height="330"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Mxh-Hr-PKE">
-                                <rect key="frame" x="150" y="380" width="300" height="220"/>
+                                <rect key="frame" x="150" y="390" width="300" height="210"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -246,15 +246,31 @@
                                     <outlet property="delegate" destination="Q0T-Lu-91q" id="Glr-2J-DXC"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZe-QW-Nhq">
+                                <rect key="frame" x="245" y="366" width="110" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="DzS-Ue-3fl"/>
+                                    <constraint firstAttribute="width" constant="110" id="mGa-1R-Dkk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <state key="normal" title="Report as spam">
+                                    <color key="titleColor" red="1" green="0.68704430567590491" blue="0.037390781689213948" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reportSpam:" destination="Q0T-Lu-91q" eventType="touchUpInside" id="AKI-iN-AnL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dR7-IH-geT" firstAttribute="top" secondItem="Mxh-Hr-PKE" secondAttribute="bottom" id="2g7-US-C2J"/>
                             <constraint firstItem="T2j-hq-GT7" firstAttribute="width" secondItem="PpR-b7-GdZ" secondAttribute="height" multiplier="1:2" id="A20-aR-FvD"/>
                             <constraint firstItem="T2j-hq-GT7" firstAttribute="top" secondItem="coL-JE-cAN" secondAttribute="bottom" constant="10" id="AZg-R3-v1M"/>
+                            <constraint firstItem="BZe-QW-Nhq" firstAttribute="centerX" secondItem="PpR-b7-GdZ" secondAttribute="centerX" id="Eec-Vo-LGP"/>
                             <constraint firstItem="T2j-hq-GT7" firstAttribute="bottom" secondItem="dR7-IH-geT" secondAttribute="top" multiplier="0.6" id="H9u-DM-p0x"/>
                             <constraint firstItem="T2j-hq-GT7" firstAttribute="width" secondItem="Mxh-Hr-PKE" secondAttribute="width" id="L9G-Bx-jHb"/>
-                            <constraint firstItem="Mxh-Hr-PKE" firstAttribute="top" secondItem="T2j-hq-GT7" secondAttribute="bottom" constant="20" id="fWX-sm-dfN"/>
+                            <constraint firstItem="Mxh-Hr-PKE" firstAttribute="top" secondItem="T2j-hq-GT7" secondAttribute="bottom" constant="30" id="fWX-sm-dfN"/>
+                            <constraint firstItem="BZe-QW-Nhq" firstAttribute="top" secondItem="T2j-hq-GT7" secondAttribute="bottom" constant="6" id="pq2-Jj-u88"/>
                             <constraint firstAttribute="centerX" secondItem="Mxh-Hr-PKE" secondAttribute="centerX" id="sPO-SV-Fcq"/>
                             <constraint firstAttribute="centerX" secondItem="T2j-hq-GT7" secondAttribute="centerX" id="zUW-E4-oHI"/>
                         </constraints>
@@ -262,6 +278,7 @@
                     <connections>
                         <outlet property="commentsTable" destination="Mxh-Hr-PKE" id="9PH-Kg-LXc"/>
                         <outlet property="mainPhotoView" destination="T2j-hq-GT7" id="7AP-g2-f2c"/>
+                        <outlet property="spamButton" destination="BZe-QW-Nhq" id="9SH-1D-jk0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EQg-Zb-RdK" userLabel="First Responder" sceneMemberID="firstResponder"/>

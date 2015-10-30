@@ -13,6 +13,7 @@ import FastImageCache
 import SwiftyJSON
 import FlatUIKit
 import MBProgressHUD
+import Parse
 
 class GalleryViewController: UICollectionViewController {
 
@@ -125,10 +126,11 @@ class GalleryViewController: UICollectionViewController {
             } else {
               self.nextURLRequest = nil
             }
+            
             let photoInfos = json["data"].arrayValue
               
               .filter {
-                $0["type"].stringValue == "image"
+                ($0["type"].stringValue == "image" && !self.shouldFilterPost($0["id"].stringValue))
               }.map({
                 PhotoInfo(instaID: $0["id"].stringValue,
                   sourceImageURL: $0["images"]["standard_resolution"]["url"].URL!,
@@ -188,6 +190,18 @@ class GalleryViewController: UICollectionViewController {
     collectionView!.collectionViewLayout = layout
     collectionView!.registerClass(PhotoBrowserCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: PhotoBrowserCellIdentifier)
     collectionView!.registerClass(PhotoBrowserLoadingCollectionView.classForCoder(), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: PhotoBrowserFooterViewIdentifier)
+  }
+  
+  func shouldFilterPost(postID: String) -> Bool {
+    let query = PFQuery(className: "FilteredPost")
+    query.whereKey("postID", containsString: postID)
+    
+    do {
+      try query.getFirstObject()
+      return true
+    } catch {
+      return false
+    }
   }
 }
 
