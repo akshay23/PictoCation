@@ -253,7 +253,6 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     sharedImageCache.retrieveImageForEntity(photo, withFormatName: formatName, completionBlock: {
       (photoInfo, _, image) -> Void in
       if (photoInfo as! PhotoInfo) == cell.photoInfo {
-        _ = photoInfo as! PhotoInfo
         cell.imageView.image = image
       }
     })

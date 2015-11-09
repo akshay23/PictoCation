@@ -86,6 +86,15 @@ class MapViewController: UIViewController {
     typeButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     typeButton.tintColor = UIColor.cloudsColor()
     navigationItem.leftBarButtonItem = typeButton
+    
+    // Add logo to center of navi bar
+    let logo = UIImageView(image: UIImage(named: "PictoIcon"))
+    logo.contentMode = UIViewContentMode.ScaleAspectFit
+    logo.frame = CGRectMake(0, 0, 30, 30)
+    navigationItem.titleView = logo
+    
+    // Change bg colour of navi bar
+    navigationController!.navigationBar.barTintColor = UIColor(fromHexCode: "D6C5C4")
   }
   
   override func viewWillAppear(animated: Bool) {

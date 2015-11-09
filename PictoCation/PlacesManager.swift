@@ -89,7 +89,8 @@ class PlacesManager {
         self.refreshPlaces(false, nextPageToken: tok, handler: handler)
       } else {
         print("Full places count is \(self.places.count)")
-        self.places.sortInPlace({ $0.name < $1.name })
+        let sortedArray = self.places.sort { $0.name < $1.name }
+        self.places = sortedArray
         handler(error: result.result)
       }
     }
