@@ -53,6 +53,14 @@ extension Array {
     }
     return nil
   }
+  
+  func lookup(index: Int) throws -> Element {
+    if index >= count { throw
+      NSError(domain: "com.actionman", code: 0,
+        userInfo: [NSLocalizedFailureReasonErrorKey:
+          "Array index out of bounds"])}
+    return self[index]
+  }
 }
 
 extension NSDate {

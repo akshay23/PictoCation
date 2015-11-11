@@ -308,12 +308,18 @@ extension MapViewController: UITableViewDataSource {
     accBtn.addTarget(self, action: Selector("elipsesTapped:event:"), forControlEvents: UIControlEvents.TouchUpInside)
     cell.accessoryView = accBtn
     
-    // Add the info
-    let location = CLLocation(latitude: placesManager.places[indexPath.row].latitude, longitude: placesManager.places[indexPath.row].longitude)
-    let distance = round(100 * (currentLocation.distanceFromLocation(location) * 0.000621371))/100  // Meters to Miles, then round to 2 decimal places
-    cell.textLabel!.text = placesManager.places[indexPath.row].name
-    cell.detailTextLabel!.text = "\(distance) miles away"
-
+    // Add the info (first make sure index is not out of bounds)
+    do {
+      try self.placesManager.places.lookup(indexPath.row)
+      let location = CLLocation(latitude: self.placesManager.places[indexPath.row].latitude, longitude: self.placesManager.places[indexPath.row].longitude)
+      let distance = round(100 * (self.currentLocation.distanceFromLocation(location) * 0.000621371))/100  // Meters to Miles, then round to 2 decimal places
+      cell.textLabel!.text = self.placesManager.places[indexPath.row].name
+      cell.detailTextLabel!.text = "\(distance) miles away"
+    } catch {
+      print("Oops! The index is out of the places array range.")
+      doRefresh()
+    }
+    
     return cell
   }
   

@@ -130,7 +130,7 @@ class GalleryViewController: UICollectionViewController {
             let photoInfos = json["data"].arrayValue
               
               .filter {
-                ($0["type"].stringValue == "image" && !self.shouldFilterPost($0["id"].stringValue))
+                $0["type"].stringValue == "image"
               }.map({
                 PhotoInfo(instaID: $0["id"].stringValue,
                   sourceImageURL: $0["images"]["standard_resolution"]["url"].URL!,
