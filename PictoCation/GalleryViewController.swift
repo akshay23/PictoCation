@@ -13,7 +13,7 @@ import FastImageCache
 import SwiftyJSON
 import FlatUIKit
 import MBProgressHUD
-import Parse
+import CoreData
 
 class GalleryViewController: UICollectionViewController {
 
@@ -23,6 +23,7 @@ class GalleryViewController: UICollectionViewController {
   var populatingPhotos = false
   var nextURLRequest: NSURLRequest?
   var user: User!
+  var coreDataStack: CoreDataStack!
   var hashtagTopic: String!
   var shouldRefresh: Bool = false
 
@@ -85,6 +86,7 @@ class GalleryViewController: UICollectionViewController {
       photoViewController.photoInfo = sender?.valueForKey("photoInfo") as? PhotoInfo
       photoViewController.hashtagTopic = hashtagTopic
       photoViewController.user = user
+      photoViewController.coreDataStack = coreDataStack
     }
   }
   
@@ -130,7 +132,7 @@ class GalleryViewController: UICollectionViewController {
             let photoInfos = json["data"].arrayValue
               
               .filter {
-                $0["type"].stringValue == "image"
+                ($0["type"].stringValue == "image" && !self.shouldFilterPost($0["id"].stringValue))
               }.map({
                 PhotoInfo(instaID: $0["id"].stringValue,
                   sourceImageURL: $0["images"]["standard_resolution"]["url"].URL!,
@@ -193,15 +195,22 @@ class GalleryViewController: UICollectionViewController {
   }
   
   func shouldFilterPost(postID: String) -> Bool {
-    let query = PFQuery(className: "FilteredPost")
-    query.whereKey("postID", containsString: postID)
-    
+    let fetchRequest = NSFetchRequest(entityName: "FilteredPost")
+    fetchRequest.predicate = NSPredicate(format: "postID = %@", postID)
+  
     do {
-      try query.getFirstObject()
-      return true
+      let results = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [FilteredPost]
+      if (results.count > 0) {
+        print("Matching postID found. Should be filtered")
+        return true
+      } else {
+        return false
+      }
     } catch {
-      return false
+      print("No matching entries for \(postID)")
     }
+    
+    return false
   }
 }
 

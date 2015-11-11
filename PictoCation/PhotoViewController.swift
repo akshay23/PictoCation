@@ -15,7 +15,7 @@ import FastImageCache
 import QuartzCore
 import MBProgressHUD
 import Hokusai
-import Parse
+import CoreData
 
 class PhotoViewController: UIViewController {
   
@@ -24,7 +24,8 @@ class PhotoViewController: UIViewController {
   @IBOutlet var spamButton: UIButton!
 
   var user: User!
-  var photoInfo: PhotoInfo?
+  var coreDataStack: CoreDataStack!
+  var photoInfo: PhotoInfo!
   var hashtagTopic: String!
   var comments: [(user: String, comment: String)] = []
 
@@ -74,7 +75,7 @@ class PhotoViewController: UIViewController {
     })
     
     // Get comments
-    let urlString = Instagram.Router.PhotoComments(photoInfo!.instagramID, user!.accessToken)
+    let urlString = Instagram.Router.PhotoComments(photoInfo.instagramID, user!.accessToken)
     comments = []
     populateComments(urlString)
   }
@@ -102,7 +103,7 @@ class PhotoViewController: UIViewController {
               self.comments.append(comment)
             }
           }
-          self.photoInfo!.isLiked = json["data"]["user_has_liked"].boolValue
+          self.photoInfo.isLiked = json["data"]["user_has_liked"].boolValue
 
           self.commentsTable.reloadData()
         }
@@ -128,22 +129,13 @@ class PhotoViewController: UIViewController {
       let hokusai = Hokusai()
 
       hokusai.addButton("Report this post as spam") {
-        let filtered = PFObject(className: "FilteredPost")
-        filtered["postID"] = self.photoInfo?.instagramID
-        filtered.saveInBackgroundWithBlock {
-          (success, error) in
-          
-          if (success) {
-            print("Post with ID \(self.photoInfo!.instagramID) as been reported as spam")
-            let gvc = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 2]
-              as! GalleryViewController
-            gvc.shouldRefresh = true
-            self.goBack()
-          } else {
-            print("Could not talk to Parse")
-            self.showAlertWithMessage("Please try again later", title: "Couldn't Report as Spam", button: "Ok")
-          }
-        }
+        let filtered = NSEntityDescription.insertNewObjectForEntityForName("FilteredPost", inManagedObjectContext: self.coreDataStack.context) as! FilteredPost
+        filtered.postID = self.photoInfo.instagramID
+        self.coreDataStack.saveContext()
+        print("Instagram post with ID \(self.photoInfo.instagramID) reported as spam")
+        let gvc = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 2] as! GalleryViewController
+        gvc.shouldRefresh = true
+        self.goBack()
       }
       
       hokusai.colorScheme = HOKColorScheme.Inari

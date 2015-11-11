@@ -152,6 +152,7 @@ class MapViewController: UIViewController {
         let strippedTopic = selectedHastagTopic!.componentsSeparatedByCharactersInSet(charsToRemove).joinWithSeparator("")
         galleryViewController.hashtagTopic = strippedTopic
         galleryViewController.shouldRefresh = true
+        galleryViewController.coreDataStack = coreDataStack
       }
     } else if segue.identifier == "show yelp" && segue.destinationViewController.isKindOfClass(UIViewController.classForCoder()) {
       if let yelpViewController = segue.destinationViewController as? YelpViewController {

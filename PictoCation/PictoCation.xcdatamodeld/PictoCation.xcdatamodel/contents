@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Xcode 4.3">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="14F27" minimumToolsVersion="Xcode 4.3">
+    <entity name="FilteredPost" representedClassName="PictoCation.FilteredPost" syncable="YES">
+        <attribute name="postID" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName="PictoCation.User" syncable="YES">
         <attribute name="accessToken" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="placesType" optional="YES" attributeType="String" syncable="YES"/>
@@ -11,5 +14,6 @@
     <fetchRequest name="UserFetchRequest" entity="User"/>
     <elements>
         <element name="User" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="FilteredPost" positionX="-63" positionY="27" width="128" height="60"/>
     </elements>
 </model>

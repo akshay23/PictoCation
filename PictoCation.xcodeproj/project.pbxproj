@@ -30,6 +30,7 @@
 		19A641EE1B56D9DF00E8402A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A641EC1B56D9DF00E8402A /* Main.storyboard */; };
 		19A641F01B56D9DF00E8402A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A641EF1B56D9DF00E8402A /* Images.xcassets */; };
 		19A641F31B56D9DF00E8402A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A641F11B56D9DF00E8402A /* LaunchScreen.xib */; };
+		19DE272B1BF3A82500FED827 /* FilteredPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DE272A1BF3A82500FED827 /* FilteredPost.swift */; };
 		19F72C691B56FC2800FA43E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C681B56FC2800FA43E9 /* MapViewController.swift */; };
 		19F72C6B1B57080500FA43E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C6A1B57080500FA43E9 /* User.swift */; };
 		19F72C6E1B57085F00FA43E9 /* PictoCation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19F72C6C1B57085F00FA43E9 /* PictoCation.xcdatamodeld */; };
@@ -78,6 +79,7 @@
 		19A641F21B56D9DF00E8402A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		19A641F81B56D9DF00E8402A /* PictoCationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PictoCationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A641FD1B56D9DF00E8402A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19DE272A1BF3A82500FED827 /* FilteredPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredPost.swift; sourceTree = "<group>"; };
 		19F72C681B56FC2800FA43E9 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		19F72C6A1B57080500FA43E9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		19F72C6D1B57085F00FA43E9 /* PictoCation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PictoCation.xcdatamodel; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				190E79621B6AEF6B00DC2B48 /* PhotoInfo.swift */,
 				195084AD1B87864000F0ADE7 /* Yelp.swift */,
 				1954632A1B9A2F1500314081 /* Uber.swift */,
+				19DE272A1BF3A82500FED827 /* FilteredPost.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				1984BC621B72B5AB00B2B7FA /* LeftViewController.swift in Sources */,
 				19739C281B6A962B00A05F26 /* Reachability.swift in Sources */,
 				1984BC641B72BBEF00B2B7FA /* ContainerViewController.swift in Sources */,
+				19DE272B1BF3A82500FED827 /* FilteredPost.swift in Sources */,
 				195084AE1B87864000F0ADE7 /* Yelp.swift in Sources */,
 				1996135E1B8F74EB00F5C351 /* YelpViewController.swift in Sources */,
 				190AFA431B7661BE003CEB93 /* Utils.swift in Sources */,
