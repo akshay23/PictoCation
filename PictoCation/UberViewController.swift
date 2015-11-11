@@ -37,6 +37,9 @@ class UberViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // Core data stack
+    coreDataStack = CoreDataStack.sharedInstance
+    
     // BG color & title image
     view.backgroundColor = UIColor.wetAsphaltColor()
     let uberIconView = UIImageView(image: UIImage(named: "UberIcon"))
@@ -106,7 +109,6 @@ class UberViewController: UIViewController {
       let navigationController = segue.destinationViewController as! UINavigationController
       if let loginViewController = navigationController.topViewController as? LoginViewController {
         loginViewController.loginType = .Uber
-        loginViewController.coreDataStack = coreDataStack
       }
     }
   }

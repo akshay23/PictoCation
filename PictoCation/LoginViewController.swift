@@ -29,6 +29,9 @@ class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // Get core data stack
+    coreDataStack = CoreDataStack.sharedInstance
+    
     closeButton.shadowHeight = 3.0
     closeButton.buttonColor = UIColor.turquoiseColor()
     closeButton.shadowColor = UIColor.greenSeaColor()

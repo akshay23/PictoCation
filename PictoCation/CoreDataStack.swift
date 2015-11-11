@@ -16,6 +16,14 @@ class CoreDataStack {
   var model: NSManagedObjectModel
   var store: NSPersistentStore?
   
+  // Singleton
+  class var sharedInstance: CoreDataStack {
+    struct Static {
+      static let instance: CoreDataStack = CoreDataStack()
+    }
+    return Static.instance
+  }
+  
   init() {
     let bundle = NSBundle.mainBundle()
     let modelURL = bundle.URLForResource("PictoCation", withExtension: "momd")

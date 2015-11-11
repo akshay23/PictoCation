@@ -18,7 +18,6 @@ class ContainerViewController: UIViewController {
   
   var centerNavigationController: UINavigationController!
   var centerViewController: MapViewController!
-  var coreDataStack: CoreDataStack!
   var currentState: SlideOutState = .BothCollapsed {
     didSet {
       let shouldShowShadow = currentState != .BothCollapsed
@@ -35,7 +34,6 @@ class ContainerViewController: UIViewController {
     
     centerViewController = UIStoryboard.centerViewController()
     centerViewController.delegate = self
-    centerViewController.coreDataStack = coreDataStack
     
     // wrap the centerViewController in a navigation controller, so we can push views to it
     // and display bar button items in the navigation bar

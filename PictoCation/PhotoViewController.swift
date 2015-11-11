@@ -32,6 +32,9 @@ class PhotoViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // Core data stack
+    coreDataStack = CoreDataStack.sharedInstance
+    
     // Set bg color
     view.backgroundColor = UIColor.wetAsphaltColor()
     

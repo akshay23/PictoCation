@@ -46,6 +46,7 @@ class MapViewController: UIViewController {
     super.viewDidLoad()
 
     // Initialize all the location stuff
+    coreDataStack = CoreDataStack.sharedInstance
     locationManager = CLLocationManager()
     locationManager.delegate = self
     locationManager.requestWhenInUseAuthorization()
@@ -136,7 +137,6 @@ class MapViewController: UIViewController {
     if segue.identifier == "login" && segue.destinationViewController.isKindOfClass(UINavigationController.classForCoder()) {
       let navigationController = segue.destinationViewController as! UINavigationController
       if let loginViewController = navigationController.topViewController as? LoginViewController {
-        loginViewController.coreDataStack = coreDataStack
         loginViewController.loginType = .Instagram
         locationManager.stopUpdatingLocation()
       }
@@ -152,7 +152,6 @@ class MapViewController: UIViewController {
         let strippedTopic = selectedHastagTopic!.componentsSeparatedByCharactersInSet(charsToRemove).joinWithSeparator("")
         galleryViewController.hashtagTopic = strippedTopic
         galleryViewController.shouldRefresh = true
-        galleryViewController.coreDataStack = coreDataStack
       }
     } else if segue.identifier == "show yelp" && segue.destinationViewController.isKindOfClass(UIViewController.classForCoder()) {
       if let yelpViewController = segue.destinationViewController as? YelpViewController {
@@ -161,7 +160,6 @@ class MapViewController: UIViewController {
     } else if segue.identifier == "show uber" && segue.destinationViewController.isKindOfClass(UIViewController.classForCoder()) {
       if let uberViewController = segue.destinationViewController as? UberViewController {
         uberViewController.user = user!
-        uberViewController.coreDataStack = coreDataStack
         uberViewController.place = selectedPlace
         uberViewController.currentLocation = currentLocation
       }

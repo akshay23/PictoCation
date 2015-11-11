@@ -34,6 +34,9 @@ class GalleryViewController: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // Get the core data stack
+    coreDataStack = CoreDataStack.sharedInstance
+    
     // BG color
     mainCollectionView.backgroundColor = UIColor.wetAsphaltColor()
     
@@ -86,7 +89,6 @@ class GalleryViewController: UICollectionViewController {
       photoViewController.photoInfo = sender?.valueForKey("photoInfo") as? PhotoInfo
       photoViewController.hashtagTopic = hashtagTopic
       photoViewController.user = user
-      photoViewController.coreDataStack = coreDataStack
     }
   }
   
