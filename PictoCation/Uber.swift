@@ -27,6 +27,7 @@ struct Uber {
     case getSandboxRequestInfo(String, String)
     case getUberTypes(String, CLLocation)
     case getEstimate(String)
+    case getSandboxEstimate(String)
     
     static func requestAccessTokenURLStringAndParms(code: String) -> (URLString: String, Params: [String: AnyObject]) {
       let params = ["client_id": Router.clientID, "client_secret": Router.clientSecret, "grant_type": "authorization_code", "redirect_uri": Router.redirectURI, "code": code]
@@ -71,6 +72,11 @@ struct Uber {
           let params = ["access_token": accessToken]
           let pathString = "/v1/requests/estimate"
           return (Uber.Router.baseURLString, pathString, params)
+          
+        case .getSandboxEstimate(let accessToken):
+          let params = ["access_token": accessToken]
+          let pathString = "/v1/requests/estimate"
+          return (Uber.Router.baseSandboxURLString, pathString, params)
         }
         }()
       

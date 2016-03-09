@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import PictoCation
+@testable import  PictoCation
 
 class RouterTests: XCTestCase {
   

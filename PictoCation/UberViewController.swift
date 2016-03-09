@@ -228,6 +228,7 @@ class UberViewController: UIViewController {
           "end_longitude": endLocation.coordinate.longitude
         ]
         let myRequest: URLRequestConvertible = Uber.Router.getEstimate(self.user.uberAccessToken)
+        print(myRequest.URLRequest)
         Alamofire.request(.POST, myRequest.URLRequest, parameters: params as? [String : AnyObject], encoding: .JSON)
           .validate()
           .responseJSON {
@@ -294,7 +295,7 @@ class UberViewController: UIViewController {
   
   func checkForActiveRequests() {
     if (user.uberMostRecentRequestID != "") {
-      print("Mose recent request_id is \(user!.uberMostRecentRequestID)")
+      print("Most recent request_id is \(user!.uberMostRecentRequestID)")
       if let navi = self.navigationController {
         let loadingNotification = MBProgressHUD.showHUDAddedTo(navi.view, animated: true)
         loadingNotification.mode = MBProgressHUDMode.Indeterminate
@@ -315,14 +316,14 @@ class UberViewController: UIViewController {
                 self.requestBtn.enabled = false
                 self.changeTypeBtn.enabled = false
                 self.activeRequestExists = true
-                self.showAlertWithMessage("Uber request has been sent. Please wait for driver.", title: "Request Sent", button: "OK")
-                self.messageLabel.text = "Driver will arrive in about \(eta) mins"
+                self.showAlertWithMessage("Uber request has been sent. Use the official Uber app to track driver.", title: "Request Sent", button: "OK")
+                self.messageLabel.text = "Driver will arrive in \((eta == "") ? "a few" : eta) mins"
               } else if (status == "accepted" || status == "arriving") {
                 let licensePlate = json["vehicle"]["license_plate"].stringValue
                 self.requestBtn.enabled = false
                 self.changeTypeBtn.enabled = false
                 self.activeRequestExists = true
-                self.showAlertWithMessage("You currently have an active request. Driver will arrive soon.", title: "Active Request", button: "OK")
+                self.showAlertWithMessage("You currently have an active request. Use the official Uber app to track driver.", title: "Active Request", button: "OK")
                 self.messageLabel.text = "Look for license plate \(licensePlate)"
               } else {
                 self.activeRequestExists = false
