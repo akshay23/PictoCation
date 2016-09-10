@@ -41,13 +41,13 @@ class YelpViewController: UIViewController {
     navigationItem.titleView = yelpIconView
     
     // Add back nav button
-    let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: "goBack")
+    let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(YelpViewController.goBack))
     backButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     backButton.tintColor = UIColor.cloudsColor()
     navigationItem.leftBarButtonItem = backButton
     
     // Add refresh nav button
-    let refreshButton = UIBarButtonItem(title: "Refresh", style: .Plain, target: self, action: "refresh")
+    let refreshButton = UIBarButtonItem(title: "Refresh", style: .Plain, target: self, action: #selector(YelpViewController.refresh))
     refreshButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     refreshButton.tintColor = UIColor.cloudsColor()
     navigationItem.rightBarButtonItem = refreshButton
@@ -64,7 +64,7 @@ class YelpViewController: UIViewController {
     callButton.buttonColor = UIColor.turquoiseColor()
     callButton.shadowColor = UIColor.greenSeaColor()
     callButton.setTitle("Call Business", forState: .Normal)
-    callButton.addTarget(self, action: "callBusiness", forControlEvents: .TouchUpInside)
+    callButton.addTarget(self, action: #selector(YelpViewController.callBusiness), forControlEvents: .TouchUpInside)
     callButton.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
     callButton.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
     
@@ -72,7 +72,7 @@ class YelpViewController: UIViewController {
     directionsButton.buttonColor = UIColor.turquoiseColor()
     directionsButton.shadowColor = UIColor.greenSeaColor()
     directionsButton.setTitle("Get Directions", forState: .Normal)
-    directionsButton.addTarget(self, action: "getDirections", forControlEvents: .TouchUpInside)
+    directionsButton.addTarget(self, action: #selector(YelpViewController.getDirections), forControlEvents: .TouchUpInside)
     directionsButton.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
     directionsButton.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
     
@@ -80,7 +80,7 @@ class YelpViewController: UIViewController {
     yelpButton.buttonColor = UIColor.turquoiseColor()
     yelpButton.shadowColor = UIColor.greenSeaColor()
     yelpButton.setTitle("View in Yelp", forState: .Normal)
-    yelpButton.addTarget(self, action: "viewYelp", forControlEvents: .TouchUpInside)
+    yelpButton.addTarget(self, action: #selector(YelpViewController.viewYelp), forControlEvents: .TouchUpInside)
     yelpButton.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
     yelpButton.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
   }

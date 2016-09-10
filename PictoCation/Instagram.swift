@@ -19,6 +19,7 @@ struct Instagram {
     
     case TaggedPhotos(String, String)
     case PhotoComments(String, String)
+    case LikePost(String, String)
     case requestOauthCode
     
     static func requestAccessTokenURLStringAndParms(code: String) -> (URLString: String, Params: [String: AnyObject]) {
@@ -39,6 +40,11 @@ struct Instagram {
         case .PhotoComments(let instagramID, let accessToken):
           let params = ["access_token": accessToken]
           let pathString = "/v1/media/\(instagramID)"
+          return (pathString, params)
+          
+        case .LikePost(let instagramID, let accessToken):
+          let params = ["access_token": accessToken]
+          let pathString = "/v1/media/\(instagramID)/likes"
           return (pathString, params)
           
         case .requestOauthCode:

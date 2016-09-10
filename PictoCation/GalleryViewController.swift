@@ -41,13 +41,13 @@ class GalleryViewController: UICollectionViewController {
     mainCollectionView.backgroundColor = UIColor.wetAsphaltColor()
     
     // Add back nav button
-    let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: "goBack")
+    let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(GalleryViewController.goBack))
     backButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     backButton.tintColor = UIColor.cloudsColor()
     navigationItem.leftBarButtonItem = backButton
     
     // Add refresh nav button
-    let refreshButton = UIBarButtonItem(title: "Refresh", style: .Plain, target: self, action: "goRefresh")
+    let refreshButton = UIBarButtonItem(title: "Refresh", style: .Plain, target: self, action: #selector(GalleryViewController.goRefresh))
     refreshButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     refreshButton.tintColor = UIColor.cloudsColor()
     navigationItem.rightBarButtonItem = refreshButton
@@ -63,7 +63,7 @@ class GalleryViewController: UICollectionViewController {
     textfield.textAlignment = .Center
     textfield.returnKeyType = .Done
     textfield.delegate = self
-    textfield.addTarget(self, action: Selector("goRefresh"), forControlEvents: .EditingDidEndOnExit)
+    textfield.addTarget(self, action: #selector(GalleryViewController.goRefresh), forControlEvents: .EditingDidEndOnExit)
     navigationItem.titleView = textfield
     
     // Set up collection

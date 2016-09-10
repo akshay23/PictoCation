@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
     closeButton.buttonColor = UIColor.turquoiseColor()
     closeButton.shadowColor = UIColor.greenSeaColor()
     closeButton.setTitle("Close", forState: .Normal)
-    closeButton.addTarget(self, action: "close", forControlEvents: .TouchUpInside)
+    closeButton.addTarget(self, action: #selector(LoginViewController.close), forControlEvents: .TouchUpInside)
     closeButton.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
     closeButton.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
   }

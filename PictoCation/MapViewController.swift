@@ -83,7 +83,7 @@ class MapViewController: UIViewController {
     btnLogout.tintColor = UIColor.cloudsColor()
     
     // Add change type button to left of navi
-    let typeButton = UIBarButtonItem(title: "Change Type", style: .Plain, target: self, action: Selector("changeType"))
+    let typeButton = UIBarButtonItem(title: "Change Type", style: .Plain, target: self, action: #selector(MapViewController.changeType))
     typeButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     typeButton.tintColor = UIColor.cloudsColor()
     navigationItem.leftBarButtonItem = typeButton
@@ -304,7 +304,7 @@ extension MapViewController: UITableViewDataSource {
     let icon = UIImage(named: "Elipses")
     let accBtn = UIButton(frame: CGRectMake(0.0, 0.0, icon!.size.width, icon!.size.width))
     accBtn.setBackgroundImage(icon, forState: .Normal)
-    accBtn.addTarget(self, action: Selector("elipsesTapped:event:"), forControlEvents: UIControlEvents.TouchUpInside)
+    accBtn.addTarget(self, action: #selector(MapViewController.elipsesTapped(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
     cell.accessoryView = accBtn
     
     // Add the info (first make sure index is not out of bounds)

@@ -39,13 +39,13 @@ class PhotoViewController: UIViewController {
     view.backgroundColor = UIColor.wetAsphaltColor()
     
     // Add back nav button
-    let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: "goBack")
+    let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(PhotoViewController.goBack))
     backButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     backButton.tintColor = UIColor.cloudsColor()
     navigationItem.leftBarButtonItem = backButton
     
     // Add refresh nav button
-    let refreshButton = UIBarButtonItem(title: "Refresh", style: .Plain, target: self, action: "goRefresh")
+    let refreshButton = UIBarButtonItem(title: "Refresh", style: .Plain, target: self, action: #selector(PhotoViewController.goRefresh))
     refreshButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     refreshButton.tintColor = UIColor.cloudsColor()
     navigationItem.rightBarButtonItem = refreshButton
@@ -61,6 +61,13 @@ class PhotoViewController: UIViewController {
     commentsTable.tableFooterView = UIView(frame: CGRectZero)
     commentsTable.rowHeight = UITableViewAutomaticDimension
     commentsTable.estimatedRowHeight = 160.0
+    
+    // Add gesture recognizer for double-tap
+    let tap = UITapGestureRecognizer()
+    tap.numberOfTapsRequired = 2
+    tap.addTarget(self, action: #selector(PhotoViewController.likeInstagramPost))
+    mainPhotoView.userInteractionEnabled = true
+    mainPhotoView.addGestureRecognizer(tap)
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -127,10 +134,28 @@ class PhotoViewController: UIViewController {
     }
   }
   
+  func likeInstagramPost() {
+    let urlString = Instagram.Router.LikePost(photoInfo.instagramID, user!.accessToken)
+    print(urlString.URLRequest)
+    Alamofire.request(.POST, urlString.URLRequest, parameters: nil, encoding: .JSON)
+      .validate()
+      .responseJSON {
+        (result) in
+        
+        print(result.debugDescription)
+      
+        if (result.result.isSuccess) {
+          print("Post has been LIKED")
+        }
+    }
+  }
+}
+
+extension PhotoViewController {
   @IBAction func reportSpam(sender: AnyObject) {
     checkReachabilityWithBlock {
       let hokusai = Hokusai()
-
+      
       hokusai.addButton("Report this post as spam") {
         let filtered = NSEntityDescription.insertNewObjectForEntityForName("FilteredPost", inManagedObjectContext: self.coreDataStack.context) as! FilteredPost
         filtered.postID = self.photoInfo.instagramID

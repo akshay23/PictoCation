@@ -39,7 +39,7 @@ class OptionsView: UIView {
     instaButton.shadowColor = UIColor.greenSeaColor()
     instaButton.setTitle("Instagram Photos", forState: .Normal)
     instaButton.titleLabel?.font = UIFont.boldFlatFontOfSize(20)
-    instaButton.addTarget(self, action: "instagram", forControlEvents: UIControlEvents.TouchUpInside)
+    instaButton.addTarget(self, action: #selector(OptionsView.instagram), forControlEvents: UIControlEvents.TouchUpInside)
     addSubview(instaButton)
     
     let yelpButton = FUIButton(frame: CGRectMake(8, instaButton.frame.origin.y + 45, frame.size.width - 15, 40))
@@ -48,7 +48,7 @@ class OptionsView: UIView {
     yelpButton.shadowColor = UIColor.greenSeaColor()
     yelpButton.setTitle("Yelp Info & Reviews", forState: .Normal)
     yelpButton.titleLabel?.font = UIFont.boldFlatFontOfSize(20)
-    yelpButton.addTarget(self, action: "yelp", forControlEvents: UIControlEvents.TouchUpInside)
+    yelpButton.addTarget(self, action: #selector(OptionsView.yelp), forControlEvents: UIControlEvents.TouchUpInside)
     addSubview(yelpButton)
     
     let reserveButton = FUIButton(frame: CGRectMake(8, yelpButton.frame.origin.y + 45, frame.size.width - 15, 40))
@@ -57,7 +57,7 @@ class OptionsView: UIView {
     reserveButton.shadowColor = UIColor.greenSeaColor()
     reserveButton.setTitle("Make Reservation", forState: .Normal)
     reserveButton.titleLabel?.font = UIFont.boldFlatFontOfSize(40)
-    reserveButton.addTarget(self, action: "reserve", forControlEvents: UIControlEvents.TouchUpInside)
+    reserveButton.addTarget(self, action: #selector(OptionsView.reserve), forControlEvents: UIControlEvents.TouchUpInside)
     reserveButton.enabled = false
     addSubview(reserveButton)
     
@@ -67,7 +67,7 @@ class OptionsView: UIView {
     uberButton.shadowColor = UIColor.greenSeaColor()
     uberButton.setTitle("Book an Uber", forState: .Normal)
     uberButton.titleLabel?.font = UIFont.boldFlatFontOfSize(40)
-    uberButton.addTarget(self, action: "uber", forControlEvents: UIControlEvents.TouchUpInside)
+    uberButton.addTarget(self, action: #selector(OptionsView.uber), forControlEvents: UIControlEvents.TouchUpInside)
     addSubview(uberButton)
     
     let cancelButton = FUIButton(frame: CGRectMake(8, uberButton.frame.origin.y + 45, frame.size.width - 15, 40))
@@ -76,7 +76,7 @@ class OptionsView: UIView {
     cancelButton.shadowColor = UIColor.greenSeaColor()
     cancelButton.setTitle("Cancel", forState: .Normal)
     cancelButton.titleLabel?.font = UIFont.boldFlatFontOfSize(20)
-    cancelButton.addTarget(self, action: "cancel", forControlEvents: UIControlEvents.TouchUpInside)
+    cancelButton.addTarget(self, action: #selector(OptionsView.cancel), forControlEvents: UIControlEvents.TouchUpInside)
     addSubview(cancelButton)
   }
   

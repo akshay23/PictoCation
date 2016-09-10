@@ -47,13 +47,13 @@ class UberViewController: UIViewController {
     navigationItem.titleView = uberIconView
     
     // Add back nav button
-    let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: "goBack")
+    let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(UberViewController.goBack))
     backButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     backButton.tintColor = UIColor.cloudsColor()
     navigationItem.leftBarButtonItem = backButton
     
     // Add refresh nav button
-    let refreshButton = UIBarButtonItem(title: "Refresh", style: .Plain, target: self, action: "refresh")
+    let refreshButton = UIBarButtonItem(title: "Refresh", style: .Plain, target: self, action: #selector(UberViewController.refresh))
     refreshButton.configureFlatButtonWithColor(UIColor.turquoiseColor(), highlightedColor: UIColor.greenSeaColor(), cornerRadius: 3)
     refreshButton.tintColor = UIColor.cloudsColor()
     navigationItem.rightBarButtonItem = refreshButton
@@ -66,14 +66,14 @@ class UberViewController: UIViewController {
     changeTypeBtn.buttonColor = UIColor.turquoiseColor()
     changeTypeBtn.shadowColor = UIColor.greenSeaColor()
     changeTypeBtn.setTitle("Change Type", forState: .Normal)
-    changeTypeBtn.addTarget(self, action: "changeType", forControlEvents: .TouchUpInside)
+    changeTypeBtn.addTarget(self, action: #selector(UberViewController.changeType), forControlEvents: .TouchUpInside)
     changeTypeBtn.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
     changeTypeBtn.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
     requestBtn.shadowHeight = 3.0
     requestBtn.buttonColor = UIColor.turquoiseColor()
     requestBtn.shadowColor = UIColor.greenSeaColor()
     requestBtn.setTitle("Request Uber", forState: .Normal)
-    requestBtn.addTarget(self, action: "requestUber", forControlEvents: .TouchUpInside)
+    requestBtn.addTarget(self, action: #selector(UberViewController.requestUber), forControlEvents: .TouchUpInside)
     requestBtn.setTitleColor(UIColor.cloudsColor(), forState: .Normal)
     requestBtn.setTitleColor(UIColor.cloudsColor(), forState: .Highlighted)
     messageLabel.textColor = UIColor.cloudsColor()
